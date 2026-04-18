@@ -1,0 +1,1812 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Home - AgroSoft Ltd.</title>
+<link rel="icon" type="image/svg+xml" href="images/Ag_logo.svg">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --g1:#1a4d23;--g2:#2d7a3a;--g3:#4caf50;
+  --bg:#f5f9f5;--white:#fff;--text:#1c2e1e;--muted:#556b57;
+  --border:#ddeedd;--sh:0 4px 30px rgba(45,122,58,.12);
+}
+body{font-family:'Inter',Arial,sans-serif;background:var(--bg);color:var(--text);direction:ltr;overflow-x:hidden}
+
+/* NAV */
+nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:999;box-shadow:0 2px 12px rgba(0,0,0,.06);border-top:8px solid var(--g1)}
+.nav-inner{display:flex;align-items:center;justify-content:flex-start;padding:0 32px;min-height:64px;max-width:1400px;margin:0 auto;gap:6px}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;margin-right:18px;flex-shrink:0}
+.logo-name{font-size:1.3rem;font-weight:900;color:var(--g1)}
+.nav-links{display:flex;align-items:center;gap:2px;flex:1}
+.nav-links>a,.nav-links>.dropdown>a,.nav-links>.lang-dd>a{color:var(--text);text-decoration:none;font-size:.875rem;font-weight:500;padding:8px 14px;border-radius:9px;white-space:nowrap;transition:.18s;display:block}
+.nav-links>a:hover,.nav-links>.dropdown>a:hover{background:#eef6ef;color:var(--g2)}
+.nav-cta{background:linear-gradient(135deg,var(--g2),var(--g3))!important;color:var(--white)!important;padding:9px 22px!important;border-radius:10px!important;font-weight:700!important;box-shadow:0 4px 14px rgba(45,122,58,.28)!important;margin-left:6px}
+.nav-cta:hover{opacity:.9}
+
+/* MEGA MENU */
+.dropdown{position:relative}
+.dropdown:hover .mega{display:block}
+.mega{display:none;position:absolute;top:calc(100%+8px);left:-200px;background:var(--white);border:1px solid var(--border);border-radius:20px;padding:24px;width:640px;box-shadow:0 16px 48px rgba(0,0,0,.14);z-index:200}
+.mega-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.mega-item{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:14px;text-decoration:none;color:var(--text);border:1.5px solid var(--border);transition:.2s;background:var(--bg)}
+.mega-item:hover{border-color:var(--g3);background:var(--white);box-shadow:0 4px 16px rgba(45,122,58,.12);transform:translateY(-2px)}
+.mega-img{width:56px;height:56px;border-radius:12px;object-fit:contain;padding:6px;flex-shrink:0}
+.mega-txt h4{font-size:.92rem;font-weight:800;margin-bottom:3px}
+.mega-txt p{font-size:.76rem;color:var(--muted);line-height:1.4}
+.mega-footer{margin-top:16px;padding-top:14px;border-top:1px solid var(--border);display:flex;justify-content:center}
+.mega-footer a{font-size:.82rem;color:var(--g2);font-weight:700;text-decoration:none;padding:8px 20px;border-radius:8px;background:#eef6ef;transition:.2s}
+.mega-footer a:hover{background:var(--g2);color:#fff}
+
+/* LANG */
+.lang-dd{position:relative;margin-left:12px}
+.lang-btn{display:flex;align-items:center;gap:6px;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:7px 14px;font-size:.85rem;font-weight:600;color:var(--muted);cursor:pointer;transition:.2s;white-space:nowrap;text-decoration:none}
+.lang-btn:hover{border-color:var(--g3);color:var(--g2);background:#f0faf0}
+.lang-dd:hover .lang-menu{display:block}
+.lang-menu{display:none;position:absolute;top:calc(100%+6px);right:0;background:var(--white);border:1px solid var(--border);border-radius:12px;padding:6px;min-width:130px;box-shadow:0 8px 24px rgba(0,0,0,.1);z-index:300}
+.lang-menu a{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;font-size:.87rem;font-weight:600;color:var(--text);text-decoration:none;transition:.18s}
+.lang-menu a:hover{background:#eef6ef;color:var(--g2)}
+
+/* PAGES */
+.page{display:none}.page.active{display:block}
+
+/* HERO */
+.hero{min-height:42vh;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;text-align:left;padding:50px 60px 40px;background:linear-gradient(160deg,rgba(26,77,35,.82) 0%,rgba(29,107,43,.75) 50%,rgba(46,139,61,.70) 100%),url('images/Agriculture.png') center/cover no-repeat;position:relative;overflow:hidden}
+.slider{width:100%;position:relative;display:flex;flex-direction:column;align-items:flex-start}
+.slide{display:none;flex-direction:column;align-items:flex-start;text-align:left;max-width:520px;animation:fadein .6s ease}
+.slide.active{display:flex}
+@keyframes fadein{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.slide h1{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;color:#fff;margin-bottom:14px;letter-spacing:-.3px}
+.hero-sub{font-size:.95rem;color:rgba(255,255,255,.78);max-width:500px;line-height:1.75;margin-bottom:32px}
+.slider-dots{display:flex;gap:10px;justify-content:center;margin-top:24px;width:100%}
+.dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.35);cursor:pointer;transition:.2s}
+.dot.active{background:#fff;transform:scale(1.2)}
+.btn-solid{background:var(--white);color:var(--g1);padding:14px 34px;border-radius:14px;font-weight:800;font-size:.97rem;text-decoration:none;box-shadow:0 6px 24px rgba(0,0,0,.15);transition:.25s}
+.btn-solid:hover{transform:translateY(-3px)}
+.btn-ghost{background:rgba(255,255,255,.1);color:#fff;padding:14px 34px;border-radius:14px;font-weight:600;font-size:.97rem;text-decoration:none;border:2px solid rgba(255,255,255,.35);transition:.25s}
+
+/* SECTIONS */
+section{padding:80px 48px}
+.sec-label{text-align:center;font-size:.76rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--g2);margin-bottom:10px}
+h2.sec-title{text-align:center;font-size:clamp(1.8rem,3vw,2.35rem);font-weight:900;margin-bottom:14px}
+.sec-sub{text-align:center;color:var(--muted);font-size:.98rem;max-width:540px;margin:0 auto 54px;line-height:1.78}
+
+/* PRODUCTS */
+.prod-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;max-width:1120px;margin:0 auto}
+.prod-card{background:var(--bg);border:1.5px solid var(--border);border-radius:20px;padding:28px 24px;transition:.28s;cursor:pointer;text-decoration:none;color:inherit;display:flex;flex-direction:column}
+.prod-card:hover{transform:translateY(-7px);border-color:var(--g3);box-shadow:0 16px 44px rgba(45,122,58,.15);background:var(--white)}
+.prod-ico{width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.55rem;margin-bottom:18px}
+.prod-card h3{font-size:1.15rem;font-weight:800;margin-bottom:8px}
+.prod-card p{color:var(--muted);font-size:.875rem;line-height:1.65;flex:1}
+.prod-arr{display:inline-flex;align-items:center;gap:5px;margin-top:16px;color:var(--g2);font-weight:700;font-size:.82rem}
+
+/* ABOUT */
+.about-wrap{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-txt .sec-label{text-align:left}
+.about-txt h2{text-align:left;font-size:1.95rem;font-weight:900;margin-bottom:18px;line-height:1.3}
+.about-txt h2 span{color:var(--g2)}
+.about-txt p{color:var(--muted);line-height:1.85;margin-bottom:14px;font-size:.93rem}
+.about-panel{background:linear-gradient(145deg,#e8f5e9,#f1f8e9);border-radius:26px;padding:36px;border:1px solid var(--border)}
+.partner-box{background:var(--white);border-radius:18px;padding:26px;text-align:center;box-shadow:0 4px 20px rgba(45,122,58,.1);border:1px solid var(--border)}
+.partner-big{font-size:2rem;font-weight:900;color:var(--g1);margin:8px 0 4px}
+.partner-sm{font-size:.78rem;color:var(--muted)}
+.about-items{display:flex;flex-direction:column;gap:12px;margin-top:18px}
+.ai{display:flex;align-items:center;gap:11px;background:var(--white);border-radius:12px;padding:13px 16px;border:1px solid var(--border);font-size:.86rem;font-weight:500}
+.ai-dot{width:9px;height:9px;background:var(--g3);border-radius:50%;flex-shrink:0}
+
+/* MODULES */
+.mod-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;max-width:980px;margin:0 auto}
+.mod{background:var(--white);border:1.5px solid var(--border);border-radius:13px;padding:16px 18px;display:flex;align-items:flex-start;gap:12px;transition:.2s}
+.mod:hover{border-color:var(--g3);box-shadow:0 4px 16px rgba(45,122,58,.08)}
+.mod-dot{width:9px;height:9px;background:var(--g2);border-radius:50%;margin-top:6px;flex-shrink:0}
+.mod span{font-size:.875rem;line-height:1.6}
+
+/* NEWS */
+.news-page-wrap{max-width:860px;margin:0 auto;padding:60px 40px}
+.news-year-sep{display:flex;align-items:center;gap:14px;margin:40px 0 24px}
+.news-year-sep:first-child{margin-top:0}
+.news-year-sep span{font-size:1rem;font-weight:900;color:var(--g1);white-space:nowrap;background:var(--bg);padding-right:14px}
+.news-year-sep::after{content:'';flex:1;height:2px;background:linear-gradient(to right,var(--g3),var(--border))}
+.news-list{display:flex;flex-direction:column;gap:16px}
+.news-card{background:var(--white);border-radius:20px;padding:28px 32px;box-shadow:0 2px 18px rgba(45,122,58,.08);border:1.5px solid var(--border);display:flex;gap:24px;align-items:flex-start;transition:.2s;position:relative;overflow:hidden;cursor:pointer;text-decoration:none;color:inherit}
+.news-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(to bottom,var(--g2),var(--g3))}
+.news-card:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(45,122,58,.15);border-color:var(--g3)}
+.news-card.featured{background:linear-gradient(135deg,#f0faf0,#e8f5e9);border-color:var(--g3)}
+.news-card.featured::before{width:5px;background:linear-gradient(to bottom,var(--g1),var(--g2))}
+.news-badge{display:inline-block;background:linear-gradient(135deg,var(--g2),var(--g3));color:#fff;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;letter-spacing:.5px;margin-bottom:8px}
+.news-date{background:linear-gradient(135deg,#e8f5e9,#d4edda);border-radius:14px;padding:14px 16px;text-align:center;flex-shrink:0;min-width:72px}
+.news-date .mo{font-size:.7rem;color:var(--muted);font-weight:700;letter-spacing:.5px;text-transform:uppercase}
+.news-date .yr{font-size:1.5rem;font-weight:900;color:var(--g1);line-height:1.1}
+.news-card h3{font-size:1.08rem;font-weight:800;margin-bottom:8px;color:var(--text)}
+.news-card p{color:var(--muted);font-size:.875rem;line-height:1.75}
+.news-card ul{color:var(--muted);font-size:.875rem;line-height:2;padding-left:20px;margin-top:8px}
+.news-card li{margin-bottom:2px}
+.news-link{display:inline-flex;align-items:center;gap:5px;margin-top:14px;color:var(--g2);font-weight:700;font-size:.82rem;text-decoration:none;transition:.18s}
+.news-link:hover{color:var(--g1);gap:8px}
+
+/* BACK BUTTON */
+.back-fab{position:fixed!important;top:80px!important;bottom:auto!important;left:24px!important;z-index:997;display:none;transform:none!important;transition:none!important}
+.back-fab button{display:flex;align-items:center;gap:8px;background:var(--white);border:1.5px solid var(--border);border-radius:24px;padding:10px 20px;font-size:.83rem;font-weight:700;color:var(--g2);cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,.12);font-family:inherit;direction:ltr;transition:none!important;transform:none!important}
+
+/* NEWS ARTICLE PAGE */
+.news-art-hero{background:linear-gradient(160deg,var(--g1) 0%,var(--g2) 60%,var(--g3) 100%);padding:56px 48px 48px;color:#fff;position:relative}
+.news-art-back{display:inline-flex;align-items:center;gap:7px;color:rgba(255,255,255,.75);font-size:.83rem;font-weight:600;text-decoration:none;margin-bottom:28px;transition:.18s;cursor:pointer;background:rgba(255,255,255,.12);padding:7px 16px;border-radius:20px;border:1px solid rgba(255,255,255,.2)}
+.news-art-back:hover{color:#fff;background:rgba(255,255,255,.2)}
+.news-art-date{display:inline-block;background:rgba(255,255,255,.18);color:#fff;font-size:.78rem;font-weight:700;padding:5px 14px;border-radius:20px;margin-bottom:14px;letter-spacing:.5px}
+.news-art-hero h1{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:900;line-height:1.3;max-width:700px}
+.news-art-body{max-width:800px;margin:0 auto;padding:56px 48px}
+.news-art-body h2{font-size:1.2rem;font-weight:800;color:var(--g1);margin:32px 0 12px;padding-bottom:8px;border-bottom:2px solid var(--border)}
+.news-art-body h2:first-child{margin-top:0}
+.news-art-body p{color:var(--muted);font-size:.93rem;line-height:1.85;margin-bottom:14px}
+.news-art-body ul{color:var(--muted);font-size:.93rem;line-height:2.1;padding-left:22px;margin-bottom:16px}
+.news-art-body li{margin-bottom:2px}
+.news-art-feature{background:var(--white);border:1.5px solid var(--border);border-radius:16px;padding:22px 26px;margin:24px 0;display:flex;gap:14px;align-items:flex-start}
+.news-art-feature .ico{font-size:1.4rem;flex-shrink:0;margin-top:2px}
+.news-art-feature h4{font-size:.95rem;font-weight:800;margin-bottom:5px}
+.news-art-feature p{margin:0;font-size:.86rem}
+.news-art-cta{background:linear-gradient(135deg,#e8f5e9,#f0faf0);border:1.5px solid var(--g3);border-radius:18px;padding:28px 32px;margin-top:40px;text-align:center}
+.news-art-cta p{color:var(--g1);font-weight:700;font-size:1rem;margin-bottom:16px}
+.news-art-cta a{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--g2),var(--g3));color:#fff;padding:12px 28px;border-radius:12px;font-weight:700;font-size:.9rem;text-decoration:none;box-shadow:0 4px 14px rgba(45,122,58,.25);transition:.2s}
+.news-art-cta a:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(45,122,58,.35)}
+
+/* CTA BAND */
+.cta-band{background:linear-gradient(135deg,var(--g1),var(--g2));padding:76px 40px;text-align:center;color:#fff}
+.cta-band h2{font-size:2.1rem;font-weight:900;margin-bottom:12px}
+.cta-band p{opacity:.82;font-size:1rem;max-width:480px;margin:0 auto 36px;line-height:1.7}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* CONTACT */
+.contact-wrap{max-width:820px;margin:0 auto}
+.cinfo-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:28px}
+.cinfo{background:var(--white);border-radius:18px;padding:26px 20px;box-shadow:var(--sh);border:1px solid var(--border);text-align:center}
+.cinfo .ico{font-size:1.8rem;margin-bottom:10px}
+.cinfo h3{font-size:.88rem;color:var(--g2);font-weight:700;margin-bottom:5px}
+.cinfo a,.cinfo p{color:var(--text);text-decoration:none;font-weight:600;font-size:.88rem}
+.cform{background:var(--white);border-radius:20px;padding:36px;box-shadow:var(--sh);border:1px solid var(--border)}
+.cform h3{font-size:1.25rem;font-weight:900;margin-bottom:22px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fg{display:flex;flex-direction:column;gap:5px;margin-bottom:14px}
+.fg label{font-size:.78rem;font-weight:700;color:var(--muted)}
+.fg input,.fg textarea,.fg select{padding:11px 15px;border:1.5px solid var(--border);border-radius:10px;font-size:.9rem;font-family:inherit;outline:none;transition:.2s;background:var(--bg);color:var(--text)}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--g2);background:var(--white)}
+.submit-btn{background:linear-gradient(135deg,var(--g2),var(--g3));color:#fff;border:none;padding:13px 36px;border-radius:12px;font-size:.97rem;font-weight:800;cursor:pointer;font-family:inherit;box-shadow:0 6px 20px rgba(45,122,58,.32);transition:.25s}
+.submit-btn:hover{transform:translateY(-2px)}
+
+/* PAGE HEADER */
+.page-hdr{background:linear-gradient(135deg,var(--g1),var(--g2));padding:64px 48px 52px;text-align:center;color:#fff}
+.page-hdr h1{font-size:2.3rem;font-weight:900;margin-bottom:10px}
+.page-hdr p{opacity:.82;font-size:1rem}
+
+/* FOOTER */
+footer{background:var(--g1);padding:40px 48px;display:flex;flex-direction:column;gap:16px}
+.foot-top{display:flex;align-items:center;justify-content:flex-start;gap:32px;flex-wrap:wrap}
+.foot-logo{font-size:1.15rem;font-weight:900;color:rgba(255,255,255,.9)}
+.foot-links{display:flex;gap:18px;flex-wrap:wrap}
+.foot-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:.83rem;transition:.18s}
+.foot-links a:hover{color:#fff}
+.foot-copy{color:rgba(255,255,255,.5);font-size:.76rem;text-align:center}
+
+/* MARQUEE */
+@keyframes marquee-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee-wrap{overflow:hidden;margin-bottom:18px}
+.marquee-wrap:hover .marquee-track{animation-play-state:paused}
+.marquee-track{display:flex;width:max-content;animation:marquee-scroll 40s linear infinite}
+.marquee-track.slow{animation-duration:56s}
+.marquee-track.fast{animation-duration:30s}
+.m-card{flex:0 0 auto;background:var(--white);border:1.5px solid var(--border);border-radius:18px;padding:20px 24px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-width:160px;min-height:110px;transition:.25s;box-shadow:0 2px 10px rgba(45,122,58,.06);margin-right:18px}
+.m-card:hover{border-color:var(--g3);box-shadow:0 8px 24px rgba(45,122,58,.15);transform:translateY(-3px)}
+.m-card img{max-width:120px;max-height:54px;object-fit:contain}
+.cname{font-size:.76rem;font-weight:700;color:var(--muted);text-align:center}
+
+/* HAMBURGER */
+.hamburger{display:none;background:none;border:1.5px solid var(--border);cursor:pointer;padding:8px 10px;border-radius:10px;flex-direction:column;gap:5px;align-items:center;justify-content:center;margin-left:4px;flex-shrink:0}
+.hamburger span{display:block;width:20px;height:2px;background:var(--g1);border-radius:2px;transition:.25s}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
+
+/* MOBILE MENU */
+.mob-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:1001;cursor:pointer}
+.mob-overlay.open{display:block}
+.mob-menu{position:fixed;top:0;left:-300px;width:285px;height:100%;background:var(--white);z-index:1002;display:flex;flex-direction:column;transition:left .28s cubic-bezier(.4,0,.2,1);box-shadow:8px 0 32px rgba(0,0,0,.16);overflow-y:auto}
+.mob-menu.open{left:0}
+.mob-head{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--border);min-height:72px}
+.mob-logo{font-size:1.2rem;font-weight:900;color:var(--g1)}
+.mob-close-btn{background:none;border:1.5px solid var(--border);border-radius:8px;font-size:1.1rem;cursor:pointer;color:var(--text);padding:4px 9px;line-height:1.4}
+.mob-nav{padding:12px;display:flex;flex-direction:column;gap:2px;flex:1}
+.mob-nav a{display:block;padding:11px 14px;border-radius:10px;color:var(--text);text-decoration:none;font-size:.95rem;font-weight:500;transition:.15s}
+.mob-nav a:active{background:#eef6ef;color:var(--g2)}
+.mob-sep{font-size:.7rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--muted);padding:14px 14px 4px;margin-top:4px}
+.mob-cta{background:linear-gradient(135deg,var(--g2),var(--g3))!important;color:#fff!important;text-align:center;font-weight:700!important;margin-top:8px;padding:13px 14px!important;border-radius:10px}
+.mob-prod{display:flex;align-items:center;gap:11px}
+.mob-prod img{width:36px;height:36px;border-radius:9px;object-fit:contain;flex-shrink:0;padding:4px}
+.mob-prod-txt{font-size:.92rem;font-weight:700;color:var(--text)}
+
+/* PRODUCT PAGE HEADERS */
+.prod-pg-hdr{padding:60px 48px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap}
+
+/* FEATURE GRID 3 COL */
+.feat-g3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1000px;margin:0 auto}
+
+/* STATS GRID 3 COL */
+.stats-g3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+
+/* PRIORITY BAND */
+.priority-band{background:#8B6914;padding:28px 48px;text-align:center;width:100%}
+.pb-inner{display:inline-flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:center}
+
+@media(max-width:820px){
+  /* NAV */
+  .hamburger{display:flex}
+  .nav-links{display:none}
+  .lang-dd{display:none}
+  .nav-inner{padding:0 16px}
+
+  /* HERO */
+  .hero{padding:36px 20px 28px;min-height:auto}
+  .slide{max-width:100%}
+
+  /* SECTIONS */
+  section{padding:44px 20px}
+
+  /* PRODUCT PAGE HEADERS */
+  .prod-pg-hdr{padding:32px 20px!important;flex-direction:column;align-items:flex-start}
+  .prod-pg-hdr>img{height:64px!important;margin-top:8px}
+
+  /* FEATURE + STATS GRIDS */
+  .feat-g3,.stats-g3{grid-template-columns:1fr!important}
+
+  /* PRODUCT INNER SECTION PADDING */
+  #agropriority section,#agrotalk section,#agrosmart section,#agroqc section,#agroshop section{padding-left:20px!important;padding-right:20px!important}
+
+  /* ABOUT */
+  .about-wrap{grid-template-columns:1fr;gap:28px}
+
+  /* CONTACT */
+  .cinfo-row{grid-template-columns:1fr}
+  .frow{grid-template-columns:1fr}
+
+  /* PAGE HEADER */
+  .page-hdr{padding:40px 20px 32px}
+  .page-hdr h1{font-size:1.75rem}
+
+  /* NEWS ARTICLE */
+  .news-art-hero{padding:40px 20px 30px}
+  .news-art-body{padding:32px 20px}
+  .news-page-wrap{padding:36px 20px}
+  .news-card{padding:20px 16px;gap:14px}
+
+  /* PRIORITY BAND */
+  .priority-band{padding:22px 20px!important}
+  .pb-inner{flex-direction:column;gap:12px;width:100%}
+
+  /* CTA BAND */
+  .cta-band{padding:56px 20px}
+  .cta-band h2{font-size:1.65rem}
+
+  /* FOOTER */
+  footer{flex-direction:column;text-align:center;padding:28px 20px}
+  .foot-top{flex-direction:column;align-items:center;gap:14px}
+  .foot-links{justify-content:center}
+
+  /* BACK BUTTON */
+  .back-fab{top:80px!important;bottom:auto!important;left:16px!important}
+}
+
+@media(max-width:480px){
+  .hero{padding:28px 16px 24px}
+  .slide h1{font-size:1.55rem}
+  .hero-sub{font-size:.85rem}
+  .btn-solid,.btn-ghost{padding:11px 20px;font-size:.88rem}
+  .news-card{flex-direction:column;gap:10px}
+  .news-date{min-width:auto;flex-direction:row;align-items:center;gap:6px;padding:8px 12px}
+  .cta-cards{gap:10px}
+  .cc{min-width:130px;padding:15px}
+  .cform{padding:24px 20px}
+}
+
+/* ACCESSIBILITY WIDGET */
+.a11y-fab{position:fixed;bottom:24px;right:24px;z-index:10000;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--g2),var(--g3));color:#fff;border:none;cursor:pointer;box-shadow:0 4px 20px rgba(45,122,58,.35);display:flex;align-items:center;justify-content:center;font-size:1.7rem;transition:.25s}
+.a11y-fab:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(45,122,58,.45)}
+.a11y-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:10001}
+.a11y-overlay.open{display:block}
+.a11y-panel{position:fixed;top:0;right:-400px;width:380px;height:100%;z-index:10002;background:var(--white);box-shadow:-8px 0 32px rgba(0,0,0,.18);display:flex;flex-direction:column;transition:right .3s cubic-bezier(.4,0,.2,1);direction:ltr;overflow:hidden}
+.a11y-panel.open{right:0}
+.a11y-head{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid var(--border);background:linear-gradient(135deg,var(--g2),var(--g3));color:#fff;flex-shrink:0}
+.a11y-head h3{font-size:1rem;font-weight:800;margin:0;display:flex;align-items:center;gap:8px}
+.a11y-close{background:rgba(255,255,255,.2);border:none;color:#fff;width:32px;height:32px;border-radius:50%;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.18s}
+.a11y-close:hover{background:rgba(255,255,255,.35)}
+.a11y-body{flex:1;overflow-y:auto;padding:16px}
+.a11y-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.a11y-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:16px 8px;border-radius:14px;border:1.5px solid var(--border);background:var(--bg);cursor:pointer;font-family:inherit;font-size:.75rem;font-weight:600;color:var(--text);transition:.18s;text-align:center;min-height:100px}
+.a11y-btn:hover{border-color:var(--g2);background:#f0faf0}
+.a11y-btn.active{border-color:var(--g2);background:#e8f5e9;color:var(--g2)}
+.a11y-btn svg{width:36px;height:36px;stroke:currentColor;fill:none;stroke-width:1.5;flex-shrink:0}
+.a11y-btn.active svg{stroke:var(--g2)}
+.a11y-foot{padding:14px 16px;border-top:1px solid var(--border);flex-shrink:0}
+.a11y-reset{width:100%;padding:12px;border-radius:12px;border:none;background:linear-gradient(135deg,var(--g2),var(--g3));color:#fff;font-family:inherit;font-size:.85rem;font-weight:700;cursor:pointer;transition:.18s;display:flex;align-items:center;justify-content:center;gap:8px}
+.a11y-reset:hover{opacity:.9}
+.a11y-stmt{margin-top:10px;text-align:center}
+.a11y-stmt a{font-size:.75rem;color:var(--muted);text-decoration:underline}
+
+/* ACCESSIBILITY BODY CLASSES */
+body.a11y-font-lg{font-size:130%!important}
+body.a11y-contrast{background:#000!important;color:#fff!important}
+body.a11y-contrast *{background-color:#000!important;color:#fff!important;border-color:#fff!important}
+body.a11y-contrast a{color:#ff0!important}
+body.a11y-contrast img{filter:brightness(1.2)}
+body.a11y-contrast .a11y-panel,body.a11y-contrast .a11y-panel *{background-color:var(--white)!important;color:var(--text)!important;border-color:var(--border)!important}
+body.a11y-contrast .a11y-head,body.a11y-contrast .a11y-head *{background:linear-gradient(135deg,var(--g2),var(--g3))!important;color:#fff!important}
+body.a11y-contrast .a11y-reset{background:linear-gradient(135deg,var(--g2),var(--g3))!important;color:#fff!important}
+body.a11y-grayscale{filter:grayscale(1)}
+body.a11y-links a{text-decoration:underline!important;font-weight:700!important;color:var(--g2)!important}
+body.a11y-contrast.a11y-links a{color:#ff0!important;text-decoration:underline!important}
+body.a11y-spacing{letter-spacing:2px!important;word-spacing:6px!important}
+body.a11y-spacing *{letter-spacing:2px!important;word-spacing:6px!important}
+body.a11y-noanim,body.a11y-noanim *{animation:none!important;transition:none!important}
+body.a11y-hideimg img:not(.a11y-panel img):not(.mega-img){opacity:0!important}
+body.a11y-dyslexia,body.a11y-dyslexia *{font-family:'OpenDyslexic','Comic Sans MS',Arial,sans-serif!important}
+body.a11y-bigcursor,body.a11y-bigcursor *{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cpath d='M4 4l16 40 6-16 16-6z' fill='%23000' stroke='%23fff' stroke-width='2'/%3E%3C/svg%3E") 4 4,auto!important}
+body.a11y-lineheight,body.a11y-lineheight *{line-height:2.2!important}
+body.a11y-textalign,body.a11y-textalign *{text-align:center!important}
+body.a11y-saturation{filter:saturate(3)}
+body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
+
+/* COOKIES BANNER */
+.cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:var(--white);border-top:2px solid var(--border);padding:18px 32px;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;box-shadow:0 -4px 24px rgba(0,0,0,.1);transform:translateY(100%);transition:transform .4s cubic-bezier(.4,0,.2,1)}
+.cookie-banner.show{transform:translateY(0)}
+.cookie-banner p{font-size:.88rem;color:var(--text);font-weight:500;margin:0;max-width:520px;text-align:center;line-height:1.6}
+.cookie-banner p a{color:var(--g2);font-weight:700;text-decoration:underline}
+.cookie-btns{display:flex;gap:10px;flex-shrink:0}
+.cookie-accept{background:linear-gradient(135deg,var(--g2),var(--g3));color:#fff;border:none;padding:10px 24px;border-radius:10px;font-weight:700;font-size:.85rem;cursor:pointer;font-family:inherit;transition:.18s;box-shadow:0 4px 14px rgba(45,122,58,.25)}
+.cookie-accept:hover{opacity:.9;transform:translateY(-1px)}
+.cookie-reject{background:var(--bg);color:var(--muted);border:1.5px solid var(--border);padding:10px 24px;border-radius:10px;font-weight:700;font-size:.85rem;cursor:pointer;font-family:inherit;transition:.18s}
+.cookie-reject:hover{border-color:var(--g3);color:var(--text)}
+
+@media(max-width:820px){
+  .a11y-fab{bottom:18px;right:16px;width:50px;height:50px;font-size:1.4rem}
+  .a11y-panel{width:300px}
+  .cookie-banner{padding:16px 20px;gap:14px;flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-inner">
+    <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <a class="logo" href="#" onclick="return go('home',event)"><div class="logo-name">AgroSoft</div></a>
+    <div class="nav-links">
+      <a href="#" onclick="return go('about',event)">About</a>
+      <div class="dropdown">
+        <a href="#">Solutions &#9660;</a>
+        <div class="mega">
+          <div class="mega-grid">
+            <a class="mega-item" href="#" onclick="return go('agropriority',event)">
+              <img class="mega-img" style="background:transparent;width:70px;height:70px" src="images/AgroPriority_logo.png">
+              <div class="mega-txt"><h4>AgroPriority</h4><p>Complete ERP solution for agricultural companies</p></div>
+            </a>
+            <a class="mega-item" href="#" onclick="return go('agrotalk',event)">
+              <img class="mega-img" style="background:#e8f5e9" src="images/AgroTalk_logoN.png">
+              <div class="mega-txt"><h4>AgroTalk</h4><p>Real-time messaging with suppliers and customers</p></div>
+            </a>
+            <a class="mega-item" href="#" onclick="return go('agrosmart',event)">
+              <img class="mega-img" style="background:#fff3e0" src="images/AgroSmart_Logo.png">
+              <div class="mega-txt"><h4>AgroSmart</h4><p>Smart warehouse management for any device</p></div>
+            </a>
+            <a class="mega-item" href="#" onclick="return go('agroqc',event)">
+              <img class="mega-img" style="background:#fce4ec" src="images/AgroQC_LogoN.png">
+              <div class="mega-txt"><h4>AgroQC</h4><p>Interactive and flexible quality control</p></div>
+            </a>
+            <a class="mega-item" href="#" onclick="return go('agroshop',event)" style="grid-column:1/-1">
+              <img class="mega-img" style="background:#f3e5f5" src="images/agroShop.png">
+              <div class="mega-txt"><h4>AgroShop</h4><p>Online B2B portal for customer order entry</p></div>
+            </a>
+          </div>
+          <div class="mega-footer">
+            <a href="#" onclick="go('home',event);setTimeout(function(){var el=document.getElementById('products-section');if(el)el.scrollIntoView({behavior:'smooth'})},100);return false;">&#8594; All Solutions</a>
+          </div>
+        </div>
+      </div>
+      <a href="#" onclick="return go('customers',event)">Our Clients</a>
+      <a href="https://www.agropriority.com/ServiceCalls" target="_blank">Customer Service</a>
+      <a href="#" onclick="return go('news',event)">News &amp; Updates</a>
+      <a href="https://www.farm-online.net/login_new/" target="_blank">Growers Portal</a>
+      <a href="#" onclick="return go('contact',event)" class="nav-cta">Contact Us</a>
+    </div>
+    <div class="lang-dd">
+      <a class="lang-btn" href="#">&#127760; &#9660;</a>
+      <div class="lang-menu">
+        <a href="index.html">&#127470;&#127473; &#1506;&#1489;&#1512;&#1497;&#1514;</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE OVERLAY -->
+<div class="mob-overlay" id="mob-overlay" onclick="closeMobileMenu()"></div>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mob-menu">
+  <div class="mob-head">
+    <div class="mob-logo">AgroSoft</div>
+    <button class="mob-close-btn" onclick="closeMobileMenu()">&#x2715;</button>
+  </div>
+  <div class="mob-nav">
+    <a href="#" onclick="closeMobileMenu();return go('home',event)">&#127968; Home</a>
+    <a href="#" onclick="closeMobileMenu();return go('about',event)">About</a>
+    <div class="mob-sep">Solutions</div>
+    <a href="#" onclick="closeMobileMenu();return go('agropriority',event)">
+      <div class="mob-prod">
+        <img src="images/AgroPriority_logo.png" style="background:transparent;width:44px;height:44px;object-fit:contain">
+        <span class="mob-prod-txt">AgroPriority</span>
+      </div>
+    </a>
+    <a href="#" onclick="closeMobileMenu();return go('agrotalk',event)">
+      <div class="mob-prod">
+        <img src="images/AgroTalk_logoN.png" style="background:#e8f5e9">
+        <span class="mob-prod-txt">AgroTalk</span>
+      </div>
+    </a>
+    <a href="#" onclick="closeMobileMenu();return go('agrosmart',event)">
+      <div class="mob-prod">
+        <img src="images/AgroSmart_Logo.png" style="background:#fff3e0">
+        <span class="mob-prod-txt">AgroSmart</span>
+      </div>
+    </a>
+    <a href="#" onclick="closeMobileMenu();return go('agroqc',event)">
+      <div class="mob-prod">
+        <img src="images/AgroQC_LogoN.png" style="background:#fce4ec">
+        <span class="mob-prod-txt">AgroQC</span>
+      </div>
+    </a>
+    <a href="#" onclick="closeMobileMenu();return go('agroshop',event)">
+      <div class="mob-prod">
+        <img src="images/agroShop.png" style="background:#f3e5f5">
+        <span class="mob-prod-txt">AgroShop</span>
+      </div>
+    </a>
+    <div class="mob-sep">More</div>
+    <a href="#" onclick="closeMobileMenu();return go('customers',event)">Our Clients</a>
+    <a href="https://www.agropriority.com/ServiceCalls" target="_blank" onclick="closeMobileMenu()">Customer Service</a>
+    <a href="#" onclick="closeMobileMenu();return go('news',event)">News &amp; Updates</a>
+    <a href="https://www.farm-online.net/login_new/" target="_blank" onclick="closeMobileMenu()">Growers Portal</a>
+    <a href="index.html" onclick="closeMobileMenu()">&#127470;&#127473; &#1506;&#1489;&#1512;&#1497;&#1514;</a>
+    <a class="mob-cta" href="#" onclick="closeMobileMenu();return go('contact',event)">Contact Us &#8594;</a>
+  </div>
+</div>
+
+<!-- BACK BUTTON -->
+<div class="back-fab" id="back-fab">
+  <button onclick="goBack()">&larr; Back to Previous Page</button>
+</div>
+
+<!-- HOME -->
+<div id="home" class="page active">
+  <div class="hero">
+    <div class="slider">
+      <div class="slide active">
+        <h1>AgroSoft</h1>
+        <p class="hero-sub">We are a software house specializing in developing and implementing software solutions, with a focus on companies in the agricultural sector.</p>
+        <a class="btn-solid" href="#" onclick="return go('about',event)">Learn More</a>
+      </div>
+      <div class="slide">
+        <h1>AgroPriority</h1>
+        <p class="hero-sub">A complete solution for managing agricultural companies &mdash; export, marketing &amp; distribution, packing houses, logistics centers, startups and more.</p>
+        <a class="btn-solid" href="#" onclick="return go('agropriority',event)">Learn More</a>
+      </div>
+    </div>
+    <div class="slider-dots">
+      <span class="dot active" onclick="goSlide(0)"></span>
+      <span class="dot" onclick="goSlide(1)"></span>
+    </div>
+  </div>
+
+  <!-- Priority Band -->
+  <section class="priority-band">
+    <div class="pb-inner">
+      <div style="display:inline-flex;align-items:center;gap:4px">
+        <span style="font-size:1.1rem;font-weight:700;color:#fff;white-space:nowrap">Agriculture with</span>
+        <a href="https://www.priority-software.com/il" target="_blank" style="display:flex;align-items:center">
+          <img src="https://agrosoft.co.il/wp-content/uploads/2023/08/Authorized-Partner_W-1024x313.png" alt="Priority" style="height:50px;transition:.2s" onerror="this.outerHTML='<span style=\'font-size:1.4rem;font-weight:900;color:#fff\'>Priority</span>'">
+        </a>
+      </div>
+      <a href="#" onclick="return go('news',event)" style="background:var(--g2);border:2px solid var(--g3);color:#fff;padding:9px 22px;border-radius:10px;font-weight:700;font-size:.9rem;text-decoration:none;white-space:nowrap;box-shadow:0 4px 14px rgba(45,122,58,.35)">&#128276; What's New?</a>
+    </div>
+  </section>
+
+  <!-- Rotating customers strip -->
+  <section style="background:var(--white);padding:40px 0 32px;border-bottom:1px solid var(--border);overflow:hidden">
+    <div style="text-align:center;margin-bottom:28px">
+      <div style="display:inline-block;border-top:3px solid var(--g2);padding-top:12px">
+        <a href="#" onclick="return go('customers',event)" style="text-decoration:none">
+          <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);font-weight:900;color:var(--g1);margin:0;transition:.18s" onmouseover="this.style.color='var(--g2)'" onmouseout="this.style.color='var(--g1)'">Our Clients &#8594;</h2>
+        </a>
+      </div>
+    </div>
+    <div style="overflow:hidden">
+      <div id="home-marquee" style="display:flex;width:max-content;animation:marquee-scroll 35s linear infinite"></div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section id="products-section" style="background:var(--white);padding-top:40px">
+    <div style="text-align:center;margin-bottom:48px">
+      <div style="display:inline-block;border-top:3px solid var(--g2);padding-top:12px">
+        <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);font-weight:900;color:var(--g1);margin:0">Our Products</h2>
+      </div>
+    </div>
+    <div class="prod-grid">
+      <a class="prod-card" href="#" onclick="return go('agropriority',event)">
+        <img src="images/AgroPriority_logo.png" style="width:100px;height:100px;object-fit:contain;margin-bottom:18px">
+        <h3>AgroPriority</h3>
+        <p>Complete ERP solution &ndash; export management, marketing, packing houses, inventory, financials and more.</p>
+        <span class="prod-arr">Learn More &#8594;</span>
+      </a>
+      <a class="prod-card" href="#" onclick="return go('agrotalk',event)">
+        <img src="images/AgroTalk_logoN.png" style="width:100px;height:100px;object-fit:contain;margin-bottom:18px">
+        <h3>AgroTalk</h3>
+        <p>Real-time messaging between the ERP, suppliers and customers.</p>
+        <span class="prod-arr">Learn More &#8594;</span>
+      </a>
+      <a class="prod-card" href="#" onclick="return go('agrosmart',event)">
+        <img src="images/AgroSmart_Logo.png" style="width:100px;height:100px;object-fit:contain;margin-bottom:18px">
+        <h3>AgroSmart</h3>
+        <p>Smart warehouse management for handheld terminals, tablets and forklift terminals.</p>
+        <span class="prod-arr">Learn More &#8594;</span>
+      </a>
+      <a class="prod-card" href="#" onclick="return go('agroqc',event)">
+        <img src="images/AgroQC_LogoN.png" style="width:100px;height:100px;object-fit:contain;margin-bottom:18px">
+        <h3>AgroQC</h3>
+        <p>Interactive and flexible quality control questionnaires connected to information systems.</p>
+        <span class="prod-arr">Learn More &#8594;</span>
+      </a>
+      <a class="prod-card" href="#" onclick="return go('agroshop',event)">
+        <img src="images/agroShop.png" style="width:100px;height:100px;object-fit:contain;margin-bottom:18px">
+        <h3>AgroShop</h3>
+        <p>Online B2B portal for order entry, optimized for mobile and desktop.</p>
+        <span class="prod-arr">Learn More &#8594;</span>
+      </a>
+    </div>
+  </section>
+</div>
+
+<!-- ABOUT -->
+<div id="about" class="page">
+  <div class="page-hdr"><h1>About AgroSoft</h1><p>Meet the team behind our solutions</p></div>
+  <section style="max-width:1060px;margin:0 auto">
+    <div class="about-wrap" style="margin-bottom:40px">
+      <div class="about-txt">
+        <div class="sec-label" style="text-align:left">About the Company</div>
+        <h2>A Software House<br><span>Specializing in Agriculture</span></h2>
+        <p><strong style="color:var(--g2)">AgroSoft</strong> is a software house specializing in developing and implementing software solutions, with a focus on companies in the agricultural sector.</p>
+        <p>Our clients include export companies, local marketing companies, logistics centers, packing houses, wholesalers, and agricultural startups.</p>
+        <p>Our guiding policy: to provide a tailored solution based on <strong>AgroPriority ERP</strong> with a comprehensive view of each business's unique needs.</p>
+        <p>Our projects are characterized by quality execution, on-time delivery, and close support throughout the entire process.</p>
+      </div>
+      <div class="about-panel">
+        <div class="partner-box">
+          <div style="font-size:.75rem;color:var(--muted);font-weight:700;letter-spacing:1px">Authorized Partner</div>
+          <div class="partner-big">Priority</div>
+          <div class="partner-sm">Authorized Partner</div>
+        </div>
+        <div class="about-items">
+          <div class="ai"><div class="ai-dot"></div>Close support from planning to implementation</div>
+          <div class="ai"><div class="ai-dot"></div>Commitment to meeting project deadlines</div>
+          <div class="ai"><div class="ai-dot"></div>Ongoing support and maintenance for years</div>
+          <div class="ai"><div class="ai-dot"></div>Development of unique agricultural modules</div>
+        </div>
+      </div>
+    </div>
+    <div class="stats-g3">
+      <div style="background:var(--white);border-radius:16px;padding:28px 18px;text-align:center;box-shadow:var(--sh);border:1px solid var(--border)">
+        <div style="font-size:2rem;margin-bottom:8px">&#127942;</div>
+        <div style="font-size:1.9rem;font-weight:900;color:var(--g2)">25+</div>
+        <div style="color:var(--muted);font-size:.82rem;margin-top:4px">Years of Experience</div>
+      </div>
+      <div style="background:var(--white);border-radius:16px;padding:28px 18px;text-align:center;box-shadow:var(--sh);border:1px solid var(--border)">
+        <div style="font-size:2rem;margin-bottom:8px">&#127807;</div>
+        <div style="font-size:1.9rem;font-weight:900;color:var(--g2)">Agriculture</div>
+        <div style="color:var(--muted);font-size:.82rem;margin-top:4px">Full Specialization</div>
+      </div>
+      <div style="background:var(--white);border-radius:16px;padding:28px 18px;text-align:center;box-shadow:var(--sh);border:1px solid var(--border)">
+        <div style="font-size:2rem;margin-bottom:8px">&#129309;</div>
+        <div style="font-size:1.9rem;font-weight:900;color:var(--g2)">Priority</div>
+        <div style="color:var(--muted);font-size:.82rem;margin-top:4px">Authorized Partner</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- AGROPRIORITY -->
+<div id="agropriority" class="page">
+  <div class="prod-pg-hdr" style="background:linear-gradient(135deg,#1a4d23,#4caf50)">
+    <div style="color:#fff;max-width:580px">
+      <div style="font-size:.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;opacity:.75;margin-bottom:12px">Leading ERP Solution for Agriculture</div>
+      <h1 style="font-size:2.8rem;font-weight:900;margin-bottom:18px;line-height:1.15">AgroPriority</h1>
+      <p style="font-size:1.05rem;line-height:1.8;opacity:.88;margin-bottom:28px">A complete solution for managing agricultural companies &mdash; export, marketing &amp; distribution, packing houses, logistics centers, startups and more. Based on <strong>Priority ERP</strong> with a unique agricultural marketing module developed by AgroSoft.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="#" onclick="return go('contact',event)" style="background:#fff;color:var(--g1);padding:12px 28px;border-radius:12px;font-weight:800;text-decoration:none;font-size:.95rem">Contact Us</a>
+        <a href="https://www.agropriority.com/ServiceCalls" target="_blank" style="background:rgba(255,255,255,.15);color:#fff;padding:12px 28px;border-radius:12px;font-weight:600;text-decoration:none;font-size:.95rem;border:2px solid rgba(255,255,255,.35)">Customer Service Portal</a>
+      </div>
+    </div>
+    <img src="images/Authorized Partner.png" style="height:100px;opacity:.95" onerror="this.style.display='none'">
+  </div>
+  <section style="background:var(--bg);padding:48px">
+    <div class="feat-g3">
+      <div style="background:var(--white);border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
+        <div style="font-size:2rem;margin-bottom:12px">&#127757;</div>
+        <h3 style="font-weight:800;margin-bottom:8px;font-size:1rem">Multi-language &amp; Multi-currency</h3>
+        <p style="color:var(--muted);font-size:.86rem;line-height:1.6">Full support for multiple languages and currencies for managing international export operations</p>
+      </div>
+      <div style="background:var(--white);border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
+        <div style="font-size:2rem;margin-bottom:12px">&#128279;</div>
+        <h3 style="font-weight:800;margin-bottom:8px;font-size:1rem">Full Integration</h3>
+        <p style="color:var(--muted);font-size:.86rem;line-height:1.6">Interfaces with Ministry of Agriculture, customs brokers, sorting machines and weighing systems</p>
+      </div>
+      <div style="background:var(--white);border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
+        <div style="font-size:2rem;margin-bottom:12px">&#128202;</div>
+        <h3 style="font-weight:800;margin-bottom:8px;font-size:1rem">Reports &amp; Analytics</h3>
+        <p style="color:var(--muted);font-size:.86rem;line-height:1.6">Flexible report generators at both user and system administrator level</p>
+      </div>
+    </div>
+  </section>
+  <section style="background:var(--white);padding:56px 48px">
+    <div style="max-width:980px;margin:0 auto">
+      <div style="text-align:center;margin-bottom:40px">
+        <div class="sec-label">What's Included</div>
+        <h2 class="sec-title">Key Modules</h2>
+      </div>
+      <div class="mod-grid">
+        <div class="mod"><div class="mod-dot"></div><span>Customer relationship management, quotes and forecasts</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Purchasing management &ndash; purchase requests and orders end-to-end</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Inventory management and full traceability locally and abroad</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Marketing and sales, customer orders</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Export file management and profitability calculations</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Import file and loading management</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Export document generation via email at the click of a button</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Advanced process control (BPM)</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Automatic import of customs broker invoices</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Interfaces with the Ministry of Agriculture</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Full accounting management</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Grower payment calculation models</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Report generators at user and system administrator level</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Packing house sorting processes + interface with sorting &amp; weighing machines</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Portal for growers and packing houses</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Agent management systems and online store</span></div>
+      </div>
+    </div>
+  </section>
+  <div class="cta-band">
+    <h2>Want to learn more about AgroPriority?</h2>
+    <p>Contact us and we'll be happy to give you a personal demo</p>
+    <div class="cta-btns">
+      <a class="btn-solid" href="#" onclick="return go('contact',event)">Contact Us Now</a>
+      <a class="btn-ghost" href="https://www.agropriority.com/ServiceCalls" target="_blank">Customer Service Portal</a>
+    </div>
+  </div>
+</div>
+
+<!-- AGROTALK -->
+<div id="agrotalk" class="page">
+  <div class="prod-pg-hdr" style="background:linear-gradient(135deg,#1b5e20,#66bb6a)">
+    <div style="color:#fff;max-width:580px">
+      <div style="font-size:.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;opacity:.75;margin-bottom:12px">Agricultural Messaging System</div>
+      <h1 style="font-size:2.8rem;font-weight:900;margin-bottom:18px;line-height:1.15">AgroTalk</h1>
+      <p style="font-size:1.05rem;line-height:1.8;opacity:.88;margin-bottom:28px">An application that enables real-time messaging from AgroPriority ERP to suppliers and customers &mdash; purchase orders, quality control results, customer orders and more.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="#" onclick="return go('contact',event)" style="background:#fff;color:#1b5e20;padding:12px 28px;border-radius:12px;font-weight:800;text-decoration:none;font-size:.95rem">Contact Us</a>
+        <a href="https://www.agropriority.com/ServiceCalls" target="_blank" style="background:rgba(255,255,255,.15);color:#fff;padding:12px 28px;border-radius:12px;font-weight:600;text-decoration:none;font-size:.95rem;border:2px solid rgba(255,255,255,.35)">Customer Service Portal</a>
+      </div>
+    </div>
+    <img src="images/AgroTalk_logoN.png" style="height:100px;opacity:.95;object-fit:contain" onerror="this.style.display='none'">
+  </div>
+  <section style="background:var(--bg);padding:48px">
+    <div class="feat-g3">
+      <div style="background:var(--white);border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
+        <div style="font-size:2rem;margin-bottom:12px">&#9889;</div>
+        <h3 style="font-weight:800;margin-bottom:8px;font-size:1rem">Real-Time</h3>
+        <p style="color:var(--muted);font-size:.86rem;line-height:1.6">Messages reach suppliers and customers instantly, directly from within the system</p>
+      </div>
+      <div style="background:var(--white);border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
+        <div style="font-size:2rem;margin-bottom:12px">&#128279;</div>
+        <h3 style="font-weight:800;margin-bottom:8px;font-size:1rem">Full Integration</h3>
+        <p style="color:var(--muted);font-size:.86rem;line-height:1.6">Integrated directly into AgroPriority ERP as an integral part of the business process</p>
+      </div>
+      <div style="background:var(--white);border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
+        <div style="font-size:2rem;margin-bottom:12px">&#8617;&#65039;</div>
+        <h3 style="font-weight:800;margin-bottom:8px;font-size:1rem">Two-Way Response</h3>
+        <p style="color:var(--muted);font-size:.86rem;line-height:1.6">The message recipient can reply &mdash; such as confirming a purchase order</p>
+      </div>
+    </div>
+  </section>
+  <section style="background:var(--white);padding:56px 48px">
+    <div style="max-width:980px;margin:0 auto">
+      <div style="text-align:center;margin-bottom:40px">
+        <div class="sec-label">Use Cases</div>
+        <h2 class="sec-title">Message Types</h2>
+      </div>
+      <div class="mod-grid">
+        <div class="mod"><div class="mod-dot"></div><span>Purchase orders to suppliers</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Quality control results</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Orders from customers</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Update on closing a customer delivery note</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Instant update to the relevant sales representative</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Text and image messages</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Purchase order confirmation from message recipient</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Updates to key personnel in the organization</span></div>
+      </div>
+    </div>
+  </section>
+  <section style="background:var(--white);padding:40px 48px;text-align:center">
+    <img src="images/AgroTalk.png" style="max-width:100%;max-height:500px;object-fit:contain;border-radius:18px;box-shadow:0 12px 40px rgba(0,0,0,.12)" onerror="this.style.display='none'">
+  </section>
+  <div class="cta-band">
+    <h2>Want to learn more about AgroTalk?</h2>
+    <p>Contact us and we'll be happy to give you a personal demo</p>
+    <div class="cta-btns">
+      <a class="btn-solid" href="#" onclick="return go('contact',event)">Contact Us Now</a>
+      <a class="btn-ghost" href="https://www.agropriority.com/ServiceCalls" target="_blank">Customer Service Portal</a>
+    </div>
+  </div>
+</div>
+
+<!-- AGROSMART -->
+<div id="agrosmart" class="page">
+  <div class="prod-pg-hdr" style="background:linear-gradient(135deg,#1b5e20,#66bb6a)">
+    <div style="color:#fff;max-width:580px">
+      <div style="font-size:.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;opacity:.75;margin-bottom:12px">Smart Warehouse Management</div>
+      <h1 style="font-size:2.8rem;font-weight:900;margin-bottom:18px;line-height:1.15">AgroSmart</h1>
+      <p style="font-size:1.05rem;line-height:1.8;opacity:.88;margin-bottom:28px">A warehouse logistics management application &mdash; compatible with handheld terminals, tablets and forklift terminals. Connected directly to AgroPriority ERP for smart and accurate inventory management.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="#" onclick="return go('contact',event)" style="background:#fff;color:#1b5e20;padding:12px 28px;border-radius:12px;font-weight:800;text-decoration:none;font-size:.95rem">Contact Us</a>
+        <a href="https://www.agropriority.com/ServiceCalls" target="_blank" style="background:rgba(255,255,255,.15);color:#fff;padding:12px 28px;border-radius:12px;font-weight:600;text-decoration:none;font-size:.95rem;border:2px solid rgba(255,255,255,.35)">Customer Service Portal</a>
+      </div>
+    </div>
+    <img src="images/AgroSmart_Logo.png" style="height:100px;opacity:.95;object-fit:contain" onerror="this.style.display='none'">
+  </div>
+  <section style="background:var(--bg);padding:48px">
+    <div class="feat-g3">
+      <div style="background:var(--white);border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
+        <div style="font-size:2rem;margin-bottom:12px">&#128241;</div>
+        <h3 style="font-weight:800;margin-bottom:8px;font-size:1rem">Any Device</h3>
+        <p style="color:var(--muted);font-size:.86rem;line-height:1.6">Compatible with handheld terminals, tablets and forklift terminals &mdash; works in any warehouse environment</p>
+      </div>
+      <div style="background:var(--white);border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
+        <div style="font-size:2rem;margin-bottom:12px">&#128279;</div>
+        <h3 style="font-weight:800;margin-bottom:8px;font-size:1rem">ERP Connected</h3>
+        <p style="color:var(--muted);font-size:.86rem;line-height:1.6">Full sync with AgroPriority for real-time inventory updates</p>
+      </div>
+      <div style="background:var(--white);border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
+        <div style="font-size:2rem;margin-bottom:12px">&#9889;</div>
+        <h3 style="font-weight:800;margin-bottom:8px;font-size:1rem">Fast &amp; Accurate</h3>
+        <p style="color:var(--muted);font-size:.86rem;line-height:1.6">Barcode scanning and instant update &mdash; reduces errors and increases efficiency</p>
+      </div>
+    </div>
+  </section>
+  <section style="background:var(--white);padding:56px 48px">
+    <div style="max-width:980px;margin:0 auto">
+      <div style="text-align:center;margin-bottom:40px">
+        <div class="sec-label">What's Included</div>
+        <h2 class="sec-title">Key Capabilities</h2>
+      </div>
+      <div class="mod-grid">
+        <div class="mod"><div class="mod-dot"></div><span>Goods receiving and barcode scanning</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Warehouse dispatch and delivery note updates</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Ongoing and cyclical inventory counts</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Warehouse location management</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Inter-warehouse transfers</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>User-friendly interface for forklift terminals</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Works with/without network connection (Offline)</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Automatic data sync with AgroPriority</span></div>
+      </div>
+    </div>
+  </section>
+  <section style="background:var(--white);padding:40px 48px;text-align:center">
+    <img src="images/AgroSmart.png" style="max-width:100%;max-height:500px;object-fit:contain;border-radius:18px;box-shadow:0 12px 40px rgba(0,0,0,.12)" onerror="this.style.display='none'">
+  </section>
+  <div class="cta-band" style="background:linear-gradient(135deg,#1a4d23,#4caf50)">
+    <h2>Want to learn more about AgroSmart?</h2>
+    <p>Contact us and we'll be happy to give you a personal demo</p>
+    <div class="cta-btns">
+      <a class="btn-solid" href="#" onclick="return go('contact',event)">Contact Us Now</a>
+      <a class="btn-ghost" href="https://www.agropriority.com/ServiceCalls" target="_blank">Customer Service Portal</a>
+    </div>
+  </div>
+</div>
+
+<!-- AGROQC -->
+<div id="agroqc" class="page">
+  <div class="prod-pg-hdr" style="background:linear-gradient(135deg,#1b5e20,#66bb6a)">
+    <div style="color:#fff;max-width:580px">
+      <div style="font-size:.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;opacity:.75;margin-bottom:12px">Agricultural Quality Control</div>
+      <h1 style="font-size:2.8rem;font-weight:900;margin-bottom:18px;line-height:1.15">AgroQC</h1>
+      <p style="font-size:1.05rem;line-height:1.8;opacity:.88;margin-bottom:28px">A system for performing interactive and flexible quality control questionnaires &mdash; connected directly to the organization's information systems for fast and accurate decision-making.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="#" onclick="return go('contact',event)" style="background:#fff;color:#1b5e20;padding:12px 28px;border-radius:12px;font-weight:800;text-decoration:none;font-size:.95rem">Contact Us</a>
+        <a href="https://www.agropriority.com/ServiceCalls" target="_blank" style="background:rgba(255,255,255,.15);color:#fff;padding:12px 28px;border-radius:12px;font-weight:600;text-decoration:none;font-size:.95rem;border:2px solid rgba(255,255,255,.35)">Customer Service Portal</a>
+      </div>
+    </div>
+    <img src="images/AgroQC_LogoN.png" style="height:100px;opacity:.95;object-fit:contain" onerror="this.style.display='none'">
+  </div>
+  <section style="background:var(--bg);padding:48px">
+    <div class="feat-g3">
+      <div style="background:var(--white);border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
+        <div style="font-size:2rem;margin-bottom:12px">&#128203;</div>
+        <h3 style="font-weight:800;margin-bottom:8px;font-size:1rem">Flexible Questionnaires</h3>
+        <p style="color:var(--muted);font-size:.86rem;line-height:1.6">Build custom QC questionnaires for each product and process in the organization</p>
+      </div>
+      <div style="background:var(--white);border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
+        <div style="font-size:2rem;margin-bottom:12px">&#128279;</div>
+        <h3 style="font-weight:800;margin-bottom:8px;font-size:1rem">Full Integration</h3>
+        <p style="color:var(--muted);font-size:.86rem;line-height:1.6">Control results are transferred directly to AgroPriority ERP</p>
+      </div>
+      <div style="background:var(--white);border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
+        <div style="font-size:2rem;margin-bottom:12px">&#128202;</div>
+        <h3 style="font-weight:800;margin-bottom:8px;font-size:1rem">Reports &amp; Tracking</h3>
+        <p style="color:var(--muted);font-size:.86rem;line-height:1.6">Control history, trends and identification of quality issues over time</p>
+      </div>
+    </div>
+  </section>
+  <section style="background:var(--white);padding:56px 48px">
+    <div style="max-width:980px;margin:0 auto">
+      <div style="text-align:center;margin-bottom:40px">
+        <div class="sec-label">What's Included</div>
+        <h2 class="sec-title">Key Capabilities</h2>
+      </div>
+      <div class="mod-grid">
+        <div class="mod"><div class="mod-dot"></div><span>Build questionnaires with drag-and-drop interface</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Multiple question types &mdash; numeric, text, selection, image</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Quality control on goods receiving</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Quality control during production and packing stages</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Photo documentation of findings</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Automatic results sending via AgroTalk</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Exception and quality reports</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Quality threshold setting and automatic process stop</span></div>
+      </div>
+    </div>
+  </section>
+  <section style="background:var(--white);padding:40px 48px;text-align:center">
+    <img src="images/AgroQC.png" style="max-width:100%;max-height:500px;object-fit:contain;border-radius:18px;box-shadow:0 12px 40px rgba(0,0,0,.12)" onerror="this.style.display='none'">
+  </section>
+  <div class="cta-band" style="background:linear-gradient(135deg,#1a4d23,#4caf50)">
+    <h2>Want to learn more about AgroQC?</h2>
+    <p>Contact us and we'll be happy to give you a personal demo</p>
+    <div class="cta-btns">
+      <a class="btn-solid" href="#" onclick="return go('contact',event)">Contact Us Now</a>
+      <a class="btn-ghost" href="https://www.agropriority.com/ServiceCalls" target="_blank">Customer Service Portal</a>
+    </div>
+  </div>
+</div>
+
+<!-- AGROSHOP -->
+<div id="agroshop" class="page">
+  <div class="prod-pg-hdr" style="background:linear-gradient(135deg,#1b5e20,#66bb6a)">
+    <div style="color:#fff;max-width:580px">
+      <div style="font-size:.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;opacity:.75;margin-bottom:12px">B2B Portal for Agriculture</div>
+      <h1 style="font-size:2.8rem;font-weight:900;margin-bottom:18px;line-height:1.15">AgroShop</h1>
+      <p style="font-size:1.05rem;line-height:1.8;opacity:.88;margin-bottom:28px">An online B2B portal that allows customers to enter orders directly into AgroPriority &mdash; optimized for desktop and mobile, with a user-friendly and intuitive interface.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="#" onclick="return go('contact',event)" style="background:#fff;color:#1b5e20;padding:12px 28px;border-radius:12px;font-weight:800;text-decoration:none;font-size:.95rem">Contact Us</a>
+        <a href="https://www.agropriority.com/ServiceCalls" target="_blank" style="background:rgba(255,255,255,.15);color:#fff;padding:12px 28px;border-radius:12px;font-weight:600;text-decoration:none;font-size:.95rem;border:2px solid rgba(255,255,255,.35)">Customer Service Portal</a>
+      </div>
+    </div>
+    <img src="images/agroShop.png" style="height:100px;opacity:.95;object-fit:contain" onerror="this.style.display='none'">
+  </div>
+  <section style="background:var(--bg);padding:48px">
+    <div class="feat-g3">
+      <div style="background:var(--white);border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
+        <div style="font-size:2rem;margin-bottom:12px">&#128241;</div>
+        <h3 style="font-weight:800;margin-bottom:8px;font-size:1rem">Mobile Friendly</h3>
+        <p style="color:var(--muted);font-size:.86rem;line-height:1.6">Fully responsive interface &mdash; works perfectly on any device</p>
+      </div>
+      <div style="background:var(--white);border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
+        <div style="font-size:2rem;margin-bottom:12px">&#128279;</div>
+        <h3 style="font-weight:800;margin-bottom:8px;font-size:1rem">ERP Connected</h3>
+        <p style="color:var(--muted);font-size:.86rem;line-height:1.6">Orders go directly to AgroPriority with no double entry</p>
+      </div>
+      <div style="background:var(--white);border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
+        <div style="font-size:2rem;margin-bottom:12px">&#128721;</div>
+        <h3 style="font-weight:800;margin-bottom:8px;font-size:1rem">Easy to Use</h3>
+        <p style="color:var(--muted);font-size:.86rem;line-height:1.6">Intuitive interface &mdash; customers enter their own orders with ease</p>
+      </div>
+    </div>
+  </section>
+  <section style="background:var(--white);padding:56px 48px">
+    <div style="max-width:980px;margin:0 auto">
+      <div style="text-align:center;margin-bottom:40px">
+        <div class="sec-label">What's Included</div>
+        <h2 class="sec-title">Key Capabilities</h2>
+      </div>
+      <div class="mod-grid">
+        <div class="mod"><div class="mod-dot"></div><span>Customer-specific product catalog</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Online order entry 24/7</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Personalized pricing for each customer</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Real-time order status tracking</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Order history and documents</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Secure login per customer</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Real-time available inventory sync</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Automatic notifications on order status</span></div>
+      </div>
+    </div>
+  </section>
+  <div class="cta-band" style="background:linear-gradient(135deg,#1a4d23,#4caf50)">
+    <h2>Want to learn more about AgroShop?</h2>
+    <p>Contact us and we'll be happy to give you a personal demo</p>
+    <div class="cta-btns">
+      <a class="btn-solid" href="#" onclick="return go('contact',event)">Contact Us Now</a>
+      <a class="btn-ghost" href="https://www.agropriority.com/ServiceCalls" target="_blank">Customer Service Portal</a>
+    </div>
+  </div>
+</div>
+
+<!-- CUSTOMERS -->
+<div id="customers" class="page">
+  <div class="page-hdr">
+    <h1>Our Clients</h1>
+    <p>From export companies to wholesalers &mdash; trusting us for years</p>
+  </div>
+  <section style="padding:60px 0;overflow:hidden">
+    <div style="text-align:center;margin-bottom:40px">
+      <div style="display:inline-block;border-top:3px solid var(--g2);padding-top:12px">
+        <h2 style="font-size:1.8rem;font-weight:900;color:var(--g1)">Leading Clients</h2>
+      </div>
+    </div>
+    <div id="marquee-rows"></div>
+  </section>
+</div>
+
+<!-- NEWS -->
+<div id="news" class="page">
+  <div class="page-hdr">
+    <h1>News &amp; Updates</h1>
+    <p>New developments, upgrades and product updates from AgroSoft</p>
+  </div>
+  <div class="news-page-wrap">
+
+    <div class="news-year-sep"><span>2025</span></div>
+    <div class="news-list">
+      <a class="news-card featured" href="#" onclick="return go('news-agrostore',event)">
+        <div class="news-date"><div class="mo">JAN</div><div class="yr">2025</div></div>
+        <div>
+          <div class="news-badge">NEW</div>
+          <h3>AgroStore &ndash; B2B Order Store</h3>
+          <p>A new B2B order management system fully integrated with AgroPriority ERP &mdash; no separate database required.</p>
+          <span class="news-link">Read More &#8594;</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="news-year-sep"><span>2019</span></div>
+    <div class="news-list">
+      <a class="news-card" href="#" onclick="return go('news-growers-link',event)">
+        <div class="news-date"><div class="mo">SEP</div><div class="yr">2019</div></div>
+        <div>
+          <h3>Direct Link Between Growers and the Marketing Company</h3>
+          <p>Direct connection between growers, the marketing company, and packing house directly from AgroTalk.</p>
+          <span class="news-link">Read More &#8594;</span>
+        </div>
+      </a>
+      <a class="news-card" href="#" onclick="return go('news-agrotalk-updates',event)">
+        <div class="news-date"><div class="mo">JUL</div><div class="yr">2019</div></div>
+        <div>
+          <h3>AgroTalk Updates &ndash; Direct Data Entry from the Grower</h3>
+          <p>Direct data entry from the grower to AgroPriority. The app is available for Android and iPhone.</p>
+          <span class="news-link">Read More &#8594;</span>
+        </div>
+      </a>
+      <a class="news-card" href="#" onclick="return go('news-api-dev',event)">
+        <div class="news-date"><div class="mo">JUL</div><div class="yr">2019</div></div>
+        <div>
+          <h3>Custom Developments with Priority API Interfaces</h3>
+          <p>Special developments for customer needs using Priority API interfaces.</p>
+          <span class="news-link">Read More &#8594;</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="news-year-sep"><span>2018</span></div>
+    <div class="news-list">
+      <a class="news-card" href="#" onclick="return go('news-receipt',event)">
+        <div class="news-date"><div class="mo">MAR</div><div class="yr">2018</div></div>
+        <div>
+          <h3>New Interface for Receiving &amp; Delivery Notes</h3>
+          <p>Automatic receipt of notes from packing houses and customers locally and abroad.</p>
+          <span class="news-link">Read More &#8594;</span>
+        </div>
+      </a>
+      <a class="news-card" href="#" onclick="return go('news-agriculture',event)">
+        <div class="news-date"><div class="mo">JAN</div><div class="yr">2018</div></div>
+        <div>
+          <h3>Interface with Ministry of Agriculture &ndash; Plant Protection Servers</h3>
+          <p>Working directly from AgroPriority with the Ministry of Agriculture's computer systems.</p>
+          <span class="news-link">Read More &#8594;</span>
+        </div>
+      </a>
+      <a class="news-card" href="#" onclick="return go('news-customs',event)">
+        <div class="news-date"><div class="mo">JAN</div><div class="yr">2018</div></div>
+        <div>
+          <h3>Central Module for Customs Broker Invoices</h3>
+          <p>Centralizes all invoices from customs brokers into one convenient work screen.</p>
+          <span class="news-link">Read More &#8594;</span>
+        </div>
+      </a>
+      <a class="news-card" href="#" onclick="return go('news-bt9',event)">
+        <div class="news-date"><div class="mo">JAN</div><div class="yr">2018</div></div>
+        <div>
+          <h3>BT9 Integration Module</h3>
+          <p>Transmitting container and sensor data directly from AgroPriority to the BT9 portal.</p>
+          <span class="news-link">Read More &#8594;</span>
+        </div>
+      </a>
+      <a class="news-card" href="#" onclick="return go('news-agroqc',event)">
+        <div class="news-date"><div class="mo">JAN</div><div class="yr">2018</div></div>
+        <div>
+          <h3>AgroQC &ndash; Quality Control &amp; Questionnaire App</h3>
+          <p>Building interactive questionnaires within AgroPriority with various question types.</p>
+          <span class="news-link">Read More &#8594;</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- NEWS ARTICLE: AGROSTORE -->
+<div id="news-agrostore" class="page">
+  <div class="news-art-hero">
+    <span class="news-art-back" onclick="goBack()">&larr; Back</span>
+    <div class="news-art-date">January 2025</div>
+    <h1>AgroStore &ndash; B2B Order Store</h1>
+  </div>
+  <div class="news-art-body">
+    <p>AgroStore is a new B2B order management system fully integrated with AgroPriority ERP &mdash; with no separate database. All infrastructure is managed directly in Priority, enabling full control and real-time data consistency.</p>
+    <h2>Price &amp; Product Management</h2>
+    <ul>
+      <li>Display items according to the price list linked to the customer</li>
+      <li>Pricing logic consistent with the Priority system</li>
+      <li>Promotion management through the promotions screen in Priority</li>
+      <li>Full image control with the ability to set separately per item</li>
+    </ul>
+    <h2>User Experience</h2>
+    <ul>
+      <li>Display a flyer upon entering the store</li>
+      <li>View recent orders, duplicate, edit and cancel</li>
+      <li>Access to customer documents &mdash; delivery notes and invoices</li>
+      <li>Fully mobile-adapted including the option to display as an app (PWA)</li>
+    </ul>
+    <div class="news-art-cta">
+      <p>Want to learn more about AgroStore?</p>
+      <a href="#" onclick="return go('agroshop',event)">Learn More about AgroShop &#8594;</a>
+    </div>
+  </div>
+</div>
+
+<!-- NEWS ARTICLE: GROWERS LINK -->
+<div id="news-growers-link" class="page">
+  <div class="news-art-hero">
+    <span class="news-art-back" onclick="goBack()">&larr; Back</span>
+    <div class="news-art-date">September 2019</div>
+    <h1>Direct Link Between Growers and the Marketing Company</h1>
+  </div>
+  <div class="news-art-body">
+    <p>A new development enabling a direct link between growers, the marketing company, and the packing house &mdash; directly from the AgroTalk application.</p>
+    <h2>What Does the Link Enable?</h2>
+    <ul>
+      <li>Real-time information broadcasting along the entire supply chain</li>
+      <li>Transferring quality controls from the grower directly to the system</li>
+      <li>Digital purchase orders without the need for phone or fax</li>
+      <li>Full accessibility from the field &mdash; Android and iPhone</li>
+    </ul>
+    <h2>Business Benefits</h2>
+    <p>The link significantly streamlines work processes between all parties in the chain &mdash; from the grower in the field to the packing house and marketing company, while saving time and preventing human errors.</p>
+    <div class="news-art-cta">
+      <p>Interested in connecting your growers to the system?</p>
+      <a href="#" onclick="return go('agrotalk',event)">Learn More about AgroTalk &#8594;</a>
+    </div>
+  </div>
+</div>
+
+<!-- NEWS ARTICLE: AGROTALK UPDATES -->
+<div id="news-agrotalk-updates" class="page">
+  <div class="news-art-hero">
+    <span class="news-art-back" onclick="goBack()">&larr; Back</span>
+    <div class="news-art-date">July 2019</div>
+    <h1>AgroTalk Updates &ndash; Direct Data Entry from the Grower</h1>
+  </div>
+  <div class="news-art-body">
+    <p>A significant update to AgroTalk adding data entry capabilities directly from the grower to AgroPriority. The app is available for Android and iPhone.</p>
+    <h2>New Capabilities</h2>
+    <div class="news-art-feature">
+      <div class="ico">&#9989;</div>
+      <div><h4>Quality Controls</h4><p>Perform quality controls from the field and transmit them directly to AgroPriority.</p></div>
+    </div>
+    <div class="news-art-feature">
+      <div class="ico">&#128203;</div>
+      <div><h4>Purchase Orders</h4><p>Receive purchase orders and confirm them directly from the app.</p></div>
+    </div>
+    <div class="news-art-feature">
+      <div class="ico">&#128172;</div>
+      <div><h4>Personalized Messages &amp; Information</h4><p>Receive targeted messages from the marketing company in real-time.</p></div>
+    </div>
+    <h2>Integration with AgroPriority</h2>
+    <p>All data is automatically synced with AgroPriority ERP &mdash; no double entry required and no risk of data inconsistency.</p>
+    <div class="news-art-cta">
+      <p>Want to see AgroTalk in action?</p>
+      <a href="#" onclick="return go('agrotalk',event)">Learn More about AgroTalk &#8594;</a>
+    </div>
+  </div>
+</div>
+
+<!-- NEWS ARTICLE: API DEV -->
+<div id="news-api-dev" class="page">
+  <div class="news-art-hero">
+    <span class="news-art-back" onclick="goBack()">&larr; Back</span>
+    <div class="news-art-date">July 2019</div>
+    <h1>Custom Developments with Priority API Interfaces</h1>
+  </div>
+  <div class="news-art-body">
+    <p>AgroSoft offers special developments tailored to each customer's unique needs, using Priority API interfaces for full integration with the existing system.</p>
+    <h2>Examples of Completed Developments</h2>
+    <div class="news-art-feature">
+      <div class="ico">&#128230;</div>
+      <div><h4>Computerized Package Distribution &ndash; Tali Grapes, Lachish</h4><p>An automatic system for distributing packages among growers based on predefined criteria, integrated with AgroPriority.</p></div>
+    </div>
+    <div class="news-art-feature">
+      <div class="ico">&#128721;</div>
+      <div><h4>Customer Order System for Agents &ndash; Granot Logistics</h4><p>A dedicated portal for agents to place customer orders, connected directly to Priority and updating inventory in real time.</p></div>
+    </div>
+    <h2>How Does It Work?</h2>
+    <p>We build interfaces (APIs) between Priority and external systems or custom applications, while maintaining data security and consistency across all components.</p>
+    <div class="news-art-cta">
+      <p>Do you have a need for custom development?</p>
+      <a href="#" onclick="return go('contact',event)">Contact us and let's build the solution together &#8594;</a>
+    </div>
+  </div>
+</div>
+
+<!-- NEWS ARTICLE: RECEIPT INTERFACE -->
+<div id="news-receipt" class="page">
+  <div class="news-art-hero">
+    <span class="news-art-back" onclick="goBack()">&larr; Back</span>
+    <div class="news-art-date">March 2018</div>
+    <h1>New Interface for Receiving &amp; Delivery Notes</h1>
+  </div>
+  <div class="news-art-body">
+    <p>A new interface enabling automatic receipt of receiving and delivery notes from a variety of external systems &mdash; packing houses, warehouses and customers locally and abroad.</p>
+    <h2>Supported Note Types</h2>
+    <ul>
+      <li>Receipt of various types of notes from different external systems</li>
+      <li>Automatic receipt of dispatch notes from the warehouse</li>
+      <li>Receipt of receiving notes from packing houses</li>
+    </ul>
+    <h2>Work Process</h2>
+    <p>Notes are first received into an intermediate table for review, then opened in AgroPriority for approval and further processing. This allows data verification before it enters the official system.</p>
+    <div class="news-art-cta">
+      <p>Interested in automating the note receipt process?</p>
+      <a href="#" onclick="return go('contact',event)">Contact Us &#8594;</a>
+    </div>
+  </div>
+</div>
+
+<!-- NEWS ARTICLE: AGRICULTURE MINISTRY -->
+<div id="news-agriculture" class="page">
+  <div class="news-art-hero">
+    <span class="news-art-back" onclick="goBack()">&larr; Back</span>
+    <div class="news-art-date">January 2018</div>
+    <h1>Interface with Ministry of Agriculture &ndash; Plant Protection Servers</h1>
+  </div>
+  <div class="news-art-body">
+    <p>Development of a direct interface between AgroPriority and the Ministry of Agriculture's plant protection server computer system &mdash; full operation from within the system without switching to an external interface.</p>
+    <h2>Available Operations</h2>
+    <div class="news-art-feature">
+      <div class="ico">&#128221;</div>
+      <div><h4>Open an Order</h4><p>Open an order in the plant protection servers directly from AgroPriority.</p></div>
+    </div>
+    <div class="news-art-feature">
+      <div class="ico">&#127807;</div>
+      <div><h4>Broadcast Growing Areas</h4><p>Transmit growing area data to Ministry of Agriculture servers.</p></div>
+    </div>
+    <div class="news-art-feature">
+      <div class="ico">&#128666;</div>
+      <div><h4>Transmit Delivery Note</h4><p>Transmit delivery notes for regulatory monitoring and tracking.</p></div>
+    </div>
+    <h2>Advantage</h2>
+    <p>All work is done from within AgroPriority &mdash; saving time, preventing double-entry errors and meeting the Ministry of Agriculture's regulatory requirements.</p>
+    <div class="news-art-cta">
+      <p>Do you need an additional regulatory interface?</p>
+      <a href="#" onclick="return go('contact',event)">Contact Us &#8594;</a>
+    </div>
+  </div>
+</div>
+
+<!-- NEWS ARTICLE: CUSTOMS MODULE -->
+<div id="news-customs" class="page">
+  <div class="news-art-hero">
+    <span class="news-art-back" onclick="goBack()">&larr; Back</span>
+    <div class="news-art-date">January 2018</div>
+    <h1>Central Module for Customs Broker Invoices</h1>
+  </div>
+  <div class="news-art-body">
+    <p>A new module in AgroPriority that centralizes all invoices from customs brokers into one convenient and efficient work screen.</p>
+    <h2>Module Features</h2>
+    <ul>
+      <li>Centralize all customs broker invoices into one screen</li>
+      <li>Receipt of PDF files and automatic association with the relevant invoices</li>
+      <li>Support for a large portion of active customs brokers in Israel</li>
+    </ul>
+    <h2>Who Is It For?</h2>
+    <p>The module is designed for export and import companies working with multiple customs brokers who wish to manage all invoices and documents in one place, integrated with AgroPriority ERP.</p>
+    <div class="news-art-cta">
+      <p>Interested in streamlining your customs broker workflow?</p>
+      <a href="#" onclick="return go('contact',event)">Contact Us &#8594;</a>
+    </div>
+  </div>
+</div>
+
+<!-- NEWS ARTICLE: BT9 -->
+<div id="news-bt9" class="page">
+  <div class="news-art-hero">
+    <span class="news-art-back" onclick="goBack()">&larr; Back</span>
+    <div class="news-art-date">January 2018</div>
+    <h1>BT9 Integration Module</h1>
+  </div>
+  <div class="news-art-body">
+    <p>A dedicated module for transmitting container and sensor data directly from AgroPriority to the BT9 portal &mdash; for complete cold chain management in export.</p>
+    <h2>What is BT9?</h2>
+    <p>BT9 is a system for managing the cold chain in agricultural export, enabling tracking of container temperatures and sensors throughout the entire shipment route.</p>
+    <h2>What Does the Interface Provide?</h2>
+    <ul>
+      <li>Automatic transmission of container data from AgroPriority to the BT9 portal</li>
+      <li>Real-time sensor data synchronization</li>
+      <li>Full cold chain management without leaving AgroPriority</li>
+      <li>Compliance with international export requirements for cold chain maintenance</li>
+    </ul>
+    <div class="news-art-cta">
+      <p>Involved in export and interested in the BT9 interface?</p>
+      <a href="#" onclick="return go('contact',event)">Contact Us &#8594;</a>
+    </div>
+  </div>
+</div>
+
+<!-- NEWS ARTICLE: AGROQC -->
+<div id="news-agroqc" class="page">
+  <div class="news-art-hero">
+    <span class="news-art-back" onclick="goBack()">&larr; Back</span>
+    <div class="news-art-date">January 2018</div>
+    <h1>AgroQC &ndash; Quality Control &amp; Questionnaire App</h1>
+  </div>
+  <div class="news-art-body">
+    <p>AgroQC is a quality control application that enables answering interactive and multi-step questionnaires defined in AgroPriority ERP.</p>
+    <h2>Supported Question Types</h2>
+    <div class="news-art-feature">
+      <div class="ico">&#128203;</div>
+      <div><h4>Selection from List</h4><p>Questions with predefined answers for fast and consistent classification.</p></div>
+    </div>
+    <div class="news-art-feature">
+      <div class="ico">&#128205;</div>
+      <div><h4>GPS Location</h4><p>Accurate location recording of the quality control directly in the field.</p></div>
+    </div>
+    <div class="news-art-feature">
+      <div class="ico">&#128247;</div>
+      <div><h4>Photo Documentation</h4><p>Photographing and visual documentation of findings as part of the questionnaire.</p></div>
+    </div>
+    <h2>Sample Process</h2>
+    <p>Scan a supplier pallet barcode &rarr; receive supplier data and product info &rarr; answer questions tailored to the product &rarr; inspection score is saved &rarr; results are sent to the supplier and quality team.</p>
+    <div class="news-art-cta">
+      <p>Interested in improving your quality control?</p>
+      <a href="#" onclick="return go('agroqc',event)">Learn More about AgroQC &#8594;</a>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="page">
+  <div class="page-hdr"><h1>Contact Us</h1><p>We'd love to hear from you</p></div>
+  <section>
+    <div class="contact-wrap">
+      <div class="cinfo-row">
+        <div class="cinfo"><div class="ico">&#128222;</div><h3>Phone</h3><a href="tel:037363728">03-736-3728</a></div>
+        <div class="cinfo"><div class="ico">&#128205;</div><h3>Address</h3><p>9 Duddevan St., Kiryat Ono 5551052</p></div>
+        <div class="cinfo"><div class="ico">&#9993;&#65039;</div><h3>Email</h3><a href="mailto:support@agrosoft.co.il">support@agrosoft.co.il</a></div>
+      </div>
+      <div class="cform">
+        <h3>Send Us a Message</h3>
+        <div class="frow">
+          <div class="fg"><label>Full Name *</label><input type="text" placeholder="Enter your name..."></div>
+          <div class="fg"><label>Phone</label><input type="tel" placeholder="+1 (555) 000-0000"></div>
+        </div>
+        <div class="fg"><label>Email *</label><input type="email" placeholder="your@email.com"></div>
+        <div class="fg"><label>Subject</label>
+          <select>
+            <option>AgroPriority &ndash; ERP</option>
+            <option>AgroTalk</option>
+            <option>AgroSmart</option>
+            <option>AgroQC</option>
+            <option>AgroShop</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="fg"><label>Message *</label><textarea rows="5" placeholder="Write your message here..."></textarea></div>
+        <button class="submit-btn" onclick="alert('Thank you! Your message was sent successfully \u{1F33F}')">Send Message &#8594;</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ACCESSIBILITY STATEMENT PAGE -->
+<div id="accessibility" class="page">
+  <div class="page-hdr"><h1>Accessibility Statement</h1><p>Committed to full accessibility for everyone</p></div>
+  <section style="max-width:820px;margin:0 auto">
+    <div class="prod-desc">
+      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin-bottom:16px;border-bottom:2px solid var(--border);padding-bottom:10px">Accessibility Policy</h2>
+      <p>We view customers with disabilities as equal-right customers, entitled to full accessibility.</p>
+      <p>We operate in accordance with the Equal Rights for Persons with Disabilities Law, and our website has been made accessible accordingly.</p>
+      <p>This section of the website was written to inform you how you can enjoy the accessibility features of the site.</p>
+      <p>Our goal is to provide equal and accessible service to every customer, with or without a disability.</p>
+      <p>This website complies with the requirements of the Equal Rights for Persons with Disabilities Regulations (Accessibility Adjustments for Service), 2013.</p>
+      <p>The site is also adapted for display on popular browsers and for mobile phone use.</p>
+
+      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">Accessibility Feature Guidelines</h2>
+      <p>The website is supported by popular browsers in their most up-to-date versions.</p>
+      <p>The website supports standard keyboard navigation using arrow keys, Enter, and Esc to exit menus and dialogs.</p>
+
+      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">Accessibility Plugin</h2>
+      <p>This website includes an accessibility plugin that assists in making the site accessible for people with disabilities:</p>
+      <ul style="padding-left:22px;line-height:2.1;color:var(--muted);margin:10px 0 16px">
+        <li>A button displaying the accessibility options</li>
+        <li>Clicking the accessibility button opens the accessibility menu</li>
+        <li>Clicking the accessibility button again closes the menu</li>
+        <li>Black &amp; white mode for color blind users</li>
+        <li>High contrast mode</li>
+        <li>A button that clearly highlights all links on the site</li>
+        <li>Increase font size</li>
+        <li>Decrease font size</li>
+      </ul>
+
+      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">Enlarging the Display</h2>
+      <p>Users who have difficulty seeing and wish to enlarge the display can do so by pressing <strong style="color:var(--g2)">Ctrl</strong> and <strong style="color:var(--g2)">+</strong> simultaneously. Each press will enlarge the display further.</p>
+      <p>To reduce the display, press <strong style="color:var(--g2)">Ctrl</strong> and <strong style="color:var(--g2)">-</strong> simultaneously.</p>
+
+      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">Keyboard Navigation</h2>
+      <p>Pressing <strong style="color:var(--g2)">Tab</strong> repeatedly will move between the different links on the page.</p>
+      <p>Pressing <strong style="color:var(--g2)">Shift + Tab</strong> will return the cursor to the previous link.</p>
+      <p>Pressing <strong style="color:var(--g2)">Enter</strong> will activate the selected link.</p>
+      <p><strong style="color:var(--g2)">F11</strong> will maximize the screen &ndash; pressing again will restore it.</p>
+      <p>The <strong style="color:var(--g2)">Space</strong> bar will scroll the page down.</p>
+
+      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">Contact Us</h2>
+      <p>We welcome inquiries for information and/or suggestions for improvement.</p>
+      <div style="background:var(--bg);border:1.5px solid var(--border);border-radius:16px;padding:22px 26px;margin:16px 0;display:flex;gap:14px;align-items:flex-start">
+        <div style="font-size:1.4rem;flex-shrink:0;margin-top:2px">👤</div>
+        <div>
+          <h4 style="font-size:.95rem;font-weight:800;margin-bottom:5px">Accessibility Coordinator</h4>
+          <p style="margin:0;font-size:.9rem"><strong>Omri Ben Eliyahu</strong></p>
+          <p style="margin:4px 0 0;font-size:.86rem">Email: <a href="mailto:omri@agrosoft.co.il" style="color:var(--g2);font-weight:700;text-decoration:none">omri@agrosoft.co.il</a></p>
+        </div>
+      </div>
+      <p>We will continue our efforts to improve the accessibility of the website to enable use for the entire population, including people with disabilities.</p>
+
+      <div style="margin-top:24px;padding-top:16px;border-top:1px solid var(--border);color:var(--muted);font-size:.82rem;text-align:center">
+        Accessibility statement last updated: January 1, 2026
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- PRIVACY POLICY PAGE -->
+<div id="privacy" class="page">
+  <div class="page-hdr"><h1>Privacy Policy</h1><p>AgroSoft Ltd.</p></div>
+  <section style="max-width:820px;margin:0 auto">
+    <div class="prod-desc">
+
+      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin-bottom:16px;border-bottom:2px solid var(--border);padding-bottom:10px">What is the Privacy Policy?</h2>
+      <p>AgroSoft Ltd. (hereinafter: "AgroSoft") respects the privacy of the users of the AgroSoft website, operating at <a href="https://agrosoft.co.il" style="color:var(--g2);font-weight:700" target="_blank">agrosoft.co.il</a> and any additional address at AgroSoft's discretion (hereinafter: "the Website").</p>
+      <p>These terms will inform you of the privacy policy practiced on the Website. They cover, among other things, how AgroSoft uses the information you provide and the information collected about you while using the Website. In this policy, "personal information" means any information that can reasonably be used to identify you, including your first and last name, address, phone number, and more.</p>
+      <p>This policy is an integral part of the Website's terms of use. This policy also applies to your activity and participation in any of the online communities, professional forums, and mailing lists of AgroSoft (hereinafter: "Online Communities"), with necessary modifications.</p>
+
+      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">Reporting a Privacy Breach</h2>
+      <p>If you believe your privacy has been compromised while using the Website or any of the Online Communities, please contact us:</p>
+      <div style="background:var(--bg);border:1.5px solid var(--border);border-radius:16px;padding:22px 26px;margin:16px 0;display:flex;gap:14px;align-items:flex-start">
+        <div style="font-size:1.4rem;flex-shrink:0;margin-top:2px">📧</div>
+        <div>
+          <p style="margin:0;font-size:.9rem">Email: <a href="mailto:support@agrosoft.co.il" style="color:var(--g2);font-weight:700;text-decoration:none">support@agrosoft.co.il</a></p>
+          <p style="margin:4px 0 0;font-size:.86rem">Address: AgroSoft Ltd., HaDuvdevan 9, Kiryat Ono 5551052, Israel</p>
+        </div>
+      </div>
+
+      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">Providing Personal Information to AgroSoft</h2>
+      <p>Using the Website does not require registration or providing personal information. However, various areas of the Website, such as event registration, mailing list subscriptions, online contact forms, and more &ndash; may require registration and providing personal information such as full name, address, phone, active email address, organizational affiliation, and additional details as needed.</p>
+      <p>Required fields will be explicitly marked. Without providing the required information, you will not be able to register in the relevant area. You must provide only accurate and complete information.</p>
+      <p>You are not legally required to provide personal information. Submission depends on your consent and free will &ndash; however, providing incorrect information or not providing all required details may prevent you from completing registration or using some Website services.</p>
+      <p>When you provide personal information of a third party, you declare that you have obtained their explicit consent to provide the information to AgroSoft for use in accordance with this policy.</p>
+
+      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">Information Collected During Website Use</h2>
+      <p>When you use the Website or any of the Online Communities, AgroSoft may collect information about your usage habits, including content you uploaded or published, information you read, pages you viewed, services that interested you, your computer location and IP address, operating system type, device type, and more.</p>
+      <p>Additionally, AgroSoft may collect and use third-party services to collect and analyze anonymous, statistical, or aggregate information related to such use.</p>
+
+      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">Social Networks and Personal Information You Share</h2>
+      <p>AgroSoft provides Website users with tools for sharing and linking content via social networks and various online services. Please note that the use of social networks and online services is external and separate from the Website and is subject to the privacy practices of those services.</p>
+      <p>Be aware that content you upload to the Website or relevant community is not private or confidential. You should exercise caution when providing personal information that may identify you or others.</p>
+
+      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">Use of Information</h2>
+      <p>The personal information you provide and the information AgroSoft collects will be used for the following purposes:</p>
+      <ul style="padding-left:22px;line-height:2.1;color:var(--muted);margin:10px 0 16px">
+        <li>To enable you to use the Website, its content, and services</li>
+        <li>To identify you during repeated visits to areas requiring registration</li>
+        <li>To improve and enrich Website services and content</li>
+        <li>To allow you to customize Website services to your preferences</li>
+        <li>To send you information about Website services and content from time to time</li>
+        <li>To contact you when AgroSoft deems it necessary</li>
+        <li>For analysis, auditing, and providing statistical information to third parties (non-personally identifiable)</li>
+        <li>For proper operation and development of the Website</li>
+        <li>To enforce the Website's terms of use and comply with legal requirements</li>
+      </ul>
+
+      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">Disclosure to Third Parties</h2>
+      <p>AgroSoft will not transfer your personal information to third parties except in the following cases:</p>
+      <ul style="padding-left:22px;line-height:2.1;color:var(--muted);margin:10px 0 16px">
+        <li>As required for proper provision of Website services</li>
+        <li>If you violate the terms of use or engage in activities contrary to law</li>
+        <li>If a court order or competent authority demand is received</li>
+        <li>In any dispute or legal proceedings between you and AgroSoft</li>
+        <li>When AgroSoft believes disclosure is necessary to prevent serious harm</li>
+        <li>For sharing anonymous, aggregate, and statistical information</li>
+        <li>If AgroSoft changes its legal structure or transfers operations to a third party</li>
+        <li>At your explicit request</li>
+      </ul>
+
+      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">Where is Information Stored?</h2>
+      <p>Information collected by AgroSoft is stored in its database, hosted by server hosting and data backup providers, which may be located outside of Israel. Your consent to this policy also constitutes consent to storing information abroad and transferring it outside of Israel.</p>
+
+      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">Cookies</h2>
+      <p>AgroSoft may use cookies on the Website for its regular and proper operation, including collecting statistical data, verifying details, customizing the Website to your preferences, information security purposes, and more.</p>
+      <p>Cookies are text files that your browser creates at the instruction of the Website's servers. They may contain various information such as pages you visited, time spent on the Website, where you arrived from, and more.</p>
+      <p>AgroSoft also uses third-party cookies, including Google Analytics, Google advertising services, and social networks such as Facebook.</p>
+      <p>If you do not wish to receive cookies, you can avoid them by changing your browser settings. Note, however, that disabling cookies may prevent you from using some Website services and features.</p>
+
+      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">Information Security</h2>
+      <p>AgroSoft attaches the utmost importance to information security. To protect information, it operates systems, applications, and procedures designed to minimize the risks of theft, damage, loss, or unauthorized access to information.</p>
+      <p>However, there is no certainty that these measures absolutely guarantee that personal information will not be exposed or stolen. By using the Website and its services, you are aware of and agree to these limitations.</p>
+
+      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">Right to Access Information</h2>
+      <p>Under the Privacy Protection Law, 1981, every person is entitled to review information about them held in a database. A person who has reviewed their information and found it to be inaccurate, incomplete, unclear, or outdated, may request that the database owner correct or delete the information.</p>
+      <p>Please note that deleting information may prevent you from continuing to receive services from the Website. Information required by AgroSoft will continue to be stored in accordance with law but will no longer be used to contact you.</p>
+
+      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">Changes to the Privacy Policy</h2>
+      <p>AgroSoft may change the privacy policy terms from time to time. If material changes are made, a notice will be published on the Website's homepage 30 days before the changes take effect. Continued use of the Website after the change indicates your consent to the amended policy.</p>
+
+      <div style="margin-top:24px;padding-top:16px;border-top:1px solid var(--border);color:var(--muted);font-size:.82rem;text-align:center">
+        Privacy policy last updated: April 5, 2026
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-top">
+    <div class="foot-logo">AgroSoft</div>
+    <div class="foot-links">
+      <a href="#" onclick="return go('about',event)">About</a>
+      <a href="#" onclick="return go('agropriority',event)">AgroPriority</a>
+      <a href="#" onclick="return go('agrotalk',event)">AgroTalk</a>
+      <a href="#" onclick="return go('agrosmart',event)">AgroSmart</a>
+      <a href="#" onclick="return go('agroqc',event)">AgroQC</a>
+      <a href="#" onclick="return go('agroshop',event)">AgroShop</a>
+      <a href="#" onclick="return go('news',event)">News</a>
+      <a href="#" onclick="return go('contact',event)">Contact</a>
+    </div>
+  </div>
+  <div class="foot-copy">&copy; 2009&ndash;2026 All rights reserved | Design &amp; Development by <a href="https://ombee.co.il" target="_blank" style="color:rgba(255,255,255,.8);font-weight:700">OMBee</a> | <a href="#" onclick="return go('accessibility',event)" style="color:rgba(255,255,255,.5)">♿ Accessibility Statement</a> | <a href="#" onclick="return go('privacy',event)" style="color:rgba(255,255,255,.5)">Privacy Policy</a></div>
+</footer>
+
+<!-- ACCESSIBILITY WIDGET -->
+<button class="a11y-fab" id="a11y-fab" onclick="toggleA11yPanel()" aria-label="Accessibility menu" title="Accessibility">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="4.5" r="2.5"/><path d="M12 7.5v4m0 0l-4 6m4-6l4 6M5 10h14"/></svg>
+</button>
+<div class="a11y-overlay" id="a11y-overlay" onclick="toggleA11yPanel()"></div>
+<div class="a11y-panel" id="a11y-panel">
+  <div class="a11y-head">
+    <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="4.5" r="2.5"/><path d="M12 7.5v4m0 0l-4 6m4-6l4 6M5 10h14"/></svg> Accessibility</h3>
+    <button class="a11y-close" onclick="toggleA11yPanel()">✕</button>
+  </div>
+  <div class="a11y-body">
+    <div class="a11y-grid">
+      <button class="a11y-btn" data-a11y="contrast" onclick="toggleA11y('contrast',this)">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v18a9 9 0 010-18z" fill="currentColor"/></svg>
+        Contrast
+      </button>
+      <button class="a11y-btn" data-a11y="links" onclick="toggleA11y('links',this)">
+        <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+        Highlight Links
+      </button>
+      <button class="a11y-btn" data-a11y="font-lg" onclick="toggleA11y('font-lg',this)">
+        <svg viewBox="0 0 24 24" stroke-width="2"><path d="M4 7V4h16v3"/><path d="M12 4v16"/><path d="M8 20h8"/></svg>
+        Large Text
+      </button>
+      <button class="a11y-btn" data-a11y="spacing" onclick="toggleA11y('spacing',this)">
+        <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/><path d="M7 4l-3 3 3 3"/><path d="M17 4l3 3-3 3"/></svg>
+        Text Spacing
+      </button>
+      <button class="a11y-btn" data-a11y="noanim" onclick="toggleA11y('noanim',this)">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M10 9l-3 3 3 3"/><path d="M14 9l3 3-3 3"/></svg>
+        Stop Animations
+      </button>
+      <button class="a11y-btn" data-a11y="hideimg" onclick="toggleA11y('hideimg',this)">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5L5 21"/><line x1="3" y1="3" x2="21" y2="21" stroke-width="2"/></svg>
+        Hide Images
+      </button>
+      <button class="a11y-btn" data-a11y="dyslexia" onclick="toggleA11y('dyslexia',this)">
+        <svg viewBox="0 0 24 24"><path d="M9 4h6l-3 8h4l-7 8 2-5H7z"/></svg>
+        Dyslexia
+      </button>
+      <button class="a11y-btn" data-a11y="bigcursor" onclick="toggleA11y('bigcursor',this)">
+        <svg viewBox="0 0 24 24"><path d="M5 3l14 7-6 2-2 6z"/><path d="M14 14l4 4"/></svg>
+        Large Cursor
+      </button>
+      <button class="a11y-btn" data-a11y="lineheight" onclick="toggleA11y('lineheight',this)">
+        <svg viewBox="0 0 24 24"><path d="M11 6h9M11 12h9M11 18h9"/><path d="M4 8l2.5-4L9 8"/><path d="M4 16l2.5 4L9 16"/></svg>
+        Line Height
+      </button>
+      <button class="a11y-btn" data-a11y="textalign" onclick="toggleA11y('textalign',this)">
+        <svg viewBox="0 0 24 24"><path d="M4 6h16M4 10h10M4 14h16M4 18h10"/></svg>
+        Text Align
+      </button>
+      <button class="a11y-btn" data-a11y="grayscale" onclick="toggleA11y('grayscale',this)">
+        <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7z"/></svg>
+        Grayscale
+      </button>
+      <button class="a11y-btn" data-a11y="saturation" onclick="toggleA11y('saturation',this)">
+        <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7z" fill="currentColor" opacity=".3"/><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7z"/></svg>
+        Saturation
+      </button>
+    </div>
+  </div>
+  <div class="a11y-foot">
+    <button class="a11y-reset" onclick="resetA11y()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M1 4v6h6"/><path d="M3.51 15a9 9 0 105.34-9.34L1 10"/></svg> Reset All Settings</button>
+    <div class="a11y-stmt"><a href="#" onclick="closeA11y();return go('accessibility',event)">Accessibility Statement</a></div>
+  </div>
+</div>
+
+<!-- COOKIES BANNER -->
+<div class="cookie-banner" id="cookie-banner">
+  <p>🍪 This website uses cookies to improve your browsing experience. <a href="#" onclick="return go('privacy',event)">Privacy Policy</a></p>
+  <div class="cookie-btns">
+    <button class="cookie-accept" onclick="acceptCookies()">Accept</button>
+    <button class="cookie-reject" onclick="rejectCookies()">Decline</button>
+  </div>
+</div>
+
+<script>
+var customerLogos = [
+  { file: 'Aviv new.png',                    name: 'Aviv',                     home: true  },
+  { file: 'tzurfarm_logo_width_2023.png',    name: 'Tzur Farm',                home: true  },
+  { file: 'Logo Galilee.png',                name: 'Galilee',                  home: true  },
+  { file: '2013 \u05DC\u05D5\u05D2\u05D5 \u05D2\u05DC\u05D9\u05DC \u05D7\u05D3\u05E9.png', name: 'Galilee', home: false },
+  { file: 'taligrapes_logo.png',             name: 'Tali Grapes',              home: true  },
+  { file: 'Granot agricultural produce.png', name: 'Granot Agriculture',       home: true  },
+  { file: 'Miluopri_logo_He.png',            name: 'Miluopri',                 home: true  },
+  { file: 'Miriam Shoham_Logo.png',          name: 'Miriam Shoham',            home: true  },
+  { file: 'sdot_baemek_logo.png',            name: 'Sdot Baemek',              home: true  },
+  { file: 'yevuley hacfar logo.png',         name: 'Yevuley Hakfar',           home: true  },
+  { file: 'Abu-Kadu.png',                    name: 'Abu Kadu',                 home: false },
+  { file: 'Arava_Logo.png',                  name: 'Arava Agricultural Union', home: false },
+  { file: 'Dudu_Ezra.png',                   name: 'Dudu Ezra',                home: false },
+  { file: 'EGO GROWERS LTD.png',             name: 'EGO Growers',              home: false },
+  { file: 'Galey Moshe_logo.png',            name: 'Galey Moshe',              home: false },
+  { file: 'Gezer Shallit_He.png',            name: 'Gezer Shallit',            home: false },
+  { file: 'Gilad_Logo_new.png',              name: 'Gilad',                    home: true  },
+  { file: 'Logo_Stm.png',                    name: 'STM',                      home: false },
+  { file: 'MeshekBechor_Logo.png',           name: 'Meshek Bechor',            home: false },
+  { file: '\u05D8\u05DC \u05D4\u05DC \u05D9\u05E1\u05DB\u05D4_\u05DC\u05D5\u05D2\u05D5.png', name: 'Tal Hal Yska', home: false },
+  { file: 'Hamarlog_Logo.png',               name: 'Hamarlog',                 home: false },
+  { file: 'haskelberg_Logo.png',             name: 'Haskelberg',               home: false },
+  { file: 'carmy export_logo.png',           name: 'Carmy Export',             home: false },
+  { file: 'Ilsar Truffles_Logo.png',         name: 'Ilsar Truffles',           home: false },
+  { file: 'Joytech_logo.png',                name: 'Joytech',                  home: false },
+];
+
+var logoImages = customerLogos.map(function(c){
+  return { src: 'images/customerImages/' + c.file, name: c.name };
+});
+var homeLogos = customerLogos.filter(function(c){ return c.home; }).map(function(c){
+  return { src: 'images/customerImages/' + c.file, name: c.name };
+});
+
+function renderCarousel(){
+  var wrap = document.getElementById('marquee-rows');
+  if(!wrap) return;
+  wrap.innerHTML = '';
+  var all = logoImages;
+  var half = Math.ceil(all.length / 2);
+  var rows = [all, all.slice(half).concat(all.slice(0, half)), all];
+  var classes = ['', ' slow', ' fast'];
+  rows.forEach(function(row, ri){
+    var div = document.createElement('div');
+    div.className = 'marquee-wrap';
+    var track = document.createElement('div');
+    track.className = 'marquee-track' + classes[ri];
+    [1,2].forEach(function(){
+      row.forEach(function(item){
+        var card = document.createElement('div');
+        card.className = 'm-card';
+        var img = document.createElement('img');
+        img.src = item.src;
+        img.alt = item.name;
+        card.appendChild(img);
+        var lbl = document.createElement('div');
+        lbl.className = 'cname';
+        lbl.textContent = item.name;
+        card.appendChild(lbl);
+        track.appendChild(card);
+      });
+    });
+    div.appendChild(track);
+    wrap.appendChild(div);
+  });
+}
+
+function renderHomeMarquee(){
+  var track = document.getElementById('home-marquee');
+  if(!track) return;
+  track.innerHTML = '';
+  [1,2].forEach(function(){
+    homeLogos.forEach(function(item){
+      var card = document.createElement('div');
+      card.style.cssText = 'flex:0 0 140px;background:var(--bg);border:1.5px solid var(--border);border-radius:12px;padding:12px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-height:80px;margin-right:20px';
+      var img = document.createElement('img');
+      img.src = item.src;
+      img.style.cssText = 'max-width:100px;max-height:40px;object-fit:contain';
+      card.appendChild(img);
+      var lbl = document.createElement('div');
+      lbl.style.cssText = 'font-size:.7rem;font-weight:700;color:var(--muted)';
+      lbl.textContent = item.name;
+      card.appendChild(lbl);
+      track.appendChild(card);
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function(){ renderHomeMarquee(); renderCarousel(); });
+
+function toggleMobileMenu(){
+  var menu=document.getElementById('mob-menu');
+  var overlay=document.getElementById('mob-overlay');
+  var ham=document.getElementById('hamburger');
+  var isOpen=menu.classList.contains('open');
+  if(isOpen){closeMobileMenu();}else{
+    menu.classList.add('open');
+    overlay.classList.add('open');
+    ham.classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+}
+function closeMobileMenu(){
+  var menu=document.getElementById('mob-menu');
+  var overlay=document.getElementById('mob-overlay');
+  var ham=document.getElementById('hamburger');
+  menu.classList.remove('open');
+  overlay.classList.remove('open');
+  ham.classList.remove('open');
+  document.body.style.overflow='';
+}
+
+var pageHistory = [];
+function go(id, e){
+  if(e){ e.preventDefault(); }
+  var current = document.querySelector('.page.active');
+  if(current && current.id && current.id !== id) pageHistory.push(current.id);
+  document.querySelectorAll('.page').forEach(function(p){ p.classList.remove('active'); });
+  var el = document.getElementById(id);
+  if(el){ el.classList.add('active'); window.scrollTo({top:0, behavior:'smooth'}); }
+  var fab = document.getElementById('back-fab');
+  if(fab) fab.style.display = (pageHistory.length > 0 && id !== 'home') ? 'block' : 'none';
+  return false;
+}
+function goBack(e){
+  if(e){ e.preventDefault(); }
+  if(!pageHistory.length) return false;
+  var prev = pageHistory.pop();
+  document.querySelectorAll('.page').forEach(function(p){ p.classList.remove('active'); });
+  var el = document.getElementById(prev);
+  if(el){ el.classList.add('active'); window.scrollTo({top:0, behavior:'smooth'}); }
+  var fab = document.getElementById('back-fab');
+  if(fab) fab.style.display = (pageHistory.length > 0 && prev !== 'home') ? 'block' : 'none';
+  return false;
+}
+
+var cur = 0;
+function slides(){ return document.querySelectorAll('.slide'); }
+function dots(){ return document.querySelectorAll('.dot'); }
+function goSlide(n){
+  slides().forEach(function(s){ s.classList.remove('active'); });
+  dots().forEach(function(d){ d.classList.remove('active'); });
+  cur = n;
+  slides()[cur].classList.add('active');
+  dots()[cur].classList.add('active');
+}
+function changeSlide(dir){
+  var total = slides().length;
+  goSlide((cur + dir + total) % total);
+}
+setInterval(function(){ changeSlide(1); }, 5000);
+
+/* ===== ACCESSIBILITY WIDGET ===== */
+var a11yOptions=['font-lg','contrast','grayscale','links','spacing','noanim','hideimg','dyslexia','bigcursor','lineheight','textalign','saturation'];
+
+function toggleA11yPanel(){
+  var panel=document.getElementById('a11y-panel');
+  var overlay=document.getElementById('a11y-overlay');
+  panel.classList.toggle('open');
+  overlay.classList.toggle('open');
+  document.body.style.overflow=panel.classList.contains('open')?'hidden':'';
+}
+function closeA11y(){
+  document.getElementById('a11y-panel').classList.remove('open');
+  document.getElementById('a11y-overlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+function toggleA11y(opt,btn){
+  document.body.classList.toggle('a11y-'+opt);
+  btn.classList.toggle('active');
+  saveA11y();
+}
+
+function resetA11y(){
+  a11yOptions.forEach(function(opt){
+    document.body.classList.remove('a11y-'+opt);
+  });
+  document.querySelectorAll('.a11y-btn').forEach(function(b){b.classList.remove('active')});
+  localStorage.removeItem('a11y');
+}
+
+function saveA11y(){
+  var active=[];
+  a11yOptions.forEach(function(opt){
+    if(document.body.classList.contains('a11y-'+opt)) active.push(opt);
+  });
+  localStorage.setItem('a11y',JSON.stringify(active));
+}
+
+function loadA11y(){
+  try{
+    var saved=JSON.parse(localStorage.getItem('a11y'));
+    if(saved&&saved.length){
+      saved.forEach(function(opt){
+        document.body.classList.add('a11y-'+opt);
+        var btn=document.querySelector('.a11y-btn[data-a11y="'+opt+'"]');
+        if(btn) btn.classList.add('active');
+      });
+    }
+  }catch(e){}
+}
+loadA11y();
+
+/* ===== COOKIES BANNER ===== */
+function showCookieBanner(){
+  if(!localStorage.getItem('cookie-consent')){
+    setTimeout(function(){
+      document.getElementById('cookie-banner').classList.add('show');
+    },800);
+  }
+}
+function acceptCookies(){
+  localStorage.setItem('cookie-consent','accepted');
+  document.getElementById('cookie-banner').classList.remove('show');
+}
+function rejectCookies(){
+  localStorage.setItem('cookie-consent','rejected');
+  document.getElementById('cookie-banner').classList.remove('show');
+}
+showCookieBanner();
+</script>
+</body>
+</html>

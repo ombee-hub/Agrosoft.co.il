@@ -1,0 +1,2148 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>בית - אגרוסופט בע"מ</title>
+<link rel="icon" type="image/svg+xml" href="images/Ag_logo.svg">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --g1:#1a4d23;--g2:#2d7a3a;--g3:#4caf50;
+  --bg:#f5f9f5;--white:#fff;--text:#1c2e1e;--muted:#556b57;
+  --border:#ddeedd;--sh:0 4px 30px rgba(45,122,58,.12);
+}
+body{font-family:'Heebo',Arial,sans-serif;background:var(--bg);color:var(--text);direction:rtl;overflow-x:hidden}
+
+/* NAV */
+nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:999;box-shadow:0 2px 12px rgba(0,0,0,.06);border-top:8px solid var(--g1)}
+.nav-inner{display:flex;align-items:center;justify-content:flex-start;padding:0 32px;min-height:64px;max-width:1400px;margin:0 auto;gap:6px}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;margin-left:18px;flex-shrink:0}
+.logo-name{font-size:1.3rem;font-weight:900;color:var(--g1)}
+.nav-links{display:flex;align-items:center;gap:2px;flex:1}
+.nav-links>a,.nav-links>.dropdown>a,.nav-links>.lang-dd>a{color:var(--text);text-decoration:none;font-size:.875rem;font-weight:500;padding:8px 14px;border-radius:9px;white-space:nowrap;transition:.18s;display:block}
+.nav-links>a:hover,.nav-links>.dropdown>a:hover{background:#eef6ef;color:var(--g2)}
+.nav-cta{background:linear-gradient(135deg,var(--g2),var(--g3))!important;color:var(--white)!important;padding:9px 22px!important;border-radius:10px!important;font-weight:700!important;box-shadow:0 4px 14px rgba(45,122,58,.28)!important;margin-right:6px}
+.nav-cta:hover{opacity:.9}
+
+/* MEGA MENU */
+.dropdown{position:relative}
+.dd-arrow{display:inline-block;transition:transform .3s ease}
+.dropdown:hover .dd-arrow{transform:rotate(180deg)}
+.dropdown:hover .mega{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto}
+.mega{position:absolute;top:calc(100%+8px);right:-200px;background:var(--white);border:1px solid var(--border);border-radius:20px;padding:24px;width:820px;box-shadow:0 16px 48px rgba(0,0,0,.14);z-index:200;opacity:0;visibility:hidden;transform:translateY(-12px);pointer-events:none;transition:opacity .3s ease,transform .3s ease,visibility .3s ease}
+.mega-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.mega-item{display:flex;flex-direction:column;align-items:center;padding:18px 10px;border-radius:20px;text-decoration:none;color:inherit;border:1.5px solid var(--border);transition:.28s;background:var(--bg);text-align:center}
+.mega-item:hover{transform:translateY(-5px);border-color:var(--g3);box-shadow:0 12px 32px rgba(45,122,58,.14);background:var(--white)}
+.mega-img{width:60px;height:60px;border-radius:12px;object-fit:contain;padding:4px;flex-shrink:0;margin-bottom:10px}
+.mega-txt h4{font-size:.85rem;font-weight:800;margin-bottom:4px}
+.mega-txt p{font-size:.72rem;color:var(--muted);line-height:1.4}
+.mega-arr{display:inline-flex;align-items:center;gap:4px;margin-top:8px;color:var(--g2);font-weight:700;font-size:.74rem}
+.mega-footer{margin-top:16px;padding-top:14px;border-top:1px solid var(--border);display:flex;justify-content:center}
+.mega-footer a{font-size:.82rem;color:var(--g2);font-weight:700;text-decoration:none;padding:8px 20px;border-radius:8px;background:#eef6ef;transition:.2s}
+.mega-footer a:hover{background:var(--g2);color:#fff}
+
+/* LANG */
+.lang-dd{position:relative;margin-right:12px}
+.lang-btn{display:flex;align-items:center;gap:6px;background:var(--bg);border:1.5px solid var(--border);border-radius:10px;padding:7px 14px;font-size:.85rem;font-weight:600;color:var(--muted);cursor:pointer;transition:.2s;white-space:nowrap;text-decoration:none}
+.lang-btn:hover{border-color:var(--g3);color:var(--g2);background:#f0faf0}
+.lang-dd:hover .lang-menu{display:block}
+.lang-menu{display:none;position:absolute;top:calc(100%+6px);left:0;background:var(--white);border:1px solid var(--border);border-radius:12px;padding:6px;min-width:130px;box-shadow:0 8px 24px rgba(0,0,0,.1);z-index:300}
+.lang-menu a{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;font-size:.87rem;font-weight:600;color:var(--text);text-decoration:none;transition:.18s}
+.lang-menu a:hover{background:#eef6ef;color:var(--g2)}
+
+/* PAGES */
+.page{display:none}.page.active{display:block}
+
+/* SLIDER / HERO */
+.hero{min-height:42vh;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;text-align:right;padding:50px 60px 40px;background:linear-gradient(160deg,rgba(26,77,35,.82) 0%,rgba(29,107,43,.75) 50%,rgba(46,139,61,.70) 100%),url('images/Agriculture.png') center/cover no-repeat;position:relative;overflow:hidden}
+.slider{width:100%;position:relative;display:flex;flex-direction:column;align-items:flex-start}
+.slide{display:none;flex-direction:column;align-items:flex-start;text-align:right;max-width:520px;animation:fadein .6s ease}
+.slide.active{display:flex}
+@keyframes fadein{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.slide h1{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;color:#fff;margin-bottom:14px;letter-spacing:-.3px}
+.hero-sub{font-size:.95rem;color:rgba(255,255,255,.78);max-width:500px;line-height:1.75;margin-bottom:32px}
+.slider-dots{display:flex;gap:10px;justify-content:center;margin-top:24px;width:100%}
+.dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.35);cursor:pointer;transition:.2s}
+.dot.active{background:#fff;transform:scale(1.2)}
+.btn-solid{background:var(--white);color:var(--g1);padding:14px 34px;border-radius:14px;font-weight:800;font-size:.97rem;text-decoration:none;box-shadow:0 6px 24px rgba(0,0,0,.15);transition:.25s}
+.btn-solid:hover{transform:translateY(-3px)}
+.btn-ghost{background:rgba(255,255,255,.1);color:#fff;padding:14px 34px;border-radius:14px;font-weight:600;font-size:.97rem;text-decoration:none;border:2px solid rgba(255,255,255,.35);transition:.25s}
+
+/* SECTIONS */
+section{padding:80px 48px}
+.sec-label{text-align:center;font-size:.76rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--g2);margin-bottom:10px}
+h2.sec-title{text-align:center;font-size:clamp(1.8rem,3vw,2.35rem);font-weight:900;margin-bottom:14px}
+.sec-sub{text-align:center;color:var(--muted);font-size:.98rem;max-width:540px;margin:0 auto 54px;line-height:1.78}
+
+/* PRODUCTS */
+.prod-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;max-width:1120px;margin:0 auto}
+.prod-card{background:var(--bg);border:1.5px solid var(--border);border-radius:20px;padding:28px 24px;transition:.28s;cursor:pointer;text-decoration:none;color:inherit;display:flex;flex-direction:column}
+.prod-card:hover{transform:translateY(-7px);border-color:var(--g3);box-shadow:0 16px 44px rgba(45,122,58,.15);background:var(--white)}
+.prod-ico{width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.55rem;margin-bottom:18px}
+.prod-card h3{font-size:1.15rem;font-weight:800;margin-bottom:8px}
+.prod-card p{color:var(--muted);font-size:.875rem;line-height:1.65;flex:1}
+.prod-arr{display:inline-flex;align-items:center;gap:5px;margin-top:16px;color:var(--g2);font-weight:700;font-size:.82rem}
+
+/* ABOUT */
+.about-wrap{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.about-txt .sec-label{text-align:right}
+.about-txt h2{text-align:right;font-size:1.95rem;font-weight:900;margin-bottom:18px;line-height:1.3}
+.about-txt h2 span{color:var(--g2)}
+.about-txt p{color:var(--muted);line-height:1.85;margin-bottom:14px;font-size:.93rem}
+.about-panel{background:linear-gradient(145deg,#e8f5e9,#f1f8e9);border-radius:26px;padding:36px;border:1px solid var(--border)}
+.partner-box{background:var(--white);border-radius:18px;padding:26px;text-align:center;box-shadow:0 4px 20px rgba(45,122,58,.1);border:1px solid var(--border)}
+.partner-big{font-size:2rem;font-weight:900;color:var(--g1);margin:8px 0 4px}
+.partner-sm{font-size:.78rem;color:var(--muted)}
+.about-items{display:flex;flex-direction:column;gap:12px;margin-top:18px}
+.ai{display:flex;align-items:center;gap:11px;background:var(--white);border-radius:12px;padding:13px 16px;border:1px solid var(--border);font-size:.86rem;font-weight:500}
+.ai-dot{width:9px;height:9px;background:var(--g3);border-radius:50%;flex-shrink:0}
+
+/* MODULES */
+.mod-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;max-width:980px;margin:0 auto}
+.mod{background:var(--white);border:1.5px solid var(--border);border-radius:13px;padding:16px 18px;display:flex;align-items:flex-start;gap:12px;transition:.2s}
+.mod:hover{border-color:var(--g3);box-shadow:0 4px 16px rgba(45,122,58,.08)}
+.mod-dot{width:9px;height:9px;background:var(--g2);border-radius:50%;margin-top:6px;flex-shrink:0}
+.mod span{font-size:.875rem;line-height:1.6}
+
+/* CUSTOMERS */
+.cust-tags{display:flex;flex-wrap:wrap;gap:13px;justify-content:center;max-width:760px;margin:0 auto}
+.ctag{background:var(--white);border:1.5px solid var(--border);border-radius:40px;padding:11px 26px;font-size:.88rem;font-weight:600;color:var(--muted);transition:.2s}
+.ctag:hover{border-color:var(--g3);color:var(--g2);background:#f0faf0}
+
+/* NEWS */
+.news-page-wrap{max-width:860px;margin:0 auto;padding:60px 40px}
+.news-year-sep{display:flex;align-items:center;gap:14px;margin:40px 0 24px}
+.news-year-sep:first-child{margin-top:0}
+.news-year-sep span{font-size:1rem;font-weight:900;color:var(--g1);white-space:nowrap;background:var(--bg);padding-left:14px}
+.news-year-sep::before{content:'';flex:1;height:2px;background:linear-gradient(to left,var(--border),var(--g3))}
+.news-list{display:flex;flex-direction:column;gap:16px}
+.news-card{background:var(--white);border-radius:20px;padding:28px 32px;box-shadow:0 2px 18px rgba(45,122,58,.08);border:1.5px solid var(--border);display:flex;gap:24px;align-items:flex-start;transition:.2s;position:relative;overflow:hidden;cursor:pointer;text-decoration:none;color:inherit}
+.news-card::before{content:'';position:absolute;right:0;top:0;bottom:0;width:4px;background:linear-gradient(to bottom,var(--g2),var(--g3))}
+.news-card:hover{transform:translateY(-3px);box-shadow:0 8px 32px rgba(45,122,58,.15);border-color:var(--g3)}
+.news-card.featured{background:linear-gradient(135deg,#f0faf0,#e8f5e9);border-color:var(--g3)}
+.news-card.featured::before{width:5px;background:linear-gradient(to bottom,var(--g1),var(--g2))}
+.news-badge{display:inline-block;background:linear-gradient(135deg,var(--g2),var(--g3));color:#fff;font-size:.68rem;font-weight:800;padding:3px 10px;border-radius:20px;letter-spacing:.5px;margin-bottom:8px}
+.news-date{background:linear-gradient(135deg,#e8f5e9,#d4edda);border-radius:14px;padding:14px 16px;text-align:center;flex-shrink:0;min-width:72px}
+.news-date .mo{font-size:.7rem;color:var(--muted);font-weight:700;letter-spacing:.5px;text-transform:uppercase}
+.news-date .yr{font-size:1.5rem;font-weight:900;color:var(--g1);line-height:1.1}
+.news-card h3{font-size:1.08rem;font-weight:800;margin-bottom:8px;color:var(--text)}
+.news-card p{color:var(--muted);font-size:.875rem;line-height:1.75}
+.news-card ul{color:var(--muted);font-size:.875rem;line-height:2;padding-right:20px;margin-top:8px}
+.news-card li{margin-bottom:2px}
+.news-link{display:inline-flex;align-items:center;gap:5px;margin-top:14px;color:var(--g2);font-weight:700;font-size:.82rem;text-decoration:none;transition:.18s}
+.news-link:hover{color:var(--g1);gap:8px}
+
+/* BACK BUTTON */
+.back-fab{position:fixed!important;top:80px!important;bottom:auto!important;right:24px!important;z-index:997;display:none;transform:none!important;transition:none!important}
+.back-fab button{display:flex;align-items:center;gap:8px;background:var(--white);border:1.5px solid var(--border);border-radius:24px;padding:10px 20px;font-size:.83rem;font-weight:700;color:var(--g2);cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,.12);font-family:inherit;direction:rtl;transition:none!important;transform:none!important}
+
+/* NEWS ARTICLE PAGE */
+.news-art-hero{background:linear-gradient(160deg,var(--g1) 0%,var(--g2) 60%,var(--g3) 100%);padding:56px 48px 48px;color:#fff;position:relative}
+.news-art-back{display:inline-flex;align-items:center;gap:7px;color:rgba(255,255,255,.75);font-size:.83rem;font-weight:600;text-decoration:none;margin-bottom:28px;transition:.18s;cursor:pointer;background:rgba(255,255,255,.12);padding:7px 16px;border-radius:20px;border:1px solid rgba(255,255,255,.2)}
+.news-art-back:hover{color:#fff;background:rgba(255,255,255,.2)}
+.news-art-date{display:inline-block;background:rgba(255,255,255,.18);color:#fff;font-size:.78rem;font-weight:700;padding:5px 14px;border-radius:20px;margin-bottom:14px;letter-spacing:.5px}
+.news-art-hero h1{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:900;line-height:1.3;max-width:700px}
+.news-art-body{max-width:800px;margin:0 auto;padding:56px 48px}
+.news-art-body h2{font-size:1.2rem;font-weight:800;color:var(--g1);margin:32px 0 12px;padding-bottom:8px;border-bottom:2px solid var(--border)}
+.news-art-body h2:first-child{margin-top:0}
+.news-art-body p{color:var(--muted);font-size:.93rem;line-height:1.85;margin-bottom:14px}
+.news-art-body ul{color:var(--muted);font-size:.93rem;line-height:2.1;padding-right:22px;margin-bottom:16px}
+.news-art-body li{margin-bottom:2px}
+.news-art-feature{background:var(--white);border:1.5px solid var(--border);border-radius:16px;padding:22px 26px;margin:24px 0;display:flex;gap:14px;align-items:flex-start}
+.news-art-feature .ico{font-size:1.4rem;flex-shrink:0;margin-top:2px}
+.news-art-feature h4{font-size:.95rem;font-weight:800;margin-bottom:5px}
+.news-art-feature p{margin:0;font-size:.86rem}
+.news-art-cta{background:linear-gradient(135deg,#e8f5e9,#f0faf0);border:1.5px solid var(--g3);border-radius:18px;padding:28px 32px;margin-top:40px;text-align:center}
+.news-art-cta p{color:var(--g1);font-weight:700;font-size:1rem;margin-bottom:16px}
+.news-art-cta a{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--g2),var(--g3));color:#fff;padding:12px 28px;border-radius:12px;font-weight:700;font-size:.9rem;text-decoration:none;box-shadow:0 4px 14px rgba(45,122,58,.25);transition:.2s}
+.news-art-cta a:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(45,122,58,.35)}
+
+/* CTA BAND */
+.cta-band{background:linear-gradient(135deg,var(--g1),var(--g2));padding:76px 40px;text-align:center;color:#fff}
+.cta-band h2{font-size:2.1rem;font-weight:900;margin-bottom:12px}
+.cta-band p{opacity:.82;font-size:1rem;max-width:480px;margin:0 auto 36px;line-height:1.7}
+.cta-cards{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-bottom:32px}
+.cc{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:16px;padding:20px 26px;min-width:180px}
+.cc .ico{font-size:1.4rem;margin-bottom:7px}
+.cc .lbl{font-size:.73rem;opacity:.7;margin-bottom:3px}
+.cc .val{font-weight:800;font-size:.95rem}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* CONTACT */
+.contact-wrap{max-width:820px;margin:0 auto}
+.cinfo-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:28px}
+.cinfo{background:var(--white);border-radius:18px;padding:26px 20px;box-shadow:var(--sh);border:1px solid var(--border);text-align:center}
+.cinfo .ico{font-size:1.8rem;margin-bottom:10px}
+.cinfo h3{font-size:.88rem;color:var(--g2);font-weight:700;margin-bottom:5px}
+.cinfo a,.cinfo p{color:var(--text);text-decoration:none;font-weight:600;font-size:.88rem}
+.cform{background:var(--white);border-radius:20px;padding:36px;box-shadow:var(--sh);border:1px solid var(--border)}
+.cform h3{font-size:1.25rem;font-weight:900;margin-bottom:22px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fg{display:flex;flex-direction:column;gap:5px;margin-bottom:14px}
+.fg label{font-size:.78rem;font-weight:700;color:var(--muted)}
+.fg input,.fg textarea,.fg select{padding:11px 15px;border:1.5px solid var(--border);border-radius:10px;font-size:.9rem;font-family:inherit;outline:none;transition:.2s;background:var(--bg);color:var(--text)}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--g2);background:var(--white)}
+.submit-btn{background:linear-gradient(135deg,var(--g2),var(--g3));color:#fff;border:none;padding:13px 36px;border-radius:12px;font-size:.97rem;font-weight:800;cursor:pointer;font-family:inherit;box-shadow:0 6px 20px rgba(45,122,58,.32);transition:.25s}
+.submit-btn:hover{transform:translateY(-2px)}
+
+/* PAGE HEADER */
+.page-hdr{background:linear-gradient(135deg,var(--g1),var(--g2));padding:64px 48px 52px;text-align:center;color:#fff}
+.page-hdr h1{font-size:2.3rem;font-weight:900;margin-bottom:10px}
+.page-hdr p{opacity:.82;font-size:1rem}
+
+/* PROD HERO */
+.prod-hero{padding:68px 40px 56px;text-align:center;color:#fff}
+.prod-hero .big-ico{font-size:3.8rem;margin-bottom:16px}
+.prod-hero h1{font-size:2.5rem;font-weight:900;margin-bottom:10px}
+.prod-hero p{opacity:.86;font-size:1rem;max-width:540px;margin:0 auto}
+.prod-body{max-width:820px;margin:0 auto;padding:56px 40px}
+.prod-desc{background:var(--white);border-radius:20px;padding:34px;box-shadow:var(--sh);border:1px solid var(--border);line-height:1.88;color:var(--muted);margin-bottom:28px;font-size:.95rem}
+.prod-desc strong{color:var(--g2)}
+
+/* IMAGE UPLOAD */
+.img-upload-zone{border:2.5px dashed var(--border);border-radius:18px;padding:32px;margin-top:28px;cursor:pointer;transition:.2s;background:var(--bg);text-align:center}
+.img-upload-zone:hover{border-color:var(--g3);background:#f0faf0}
+.upload-placeholder{color:var(--muted)}
+.img-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-top:16px}
+.img-gallery img{width:100%;height:160px;object-fit:cover;border-radius:12px;border:1.5px solid var(--border);transition:.2s}
+.img-gallery img:hover{transform:scale(1.03);box-shadow:var(--sh)}
+
+/* FOOTER */
+footer{background:var(--g1);padding:40px 48px;display:flex;flex-direction:column;gap:16px}
+.foot-top{display:flex;align-items:center;justify-content:flex-start;gap:32px;flex-wrap:wrap}
+.foot-logo{font-size:1.15rem;font-weight:900;color:rgba(255,255,255,.9)}
+.foot-links{display:flex;gap:18px;flex-wrap:wrap}
+.foot-links a{color:rgba(255,255,255,.6);text-decoration:none;font-size:.83rem;transition:.18s}
+.foot-links a:hover{color:#fff}
+.foot-copy{color:rgba(255,255,255,.5);font-size:.76rem;text-align:center}
+
+/* MARQUEE */
+@keyframes marquee-rtl{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes marquee-ltr{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+.marquee-wrap{overflow:hidden;margin-bottom:18px;direction:ltr}
+.marquee-wrap:hover .marquee-track{animation-play-state:paused}
+.marquee-track{display:flex;width:max-content;animation:marquee-rtl 40s linear infinite}
+.marquee-track.reverse{animation:marquee-ltr 48s linear infinite}
+.marquee-track.slow{animation-duration:56s}
+.marquee-track.fast{animation-duration:30s}
+.m-card{flex:0 0 auto;background:var(--white);border:1.5px solid var(--border);border-radius:18px;padding:20px 24px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-width:160px;min-height:110px;transition:.25s;box-shadow:0 2px 10px rgba(45,122,58,.06);margin-right:18px}
+.m-card:hover{border-color:var(--g3);box-shadow:0 8px 24px rgba(45,122,58,.15);transform:translateY(-3px)}
+.m-card img{max-width:120px;max-height:54px;object-fit:contain}
+.cname{font-size:.76rem;font-weight:700;color:var(--muted);text-align:center}
+
+/* HAMBURGER */
+.hamburger{display:none;background:none;border:1.5px solid var(--border);cursor:pointer;padding:8px 10px;border-radius:10px;flex-direction:column;gap:5px;align-items:center;justify-content:center;margin-right:4px;flex-shrink:0}
+.hamburger span{display:block;width:20px;height:2px;background:var(--g1);border-radius:2px;transition:.25s}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
+
+/* MOBILE MENU */
+.mob-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:1001;cursor:pointer}
+.mob-overlay.open{display:block}
+.mob-menu{position:fixed;top:0;right:-300px;width:285px;height:100%;background:var(--white);z-index:1002;display:flex;flex-direction:column;transition:right .28s cubic-bezier(.4,0,.2,1);box-shadow:-8px 0 32px rgba(0,0,0,.16);overflow-y:auto}
+.mob-menu.open{right:0}
+.mob-head{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--border);min-height:72px}
+.mob-logo{font-size:1.2rem;font-weight:900;color:var(--g1)}
+.mob-close-btn{background:none;border:1.5px solid var(--border);border-radius:8px;font-size:1.1rem;cursor:pointer;color:var(--text);padding:4px 9px;line-height:1.4}
+.mob-nav{padding:12px;display:flex;flex-direction:column;gap:2px;flex:1}
+.mob-nav a{display:block;padding:11px 14px;border-radius:10px;color:var(--text);text-decoration:none;font-size:.95rem;font-weight:500;transition:.15s}
+.mob-nav a:active{background:#eef6ef;color:var(--g2)}
+.mob-sep{font-size:.7rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--muted);padding:14px 14px 4px;margin-top:4px}
+.mob-sep-toggle{cursor:pointer;display:flex;align-items:center;justify-content:space-between}
+.mob-sep-toggle .mob-sep-arrow{display:inline-block;transition:transform .3s ease;font-size:.65rem}
+.mob-sep-toggle.open .mob-sep-arrow{transform:rotate(180deg)}
+.mob-products{overflow:hidden;max-height:0;transition:max-height .35s ease;margin:0}
+.mob-products.open{max-height:400px}
+.mob-cta{background:linear-gradient(135deg,var(--g2),var(--g3))!important;color:#fff!important;text-align:center;font-weight:700!important;margin-top:8px;padding:13px 14px!important;border-radius:10px}
+.mob-prod{display:flex;align-items:center;gap:16px}
+.mob-prod img{width:58px;height:58px;border-radius:0;object-fit:contain;flex-shrink:0;padding:0;background:none!important}
+.mob-prod-txt{font-size:1.05rem;font-weight:700;color:var(--text)}
+
+/* PRODUCT PAGE HEADERS */
+.prod-pg-hdr{padding:60px 48px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap}
+
+/* FEATURE GRID 3 COL */
+.feat-g3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1000px;margin:0 auto}
+
+/* STATS GRID 3 COL */
+.stats-g3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+
+/* PRIORITY BAND */
+.priority-band{background:#8B6914;padding:28px 48px;text-align:center;width:100%}
+.pb-inner{display:inline-flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:center}
+
+/* TABLET */
+@media(max-width:1024px){
+  /* NAV - compact */
+  .nav-links>a,.nav-links>.dropdown>a,.nav-links>.lang-dd>a{padding:7px 10px;font-size:.82rem}
+  .nav-inner{padding:0 20px;gap:4px}
+  .nav-cta{padding:8px 16px!important;font-size:.85rem!important}
+
+  /* MEGA MENU - narrower, 3 cols */
+  .mega{width:620px;right:-100px;padding:20px}
+  .mega-grid{grid-template-columns:repeat(3,1fr);gap:10px}
+  .mega-item{padding:14px 8px}
+  .mega-img{width:56px;height:56px}
+
+  /* SECTIONS */
+  section{padding:60px 32px}
+
+  /* HERO */
+  .hero{padding:44px 40px 36px}
+
+  /* PRODUCTS GRID - 2 columns */
+  .prod-grid{grid-template-columns:repeat(2,1fr);max-width:900px}
+
+  /* ABOUT */
+  .about-wrap{gap:36px}
+  .about-txt h2{font-size:1.7rem}
+
+  /* CONTACT INFO - 3 → 2 columns */
+  .cinfo-row{grid-template-columns:repeat(2,1fr)}
+
+  /* FEATURE + STATS GRIDS - 3 → 2 columns */
+  .feat-g3,.stats-g3{grid-template-columns:repeat(2,1fr)!important}
+
+  /* PAGE HEADER */
+  .page-hdr{padding:52px 32px 44px}
+
+  /* PRODUCT PAGE HEADER */
+  .prod-pg-hdr{padding:48px 32px}
+
+  /* NEWS */
+  .news-page-wrap{padding:48px 28px}
+  .news-art-hero{padding:48px 32px 40px}
+  .news-art-body{padding:44px 32px}
+
+  /* CTA BAND */
+  .cta-band{padding:60px 28px}
+  .cta-band h2{font-size:1.85rem}
+
+  /* PRIORITY BAND */
+  .priority-band{padding:24px 28px!important}
+
+  /* FOOTER */
+  footer{padding:36px 32px}
+  .foot-top{gap:24px}
+
+  /* MODULES */
+  .mod-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+}
+
+@media(max-width:820px){
+  /* NAV */
+  .hamburger{display:flex}
+  .nav-links{display:none}
+  .lang-dd{display:none}
+  .nav-inner{padding:0 16px}
+
+  /* HERO */
+  .hero{padding:36px 20px 28px;min-height:auto}
+  .slide{max-width:100%}
+
+  /* SECTIONS */
+  section{padding:44px 20px}
+
+  /* PRODUCT PAGE HEADERS */
+  .prod-pg-hdr{padding:32px 20px!important;flex-direction:column;align-items:flex-start}
+  .prod-pg-hdr>img{height:64px!important;margin-top:8px}
+
+  /* FEATURE + STATS GRIDS */
+  .feat-g3,.stats-g3{grid-template-columns:1fr!important}
+
+  /* PRODUCT INNER SECTION PADDING */
+  #agropriority section,#agrotalk section,#agrosmart section,#agroqc section,#agroshop section{padding-left:20px!important;padding-right:20px!important}
+
+  /* ABOUT */
+  .about-wrap{grid-template-columns:1fr;gap:28px}
+
+  /* CONTACT */
+  .cinfo-row{grid-template-columns:1fr}
+  .frow{grid-template-columns:1fr}
+
+  /* PAGE HEADER */
+  .page-hdr{padding:40px 20px 32px}
+  .page-hdr h1{font-size:1.75rem}
+
+  /* NEWS ARTICLE */
+  .news-art-hero{padding:40px 20px 30px}
+  .news-art-body{padding:32px 20px}
+  .news-page-wrap{padding:36px 20px}
+  .news-card{padding:20px 16px;gap:14px}
+
+  /* PRIORITY BAND */
+  .priority-band{padding:22px 20px!important}
+  .pb-inner{flex-direction:column;gap:12px;width:100%}
+
+  /* CTA BAND */
+  .cta-band{padding:56px 20px}
+  .cta-band h2{font-size:1.65rem}
+
+  /* FOOTER */
+  footer{flex-direction:column;text-align:center;padding:28px 20px}
+  .foot-top{flex-direction:column;align-items:center;gap:14px}
+  .foot-links{justify-content:center}
+
+  /* BACK BUTTON - move to bottom */
+  .back-fab{top:80px!important;bottom:auto!important;right:16px!important}
+}
+
+@media(max-width:480px){
+  .hero{padding:28px 16px 24px}
+  .slide h1{font-size:1.55rem}
+  .hero-sub{font-size:.85rem}
+  .btn-solid,.btn-ghost{padding:11px 20px;font-size:.88rem}
+  .news-card{flex-direction:column;gap:10px}
+  .news-date{min-width:auto;flex-direction:row;align-items:center;gap:6px;padding:8px 12px}
+  .cta-cards{gap:10px}
+  .cc{min-width:130px;padding:15px}
+  .cform{padding:24px 20px}
+}
+
+/* ACCESSIBILITY WIDGET */
+.a11y-fab{position:fixed;bottom:24px;left:24px;z-index:10000;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--g2),var(--g3));color:#fff;border:none;cursor:pointer;box-shadow:0 4px 20px rgba(45,122,58,.35);display:flex;align-items:center;justify-content:center;font-size:1.7rem;transition:.25s}
+.a11y-fab:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(45,122,58,.45)}
+.a11y-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:10001}
+.a11y-overlay.open{display:block}
+.a11y-panel{position:fixed;top:0;left:-400px;width:380px;height:100%;z-index:10002;background:var(--white);box-shadow:8px 0 32px rgba(0,0,0,.18);display:flex;flex-direction:column;transition:left .3s cubic-bezier(.4,0,.2,1);direction:rtl;overflow:hidden}
+.a11y-panel.open{left:0}
+.a11y-head{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid var(--border);background:linear-gradient(135deg,var(--g2),var(--g3));color:#fff;flex-shrink:0}
+.a11y-head h3{font-size:1rem;font-weight:800;margin:0;display:flex;align-items:center;gap:8px}
+.a11y-close{background:rgba(255,255,255,.2);border:none;color:#fff;width:32px;height:32px;border-radius:50%;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.18s}
+.a11y-close:hover{background:rgba(255,255,255,.35)}
+.a11y-body{flex:1;overflow-y:auto;padding:16px}
+.a11y-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.a11y-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:16px 8px;border-radius:14px;border:1.5px solid var(--border);background:var(--bg);cursor:pointer;font-family:inherit;font-size:.75rem;font-weight:600;color:var(--text);transition:.18s;text-align:center;min-height:100px}
+.a11y-btn:hover{border-color:var(--g2);background:#f0faf0}
+.a11y-btn.active{border-color:var(--g2);background:#e8f5e9;color:var(--g2)}
+.a11y-btn svg{width:36px;height:36px;stroke:currentColor;fill:none;stroke-width:1.5;flex-shrink:0}
+.a11y-btn.active svg{stroke:var(--g2)}
+.a11y-foot{padding:14px 16px;border-top:1px solid var(--border);flex-shrink:0}
+.a11y-reset{width:100%;padding:12px;border-radius:12px;border:none;background:linear-gradient(135deg,var(--g2),var(--g3));color:#fff;font-family:inherit;font-size:.85rem;font-weight:700;cursor:pointer;transition:.18s;display:flex;align-items:center;justify-content:center;gap:8px}
+.a11y-reset:hover{opacity:.9}
+.a11y-stmt{margin-top:10px;text-align:center}
+.a11y-stmt a{font-size:.75rem;color:var(--muted);text-decoration:underline}
+
+/* ACCESSIBILITY BODY CLASSES */
+body.a11y-font-lg{font-size:130%!important}
+body.a11y-contrast{background:#000!important;color:#fff!important}
+body.a11y-contrast *{background-color:#000!important;color:#fff!important;border-color:#fff!important}
+body.a11y-contrast a{color:#ff0!important}
+body.a11y-contrast img{filter:brightness(1.2)}
+body.a11y-contrast .a11y-panel,body.a11y-contrast .a11y-panel *{background-color:var(--white)!important;color:var(--text)!important;border-color:var(--border)!important}
+body.a11y-contrast .a11y-head,body.a11y-contrast .a11y-head *{background:linear-gradient(135deg,var(--g2),var(--g3))!important;color:#fff!important}
+body.a11y-contrast .a11y-reset{background:linear-gradient(135deg,var(--g2),var(--g3))!important;color:#fff!important}
+body.a11y-grayscale{filter:grayscale(1)}
+body.a11y-links a{text-decoration:underline!important;font-weight:700!important;color:var(--g2)!important}
+body.a11y-contrast.a11y-links a{color:#ff0!important;text-decoration:underline!important}
+body.a11y-spacing{letter-spacing:2px!important;word-spacing:6px!important}
+body.a11y-spacing *{letter-spacing:2px!important;word-spacing:6px!important}
+body.a11y-noanim,body.a11y-noanim *{animation:none!important;transition:none!important}
+body.a11y-hideimg img:not(.a11y-panel img):not(.mega-img){opacity:0!important}
+body.a11y-dyslexia,body.a11y-dyslexia *{font-family:'OpenDyslexic','Comic Sans MS',Arial,sans-serif!important}
+body.a11y-bigcursor,body.a11y-bigcursor *{cursor:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cpath d='M4 4l16 40 6-16 16-6z' fill='%23000' stroke='%23fff' stroke-width='2'/%3E%3C/svg%3E") 4 4,auto!important}
+body.a11y-lineheight,body.a11y-lineheight *{line-height:2.2!important}
+body.a11y-textalign,body.a11y-textalign *{text-align:center!important}
+body.a11y-saturation{filter:saturate(3)}
+body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
+
+/* COOKIES BANNER */
+.cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:var(--white);border-top:2px solid var(--border);padding:18px 32px;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;box-shadow:0 -4px 24px rgba(0,0,0,.1);transform:translateY(100%);transition:transform .4s cubic-bezier(.4,0,.2,1)}
+.cookie-banner.show{transform:translateY(0)}
+.cookie-banner p{font-size:.88rem;color:var(--text);font-weight:500;margin:0;max-width:520px;text-align:center;line-height:1.6}
+.cookie-banner p a{color:var(--g2);font-weight:700;text-decoration:underline}
+.cookie-btns{display:flex;gap:10px;flex-shrink:0}
+.cookie-accept{background:linear-gradient(135deg,var(--g2),var(--g3));color:#fff;border:none;padding:10px 24px;border-radius:10px;font-weight:700;font-size:.85rem;cursor:pointer;font-family:inherit;transition:.18s;box-shadow:0 4px 14px rgba(45,122,58,.25)}
+.cookie-accept:hover{opacity:.9;transform:translateY(-1px)}
+.cookie-reject{background:var(--bg);color:var(--muted);border:1.5px solid var(--border);padding:10px 24px;border-radius:10px;font-weight:700;font-size:.85rem;cursor:pointer;font-family:inherit;transition:.18s}
+.cookie-reject:hover{border-color:var(--g3);color:var(--text)}
+
+@media(max-width:820px){
+  .a11y-fab{bottom:18px;left:16px;width:50px;height:50px;font-size:1.4rem}
+  .a11y-panel{width:300px}
+  .cookie-banner{padding:16px 20px;gap:14px;flex-direction:column}
+}
+
+/* DEVICE PREVIEW TOOLBAR */
+.device-bar{position:fixed;top:50%;left:20px;transform:translateY(-50%);z-index:9998;display:flex;flex-direction:column;gap:6px;background:var(--white);border:1.5px solid var(--border);border-radius:14px;padding:8px;box-shadow:0 4px 20px rgba(0,0,0,.1)}
+.device-bar button{width:42px;height:42px;border-radius:10px;border:1.5px solid var(--border);background:var(--bg);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.18s;color:var(--muted)}
+.device-bar button.active{border-color:var(--g2);background:#e8f5e9;color:var(--g2)}
+.device-bar button:hover{border-color:var(--g3);color:var(--g2)}
+.device-bar button svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.5}
+@media(max-width:1024px){.device-bar{display:none}}
+
+/* DEVICE PREVIEW OVERLAY */
+.dev-preview{display:none;position:fixed;inset:0;z-index:9997;background:rgba(30,30,30,.85);align-items:center;justify-content:center;flex-direction:column;gap:16px}
+.dev-preview.open{display:flex}
+.dev-frame{background:var(--white);border-radius:20px;box-shadow:0 8px 60px rgba(0,0,0,.3);overflow:hidden;position:relative;transition:width .3s ease,height .3s ease}
+.dev-frame iframe{width:100%;height:100%;border:none}
+.dev-label{color:rgba(255,255,255,.7);font-size:.85rem;font-weight:600;font-family:'Heebo',sans-serif}
+body.nobar .device-bar,body.nobar .dev-preview{display:none!important}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-inner">
+    <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()" aria-label="תפריט">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <a class="logo" href="#" onclick="return go('home',event)"><div class="logo-name">AgroSoft</div></a>
+    <div class="nav-links">
+      <a href="#" onclick="return go('about',event)">חברה</a>
+      <div class="dropdown">
+        <a href="#">פתרונות <span class="dd-arrow">▾</span></a>
+        <div class="mega">
+          <div class="mega-grid">
+            <a class="mega-item" href="#" onclick="return go('agropriority',event)">
+              <img class="mega-img" src="images/AgroPriority_logo.png">
+              <div class="mega-txt"><h4>AgroPriority</h4><p>פתרון ERP שלם לניהול חברות חקלאיות</p></div>
+              <span class="mega-arr">למידע נוסף ←</span>
+            </a>
+            <a class="mega-item" href="#" onclick="return go('agrotalk',event)">
+              <img class="mega-img" src="images/AgroTalk_logoN.png">
+              <div class="mega-txt"><h4>AgroTalk</h4><p>תקשורת בזמן אמת עם ספקים ולקוחות</p></div>
+              <span class="mega-arr">למידע נוסף ←</span>
+            </a>
+            <a class="mega-item" href="#" onclick="return go('agrosmart',event)">
+              <img class="mega-img" src="images/AgroSmart_Logo.png">
+              <div class="mega-txt"><h4>AgroSmart</h4><p>ניהול מחסנים חכם לכל מכשיר</p></div>
+              <span class="mega-arr">למידע נוסף ←</span>
+            </a>
+            <a class="mega-item" href="#" onclick="return go('agroqc',event)">
+              <img class="mega-img" src="images/AgroQC_LogoN.png">
+              <div class="mega-txt"><h4>AgroQC</h4><p>בקרת איכות אינטראקטיבית וגמישה</p></div>
+              <span class="mega-arr">למידע נוסף ←</span>
+            </a>
+            <a class="mega-item" href="#" onclick="return go('agroshop',event)">
+              <img class="mega-img" src="images/agroShop.png">
+              <div class="mega-txt"><h4>AgroShop</h4><p>פורטל B2B מקוון להזנת הזמנות לקוחות</p></div>
+              <span class="mega-arr">למידע נוסף ←</span>
+            </a>
+          </div>
+          <div class="mega-footer">
+            <a href="#" onclick="go('home',event);setTimeout(()=>{const el=document.getElementById('products-section');if(el)el.scrollIntoView({behavior:'smooth'})},100);return false;">← לכל הפתרונות</a>
+          </div>
+        </div>
+      </div>
+      <a href="#" onclick="return go('customers',event)">הלקוחות שלנו</a>
+      <a href="https://www.agropriority.com/ServiceCalls" target="_blank">שרות לקוחות</a>
+      <a href="#" onclick="return go('news',event)">חדשות ועדכונים</a>
+      <a href="https://www.farm-online.net/login_new/" target="_blank">פורטל מגדלים</a>
+      <a href="#" onclick="return go('contact',event)" class="nav-cta">יצירת קשר</a>
+    </div>
+    <div class="lang-dd">
+      <a class="lang-btn" href="#">🌐 ▾</a>
+      <div class="lang-menu">
+        <a href="index-en.html">🇺🇸 English</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE OVERLAY -->
+<div class="mob-overlay" id="mob-overlay" onclick="closeMobileMenu()"></div>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mob-menu">
+  <div class="mob-head">
+    <div class="mob-logo">AgroSoft</div>
+    <button class="mob-close-btn" onclick="closeMobileMenu()">✕</button>
+  </div>
+  <div class="mob-nav">
+    <a href="#" onclick="closeMobileMenu();return go('about',event)">חברה</a>
+    <div class="mob-sep mob-sep-toggle open" onclick="toggleMobProducts(this)">פתרונות <span class="mob-sep-arrow">▾</span></div>
+    <div class="mob-products open">
+      <a href="#" onclick="closeMobileMenu();return go('agropriority',event)">
+        <div class="mob-prod">
+          <img src="images/AgroPriority_logo.png" style="width:68px;height:68px">
+          <span class="mob-prod-txt">AgroPriority</span>
+        </div>
+      </a>
+      <a href="#" onclick="closeMobileMenu();return go('agrotalk',event)">
+        <div class="mob-prod">
+          <img src="images/AgroTalk_logoN.png" style="background:#e8f5e9">
+          <span class="mob-prod-txt">AgroTalk</span>
+        </div>
+      </a>
+      <a href="#" onclick="closeMobileMenu();return go('agrosmart',event)">
+        <div class="mob-prod">
+          <img src="images/AgroSmart_Logo.png" style="background:#fff3e0">
+          <span class="mob-prod-txt">AgroSmart</span>
+        </div>
+      </a>
+      <a href="#" onclick="closeMobileMenu();return go('agroqc',event)">
+        <div class="mob-prod">
+          <img src="images/AgroQC_LogoN.png" style="background:#fce4ec">
+          <span class="mob-prod-txt">AgroQC</span>
+        </div>
+      </a>
+      <a href="#" onclick="closeMobileMenu();return go('agroshop',event)">
+        <div class="mob-prod">
+          <img src="images/agroShop.png" style="background:#f3e5f5">
+          <span class="mob-prod-txt">AgroShop</span>
+        </div>
+      </a>
+    </div>
+    <div class="mob-sep">עוד</div>
+    <a href="#" onclick="closeMobileMenu();return go('customers',event)">הלקוחות שלנו</a>
+    <a href="https://www.agropriority.com/ServiceCalls" target="_blank" onclick="closeMobileMenu()">שרות לקוחות</a>
+    <a href="#" onclick="closeMobileMenu();return go('news',event)">חדשות ועדכונים</a>
+    <a href="https://www.farm-online.net/login_new/" target="_blank" onclick="closeMobileMenu()">פורטל מגדלים</a>
+    <a href="index-en.html" onclick="closeMobileMenu()">🌐 English</a>
+    <a class="mob-cta" href="#" onclick="closeMobileMenu();return go('contact',event)">יצירת קשר ←</a>
+  </div>
+</div>
+
+<!-- BACK BUTTON (גלובלי) -->
+<div class="back-fab" id="back-fab">
+  <button onclick="goBack()">→ חזרה לדף הקודם</button>
+</div>
+
+<!-- HOME -->
+<div id="home" class="page active">
+  <div class="hero">
+    <div class="slider">
+      <div class="slide active">
+        <h1>אגרוסופט</h1>
+        <p class="hero-sub">הינו בית תוכנה העוסק בפיתוח והטמעה של פתרונות תוכנה בדגש על פתרונות עבור חברות עם נגיעה לעולם החקלאות</p>
+        <a class="btn-solid" href="#" onclick="return go('about',event)">למידע נוסף</a>
+      </div>
+      <div class="slide">
+        <h1>אגרופריוריטי</h1>
+        <p class="hero-sub">פתרון שלם לניהול חברות מעולם החקלאות וביניהן חברות יצוא, חברות שיווק והפצה, בתי אריזה, מרלוגים, חברות הזנק ועוד.</p>
+        <a class="btn-solid" href="#" onclick="return go('agropriority',event)">למידע נוסף</a>
+      </div>
+    </div>
+    <div class="slider-dots">
+      <span class="dot active" onclick="goSlide(0)"></span>
+      <span class="dot" onclick="goSlide(1)"></span>
+    </div>
+  </div>
+
+  <!-- Priority Band -->
+  <section class="priority-band">
+    <div class="pb-inner">
+      <div style="display:inline-flex;align-items:center;gap:4px">
+        <span style="font-size:1.1rem;font-weight:700;color:#fff;white-space:nowrap">החקלאות אצלנו ב</span>
+        <a href="https://www.priority-software.com/il" target="_blank" style="display:flex;align-items:center">
+          <img src="https://agrosoft.co.il/wp-content/uploads/2023/08/Authorized-Partner_W-1024x313.png" alt="Priority" style="height:50px;transition:.2s" onerror="this.outerHTML='<span style=\'font-size:1.4rem;font-weight:900;color:#fff\'>Priority</span>'">
+        </a>
+      </div>
+      <a href="#" onclick="return go('news',event)" style="background:var(--g2);border:2px solid var(--g3);color:#fff;padding:9px 22px;border-radius:10px;font-weight:700;font-size:.9rem;text-decoration:none;white-space:nowrap;box-shadow:0 4px 14px rgba(45,122,58,.35)">🔔 מה חדש?</a>
+    </div>
+  </section>
+
+  <!-- רצועת לקוחות מסתובבת -->
+  <section style="background:var(--white);padding:40px 0 32px;border-bottom:1px solid var(--border);overflow:hidden">
+    <div style="text-align:center;margin-bottom:28px">
+      <div style="display:inline-block;border-top:3px solid var(--g2);padding-top:12px">
+        <a href="#" onclick="return go('customers',event)" style="text-decoration:none">
+          <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);font-weight:900;color:var(--g1);margin:0;transition:.18s" onmouseover="this.style.color='var(--g2)'" onmouseout="this.style.color='var(--g1)'">הלקוחות שלנו ←</h2>
+        </a>
+      </div>
+    </div>
+    <div style="overflow:hidden;direction:ltr">
+      <div id="home-marquee" style="display:flex;width:max-content;animation:marquee-rtl 35s linear infinite"></div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section id="products-section" style="background:var(--white);padding-top:40px">
+    <div style="text-align:center;margin-bottom:48px">
+      <div style="display:inline-block;border-top:3px solid var(--g2);padding-top:12px">
+        <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);font-weight:900;color:var(--g1);margin:0">המוצרים שלנו</h2>
+      </div>
+    </div>
+    <div class="prod-grid">
+      <a class="prod-card" href="#" onclick="return go('agropriority',event)">
+        <img src="images/AgroPriority_logo.png" style="width:100px;height:100px;object-fit:contain;margin-bottom:18px">
+        <h3>AgroPriority</h3>
+        <p>פתרון ERP שלם – ניהול יצוא, שיווק, בתי אריזה, מלאי, כספים ועוד.</p>
+        <span class="prod-arr">למידע נוסף ←</span>
+      </a>
+      <a class="prod-card" href="#" onclick="return go('agrotalk',event)">
+        <img src="images/AgroTalk_logoN.png" style="width:100px;height:100px;object-fit:contain;margin-bottom:18px">
+        <h3>AgroTalk</h3>
+        <p>העברת מסרים בזמן אמת בין ה-ERP לספקים ולקוחות.</p>
+        <span class="prod-arr">למידע נוסף ←</span>
+      </a>
+      <a class="prod-card" href="#" onclick="return go('agrosmart',event)">
+        <img src="images/AgroSmart_Logo.png" style="width:100px;height:100px;object-fit:contain;margin-bottom:18px">
+        <h3>AgroSmart</h3>
+        <p>ניהול מחסנים חכם למסופונים, טאבלטים ומסופני מלגזה.</p>
+        <span class="prod-arr">למידע נוסף ←</span>
+      </a>
+      <a class="prod-card" href="#" onclick="return go('agroqc',event)">
+        <img src="images/AgroQC_LogoN.png" style="width:100px;height:100px;object-fit:contain;margin-bottom:18px">
+        <h3>AgroQC</h3>
+        <p>שאלוני בקרת איכות אינטראקטיביים וגמישים מחוברים למערכות המידע.</p>
+        <span class="prod-arr">למידע נוסף ←</span>
+      </a>
+      <a class="prod-card" href="#" onclick="return go('agroshop',event)">
+        <img src="images/agroShop.png" style="width:100px;height:100px;object-fit:contain;margin-bottom:18px">
+        <h3>AgroShop</h3>
+        <p>פורטל B2B מקוון להזנת הזמנות, מותאם לנייד ולמחשב.</p>
+        <span class="prod-arr">למידע נוסף ←</span>
+      </a>
+    </div>
+  </section>
+
+</div>
+
+<!-- ABOUT -->
+<div id="about" class="page">
+  <div class="page-hdr"><h1>אודות אגרוסופט</h1><p>הכירו את הצוות שמאחורי הפתרונות</p></div>
+  <section style="max-width:1060px;margin:0 auto">
+    <div class="about-wrap" style="margin-bottom:40px">
+      <div class="about-txt">
+        <div class="sec-label" style="text-align:right">אודות החברה</div>
+        <h2>בית תוכנה<br><span>מתמחה בחקלאות</span></h2>
+        <p><strong style="color:var(--g2)">אגרוסופט</strong> הינו בית תוכנה העוסק בפיתוח והטמעה של פתרונות תוכנה, בדגש על פתרונות עבור חברות עם נגיעה לעולם החקלאות.</p>
+        <p>לקוחותינו כוללים חברות יצוא, חברות שיווק בשוק המקומי, מרלוגים, בתי אריזה, סיטונאים וחברות הזנק בתחום החקלאות.</p>
+        <p>המדיניות המנחה אותנו: לספק פתרון מותאם המבוסס על <strong>אגרופריוריטי ERP</strong> מתוך ראיה כוללת של הצרכים היחודיים של העסק.</p>
+        <p>הפרויקטים שלנו מתאפיינים בביצוע איכותי, עמידה בלוחות זמנים, וליווי צמוד לאורך כל הדרך.</p>
+      </div>
+      <div class="about-panel">
+        <div class="partner-box">
+          <div style="font-size:.75rem;color:var(--muted);font-weight:700;letter-spacing:1px">שותף מורשה</div>
+          <div class="partner-big">Priority</div>
+          <div class="partner-sm">Authorized Partner</div>
+        </div>
+        <div class="about-items">
+          <div class="ai"><div class="ai-dot"></div>ליווי צמוד מתכנון ועד הטמעה</div>
+          <div class="ai"><div class="ai-dot"></div>מחויבות לעמידה בלוחות זמנים</div>
+          <div class="ai"><div class="ai-dot"></div>תמיכה ותחזוקה שוטפת לאורך שנים</div>
+          <div class="ai"><div class="ai-dot"></div>פיתוח מודולים ייחודיים לחקלאות</div>
+        </div>
+      </div>
+    </div>
+    <div class="stats-g3">
+      <div style="background:var(--white);border-radius:16px;padding:28px 18px;text-align:center;box-shadow:var(--sh);border:1px solid var(--border)">
+        <div style="font-size:2rem;margin-bottom:8px">🏆</div>
+        <div style="font-size:1.9rem;font-weight:900;color:var(--g2)">25+</div>
+        <div style="color:var(--muted);font-size:.82rem;margin-top:4px">שנות ניסיון</div>
+      </div>
+      <div style="background:var(--white);border-radius:16px;padding:28px 18px;text-align:center;box-shadow:var(--sh);border:1px solid var(--border)">
+        <div style="font-size:2rem;margin-bottom:8px">🌱</div>
+        <div style="font-size:1.9rem;font-weight:900;color:var(--g2)">חקלאות</div>
+        <div style="color:var(--muted);font-size:.82rem;margin-top:4px">התמחות מלאה</div>
+      </div>
+      <div style="background:var(--white);border-radius:16px;padding:28px 18px;text-align:center;box-shadow:var(--sh);border:1px solid var(--border)">
+        <div style="font-size:2rem;margin-bottom:8px">🤝</div>
+        <div style="font-size:1.9rem;font-weight:900;color:var(--g2)">Priority</div>
+        <div style="color:var(--muted);font-size:.82rem;margin-top:4px">שותף מורשה</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- AGROPRIORITY -->
+<div id="agropriority" class="page">
+  <div class="prod-pg-hdr" style="background:linear-gradient(135deg,#1a4d23,#4caf50)">
+    <div style="color:#fff;max-width:580px">
+      <div style="font-size:.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;opacity:.75;margin-bottom:12px">פתרון ERP מוביל לחקלאות</div>
+      <h1 style="font-size:2.8rem;font-weight:900;margin-bottom:18px;line-height:1.15">AgroPriority</h1>
+      <p style="font-size:1.05rem;line-height:1.8;opacity:.88;margin-bottom:28px">פתרון שלם לניהול חברות מעולם החקלאות — חברות יצוא, שיווק והפצה, בתי אריזה, מרלוגים, חברות הזנק ועוד. מבוסס על תוכנת <strong>פריוריטי ERP</strong> בתוספת מודול שיווק חקלאי ייחודי שפותח ע"י אגרוסופט.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="#" onclick="return go('contact',event)" style="background:#fff;color:var(--g1);padding:12px 28px;border-radius:12px;font-weight:800;text-decoration:none;font-size:.95rem">צור קשר</a>
+        <a href="https://www.agropriority.com/ServiceCalls" target="_blank" style="background:rgba(255,255,255,.15);color:#fff;padding:12px 28px;border-radius:12px;font-weight:600;text-decoration:none;font-size:.95rem;border:2px solid rgba(255,255,255,.35)">פורטל שרות לקוחות</a>
+      </div>
+    </div>
+    <img src="images/Authorized Partner.png" style="height:100px;opacity:.95" onerror="this.style.display='none'">
+  </div>
+  <section style="background:var(--bg);padding:48px">
+    <div class="feat-g3">
+      <div style="background:var(--white);border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
+        <div style="font-size:2rem;margin-bottom:12px">🌍</div>
+        <h3 style="font-weight:800;margin-bottom:8px;font-size:1rem">רב לשונית ורב מטבעית</h3>
+        <p style="color:var(--muted);font-size:.86rem;line-height:1.6">תמיכה מלאה בשפות ומטבעות שונים לניהול עסקי יצוא בינלאומי</p>
+      </div>
+      <div style="background:var(--white);border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
+        <div style="font-size:2rem;margin-bottom:12px">🔗</div>
+        <h3 style="font-weight:800;margin-bottom:8px;font-size:1rem">אינטגרציה מלאה</h3>
+        <p style="color:var(--muted);font-size:.86rem;line-height:1.6">ממשקים למשרד החקלאות, עמילי מכס, מכונות מיון ומערכות שקילה</p>
+      </div>
+      <div style="background:var(--white);border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
+        <div style="font-size:2rem;margin-bottom:12px">📊</div>
+        <h3 style="font-weight:800;margin-bottom:8px;font-size:1rem">דוחות וניתוחים</h3>
+        <p style="color:var(--muted);font-size:.86rem;line-height:1.6">מחוללי דוחות גמישים ברמת משתמש ומנהל מערכת</p>
+      </div>
+    </div>
+  </section>
+  <section style="background:var(--white);padding:56px 48px">
+    <div style="max-width:980px;margin:0 auto">
+      <div style="text-align:center;margin-bottom:40px">
+        <div class="sec-label">מה כלול במערכת</div>
+        <h2 class="sec-title">מודולים עיקריים</h2>
+      </div>
+      <div class="mod-grid">
+        <div class="mod"><div class="mod-dot"></div><span>ניהול קשרי לקוחות, הצעות מחיר ותחזיות</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>ניהול רכש – דרישות והזמנות רכש מקצה לקצה</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>ניהול מלאי ועקיבות מלאה בארץ ובחו"ל</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>שיווק ומכירות, הזמנות לקוח</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>ניהול תיקי יצוא וחישובי רווחיות</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>ניהול תיקי יבוא והעמסות</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>הפקת מסמכי יצוא בדוא"ל בלחיצת כפתור</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>בקרת תהליכים מתקדמת (BPM)</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>קליטה אוטומטית של חשבוניות מעמילי מכס</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>ממשקים מול משרד החקלאות</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>הנהלת חשבונות מלאה</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>מודלים לחישוב תשלום למגדלים</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>מחוללי דוחות ברמת משתמש ומנהל מערכת</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>תהליכי מיון בבית אריזה + ממשק למכונות מיון ושקילה</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>פורטל למגדלים ולבתי אריזה</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>מערכות לסוכנים וחנות אינטרנטית</span></div>
+      </div>
+    </div>
+  </section>
+  <div class="cta-band">
+    <h2>מעוניין לשמוע עוד על AgroPriority?</h2>
+    <p>צור קשר ונשמח לתת לך הדגמה אישית</p>
+    <div class="cta-btns">
+      <a class="btn-solid" href="#" onclick="return go('contact',event)">צור קשר עכשיו</a>
+      <a class="btn-ghost" href="https://www.agropriority.com/ServiceCalls" target="_blank">פורטל שרות לקוחות</a>
+    </div>
+  </div>
+</div>
+
+<!-- AGROTALK -->
+<div id="agrotalk" class="page">
+  <div class="prod-pg-hdr" style="background:linear-gradient(135deg,#1b5e20,#66bb6a)">
+    <div style="color:#fff;max-width:580px">
+      <div style="font-size:.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;opacity:.75;margin-bottom:12px">מערכת מסרים לחקלאות</div>
+      <h1 style="font-size:2.8rem;font-weight:900;margin-bottom:18px;line-height:1.15">AgroTalk</h1>
+      <p style="font-size:1.05rem;line-height:1.8;opacity:.88;margin-bottom:28px">יישומון המאפשר העברת מסרים מ-AgroPriority ERP לספקים ולקוחות — הזמנות רכש, תוצאות בקרת איכות, הזמנות לקוחות ועוד, בזמן אמת.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="#" onclick="return go('contact',event)" style="background:#fff;color:#1b5e20;padding:12px 28px;border-radius:12px;font-weight:800;text-decoration:none;font-size:.95rem">צור קשר</a>
+        <a href="https://www.agropriority.com/ServiceCalls" target="_blank" style="background:rgba(255,255,255,.15);color:#fff;padding:12px 28px;border-radius:12px;font-weight:600;text-decoration:none;font-size:.95rem;border:2px solid rgba(255,255,255,.35)">פורטל שרות לקוחות</a>
+      </div>
+    </div>
+    <img src="images/AgroTalk_logoN.png" style="height:100px;opacity:.95;object-fit:contain" onerror="this.style.display='none'">
+  </div>
+
+  <section style="background:var(--bg);padding:48px">
+    <div class="feat-g3">
+      <div style="background:var(--white);border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
+        <div style="font-size:2rem;margin-bottom:12px">⚡</div>
+        <h3 style="font-weight:800;margin-bottom:8px;font-size:1rem">זמן אמת</h3>
+        <p style="color:var(--muted);font-size:.86rem;line-height:1.6">הודעות מגיעות מיידית לספקים ולקוחות ישירות מתוך המערכת</p>
+      </div>
+      <div style="background:var(--white);border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
+        <div style="font-size:2rem;margin-bottom:12px">🔗</div>
+        <h3 style="font-weight:800;margin-bottom:8px;font-size:1rem">אינטגרציה מלאה</h3>
+        <p style="color:var(--muted);font-size:.86rem;line-height:1.6">משולב ישירות ב-AgroPriority ERP כחלק אינטגרלי מהתהליך העסקי</p>
+      </div>
+      <div style="background:var(--white);border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
+        <div style="font-size:2rem;margin-bottom:12px">↩️</div>
+        <h3 style="font-weight:800;margin-bottom:8px;font-size:1rem">מענה דו-כיווני</h3>
+        <p style="color:var(--muted);font-size:.86rem;line-height:1.6">מקבל ההודעה יכול להשיב — כגון אישור הזמנת רכש וכדומה</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--white);padding:56px 48px">
+    <div style="max-width:980px;margin:0 auto">
+      <div style="text-align:center;margin-bottom:40px">
+        <div class="sec-label">דוגמאות לשימוש</div>
+        <h2 class="sec-title">אפשרויות ההודעות</h2>
+      </div>
+      <div class="mod-grid">
+        <div class="mod"><div class="mod-dot"></div><span>הזמנות רכש לספקים</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>תוצאות בקרת איכות</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>הזמנות מלקוחות</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>עדכון בסגירת תעודת משלוח ללקוח</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>עדכון מיידי לאיש המכירות הרלוונטי</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>הודעות טקסט ותמונות</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>אישור הזמנת רכש ממקבל ההודעה</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>עדכונים לאנשי מפתח בארגון</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--white);padding:40px 48px;text-align:center">
+    <img src="images/AgroTalk.png" style="max-width:100%;max-height:500px;object-fit:contain;border-radius:18px;box-shadow:0 12px 40px rgba(0,0,0,.12)" onerror="this.style.display='none'">
+  </section>
+  <div class="cta-band">
+    <h2>מעוניין לשמוע עוד על AgroTalk?</h2>
+    <p>צור קשר ונשמח לתת לך הדגמה אישית</p>
+    <div class="cta-btns">
+      <a class="btn-solid" href="#" onclick="return go('contact',event)">צור קשר עכשיו</a>
+      <a class="btn-ghost" href="https://www.agropriority.com/ServiceCalls" target="_blank">פורטל שרות לקוחות</a>
+    </div>
+  </div>
+</div>
+
+<!-- AGROSMART -->
+<div id="agrosmart" class="page">
+  <div class="prod-pg-hdr" style="background:linear-gradient(135deg,#1b5e20,#66bb6a)">
+    <div style="color:#fff;max-width:580px">
+      <div style="font-size:.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;opacity:.75;margin-bottom:12px">ניהול מחסנים חכם</div>
+      <h1 style="font-size:2.8rem;font-weight:900;margin-bottom:18px;line-height:1.15">AgroSmart</h1>
+      <p style="font-size:1.05rem;line-height:1.8;opacity:.88;margin-bottom:28px">יישומון לניהול לוגיסטי של מחסנים — מותאם למסופונים, טאבלטים ומסופני מלגזה. מחובר ישירות ל-AgroPriority ERP לניהול מלאי חכם ומדויק.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="#" onclick="return go('contact',event)" style="background:#fff;color:#1b5e20;padding:12px 28px;border-radius:12px;font-weight:800;text-decoration:none;font-size:.95rem">צור קשר</a>
+        <a href="https://www.agropriority.com/ServiceCalls" target="_blank" style="background:rgba(255,255,255,.15);color:#fff;padding:12px 28px;border-radius:12px;font-weight:600;text-decoration:none;font-size:.95rem;border:2px solid rgba(255,255,255,.35)">פורטל שרות לקוחות</a>
+      </div>
+    </div>
+    <img src="images/AgroSmart_Logo.png" style="height:100px;opacity:.95;object-fit:contain" onerror="this.style.display='none'">
+  </div>
+  <section style="background:var(--bg);padding:48px">
+    <div class="feat-g3">
+      <div style="background:var(--white);border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
+        <div style="font-size:2rem;margin-bottom:12px">📱</div>
+        <h3 style="font-weight:800;margin-bottom:8px;font-size:1rem">כל מכשיר</h3>
+        <p style="color:var(--muted);font-size:.86rem;line-height:1.6">תואם למסופונים, טאבלטים ומסופני מלגזה — עובד בכל סביבה מחסנית</p>
+      </div>
+      <div style="background:var(--white);border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
+        <div style="font-size:2rem;margin-bottom:12px">🔗</div>
+        <h3 style="font-weight:800;margin-bottom:8px;font-size:1rem">מחובר ל-ERP</h3>
+        <p style="color:var(--muted);font-size:.86rem;line-height:1.6">סנכרון מלא עם AgroPriority לעדכון מלאי בזמן אמת</p>
+      </div>
+      <div style="background:var(--white);border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
+        <div style="font-size:2rem;margin-bottom:12px">⚡</div>
+        <h3 style="font-weight:800;margin-bottom:8px;font-size:1rem">מהיר ומדויק</h3>
+        <p style="color:var(--muted);font-size:.86rem;line-height:1.6">סריקת ברקודים ועדכון מיידי — מצמצם שגיאות ומגביר יעילות</p>
+      </div>
+    </div>
+  </section>
+  <section style="background:var(--white);padding:56px 48px">
+    <div style="max-width:980px;margin:0 auto">
+      <div style="text-align:center;margin-bottom:40px">
+        <div class="sec-label">מה כלול במערכת</div>
+        <h2 class="sec-title">יכולות עיקריות</h2>
+      </div>
+      <div class="mod-grid">
+        <div class="mod"><div class="mod-dot"></div><span>קליטת סחורה וסריקת ברקודים</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>שליחה מהמחסן ועדכון תעודות משלוח</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>ספירות מלאי שוטפות ומחזוריות</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>ניהול מיקומים במחסן</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>העברות בין מחסנים</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>ממשק נוח למסופני מלגזה</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>עבודה עם/בלי חיבור רשת (Offline)</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>סנכרון נתונים אוטומטי עם AgroPriority</span></div>
+      </div>
+    </div>
+  </section>
+  <section style="background:var(--white);padding:40px 48px;text-align:center">
+    <img src="images/AgroSmart.png" style="max-width:100%;max-height:500px;object-fit:contain;border-radius:18px;box-shadow:0 12px 40px rgba(0,0,0,.12)" onerror="this.style.display='none'">
+  </section>
+  <div class="cta-band" style="background:linear-gradient(135deg,#1a4d23,#4caf50)">
+    <h2>מעוניין לשמוע עוד על AgroSmart?</h2>
+    <p>צור קשר ונשמח לתת לך הדגמה אישית</p>
+    <div class="cta-btns">
+      <a class="btn-solid" href="#" onclick="return go('contact',event)">צור קשר עכשיו</a>
+      <a class="btn-ghost" href="https://www.agropriority.com/ServiceCalls" target="_blank">פורטל שרות לקוחות</a>
+    </div>
+  </div>
+</div>
+
+<!-- AGROQC -->
+<div id="agroqc" class="page">
+  <div class="prod-pg-hdr" style="background:linear-gradient(135deg,#1b5e20,#66bb6a)">
+    <div style="color:#fff;max-width:580px">
+      <div style="font-size:.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;opacity:.75;margin-bottom:12px">בקרת איכות חקלאית</div>
+      <h1 style="font-size:2.8rem;font-weight:900;margin-bottom:18px;line-height:1.15">AgroQC</h1>
+      <p style="font-size:1.05rem;line-height:1.8;opacity:.88;margin-bottom:28px">מערכת לביצוע שאלוני בקרת איכות אינטראקטיביים וגמישים — מחוברת ישירות למערכות המידע של הארגון לקבלת החלטות מהירה ומדויקת.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="#" onclick="return go('contact',event)" style="background:#fff;color:#1b5e20;padding:12px 28px;border-radius:12px;font-weight:800;text-decoration:none;font-size:.95rem">צור קשר</a>
+        <a href="https://www.agropriority.com/ServiceCalls" target="_blank" style="background:rgba(255,255,255,.15);color:#fff;padding:12px 28px;border-radius:12px;font-weight:600;text-decoration:none;font-size:.95rem;border:2px solid rgba(255,255,255,.35)">פורטל שרות לקוחות</a>
+      </div>
+    </div>
+    <img src="images/AgroQC_LogoN.png" style="height:100px;opacity:.95;object-fit:contain" onerror="this.style.display='none'">
+  </div>
+  <section style="background:var(--bg);padding:48px">
+    <div class="feat-g3">
+      <div style="background:var(--white);border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
+        <div style="font-size:2rem;margin-bottom:12px">📋</div>
+        <h3 style="font-weight:800;margin-bottom:8px;font-size:1rem">שאלונים גמישים</h3>
+        <p style="color:var(--muted);font-size:.86rem;line-height:1.6">בניית שאלוני QC מותאמים אישית לכל מוצר ותהליך בארגון</p>
+      </div>
+      <div style="background:var(--white);border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
+        <div style="font-size:2rem;margin-bottom:12px">🔗</div>
+        <h3 style="font-weight:800;margin-bottom:8px;font-size:1rem">אינטגרציה מלאה</h3>
+        <p style="color:var(--muted);font-size:.86rem;line-height:1.6">תוצאות הבקרה מועברות ישירות ל-AgroPriority ERP</p>
+      </div>
+      <div style="background:var(--white);border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
+        <div style="font-size:2rem;margin-bottom:12px">📊</div>
+        <h3 style="font-weight:800;margin-bottom:8px;font-size:1rem">דוחות ומעקב</h3>
+        <p style="color:var(--muted);font-size:.86rem;line-height:1.6">היסטוריית בקרות, מגמות ואיתור בעיות איכות לאורך זמן</p>
+      </div>
+    </div>
+  </section>
+  <section style="background:var(--white);padding:56px 48px">
+    <div style="max-width:980px;margin:0 auto">
+      <div style="text-align:center;margin-bottom:40px">
+        <div class="sec-label">מה כלול במערכת</div>
+        <h2 class="sec-title">יכולות עיקריות</h2>
+      </div>
+      <div class="mod-grid">
+        <div class="mod"><div class="mod-dot"></div><span>בניית שאלונים בממשק גרירה ושחרור</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>שאלות מסוגים שונים — מספרי, טקסט, בחירה, תמונה</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>בקרת איכות בקליטת סחורה</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>בקרת איכות בשלבי ייצור ואריזה</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>צילום ותיעוד ממצאים</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>שליחת תוצאות אוטומטית ב-AgroTalk</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>דוחות חריגות ואיכות</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>הגדרת סף איכות ועצירת תהליך אוטומטית</span></div>
+      </div>
+    </div>
+  </section>
+  <section style="background:var(--white);padding:40px 48px;text-align:center">
+    <img src="images/AgroQC.png" style="max-width:100%;max-height:500px;object-fit:contain;border-radius:18px;box-shadow:0 12px 40px rgba(0,0,0,.12)" onerror="this.style.display='none'">
+  </section>
+  <div class="cta-band" style="background:linear-gradient(135deg,#1a4d23,#4caf50)">
+    <h2>מעוניין לשמוע עוד על AgroQC?</h2>
+    <p>צור קשר ונשמח לתת לך הדגמה אישית</p>
+    <div class="cta-btns">
+      <a class="btn-solid" href="#" onclick="return go('contact',event)">צור קשר עכשיו</a>
+      <a class="btn-ghost" href="https://www.agropriority.com/ServiceCalls" target="_blank">פורטל שרות לקוחות</a>
+    </div>
+  </div>
+</div>
+
+<!-- AGROSHOP -->
+<div id="agroshop" class="page">
+  <div class="prod-pg-hdr" style="background:linear-gradient(135deg,#1b5e20,#66bb6a)">
+    <div style="color:#fff;max-width:580px">
+      <div style="font-size:.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;opacity:.75;margin-bottom:12px">פורטל B2B לחקלאות</div>
+      <h1 style="font-size:2.8rem;font-weight:900;margin-bottom:18px;line-height:1.15">AgroShop</h1>
+      <p style="font-size:1.05rem;line-height:1.8;opacity:.88;margin-bottom:28px">פורטל B2B מקוון המאפשר ללקוחות להזין הזמנות ישירות מול AgroPriority — מותאם למחשב ולנייד, עם ממשק נוח ואינטואיטיבי.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="#" onclick="return go('contact',event)" style="background:#fff;color:#1b5e20;padding:12px 28px;border-radius:12px;font-weight:800;text-decoration:none;font-size:.95rem">צור קשר</a>
+        <a href="https://www.agropriority.com/ServiceCalls" target="_blank" style="background:rgba(255,255,255,.15);color:#fff;padding:12px 28px;border-radius:12px;font-weight:600;text-decoration:none;font-size:.95rem;border:2px solid rgba(255,255,255,.35)">פורטל שרות לקוחות</a>
+      </div>
+    </div>
+    <img src="images/agroShop.png" style="height:100px;opacity:.95;object-fit:contain" onerror="this.style.display='none'">
+  </div>
+  <section style="background:var(--bg);padding:48px">
+    <div class="feat-g3">
+      <div style="background:var(--white);border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
+        <div style="font-size:2rem;margin-bottom:12px">📱</div>
+        <h3 style="font-weight:800;margin-bottom:8px;font-size:1rem">מותאם לנייד</h3>
+        <p style="color:var(--muted);font-size:.86rem;line-height:1.6">ממשק רספונסיבי מלא — עובד בצורה מושלמת בכל מכשיר</p>
+      </div>
+      <div style="background:var(--white);border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
+        <div style="font-size:2rem;margin-bottom:12px">🔗</div>
+        <h3 style="font-weight:800;margin-bottom:8px;font-size:1rem">מחובר ל-ERP</h3>
+        <p style="color:var(--muted);font-size:.86rem;line-height:1.6">הזמנות מגיעות ישירות ל-AgroPriority ללא הקלדה כפולה</p>
+      </div>
+      <div style="background:var(--white);border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
+        <div style="font-size:2rem;margin-bottom:12px">🛒</div>
+        <h3 style="font-weight:800;margin-bottom:8px;font-size:1rem">קל לשימוש</h3>
+        <p style="color:var(--muted);font-size:.86rem;line-height:1.6">ממשק אינטואיטיבי — לקוחות מזינים הזמנות בעצמם בקלות</p>
+      </div>
+    </div>
+  </section>
+  <section style="background:var(--white);padding:56px 48px">
+    <div style="max-width:980px;margin:0 auto">
+      <div style="text-align:center;margin-bottom:40px">
+        <div class="sec-label">מה כלול במערכת</div>
+        <h2 class="sec-title">יכולות עיקריות</h2>
+      </div>
+      <div class="mod-grid">
+        <div class="mod"><div class="mod-dot"></div><span>קטלוג מוצרים מותאם ללקוח</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>הזנת הזמנות מקוונות 24/7</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>מחירים מותאמים אישית לכל לקוח</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>מעקב סטטוס הזמנה בזמן אמת</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>היסטוריית הזמנות ומסמכים</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>התחברות מאובטחת לכל לקוח</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>סנכרון מלאי זמין בזמן אמת</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>הודעות אוטומטיות על סטטוס ההזמנה</span></div>
+      </div>
+    </div>
+  </section>
+  <div class="cta-band" style="background:linear-gradient(135deg,#1a4d23,#4caf50)">
+    <h2>מעוניין לשמוע עוד על AgroShop?</h2>
+    <p>צור קשר ונשמח לתת לך הדגמה אישית</p>
+    <div class="cta-btns">
+      <a class="btn-solid" href="#" onclick="return go('contact',event)">צור קשר עכשיו</a>
+      <a class="btn-ghost" href="https://www.agropriority.com/ServiceCalls" target="_blank">פורטל שרות לקוחות</a>
+    </div>
+  </div>
+</div>
+
+<!-- CUSTOMERS -->
+<div id="customers" class="page">
+  <div class="page-hdr">
+    <h1>הלקוחות שלנו</h1>
+    <p>מחברות יצוא ועד סיטונאים — סומכים עלינו כבר שנים</p>
+  </div>
+  <section style="padding:60px 0;overflow:hidden">
+    <div style="text-align:center;margin-bottom:40px">
+      <div style="display:inline-block;border-top:3px solid var(--g2);padding-top:12px">
+        <h2 style="font-size:1.8rem;font-weight:900;color:var(--g1)">לקוחות מובילים</h2>
+      </div>
+    </div>
+    <div id="marquee-rows"></div>
+  </section>
+</div>
+
+<!-- NEWS -->
+<div id="news" class="page">
+  <div class="page-hdr">
+    <h1>חדשות ועדכונים</h1>
+    <p>פיתוחים חדשים, שדרוגים ועדכוני מוצר מאגרוסופט</p>
+  </div>
+
+  <div class="news-page-wrap">
+
+    <!-- ── 2025 ─────────────────────────────────────── -->
+    <div class="news-year-sep"><span>2025</span></div>
+    <div class="news-list">
+
+      <!-- ============ להוספת חדשה — העתק מכאן ============
+      <div class="news-card">
+        <div class="news-date"><div class="mo">חודש</div><div class="yr">שנה</div></div>
+        <div>
+          <h3>כותרת</h3>
+          <p>תיאור</p>
+        </div>
+      </div>
+      ============ עד כאן ============ -->
+
+      <a class="news-card featured" href="#" onclick="return go('news-agrostore',event)">
+        <div class="news-date"><div class="mo">ינואר</div><div class="yr">2025</div></div>
+        <div>
+          <div class="news-badge">חדש</div>
+          <h3>AgroStore – חנות הזמנות B2B</h3>
+          <p>מערכת חדשה לניהול הזמנות B2B המשולבת במלואה עם AgroPriority — ללא בסיס נתונים נפרד.</p>
+          <span class="news-link">קרא עוד ←</span>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- ── 2019 ─────────────────────────────────────── -->
+    <div class="news-year-sep"><span>2019</span></div>
+    <div class="news-list">
+
+      <a class="news-card" href="#" onclick="return go('news-growers-link',event)">
+        <div class="news-date"><div class="mo">ספטמבר</div><div class="yr">2019</div></div>
+        <div>
+          <h3>קישור בין מגדלים לחברת השיווק ובית האריזה</h3>
+          <p>קישור ישיר בין מגדלים לחברת השיווק ולבית האריזה ישירות מ-AgroTalk.</p>
+          <span class="news-link">קרא עוד ←</span>
+        </div>
+      </a>
+
+      <a class="news-card" href="#" onclick="return go('news-agrotalk-updates',event)">
+        <div class="news-date"><div class="mo">יולי</div><div class="yr">2019</div></div>
+        <div>
+          <h3>חידושים ב-AgroTalk – הזנת נתונים ישירות מהמגדל</h3>
+          <p>קישור להזנת נתונים ישירות מהמגדל לאגרופריוריטי. האפליקציה זמינה ל-Android ו-iPhone.</p>
+          <span class="news-link">קרא עוד ←</span>
+        </div>
+      </a>
+
+      <a class="news-card" href="#" onclick="return go('news-api-dev',event)">
+        <div class="news-date"><div class="mo">יולי</div><div class="yr">2019</div></div>
+        <div>
+          <h3>פיתוחים מותאמים עם ממשקי API לפריוריטי</h3>
+          <p>פיתוחים מיוחדים לצרכי הלקוח באמצעות ממשקי API לפריוריטי.</p>
+          <span class="news-link">קרא עוד ←</span>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- ── 2018 ─────────────────────────────────────── -->
+    <div class="news-year-sep"><span>2018</span></div>
+    <div class="news-list">
+
+      <a class="news-card" href="#" onclick="return go('news-receipt',event)">
+        <div class="news-date"><div class="mo">מרץ</div><div class="yr">2018</div></div>
+        <div>
+          <h3>ממשק חדש לקליטת תעודות קבלה ומשלוח</h3>
+          <p>ממשק המאפשר קליטה אוטומטית של תעודות מבתי אריזה ולקוחות בארץ ובחו"ל.</p>
+          <span class="news-link">קרא עוד ←</span>
+        </div>
+      </a>
+
+      <a class="news-card" href="#" onclick="return go('news-agriculture',event)">
+        <div class="news-date"><div class="mo">ינואר</div><div class="yr">2018</div></div>
+        <div>
+          <h3>ממשק מול משרד החקלאות – שרתי הגנת הצומח</h3>
+          <p>עבודה מתוך AgroPriority ישירות מול מערכת המחשוב של השרתים.</p>
+          <span class="news-link">קרא עוד ←</span>
+        </div>
+      </a>
+
+      <a class="news-card" href="#" onclick="return go('news-customs',event)">
+        <div class="news-date"><div class="mo">ינואר</div><div class="yr">2018</div></div>
+        <div>
+          <h3>מודול מרכזי לחשבוניות עמילי מכס</h3>
+          <p>מרכז את כלל החשבוניות מעמילי המכס למסך אחד נוח לעבודה.</p>
+          <span class="news-link">קרא עוד ←</span>
+        </div>
+      </a>
+
+      <a class="news-card" href="#" onclick="return go('news-bt9',event)">
+        <div class="news-date"><div class="mo">ינואר</div><div class="yr">2018</div></div>
+        <div>
+          <h3>מודול עבודה מול BT9</h3>
+          <p>שידור נתונים של מכולות וסנסורים ישירות מ-AgroPriority לפורטל של BT9.</p>
+          <span class="news-link">קרא עוד ←</span>
+        </div>
+      </a>
+
+      <a class="news-card" href="#" onclick="return go('news-agroqc',event)">
+        <div class="news-date"><div class="mo">ינואר</div><div class="yr">2018</div></div>
+        <div>
+          <h3>AgroQC – אפליקציה לבקרת איכות ושאלונים</h3>
+          <p>בניית שאלונים אינטראקטיביים בתוך AgroPriority עם סוגי שאלות מגוונים.</p>
+          <span class="news-link">קרא עוד ←</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<!-- NEWS ARTICLE: AGROSTORE -->
+<div id="news-agrostore" class="page">
+  <div class="news-art-hero">
+    <span class="news-art-back" onclick="goBack()">→ חזרה</span>
+    <div class="news-art-date">ינואר 2025</div>
+    <h1>AgroStore – חנות הזמנות B2B</h1>
+  </div>
+  <div class="news-art-body">
+    <p>AgroStore היא מערכת חדשה לניהול הזמנות B2B המשולבת במלואה עם AgroPriority ERP — ללא בסיס נתונים נפרד. כל התשתיות מנוהלות ישירות בפריוריטי, מה שמאפשר שליטה מלאה ועקביות נתונים בזמן אמת.</p>
+
+    <h2>ניהול מחירים ומוצרים</h2>
+    <ul>
+      <li>הצגת פריטים לפי המחירון המקושר ללקוח</li>
+      <li>לוגיקת מחירים תואמת למערכת פריוריטי</li>
+      <li>ניהול מבצעים דרך מסך המבצעים בפריוריטי</li>
+      <li>שליטה מלאה בתמונות עם אפשרות הגדרה נפרדת לכל פריט</li>
+    </ul>
+
+    <h2>חוויית משתמש</h2>
+    <ul>
+      <li>הצגת פלייר בכניסה לחנות</li>
+      <li>צפייה בהזמנות אחרונות, שכפול, עריכה וביטול</li>
+      <li>גישה למסמכי לקוח — תעודות וחשבוניות</li>
+      <li>התאמה מלאה לנייד כולל אפשרות להציג כאפליקציה (PWA)</li>
+    </ul>
+
+    <div class="news-art-cta">
+      <p>רוצים לשמוע עוד על AgroStore?</p>
+      <a href="#" onclick="return go('agroshop',event)">למידע נוסף על AgroShop ←</a>
+    </div>
+  </div>
+</div>
+
+<!-- NEWS ARTICLE: GROWERS LINK -->
+<div id="news-growers-link" class="page">
+  <div class="news-art-hero">
+    <span class="news-art-back" onclick="goBack()">→ חזרה</span>
+    <div class="news-art-date">ספטמבר 2019</div>
+    <h1>קישור בין מגדלים לחברת השיווק ובית האריזה</h1>
+  </div>
+  <div class="news-art-body">
+    <p>פיתוח חדש המאפשר קישור ישיר בין מגדלים לחברת השיווק ולבית האריזה — ישירות מתוך אפליקציית AgroTalk.</p>
+
+    <h2>מה מאפשר הקישור?</h2>
+    <ul>
+      <li>שידור מידע בזמן אמת לאורך כל שרשרת האספקה</li>
+      <li>העברת בקרות איכות מהמגדל ישירות למערכת</li>
+      <li>הזמנות רכש דיגיטליות ללא צורך בטלפון או פקס</li>
+      <li>נגישות מלאה מהשדה — Android ו-iPhone</li>
+    </ul>
+
+    <h2>יתרונות עסקיים</h2>
+    <p>הקישור מייעל משמעותית את תהליכי העבודה בין כל הגורמים בשרשרת — מהמגדל בשדה ועד לבית האריזה וחברת השיווק, תוך חיסכון בזמן ומניעת טעויות אנוש.</p>
+
+    <div class="news-art-cta">
+      <p>מעוניינים לחבר את המגדלים שלכם למערכת?</p>
+      <a href="#" onclick="return go('agrotalk',event)">למידע נוסף על AgroTalk ←</a>
+    </div>
+  </div>
+</div>
+
+<!-- NEWS ARTICLE: AGROTALK UPDATES -->
+<div id="news-agrotalk-updates" class="page">
+  <div class="news-art-hero">
+    <span class="news-art-back" onclick="goBack()">→ חזרה</span>
+    <div class="news-art-date">יולי 2019</div>
+    <h1>חידושים ב-AgroTalk – הזנת נתונים ישירות מהמגדל</h1>
+  </div>
+  <div class="news-art-body">
+    <p>עדכון משמעותי ל-AgroTalk המוסיף יכולות הזנת נתונים ישירות מהמגדל לאגרופריוריטי. האפליקציה זמינה ל-Android ו-iPhone.</p>
+
+    <h2>יכולות חדשות</h2>
+    <div class="news-art-feature">
+      <div class="ico">✅</div>
+      <div><h4>בקרות איכות</h4><p>ביצוע בקרות איכות מהשדה ושידורן ישירות ל-AgroPriority.</p></div>
+    </div>
+    <div class="news-art-feature">
+      <div class="ico">📋</div>
+      <div><h4>הזמנות רכש</h4><p>קבלת הזמנות רכש ואישורן ישירות מהאפליקציה.</p></div>
+    </div>
+    <div class="news-art-feature">
+      <div class="ico">💬</div>
+      <div><h4>הודעות ומידע מותאם אישית</h4><p>קבלת הודעות ממוקדות מחברת השיווק בזמן אמת.</p></div>
+    </div>
+
+    <h2>שילוב עם AgroPriority</h2>
+    <p>כל הנתונים מסונכרנים באופן אוטומטי עם AgroPriority ERP — אין צורך בהזנה כפולה ואין סיכון לאי-עקביות בנתונים.</p>
+
+    <div class="news-art-cta">
+      <p>רוצים לראות את AgroTalk בפעולה?</p>
+      <a href="#" onclick="return go('agrotalk',event)">למידע נוסף על AgroTalk ←</a>
+    </div>
+  </div>
+</div>
+
+<!-- NEWS ARTICLE: API DEV -->
+<div id="news-api-dev" class="page">
+  <div class="news-art-hero">
+    <span class="news-art-back" onclick="goBack()">→ חזרה</span>
+    <div class="news-art-date">יולי 2019</div>
+    <h1>פיתוחים מותאמים עם ממשקי API לפריוריטי</h1>
+  </div>
+  <div class="news-art-body">
+    <p>אגרוסופט מציעה פיתוחים מיוחדים המותאמים לצרכים הייחודיים של כל לקוח, תוך שימוש בממשקי API של פריוריטי לאינטגרציה מלאה עם המערכת הקיימת.</p>
+
+    <h2>דוגמאות לפיתוחים שבוצעו</h2>
+    <div class="news-art-feature">
+      <div class="ico">📦</div>
+      <div><h4>חלוקת אריזות ממוחשבת – ענבי טלי, מושב לכיש</h4><p>מערכת אוטומטית לחלוקת אריזות בין מגדלים בהתאם לקריטריונים מוגדרים מראש, משולבת עם AgroPriority.</p></div>
+    </div>
+    <div class="news-art-feature">
+      <div class="ico">🛒</div>
+      <div><h4>מערכת הזמנות לקוח לסוכנים – גרנות מרלו"ג</h4><p>פורטל ייעודי לסוכנים לביצוע הזמנות לקוח, מחובר ישירות לפריוריטי ומעדכן את המלאי בזמן אמת.</p></div>
+    </div>
+
+    <h2>כיצד זה עובד?</h2>
+    <p>אנו בונים ממשקים (APIs) בין פריוריטי לבין מערכות חיצוניות או אפליקציות מותאמות, תוך שמירה על אבטחת המידע ועקביות הנתונים בכל הרכיבים.</p>
+
+    <div class="news-art-cta">
+      <p>יש לכם צורך בפיתוח מותאם?</p>
+      <a href="#" onclick="return go('contact',event)">צרו קשר ונבנה יחד את הפתרון ←</a>
+    </div>
+  </div>
+</div>
+
+<!-- NEWS ARTICLE: RECEIPT INTERFACE -->
+<div id="news-receipt" class="page">
+  <div class="news-art-hero">
+    <span class="news-art-back" onclick="goBack()">→ חזרה</span>
+    <div class="news-art-date">מרץ 2018</div>
+    <h1>ממשק חדש לקליטת תעודות קבלה ומשלוח</h1>
+  </div>
+  <div class="news-art-body">
+    <p>ממשק חדש המאפשר קליטה אוטומטית של תעודות קבלה ומשלוח ממגוון מערכות חיצוניות — בתי אריזה, מחסנים ולקוחות בארץ ובחו"ל.</p>
+
+    <h2>סוגי התעודות הנתמכות</h2>
+    <ul>
+      <li>קליטת תעודות מסוגים שונים ממערכות חיצוניות שונות</li>
+      <li>קליטה אוטומטית של תעודות משלוח ממחסן</li>
+      <li>קליטת תעודות קבלה מבתי אריזה</li>
+    </ul>
+
+    <h2>תהליך העבודה</h2>
+    <p>התעודות נקלטות תחילה לטבלת ביניים לביקורת, ומשם נפתחות ב-AgroPriority לאישור ולעיבוד נוסף. תהליך זה מאפשר בקרה על הנתונים לפני שהם מוזנים למערכת הרשמית.</p>
+
+    <div class="news-art-cta">
+      <p>מעוניינים לאוטומט את תהליך קליטת התעודות?</p>
+      <a href="#" onclick="return go('contact',event)">צרו קשר ←</a>
+    </div>
+  </div>
+</div>
+
+<!-- NEWS ARTICLE: AGRICULTURE MINISTRY -->
+<div id="news-agriculture" class="page">
+  <div class="news-art-hero">
+    <span class="news-art-back" onclick="goBack()">→ חזרה</span>
+    <div class="news-art-date">ינואר 2018</div>
+    <h1>ממשק מול משרד החקלאות – שרתי הגנת הצומח</h1>
+  </div>
+  <div class="news-art-body">
+    <p>פיתוח ממשק ישיר בין AgroPriority למערכת המחשוב של שרתי הגנת הצומח במשרד החקלאות — עבודה מלאה מתוך המערכת ללא מעבר לממשק חיצוני.</p>
+
+    <h2>פעולות זמינות</h2>
+    <div class="news-art-feature">
+      <div class="ico">📝</div>
+      <div><h4>פתיחת הזמנה</h4><p>פתיחת הזמנה בשרתי הגנת הצומח ישירות מ-AgroPriority.</p></div>
+    </div>
+    <div class="news-art-feature">
+      <div class="ico">🌿</div>
+      <div><h4>שידור משטחים</h4><p>שידור נתוני משטחי הגידול לשרתי משרד החקלאות.</p></div>
+    </div>
+    <div class="news-art-feature">
+      <div class="ico">🚚</div>
+      <div><h4>שידור תעודת משלוח</h4><p>שידור תעודות משלוח לצורך בקרה ומעקב רגולטורי.</p></div>
+    </div>
+
+    <h2>יתרון</h2>
+    <p>העבודה מתבצעת כולה מתוך AgroPriority — חיסכון בזמן, מניעת שגיאות הזנה כפולה ועמידה בדרישות הרגולטוריות של משרד החקלאות.</p>
+
+    <div class="news-art-cta">
+      <p>יש לכם צורך בממשק רגולטורי נוסף?</p>
+      <a href="#" onclick="return go('contact',event)">צרו קשר ←</a>
+    </div>
+  </div>
+</div>
+
+<!-- NEWS ARTICLE: CUSTOMS MODULE -->
+<div id="news-customs" class="page">
+  <div class="news-art-hero">
+    <span class="news-art-back" onclick="goBack()">→ חזרה</span>
+    <div class="news-art-date">ינואר 2018</div>
+    <h1>מודול מרכזי לחשבוניות עמילי מכס</h1>
+  </div>
+  <div class="news-art-body">
+    <p>מודול חדש ב-AgroPriority המרכז את כלל החשבוניות מעמילי המכס למסך עבודה אחד נוח ויעיל.</p>
+
+    <h2>תכונות המודול</h2>
+    <ul>
+      <li>ריכוז כלל החשבוניות מעמילי המכס למסך אחד</li>
+      <li>קליטת קבצי PDF ושיוכם אוטומטי לחשבוניות הרלוונטיות</li>
+      <li>תמיכה בחלק ניכר מעמילי המכס הפעילים בישראל</li>
+    </ul>
+
+    <h2>למי זה מתאים?</h2>
+    <p>המודול מיועד לחברות יצוא ויבוא העובדות עם עמילי מכס מרובים ומעוניינות לנהל את כל החשבוניות והמסמכים במקום אחד, משולב עם AgroPriority ERP.</p>
+
+    <div class="news-art-cta">
+      <p>מעוניינים לייעל את עבודת עמילי המכס?</p>
+      <a href="#" onclick="return go('contact',event)">צרו קשר ←</a>
+    </div>
+  </div>
+</div>
+
+<!-- NEWS ARTICLE: BT9 -->
+<div id="news-bt9" class="page">
+  <div class="news-art-hero">
+    <span class="news-art-back" onclick="goBack()">→ חזרה</span>
+    <div class="news-art-date">ינואר 2018</div>
+    <h1>מודול עבודה מול BT9</h1>
+  </div>
+  <div class="news-art-body">
+    <p>מודול ייעודי לשידור נתוני מכולות וסנסורים ישירות מ-AgroPriority לפורטל של BT9 — לניהול מלא של שרשרת הקירור ביצוא.</p>
+
+    <h2>מה זה BT9?</h2>
+    <p>BT9 היא מערכת לניהול שרשרת הקירור ביצוא חקלאי, המאפשרת מעקב אחר טמפרטורת המכולות והסנסורים לאורך כל מסלול המשלוח.</p>
+
+    <h2>מה מספק הממשק?</h2>
+    <ul>
+      <li>שידור אוטומטי של נתוני מכולות מ-AgroPriority לפורטל BT9</li>
+      <li>סנכרון נתוני סנסורים בזמן אמת</li>
+      <li>ניהול מלא של שרשרת הקירור ללא יציאה ממערכת AgroPriority</li>
+      <li>עמידה בדרישות ייצוא בינלאומיות לשמירת קור</li>
+    </ul>
+
+    <div class="news-art-cta">
+      <p>עוסקים ביצוא ומעוניינים בממשק BT9?</p>
+      <a href="#" onclick="return go('contact',event)">צרו קשר ←</a>
+    </div>
+  </div>
+</div>
+
+<!-- NEWS ARTICLE: AGROQC -->
+<div id="news-agroqc" class="page">
+  <div class="news-art-hero">
+    <span class="news-art-back" onclick="goBack()">→ חזרה</span>
+    <div class="news-art-date">ינואר 2018</div>
+    <h1>AgroQC – אפליקציה לבקרת איכות ושאלונים</h1>
+  </div>
+  <div class="news-art-body">
+    <p>AgroQC היא אפליקציה לבקרת איכות המאפשרת מענה על שאלונים אינטראקטיביים ורב-שלביים שהוגדרו ב-AgroPriority ERP.</p>
+
+    <h2>סוגי שאלות הנתמכות</h2>
+    <div class="news-art-feature">
+      <div class="ico">📋</div>
+      <div><h4>בחירה מרשימה</h4><p>שאלות עם תשובות מוגדרות מראש לסיווג מהיר ואחיד.</p></div>
+    </div>
+    <div class="news-art-feature">
+      <div class="ico">📍</div>
+      <div><h4>מיקום GPS</h4><p>תיעוד מיקום מדויק של בקרת האיכות ישירות בשדה.</p></div>
+    </div>
+    <div class="news-art-feature">
+      <div class="ico">📷</div>
+      <div><h4>צילום תמונות</h4><p>צילום ותיעוד ויזואלי של הממצאים כחלק מהשאלון.</p></div>
+    </div>
+
+    <h2>תהליך לדוגמה</h2>
+    <p>סרוק ברקוד של משטח מספק ← קבל נתוני הספק ומידע על המוצר ← ענה על שאלות המותאמות למוצר ← ציון הבדיקה נשמר ← תוצאות נשלחות לספק ולצוות האיכות.</p>
+
+    <div class="news-art-cta">
+      <p>מעוניינים לשפר את בקרת האיכות שלכם?</p>
+      <a href="#" onclick="return go('agroqc',event)">למידע נוסף על AgroQC ←</a>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="page">
+  <div class="page-hdr"><h1>יצירת קשר</h1><p>נשמח לשמוע ממך</p></div>
+  <section>
+    <div class="contact-wrap">
+      <div class="cinfo-row">
+        <div class="cinfo"><div class="ico">📞</div><h3>טלפון</h3><a href="tel:037363728">03-736-3728</a></div>
+        <div class="cinfo"><div class="ico">📍</div><h3>כתובת</h3><p>הדובדבן 9, קרית אונו 5551052</p></div>
+        <div class="cinfo"><div class="ico">✉️</div><h3>אימייל</h3><a href="mailto:support@agrosoft.co.il">support@agrosoft.co.il</a></div>
+      </div>
+      <div class="cform">
+        <h3>שלח לנו הודעה</h3>
+        <div class="frow">
+          <div class="fg"><label>שם מלא *</label><input type="text" placeholder="הכנס שמך..."></div>
+          <div class="fg"><label>טלפון</label><input type="tel" placeholder="05X-XXXXXXX"></div>
+        </div>
+        <div class="fg"><label>אימייל *</label><input type="email" placeholder="your@email.com"></div>
+        <div class="fg"><label>נושא</label>
+          <select>
+            <option>AgroPriority – ERP</option>
+            <option>AgroTalk</option>
+            <option>AgroSmart</option>
+            <option>AgroQC</option>
+            <option>AgroShop</option>
+            <option>אחר</option>
+          </select>
+        </div>
+        <div class="fg"><label>הודעה *</label><textarea rows="5" placeholder="כתוב את הודעתך..."></textarea></div>
+        <button class="submit-btn" onclick="alert('תודה! הודעתך נשלחה בהצלחה 🌿')">שלח הודעה ←</button>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ACCESSIBILITY STATEMENT PAGE -->
+<div id="accessibility" class="page">
+  <div class="page-hdr"><h1>הצהרת נגישות</h1><p>מחויבים לנגישות מלאה עבור כולם</p></div>
+  <section style="max-width:820px;margin:0 auto">
+    <div class="prod-desc">
+      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin-bottom:16px;border-bottom:2px solid var(--border);padding-bottom:10px">מדיניות נגישות</h2>
+      <p>אנו רואים בלקוחות עם מוגבלות לקוחות שווי זכויות, הזכאים ליהנות מנגישות מלאה.</p>
+      <p>אנו פועלים על-פי הקבוע בחוק שוויון הזדמנויות לאנשים עם מוגבלות, ובהתאם לכך מונגש אתרנו.</p>
+      <p>חלק זה באתר נכתב במטרה ליידע אותך כיצד ניתן ליהנות מהסדרי הנגישות של האתר.</p>
+      <p>מטרתנו לאפשר לכל לקוח עם או בלי מוגבלות שירות שוויוני ונגיש.</p>
+      <p>אתר זה עומד בדרישות תקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), התשע"ג 2013.</p>
+      <p>כמו כן, מותאם לתצוגה בדפדפנים הנפוצים ולשימוש בטלפון הסלולרי.</p>
+
+      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">הנחיות לתפעול מאפייני הנגישות</h2>
+      <p>האתר נתמך על ידי הדפדפנים הנפוצים, בגרסתם העדכנית ביותר.</p>
+      <p>האתר מספק תמיכה בדפוס השימוש המקובל להפעלה עם מקלדת בעזרת מקשי החיצים, Enter ו-Esc ליציאה מתפריטים וחלונות.</p>
+
+      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">תוסף הנגישות באתר</h2>
+      <p>באתר זה מוטמע תוסף נגישות המסייע בהנגשת האתר לבעלי מוגבלויות:</p>
+      <ul style="padding-right:22px;line-height:2.1;color:var(--muted);margin:10px 0 16px">
+        <li>כפתור המציג את האפשרות לנגישות</li>
+        <li>לחיצה על כפתור הנגישות תפתח את תפריט הנגישות</li>
+        <li>לחיצה נוספת על כפתור הנגישות תסגור את תפריט הנגישות</li>
+        <li>כפתור מצב שחור לבן עבור עיוורי צבעים</li>
+        <li>כפתור שינוי ניגודיות גבוהה</li>
+        <li>כפתור המדגיש בצורה ברורה את כל הקישורים המופיעים באתר</li>
+        <li>כפתור הגדלת גודל הגופנים באתר</li>
+        <li>כפתור הקטנת גודל הגופנים באתר</li>
+      </ul>
+
+      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">הגדלת התצוגה באתר</h2>
+      <p>גולשים המתקשים בראייה ורוצים להגדיל את התצוגה באתר, יכולים לעשות זאת באמצעות לחיצה בו זמנית על המקשים <strong style="color:var(--g2)">Ctrl</strong> ו-<strong style="color:var(--g2)">+</strong> (קונטרול ופלוס). כל לחיצה על צמד המקשים הללו תגדיל את התצוגה.</p>
+      <p>כדי להקטין את התצוגה יש ללחוץ בו זמנית על המקשים <strong style="color:var(--g2)">Ctrl</strong> ו-<strong style="color:var(--g2)">-</strong> (קונטרול ומינוס).</p>
+
+      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">הפעלת האתר באמצעות מקלדת</h2>
+      <p>לחיצה חוזרת על מקש <strong style="color:var(--g2)">Tab</strong> תעביר בין הקישורים השונים בעמוד.</p>
+      <p>לחיצה בו זמנית על המקשים <strong style="color:var(--g2)">Shift + Tab</strong> תחזיר את הסמן לקישור הקודם.</p>
+      <p>לחיצה על מקש <strong style="color:var(--g2)">Enter</strong> תפעיל את הקישור המסומן.</p>
+      <p>מקש <strong style="color:var(--g2)">F11</strong> יגדיל את המסך לגודל מלא – לחיצה נוספת תקטין אותו חזרה.</p>
+      <p>מקש רווח (<strong style="color:var(--g2)">Space</strong>) יוריד את האתר כלפי מטה.</p>
+
+      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">דרכי יצירת קשר</h2>
+      <p>לצורך שיפור השירות נשמח לקבל פניות לקבלת מידע ו/או הצעות שיפור.</p>
+      <div style="background:var(--bg);border:1.5px solid var(--border);border-radius:16px;padding:22px 26px;margin:16px 0;display:flex;gap:14px;align-items:flex-start">
+        <div style="font-size:1.4rem;flex-shrink:0;margin-top:2px">👤</div>
+        <div>
+          <h4 style="font-size:.95rem;font-weight:800;margin-bottom:5px">רכז הנגישות</h4>
+          <p style="margin:0;font-size:.9rem"><strong>עמרי בן אליהו</strong></p>
+          <p style="margin:4px 0 0;font-size:.86rem">מייל: <a href="mailto:omri@agrosoft.co.il" style="color:var(--g2);font-weight:700;text-decoration:none">omri@agrosoft.co.il</a></p>
+        </div>
+      </div>
+      <p>אנו נמשיך במאמצינו לשפר את נגישות האתר על מנת לאפשר שימוש באתר עבור האוכלוסייה כולה, לרבות אנשים עם מוגבלויות.</p>
+
+      <div style="margin-top:24px;padding-top:16px;border-top:1px solid var(--border);color:var(--muted);font-size:.82rem;text-align:center">
+        הצהרת הנגישות עודכנה ביום: 1.1.2026
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- PRIVACY POLICY PAGE -->
+<div id="privacy" class="page">
+  <div class="page-hdr"><h1>מדיניות פרטיות</h1><p>אגרוסופט בע"מ</p></div>
+  <section style="max-width:820px;margin:0 auto">
+    <div class="prod-desc">
+
+      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin-bottom:16px;border-bottom:2px solid var(--border);padding-bottom:10px">מהי מדיניות הפרטיות?</h2>
+      <p>אגרוסופט בע"מ (להלן: "האגרוסופט") מתייחס בכבוד לפרטיות המשתמשים באתר האגרוסופט, הפועל בכתובת האינטרנט <a href="https://agrosoft.co.il" style="color:var(--g2);font-weight:700" target="_blank">agrosoft.co.il</a> ובכל כתובת נוספת בהתאם לשיקול דעתו של האגרוסופט (להלן: "האתר").</p>
+      <p>תנאים אלה ילמדו אותך מהי מדיניות הפרטיות הנהוגה באתר. הם סוקרים, בין השאר, את האופן שבו משתמש אגרוסופט בע"מ במידע שתמסור לו ובמידע שייאסף על אודותייך בעת שתשתמש באתר. במדיניות זו, הביטוי "מידע אישי" פירושו כל מידע שניתן לעשות בו שימוש באופן סביר על-מנת לזהות אותך, לרבות שמך הפרטי ושם משפחתך, כתובתך, מספר הטלפון שלך ועוד.</p>
+      <p>מדיניות זו מהווה חלק בלתי נפרד מתנאי השימוש באתר. המדיניות מנוסחת בלשון זכר מטעמי נוחות בלבד, והיא חלה באופן זהה עבור כל המינים. בנוסף, מדיניות זו חלה גם על פעילותך והשתתפותך באילו מהקהילות המקוונות, הפורומים המקצועיים ורשימות הדיוור והתפוצה של האגרוסופט (להלן: "הקהילות המקוונות"), בשינויים המחויבים לפי העניין.</p>
+
+      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">דיווח על פגיעה בפרטיות</h2>
+      <p>אם אתה חושב שפרטיותך נפגעה במהלך השימוש באתר, או באילו מהקהילות המקוונות, אנא פנה אלינו:</p>
+      <div style="background:var(--bg);border:1.5px solid var(--border);border-radius:16px;padding:22px 26px;margin:16px 0;display:flex;gap:14px;align-items:flex-start">
+        <div style="font-size:1.4rem;flex-shrink:0;margin-top:2px">📧</div>
+        <div>
+          <p style="margin:0;font-size:.9rem">דוא"ל: <a href="mailto:support@agrosoft.co.il" style="color:var(--g2);font-weight:700;text-decoration:none">support@agrosoft.co.il</a></p>
+          <p style="margin:4px 0 0;font-size:.86rem">כתובת: אגרוסופט בע"מ, הדובדבן 9, קרית אונו 5551052</p>
+        </div>
+      </div>
+
+      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">מסירת פרטים ומידע אישי לאגרוסופט</h2>
+      <p>השימוש באתר אינו כרוך ברישום או במסירת פרטים ומידע אישי. עם זאת, אזורים ומדורים שונים באתר, כגון רישום לאירועים, רישום לרשימות התפוצה, יצירת קשר באמצעות טפסי קשר מקוונים ועוד – עשויים להיות כרוכים ברישום ומסירת פרטים ומידע אישי, כגון שם מלא, כתובת, טלפון, כתובת דוא"ל פעילה, שיוך ארגוני ופרטים נוספים לפי הצורך.</p>
+      <p>השדות שחובה למלא יסומנו במפורש. ללא מסירת הפרטים המתבקשים בשדות החובה לא תוכל להירשם באזור הרלבנטי באתר. עליך למסור רק פרטים נכונים, מדויקים ומלאים.</p>
+      <p>אינך חייב על-פי חוק למסור את הפרטים והמידע האישי. מסירתם תלויה בהסכמתך וברצונך החופשי – אולם מסירת פרטים שגויים, או אי מסירת מלוא הפרטים הנדרשים, עלולים למנוע ממך את האפשרות להשלים את הרישום או להשתמש בחלק משירותי האתר.</p>
+      <p>כאשר אתה מוסר מידע אישי של צד שלישי, אתה מצהיר כי קיבלת את הסכמתו המפורשת למסירת המידע לאגרוסופט, לשם השימוש במידע זה בהתאם למדיניות זו.</p>
+
+      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">מידע שנאסף במהלך השימוש באתר</h2>
+      <p>בעת שתשתמש באתר, או באילו מהקהילות המקוונות, עשוי האגרוסופט לאסוף מידע על נוהגיך ביחס לשימוש באתר, לרבות תכנים שטענת או פרסמת, מידע שקראת, העמודים שבהם צפית, השירותים שעניינו אותך, מקום המחשב ונתוני כתובת האינטרנט (IP address), סוג מערכת ההפעלה המשמשת אותך, סוג מכשיר הקצה שברשותך ועוד.</p>
+      <p>בנוסף, האגרוסופט רשאי לאסוף ולהסתייע בשירותיהם של צדדים שלישיים כדי לאסוף ולנתח מידע אנונימי, סטטיסטי, או מצרפי (אגרגטיבי) בקשר עם השימוש כאמור.</p>
+
+      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">רשתות חברתיות ומידע אישי שאתה משתף</h2>
+      <p>האגרוסופט מעמיד לרשות משתמשי האתר כלים לשיתוף וקישור תכנים מהאתר באמצעות רשתות חברתיות ושירותים מקוונים שונים. תשומת ליבך כי השימוש ברשתות חברתיות ושירותים מקוונים כאמור הוא חיצוני ונפרד לאתר וכפוף לנוהגי הפרטיות של אותם שירותים.</p>
+      <p>דע כי התכנים שאתה טוען לאתר או לקהילה הרלבנטית אינם פרטיים או חסויים. עליך לנקוט משנה זהירות ולהפעיל שיקול דעת בעת שהנך מוסר מידע אישי שעלול לזהות אותך או אחרים.</p>
+
+      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">השימוש במידע</h2>
+      <p>בפרטים ובמידע האישי שתמסור ובפרטים שיאסוף האגרוסופט, ייעשה שימוש למטרות הבאות:</p>
+      <ul style="padding-right:22px;line-height:2.1;color:var(--muted);margin:10px 0 16px">
+        <li>כדי לאפשר לך להשתמש באתר, בתכנים הכלולים בו ובשירותים שהוא מציע</li>
+        <li>כדי לזהות אותך במהלך כניסות חוזרות לאזורים הטעונים הרשמה</li>
+        <li>כדי לשפר ולהעשיר את השירותים והתכנים באתר</li>
+        <li>כדי לאפשר לך להתאים את השירותים באתר להעדפותיך</li>
+        <li>כדי לשלוח אליך מעת לעת מידע בדבר שירותי ותכני האתר</li>
+        <li>ליצירת קשר איתך כשהאגרוסופט סבור שקיים צורך בכך</li>
+        <li>לצורך ניתוח, בקרה ומסירת מידע סטטיסטי לצדדים שלישיים (מידע שלא יזהה אותך אישית)</li>
+        <li>לשם תפעולו התקין ופיתוחו של האתר</li>
+        <li>כדי לאכוף את תנאי השימוש באתר ולמלא אחר דרישות כל דין</li>
+      </ul>
+
+      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">מסירת מידע לצדדים שלישיים</h2>
+      <p>האגרוסופט לא יעביר לצדדים שלישיים את המידע האישי שמסרת והפרטים שנאספו על פעילותך, אלא במקרים הבאים:</p>
+      <ul style="padding-right:22px;line-height:2.1;color:var(--muted);margin:10px 0 16px">
+        <li>ככל שהדבר דרוש לצורך אספקה תקינה של שירותי האתר</li>
+        <li>אם תפר את הוראות תנאי השימוש באתר או תבצע פעולות המנוגדות לדין</li>
+        <li>אם יתקבל צו שיפוטי או דרישה של רשות מוסמכת</li>
+        <li>בכל מחלוקת, טענה, תביעה או הליכים משפטיים בינך לבין האגרוסופט</li>
+        <li>כשהאגרוסופט יסבור כי מסירת המידע נחוצה כדי למנוע נזק חמור</li>
+        <li>לצורך מסירת מידע אנונימי, מצרפי וסטטיסטי</li>
+        <li>אם האגרוסופט ישנה את מבנהו המשפטי או יעביר פעילות לצד שלישי</li>
+        <li>על-פי בקשתך המפורשת</li>
+      </ul>
+
+      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">היכן נשמר המידע?</h2>
+      <p>המידע שהאגרוסופט אוסף נשמר במאגר המידע שלו, המאוחסן אצל ספקי אירוח שרתים וגיבוי מידע, שעשויים להימצא גם מחוץ לגבולות ישראל. הסכמתך למדיניות זו מהווה גם הסכמה לשמירת המידע בחו"ל ולהעברתו מחוץ לגבולות ישראל.</p>
+
+      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">Cookies (עוגיות)</h2>
+      <p>האגרוסופט עשוי להשתמש באתר ב'עוגיות' (Cookies) לצורך תפעולו השוטף והתקין, לרבות כדי לאסוף נתונים סטטיסטיים, לאימות פרטים, כדי להתאים את האתר להעדפותיך האישיות, לצרכי אבטחת מידע ועוד.</p>
+      <p>'עוגיות' הן קבצי טקסט, שהדפדפן שלך יוצר לפי פקודה ממחשבי האתר. הן יכולות להכיל מידע מגוון כדוגמת הדפים שבהם ביקרת, משך הזמן ששהית באתר, מהיכן הגעת אל האתר ועוד.</p>
+      <p>האגרוסופט נעזר בנוסף גם ב-Cookies שמקורם בצדדים שלישיים, בהם Google Analytics, שירותי הפרסום של חברת גוגל, ורשתות חברתיות כגון פייסבוק.</p>
+      <p>אם אינך רוצה לקבל Cookies, תוכל להימנע מכך על ידי שינוי ההגדרות בדפדפן שלך. זכור עם זאת שנטרול העוגיות עלול לגרום לכך שלא תוכל להשתמש בחלק מהשירותים והתכונות באתר.</p>
+
+      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">אבטחת מידע</h2>
+      <p>האגרוסופט מייחס חשיבות עליונה לאבטחת המידע במערכותיו. לשם שמירת המידע, הוא מפעיל מערכות, יישומים ונהלים לאבטחת המידע, המיועדים למזער את הסיכונים מפני גניבה, פגיעה, אובדן או גישה בלתי מורשית למידע.</p>
+      <p>עם זה, אין וודאות שיישומים אלה מבטיחים באופן מוחלט שמידע אישי לא ייחשף או ייגנב ממאגרי המידע. בעצם השימוש באתר ובשירותיו, אתה מודע ומסכים למגבלות אלו.</p>
+
+      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">זכות לעיין במידע</h2>
+      <p>על-פי חוק הגנת הפרטיות, התשמ"א – 1981, כל אדם זכאי לעיין במידע שעליו המוחזק במאגר מידע. אדם שעיין במידע שעליו ומצא שאינו נכון, שלם, ברור או מעודכן, רשאי לפנות לבעל מאגר המידע בבקשה לתקן את המידע או למוחקו.</p>
+      <p>שים לב כי מחיקת מידע עלולה למנוע ממך להמשיך ולקבל שירותים מהאתר. מידע הדרוש לאגרוסופט יוסיף להישמר על-פי דין, אך לא ישמש עוד לצורך פניות אליך.</p>
+
+      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">שינויים במדיניות הפרטיות</h2>
+      <p>האגרוסופט רשאי לשנות מעת לעת את תנאי מדיניות הפרטיות. אם יבוצעו שינויים מהותיים, תפורסם על-כך הודעה בעמוד הבית של האתר 30 ימים לפני כניסת השינויים לתוקף. המשך השימוש באתר לאחר השינוי מעיד על הסכמתך למדיניות המתוקנת.</p>
+
+      <div style="margin-top:24px;padding-top:16px;border-top:1px solid var(--border);color:var(--muted);font-size:.82rem;text-align:center">
+        מדיניות הפרטיות עודכנה לאחרונה: 05/04/2026 | מדיניות הפרטיות מנוסחת בלשון זכר מטעמי נוחות בלבד.
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-top">
+    <div class="foot-logo">AgroSoft</div>
+    <div class="foot-links">
+      <a href="#" onclick="return go('about',event)">חברה</a>
+      <a href="#" onclick="return go('agropriority',event)">AgroPriority</a>
+      <a href="#" onclick="return go('agrotalk',event)">AgroTalk</a>
+      <a href="#" onclick="return go('agrosmart',event)">AgroSmart</a>
+      <a href="#" onclick="return go('agroqc',event)">AgroQC</a>
+      <a href="#" onclick="return go('agroshop',event)">AgroShop</a>
+      <a href="#" onclick="return go('news',event)">חדשות</a>
+      <a href="#" onclick="return go('contact',event)">יצירת קשר</a>
+    </div>
+  </div>
+  <div class="foot-copy">© 2009–2026 כל הזכויות שמורות | עיצוב ובנייה ע"י <a href="https://ombee.co.il" target="_blank" style="color:rgba(255,255,255,.8);font-weight:700">OMBee Graphic Design And UI/UX</a> | <a href="#" onclick="return go('accessibility',event)" style="color:rgba(255,255,255,.5)">♿ הצהרת נגישות</a> | <a href="#" onclick="return go('privacy',event)" style="color:rgba(255,255,255,.5)">מדיניות פרטיות</a></div>
+</footer>
+
+<!-- DEVICE PREVIEW TOOLBAR -->
+<div class="device-bar" id="device-bar">
+  <button onclick="switchDevice('desktop')" class="active" title="מחשב">
+    <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
+  </button>
+  <button onclick="switchDevice('tablet')" title="טאבלט">
+    <svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+  </button>
+  <button onclick="switchDevice('mobile')" title="נייד">
+    <svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+  </button>
+</div>
+<div class="dev-preview" id="dev-preview">
+  <div class="dev-label" id="dev-label"></div>
+  <div class="dev-frame" id="dev-frame"></div>
+</div>
+
+<!-- ACCESSIBILITY WIDGET -->
+<button class="a11y-fab" id="a11y-fab" onclick="toggleA11yPanel()" aria-label="תפריט נגישות" title="נגישות">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><circle cx="12" cy="4" r="2"/><path d="M19 13v-2c-1.54.02-3.09-.75-4.07-1.83l-1.29-1.43c-.17-.19-.38-.34-.61-.45-.01 0-.01-.01-.02-.01H13c-.35-.2-.75-.3-1.19-.26C10.76 7.11 10 8.04 10 9.09V15c0 1.1.9 2 2 2h5v5h2v-5.5c0-1.1-.9-2-2-2h-3v-3.45c1.29 1.07 3.25 1.94 5 1.95zm-6.17 5c-.41 1.16-1.52 2-2.83 2-1.66 0-3-1.34-3-3 0-1.31.84-2.42 2-2.83V12.1c-2.28.46-4 2.48-4 4.9 0 2.76 2.24 5 5 5 2.42 0 4.44-1.72 4.9-4h-2.07z"/></svg>
+</button>
+<div class="a11y-overlay" id="a11y-overlay" onclick="toggleA11yPanel()"></div>
+<div class="a11y-panel" id="a11y-panel">
+  <div class="a11y-head">
+    <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><circle cx="12" cy="4" r="2"/><path d="M19 13v-2c-1.54.02-3.09-.75-4.07-1.83l-1.29-1.43c-.17-.19-.38-.34-.61-.45-.01 0-.01-.01-.02-.01H13c-.35-.2-.75-.3-1.19-.26C10.76 7.11 10 8.04 10 9.09V15c0 1.1.9 2 2 2h5v5h2v-5.5c0-1.1-.9-2-2-2h-3v-3.45c1.29 1.07 3.25 1.94 5 1.95zm-6.17 5c-.41 1.16-1.52 2-2.83 2-1.66 0-3-1.34-3-3 0-1.31.84-2.42 2-2.83V12.1c-2.28.46-4 2.48-4 4.9 0 2.76 2.24 5 5 5 2.42 0 4.44-1.72 4.9-4h-2.07z"/></svg> יישומון נגישות</h3>
+    <button class="a11y-close" onclick="toggleA11yPanel()">✕</button>
+  </div>
+  <div class="a11y-body">
+    <div class="a11y-grid">
+      <button class="a11y-btn" data-a11y="contrast" onclick="toggleA11y('contrast',this)">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v18a9 9 0 010-18z" fill="currentColor"/></svg>
+        ניגודיות
+      </button>
+      <button class="a11y-btn" data-a11y="links" onclick="toggleA11y('links',this)">
+        <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+        הדגשת קישורים
+      </button>
+      <button class="a11y-btn" data-a11y="font-lg" onclick="toggleA11y('font-lg',this)">
+        <svg viewBox="0 0 24 24" stroke-width="2"><path d="M4 7V4h16v3"/><path d="M12 4v16"/><path d="M8 20h8"/></svg>
+        טקסט גדול
+      </button>
+      <button class="a11y-btn" data-a11y="spacing" onclick="toggleA11y('spacing',this)">
+        <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/><path d="M7 4l-3 3 3 3"/><path d="M17 4l3 3-3 3"/></svg>
+        ריווח טקסט
+      </button>
+      <button class="a11y-btn" data-a11y="noanim" onclick="toggleA11y('noanim',this)">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M10 9l-3 3 3 3"/><path d="M14 9l3 3-3 3"/></svg>
+        ביטול הנפשות
+      </button>
+      <button class="a11y-btn" data-a11y="hideimg" onclick="toggleA11y('hideimg',this)">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/><path d="M21 15l-5-5L5 21"/><line x1="3" y1="3" x2="21" y2="21" stroke-width="2"/></svg>
+        הסתרת תמונות
+      </button>
+      <button class="a11y-btn" data-a11y="dyslexia" onclick="toggleA11y('dyslexia',this)">
+        <svg viewBox="0 0 24 24"><path d="M9 4h6l-3 8h4l-7 8 2-5H7z"/></svg>
+        דיסלקסיה
+      </button>
+      <button class="a11y-btn" data-a11y="bigcursor" onclick="toggleA11y('bigcursor',this)">
+        <svg viewBox="0 0 24 24"><path d="M5 3l14 7-6 2-2 6z"/><path d="M14 14l4 4"/></svg>
+        סמן גדול
+      </button>
+      <button class="a11y-btn" data-a11y="lineheight" onclick="toggleA11y('lineheight',this)">
+        <svg viewBox="0 0 24 24"><path d="M11 6h9M11 12h9M11 18h9"/><path d="M4 8l2.5-4L9 8"/><path d="M4 16l2.5 4L9 16"/></svg>
+        גובה שורה
+      </button>
+      <button class="a11y-btn" data-a11y="textalign" onclick="toggleA11y('textalign',this)">
+        <svg viewBox="0 0 24 24"><path d="M4 6h16M4 10h10M4 14h16M4 18h10"/></svg>
+        יישור טקסט
+      </button>
+      <button class="a11y-btn" data-a11y="grayscale" onclick="toggleA11y('grayscale',this)">
+        <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7z"/></svg>
+        גווני אפור
+      </button>
+      <button class="a11y-btn" data-a11y="saturation" onclick="toggleA11y('saturation',this)">
+        <svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7z" fill="currentColor" opacity=".3"/><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7z"/></svg>
+        רוויה
+      </button>
+    </div>
+  </div>
+  <div class="a11y-foot">
+    <button class="a11y-reset" onclick="resetA11y()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M1 4v6h6"/><path d="M3.51 15a9 9 0 105.34-9.34L1 10"/></svg> איפוס כל הגדרות הנגישות</button>
+    <div class="a11y-stmt"><a href="#" onclick="closeA11y();return go('accessibility',event)">הצהרת נגישות</a> | <a href="#" onclick="closeA11y();return go('privacy',event)">מדיניות פרטיות</a></div>
+  </div>
+</div>
+
+<!-- COOKIES BANNER -->
+<div class="cookie-banner" id="cookie-banner">
+  <p>🍪 אתר זה משתמש בעוגיות (Cookies) כדי לשפר את חוויית הגלישה שלך. <a href="#" onclick="return go('privacy',event)">מדיניות פרטיות</a></p>
+  <div class="cookie-btns">
+    <button class="cookie-accept" onclick="acceptCookies()">אישור</button>
+    <button class="cookie-reject" onclick="rejectCookies()">דחייה</button>
+  </div>
+</div>
+
+<script>
+// ================================================================
+// רשימת לוגואים של לקוחות
+// home: true  = מופיע גם במסתובב בדף הראשי
+// home: false = מופיע רק בדף הלקוחות
+// ================================================================
+var customerLogos = [
+  { file: 'Aviv new.png',                    name: 'אביב',                  home: true  },
+  { file: 'tzurfarm_logo_width_2023.png',    name: 'משק צור',               home: true  },
+  { file: 'Logo Galilee.png',                name: 'גליל',                  home: true  },
+  { file: '2013 לוגו גליל חדש.png',         name: 'גליל',                  home: false },
+  { file: 'taligrapes_logo.png',             name: 'ענבי טלי',              home: true  },
+  { file: 'Granot agricultural produce.png', name: 'תוצרת חקלאי גרנות',    home: true  },
+  { file: 'Miluopri_logo_He.png',            name: 'מלופרי',                home: true  },
+  { file: 'Miriam Shoham_Logo.png',          name: 'שוהם',                  home: true  },
+  { file: 'sdot_baemek_logo.png',            name: 'שדות בעמק',             home: true  },
+  { file: 'yevuley hacfar logo.png',         name: 'יבולי הכפר',            home: true  },
+  { file: 'Abu-Kadu.png',                    name: 'אבו קאדו',              home: false },
+  { file: 'Arava_Logo.png',                  name: 'איחוד חקלאי הערבה',     home: false },
+  { file: 'Dudu_Ezra.png',                   name: 'דודו עזרא',             home: false },
+  { file: 'EGO GROWERS LTD.png',             name: 'EGO Growers',           home: false },
+  { file: 'Galey Moshe_logo.png',            name: 'גלי משה',               home: false },
+  { file: 'Gezer Shallit_He.png',            name: 'גזר שליט',              home: false },
+  { file: 'Gilad_Logo_new.png',              name: 'גלעד',                  home: true  },
+  { file: 'Logo_Stm.png',                   name: 'STM',                   home: false },
+  { file: 'MeshekBechor_Logo.png',          name: 'משק בכור',              home: false },
+  { file: 'טל הל יסכה_לוגו.png',           name: 'טל הל יסכה',            home: false },
+  { file: 'Hamarlog_Logo.png',             name: 'המרלוג',                home: false },
+  { file: 'haskelberg_Logo.png',           name: 'הסקלברג',               home: false },
+  { file: 'carmy export_logo.png',         name: 'Carmy Export',          home: false },
+  { file: 'Ilsar Truffles_Logo.png',       name: 'Ilsar Truffles',        home: false },
+  { file: 'Joytech_logo.png',             name: 'Joytech',               home: false },
+];
+</script>
+<script>
+function renderCarousel(){
+  var wrap = document.getElementById('marquee-rows');
+  if(!wrap) return;
+  wrap.innerHTML = '';
+  var all = logoImages;
+  var half = Math.ceil(all.length / 2);
+  var rows = [all, all.slice(half).concat(all.slice(0, half)), all];
+  var classes = ['', ' slow', ' fast'];
+  rows.forEach(function(row, ri){
+    var div = document.createElement('div');
+    div.className = 'marquee-wrap';
+    var track = document.createElement('div');
+    track.className = 'marquee-track' + classes[ri];
+    [1,2].forEach(function(){
+      row.forEach(function(item){
+        var card = document.createElement('div');
+        card.className = 'm-card';
+        var img = document.createElement('img');
+        img.src = item.src;
+        img.alt = item.name;
+        card.appendChild(img);
+        var lbl = document.createElement('div');
+        lbl.className = 'cname';
+        lbl.textContent = item.name;
+        card.appendChild(lbl);
+        track.appendChild(card);
+      });
+    });
+    div.appendChild(track);
+    wrap.appendChild(div);
+  });
+}
+
+
+var customers = [
+  'אביב','משק צור','חקלאי גנות','גליל','ענבי טלי','גרנות פראש',
+  'אביקדו','איחוד חקלאי הערבה','יופי של ירקות','בננות החוף',
+  'Pringeve','ביפראש','בלאס','כרמלים','דודו עזרא','כרמי',
+  'אדום פרוץ','גידולי אגו','גלי משה','תפודי הארץ הטובה',
+  'גלעד','גזר שליט','גיליל + אדם','מלופרי','בכור',
+  'Miriam Shoham','ג\'ויטק','חסלברג','תוצרת חקלאי גרנות',
+  'R.A.N','STM','Hmarlog','תוצרת הנגב','Mor USA','Mor IL',
+  'מילועוף','א.א. גבאי','Sadot Baemek','Yevoley Hakfar'
+];
+// לוגואים שהועלו ידנית
+var uploadedLogos = {};
+
+var customerImages = {
+  0: 'images/customerImages/Aviv new.png',
+  1: 'images/customerImages/tzurfarm_logo_width_2023.png',
+  3: 'images/customerImages/Logo Galilee.png',
+};
+
+var logoImages = customerLogos.map(function(c){
+  return { src: 'images/customerImages/' + c.file, name: c.name };
+});
+var homeLogos = customerLogos.filter(function(c){ return c.home; }).map(function(c){
+  return { src: 'images/customerImages/' + c.file, name: c.name };
+});
+
+function renderCustomers(){
+  renderCarousel();
+  var grid = document.getElementById('customers-grid');
+  if(!grid) return;
+  grid.innerHTML = '';
+  customers.forEach(function(name, i){
+    var card = document.createElement('div');
+    card.style.cssText = 'background:var(--white);border:1.5px solid var(--border);border-radius:14px;padding:16px;text-align:center;cursor:pointer;transition:.2s;position:relative;min-height:110px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px';
+    card.onmouseover = function(){this.style.borderColor='var(--g3)';this.style.boxShadow='0 4px 16px rgba(45,122,58,.12)'};
+    card.onmouseout = function(){this.style.borderColor='var(--border)';this.style.boxShadow='none'};
+    card.title = 'לחץ להחלפת לוגו';
+    if(customerImages[i]){
+      var img = document.createElement('img');
+      img.src = customerImages[i];
+      img.style.cssText = 'max-width:120px;max-height:60px;object-fit:contain';
+      card.appendChild(img);
+    } else {
+      var placeholder = document.createElement('div');
+      placeholder.style.cssText = 'width:48px;height:48px;background:#e8f5e9;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin:0 auto';
+      placeholder.textContent = '🌿';
+      card.appendChild(placeholder);
+    }
+    var label = document.createElement('div');
+    label.style.cssText = 'font-size:.78rem;font-weight:700;color:var(--muted)';
+    label.textContent = name;
+    card.appendChild(label);
+    // input להחלפת לוגו
+    var inp = document.createElement('input');
+    inp.type = 'file';inp.accept = 'image/*';inp.style.display = 'none';
+    inp.onchange = (function(idx){ return function(e){
+      var reader = new FileReader();
+      reader.onload = function(ev){
+        customerImages[idx] = ev.target.result;
+        renderCustomers();
+      };
+      reader.readAsDataURL(e.target.files[0]);
+    };})(i);
+    card.appendChild(inp);
+    card.onclick = function(){ inp.click(); };
+    grid.appendChild(card);
+  });
+}
+
+function addNewCustomers(input){
+  Array.from(input.files).forEach(function(file){
+    var reader = new FileReader();
+    reader.onload = function(e){
+      var name = file.name.replace(/\.[^/.]+$/,'');
+      var idx = customers.length;
+      customers.push(name);
+      customerImages[idx] = e.target.result;
+      renderCustomers();
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+function renderHomeMarquee(){
+  var track = document.getElementById('home-marquee');
+  if(!track) return;
+  track.innerHTML = '';
+  [1,2].forEach(function(){
+    homeLogos.forEach(function(item){
+      var card = document.createElement('div');
+      card.style.cssText = 'flex:0 0 140px;background:var(--bg);border:1.5px solid var(--border);border-radius:12px;padding:12px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-height:80px;margin-right:20px';
+      var img = document.createElement('img');
+      img.src = item.src;
+      img.style.cssText = 'max-width:100px;max-height:40px;object-fit:contain';
+      card.appendChild(img);
+      var lbl = document.createElement('div');
+      lbl.style.cssText = 'font-size:.7rem;font-weight:700;color:var(--muted)';
+      lbl.textContent = item.name;
+      card.appendChild(lbl);
+      track.appendChild(card);
+    });
+  });
+}
+document.addEventListener('DOMContentLoaded', function(){ renderHomeMarquee(); renderCustomers(); });
+function toggleMobileMenu(){
+  var menu=document.getElementById('mob-menu');
+  var overlay=document.getElementById('mob-overlay');
+  var ham=document.getElementById('hamburger');
+  var isOpen=menu.classList.contains('open');
+  if(isOpen){closeMobileMenu();}else{
+    menu.classList.add('open');
+    overlay.classList.add('open');
+    ham.classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+}
+function toggleMobProducts(el){
+  el.classList.toggle('open');
+  var products=el.nextElementSibling;
+  products.classList.toggle('open');
+}
+function closeMobileMenu(){
+  var menu=document.getElementById('mob-menu');
+  var overlay=document.getElementById('mob-overlay');
+  var ham=document.getElementById('hamburger');
+  menu.classList.remove('open');
+  overlay.classList.remove('open');
+  ham.classList.remove('open');
+  document.body.style.overflow='';
+}
+window.addEventListener('resize',function(){
+  if(window.innerWidth>820) closeMobileMenu();
+});
+
+var pageHistory=[];
+function go(id,e){
+  if(e){e.preventDefault();}
+  var current=document.querySelector('.page.active');
+  if(current&&current.id&&current.id!==id) pageHistory.push(current.id);
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  var el=document.getElementById(id);
+  if(el){el.classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}
+  var fab=document.getElementById('back-fab');
+  if(fab) fab.style.display=(pageHistory.length>0&&id!=='home')?'block':'none';
+  return false;
+}
+function goBack(e){
+  if(e){e.preventDefault();}
+  if(!pageHistory.length) return false;
+  var prev=pageHistory.pop();
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  var el=document.getElementById(prev);
+  if(el){el.classList.add('active');window.scrollTo({top:0,behavior:'smooth'});}
+  var fab=document.getElementById('back-fab');
+  if(fab) fab.style.display=(pageHistory.length>0&&prev!=='home')?'block':'none';
+  return false;
+}
+
+document.querySelectorAll('.img-upload-zone').forEach(function(zone){
+  zone.addEventListener('click',function(){
+    zone.querySelector('input[type=file]').click();
+  });
+});
+
+function loadImages(input,galleryId){
+  var gallery=document.getElementById(galleryId);
+  var ph=input.closest('.img-upload-zone').querySelector('.upload-placeholder');
+  Array.from(input.files).forEach(function(file){
+    var reader=new FileReader();
+    reader.onload=function(e){
+      var img=document.createElement('img');
+      img.src=e.target.result;
+      img.title=file.name;
+      gallery.appendChild(img);
+      if(ph)ph.style.display='none';
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+var cur=0;
+function slides(){return document.querySelectorAll('.slide')}
+function dots(){return document.querySelectorAll('.dot')}
+function goSlide(n){
+  slides().forEach(function(s){s.classList.remove('active')});
+  dots().forEach(function(d){d.classList.remove('active')});
+  cur=n;
+  slides()[cur].classList.add('active');
+  dots()[cur].classList.add('active');
+}
+function changeSlide(dir){
+  var total=slides().length;
+  goSlide((cur+dir+total)%total);
+}
+setInterval(function(){changeSlide(1)},5000);
+
+/* ===== ACCESSIBILITY WIDGET ===== */
+var a11yOptions=['font-lg','contrast','grayscale','links','spacing','noanim','hideimg','dyslexia','bigcursor','lineheight','textalign','saturation'];
+
+function toggleA11yPanel(){
+  var panel=document.getElementById('a11y-panel');
+  var overlay=document.getElementById('a11y-overlay');
+  panel.classList.toggle('open');
+  overlay.classList.toggle('open');
+  document.body.style.overflow=panel.classList.contains('open')?'hidden':'';
+}
+function closeA11y(){
+  document.getElementById('a11y-panel').classList.remove('open');
+  document.getElementById('a11y-overlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+
+function toggleA11y(opt,btn){
+  document.body.classList.toggle('a11y-'+opt);
+  btn.classList.toggle('active');
+  saveA11y();
+}
+
+function resetA11y(){
+  a11yOptions.forEach(function(opt){
+    document.body.classList.remove('a11y-'+opt);
+  });
+  document.querySelectorAll('.a11y-btn').forEach(function(b){b.classList.remove('active')});
+  localStorage.removeItem('a11y');
+}
+
+function saveA11y(){
+  var active=[];
+  a11yOptions.forEach(function(opt){
+    if(document.body.classList.contains('a11y-'+opt)) active.push(opt);
+  });
+  localStorage.setItem('a11y',JSON.stringify(active));
+}
+
+function loadA11y(){
+  try{
+    var saved=JSON.parse(localStorage.getItem('a11y'));
+    if(saved&&saved.length){
+      saved.forEach(function(opt){
+        document.body.classList.add('a11y-'+opt);
+        var btn=document.querySelector('.a11y-btn[data-a11y="'+opt+'"]');
+        if(btn) btn.classList.add('active');
+      });
+    }
+  }catch(e){}
+}
+loadA11y();
+
+/* ===== COOKIES BANNER ===== */
+function showCookieBanner(){
+  if(!localStorage.getItem('cookie-consent')){
+    setTimeout(function(){
+      document.getElementById('cookie-banner').classList.add('show');
+    },800);
+  }
+}
+function acceptCookies(){
+  localStorage.setItem('cookie-consent','accepted');
+  document.getElementById('cookie-banner').classList.remove('show');
+}
+function rejectCookies(){
+  localStorage.setItem('cookie-consent','rejected');
+  document.getElementById('cookie-banner').classList.remove('show');
+}
+showCookieBanner();
+
+/* ===== DEVICE PREVIEW ===== */
+if(new URLSearchParams(location.search).has('nobar')){
+  document.body.classList.add('nobar');
+}
+function switchDevice(mode){
+  var bar=document.getElementById('device-bar');
+  var preview=document.getElementById('dev-preview');
+  var frame=document.getElementById('dev-frame');
+  var label=document.getElementById('dev-label');
+  var btns=bar.querySelectorAll('button');
+  btns.forEach(function(b){b.classList.remove('active')});
+  if(mode==='desktop'){
+    preview.classList.remove('open');
+    frame.innerHTML='';
+    btns[0].classList.add('active');
+    return;
+  }
+  var w=mode==='tablet'?768:375;
+  var h=mode==='tablet'?1024:812;
+  var maxH=window.innerHeight-100;
+  var displayH=Math.min(h,maxH);
+  frame.style.width=w+'px';
+  frame.style.height=displayH+'px';
+  label.textContent=mode==='tablet'?'טאבלט — '+w+'×'+h:'נייד — '+w+'×'+h;
+  var currentPage=location.pathname.split('/').pop()||'index.html';
+  var hash=location.hash;
+  frame.innerHTML='<iframe src="'+currentPage+'?nobar=1'+hash+'" style="width:'+w+'px;height:'+displayH+'px;border:none"></iframe>';
+  preview.classList.add('open');
+  btns[mode==='tablet'?1:2].classList.add('active');
+}
+document.getElementById('dev-preview').addEventListener('click',function(e){
+  if(e.target===this) switchDevice('desktop');
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(where php:*)",
+      "Read(//c/Program Files/Git/usr/bin/**)",
+      "Read(//c/Program Files/WinRAR/**)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(powershell -NoProfile -ExecutionPolicy Bypass -Command \"Write-Host ''test''\")",
+      "Bash(powershell -Command \"Compress-Archive -Path ''C:\\\\My Files\\\\Agrosoft Ltd\\\\Agrosoft Web'' -DestinationPath ''C:\\\\My Files\\\\Agrosoft Ltd\\\\Backup_Agrosoft_Web_2026-04-02.zip'' -Force\")",
+      "Bash(gh auth *)",
+      "Bash(winget install *)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/GitHub CLI\")",
+      "Bash(gh --version)",
+      "Bash(awk -F\"'\" '{print $2}')",
+      "Bash(bash build-pages.sh)",
+      "Bash(xxd)",
+      "Bash(bash update-footer.sh)",
+      "Bash(grep -nE \"עברית|index\\\\.html\\\\\">.{1,30}<\" about-en.html)",
+      "Read(//c/Users/benel/**)",
+      "Read(//c/Users/benel/.config/**)",
+      "Bash(gh repo *)",
+      "Read(//c/Users/**)"
+    ]
+  }
+}
