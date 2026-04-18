@@ -184,6 +184,7 @@ h2.sec-title{text-align:center;font-size:clamp(1.8rem,3vw,2.35rem);font-weight:9
 
 /* FOOTER */
 footer{background:var(--g1);padding:48px 48px 28px;display:flex;flex-direction:column;gap:28px}
+.foot-title{color:#fff;font-size:1.15rem;font-weight:800;text-align:center;letter-spacing:.5px;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.12)}
 .foot-top{display:grid;grid-template-columns:1.6fr repeat(4,1fr);gap:36px;align-items:start}
 .foot-brand{color:rgba(255,255,255,.9)}
 .foot-logo{font-size:1.4rem;font-weight:900;color:rgba(255,255,255,.95);margin-bottom:10px}
@@ -227,7 +228,7 @@ footer{background:var(--g1);padding:48px 48px 28px;display:flex;flex-direction:c
 .mob-nav a:active{background:#eef6ef;color:var(--g2)}
 .mob-sep{font-size:.7rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--muted);padding:14px 14px 4px;margin-top:4px}
 .mob-sep-toggle{cursor:pointer;display:flex;align-items:center;justify-content:space-between}
-.mob-sep-toggle .mob-sep-arrow{display:inline-block;transition:transform .3s ease;font-size:.65rem}
+.mob-sep-toggle .mob-sep-arrow{display:inline-block;transition:transform .3s ease;font-size:.9rem;font-weight:900;color:var(--g2);line-height:1}
 .mob-sep-toggle.open .mob-sep-arrow{transform:rotate(180deg)}
 .mob-products{overflow:hidden;max-height:0;transition:max-height .35s ease;margin:0}
 .mob-products.open{max-height:400px}
@@ -301,8 +302,10 @@ footer{background:var(--g1);padding:48px 48px 28px;display:flex;flex-direction:c
 
   /* FOOTER */
   footer{padding:40px 32px 24px}
+  .foot-title{font-size:1.05rem;padding-bottom:14px}
   .foot-top{grid-template-columns:1fr 1fr 1fr;gap:28px}
-  .foot-brand{grid-column:1/-1}
+  .foot-brand{grid-column:1/-1;text-align:center}
+  .foot-tagline{margin:0 auto}
 
   /* MODULES */
   .mod-grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
@@ -358,10 +361,13 @@ footer{background:var(--g1);padding:48px 48px 28px;display:flex;flex-direction:c
   .cta-band h2{font-size:1.65rem}
 
   /* FOOTER */
-  footer{padding:32px 22px 20px}
-  .foot-top{grid-template-columns:1fr 1fr;gap:24px}
+  footer{padding:32px 22px 20px;gap:20px}
+  .foot-title{font-size:.98rem;padding-bottom:12px;letter-spacing:.3px}
+  .foot-top{grid-template-columns:1fr 1fr;gap:22px 18px}
   .foot-brand{grid-column:1/-1;text-align:center}
-  .foot-tagline{margin:0 auto}
+  .foot-tagline{margin:0 auto;max-width:280px}
+  .foot-col h4{margin-bottom:10px;font-size:.78rem}
+  .foot-col a{font-size:.82rem;padding:6px 0}
 
   /* BACK BUTTON */
   .back-fab{top:80px!important;bottom:auto!important;left:16px!important}
@@ -377,6 +383,15 @@ footer{background:var(--g1);padding:48px 48px 28px;display:flex;flex-direction:c
   .cta-cards{gap:10px}
   .cc{min-width:130px;padding:15px}
   .cform{padding:24px 20px}
+
+  /* FOOTER - single column */
+  footer{padding:28px 18px 18px}
+  .foot-title{font-size:.92rem;padding-bottom:10px}
+  .foot-top{grid-template-columns:1fr;gap:18px;text-align:center}
+  .foot-brand{grid-column:1}
+  .foot-col h4{margin-bottom:8px}
+  .foot-col a{padding:4px 0}
+  .foot-copy{font-size:.72rem;padding-top:16px}
 }
 
 /* ACCESSIBILITY WIDGET */
@@ -608,6 +623,7 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
 
 <!-- AGROPRIORITY -->
 <footer>
+  <div class="foot-title">Site Map</div>
   <div class="foot-top">
     <div class="foot-brand">
       <div class="foot-logo">AgroSoft</div>
