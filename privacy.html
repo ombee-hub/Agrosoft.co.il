@@ -77,8 +77,8 @@ h2.sec-title{text-align:center;font-size:clamp(1.8rem,3vw,2.35rem);font-weight:9
 .sec-sub{text-align:center;color:var(--muted);font-size:.98rem;max-width:540px;margin:0 auto 54px;line-height:1.78}
 
 /* PRODUCTS */
-.prod-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;max-width:1120px;margin:0 auto}
-.prod-card{background:var(--bg);border:1.5px solid var(--border);border-radius:20px;padding:28px 24px;transition:.28s;cursor:pointer;text-decoration:none;color:inherit;display:flex;flex-direction:column}
+.prod-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;max-width:1120px;margin:0 auto}
+.prod-card{background:var(--bg);border:1.5px solid var(--border);border-radius:20px;padding:28px 24px;transition:.28s;cursor:pointer;text-decoration:none;color:inherit;display:flex;flex-direction:column;align-items:center;text-align:center}
 .prod-card:hover{transform:translateY(-7px);border-color:var(--g3);box-shadow:0 16px 44px rgba(45,122,58,.15);background:var(--white)}
 .prod-ico{width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.55rem;margin-bottom:18px}
 .prod-card h3{font-size:1.15rem;font-weight:800;margin-bottom:8px}
@@ -257,8 +257,8 @@ footer{background:var(--g1);padding:48px 48px 28px;display:flex;flex-direction:c
 .mob-nav a{display:block;padding:11px 14px;border-radius:10px;color:var(--text);text-decoration:none;font-size:.95rem;font-weight:500;transition:.15s}
 .mob-nav a:active{background:#eef6ef;color:var(--g2)}
 .mob-sep{font-size:.7rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--muted);padding:14px 14px 4px;margin-top:4px}
-.mob-sep-toggle{cursor:pointer;display:flex;align-items:center;justify-content:space-between}
-.mob-sep-toggle .mob-sep-arrow{display:inline-block;transition:transform .3s ease;font-size:.9rem;font-weight:900;color:var(--g2);line-height:1}
+.mob-sep-toggle{cursor:pointer;display:flex;align-items:center;justify-content:space-between;font-size:.95rem;font-weight:500;letter-spacing:normal;text-transform:none;color:var(--text);padding:11px 14px;margin-top:0;border-radius:10px}
+.mob-sep-toggle .mob-sep-arrow{display:inline-block;transition:transform .3s ease;font-size:1.25rem;font-weight:900;color:var(--g2);line-height:1;position:relative;top:3px}
 .mob-sep-toggle.open .mob-sep-arrow{transform:rotate(180deg)}
 .mob-products{overflow:hidden;max-height:0;transition:max-height .35s ease;margin:0}
 .mob-products.open{max-height:400px}
@@ -507,7 +507,7 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
       <span></span>
       <span></span>
     </button>
-    <a class="logo" href="index.html"><div class="logo-name">AgroSoft</div></a>
+    <a class="logo" href="/"><div class="logo-name">AgroSoft</div></a>
     <div class="nav-links">
       <a href="about.html">חברה</a>
       <div class="dropdown">
@@ -541,7 +541,7 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
             </a>
           </div>
           <div class="mega-footer">
-            <a href="index.html#products-section">← לכל הפתרונות</a>
+            <a href="/#products-section">← לכל הפתרונות</a>
           </div>
         </div>
       </div>
@@ -554,7 +554,7 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
     <div class="lang-dd">
       <a class="lang-btn" href="#">🌐 ▾</a>
       <div class="lang-menu">
-        <a href="index-en.html"><img src="images/Union_Jack_1606_Scotland.svg" width="20" height="20" style="vertical-align:middle;margin-left:6px" alt="EN"> English</a>
+        <a href="/en/"><img src="images/Union_Jack_1606_Scotland.svg" width="20" height="20" style="vertical-align:middle;margin-left:6px" alt="EN"> English</a>
       </div>
     </div>
   </div>
@@ -603,12 +603,11 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
         </div>
       </a>
     </div>
-    <div class="mob-sep">עוד</div>
     <a href="customers.html">הלקוחות שלנו</a>
     <a href="https://www.agropriority.com/ServiceCalls" target="_blank" onclick="closeMobileMenu()">שרות לקוחות</a>
     <a href="news.html">חדשות ועדכונים</a>
     <a href="https://www.farm-online.net/login_new/" target="_blank" onclick="closeMobileMenu()">פורטל מגדלים</a>
-    <a href="index-en.html" onclick="closeMobileMenu()"><img src="images/Union_Jack_1606_Scotland.svg" width="20" height="20" style="vertical-align:middle;margin-left:6px" alt="EN"> English</a>
+    <a href="/en/" onclick="closeMobileMenu()"><img src="images/Union_Jack_1606_Scotland.svg" width="20" height="20" style="vertical-align:middle;margin-left:6px" alt="EN"> English</a>
     <a class="mob-cta" href="contact.html">יצירת קשר ←</a>
   </div>
 </div>
@@ -619,9 +618,9 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
     <div class="prod-desc">
 
       <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin-bottom:16px;border-bottom:2px solid var(--border);padding-bottom:10px">מהי מדיניות הפרטיות?</h2>
-      <p>אגרוסופט בע"מ (להלן: "האגרוסופט") מתייחס בכבוד לפרטיות המשתמשים באתר האגרוסופט, הפועל בכתובת האינטרנט <a href="https://agrosoft.co.il" style="color:var(--g2);font-weight:700" target="_blank">agrosoft.co.il</a> ובכל כתובת נוספת בהתאם לשיקול דעתו של האגרוסופט (להלן: "האתר").</p>
+      <p>אגרוסופט בע"מ (להלן: "אגרוסופט") מתייחס בכבוד לפרטיות המשתמשים באתר אגרוסופט, הפועל בכתובת האינטרנט <a href="https://agrosoft.co.il" style="color:var(--g2);font-weight:700" target="_blank">agrosoft.co.il</a> ובכל כתובת נוספת בהתאם לשיקול דעתו של אגרוסופט (להלן: "האתר").</p>
       <p>תנאים אלה ילמדו אותך מהי מדיניות הפרטיות הנהוגה באתר. הם סוקרים, בין השאר, את האופן שבו משתמש אגרוסופט בע"מ במידע שתמסור לו ובמידע שייאסף על אודותייך בעת שתשתמש באתר. במדיניות זו, הביטוי "מידע אישי" פירושו כל מידע שניתן לעשות בו שימוש באופן סביר על-מנת לזהות אותך, לרבות שמך הפרטי ושם משפחתך, כתובתך, מספר הטלפון שלך ועוד.</p>
-      <p>מדיניות זו מהווה חלק בלתי נפרד מתנאי השימוש באתר. המדיניות מנוסחת בלשון זכר מטעמי נוחות בלבד, והיא חלה באופן זהה עבור כל המינים. בנוסף, מדיניות זו חלה גם על פעילותך והשתתפותך באילו מהקהילות המקוונות, הפורומים המקצועיים ורשימות הדיוור והתפוצה של האגרוסופט (להלן: "הקהילות המקוונות"), בשינויים המחויבים לפי העניין.</p>
+      <p>מדיניות זו מהווה חלק בלתי נפרד מתנאי השימוש באתר. המדיניות מנוסחת בלשון זכר מטעמי נוחות בלבד, והיא חלה באופן זהה עבור כל המינים. בנוסף, מדיניות זו חלה גם על פעילותך והשתתפותך באילו מהקהילות המקוונות, הפורומים המקצועיים ורשימות הדיוור והתפוצה של אגרוסופט (להלן: "הקהילות המקוונות"), בשינויים המחויבים לפי העניין.</p>
 
       <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">דיווח על פגיעה בפרטיות</h2>
       <p>אם אתה חושב שפרטיותך נפגעה במהלך השימוש באתר, או באילו מהקהילות המקוונות, אנא פנה אלינו:</p>
@@ -640,51 +639,51 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
       <p>כאשר אתה מוסר מידע אישי של צד שלישי, אתה מצהיר כי קיבלת את הסכמתו המפורשת למסירת המידע לאגרוסופט, לשם השימוש במידע זה בהתאם למדיניות זו.</p>
 
       <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">מידע שנאסף במהלך השימוש באתר</h2>
-      <p>בעת שתשתמש באתר, או באילו מהקהילות המקוונות, עשוי האגרוסופט לאסוף מידע על נוהגיך ביחס לשימוש באתר, לרבות תכנים שטענת או פרסמת, מידע שקראת, העמודים שבהם צפית, השירותים שעניינו אותך, מקום המחשב ונתוני כתובת האינטרנט (IP address), סוג מערכת ההפעלה המשמשת אותך, סוג מכשיר הקצה שברשותך ועוד.</p>
-      <p>בנוסף, האגרוסופט רשאי לאסוף ולהסתייע בשירותיהם של צדדים שלישיים כדי לאסוף ולנתח מידע אנונימי, סטטיסטי, או מצרפי (אגרגטיבי) בקשר עם השימוש כאמור.</p>
+      <p>בעת שתשתמש באתר, או באילו מהקהילות המקוונות, עשוי אגרוסופט לאסוף מידע על נוהגיך ביחס לשימוש באתר, לרבות תכנים שטענת או פרסמת, מידע שקראת, העמודים שבהם צפית, השירותים שעניינו אותך, מקום המחשב ונתוני כתובת האינטרנט (IP address), סוג מערכת ההפעלה המשמשת אותך, סוג מכשיר הקצה שברשותך ועוד.</p>
+      <p>בנוסף, אגרוסופט רשאי לאסוף ולהסתייע בשירותיהם של צדדים שלישיים כדי לאסוף ולנתח מידע אנונימי, סטטיסטי, או מצרפי (אגרגטיבי) בקשר עם השימוש כאמור.</p>
 
       <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">רשתות חברתיות ומידע אישי שאתה משתף</h2>
-      <p>האגרוסופט מעמיד לרשות משתמשי האתר כלים לשיתוף וקישור תכנים מהאתר באמצעות רשתות חברתיות ושירותים מקוונים שונים. תשומת ליבך כי השימוש ברשתות חברתיות ושירותים מקוונים כאמור הוא חיצוני ונפרד לאתר וכפוף לנוהגי הפרטיות של אותם שירותים.</p>
+      <p>אגרוסופט מעמיד לרשות משתמשי האתר כלים לשיתוף וקישור תכנים מהאתר באמצעות רשתות חברתיות ושירותים מקוונים שונים. תשומת ליבך כי השימוש ברשתות חברתיות ושירותים מקוונים כאמור הוא חיצוני ונפרד לאתר וכפוף לנוהגי הפרטיות של אותם שירותים.</p>
       <p>דע כי התכנים שאתה טוען לאתר או לקהילה הרלבנטית אינם פרטיים או חסויים. עליך לנקוט משנה זהירות ולהפעיל שיקול דעת בעת שהנך מוסר מידע אישי שעלול לזהות אותך או אחרים.</p>
 
       <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">השימוש במידע</h2>
-      <p>בפרטים ובמידע האישי שתמסור ובפרטים שיאסוף האגרוסופט, ייעשה שימוש למטרות הבאות:</p>
+      <p>בפרטים ובמידע האישי שתמסור ובפרטים שיאסוף אגרוסופט, ייעשה שימוש למטרות הבאות:</p>
       <ul style="padding-right:22px;line-height:2.1;color:var(--muted);margin:10px 0 16px">
         <li>כדי לאפשר לך להשתמש באתר, בתכנים הכלולים בו ובשירותים שהוא מציע</li>
         <li>כדי לזהות אותך במהלך כניסות חוזרות לאזורים הטעונים הרשמה</li>
         <li>כדי לשפר ולהעשיר את השירותים והתכנים באתר</li>
         <li>כדי לאפשר לך להתאים את השירותים באתר להעדפותיך</li>
         <li>כדי לשלוח אליך מעת לעת מידע בדבר שירותי ותכני האתר</li>
-        <li>ליצירת קשר איתך כשהאגרוסופט סבור שקיים צורך בכך</li>
+        <li>ליצירת קשר איתך כשאגרוסופט סבור שקיים צורך בכך</li>
         <li>לצורך ניתוח, בקרה ומסירת מידע סטטיסטי לצדדים שלישיים (מידע שלא יזהה אותך אישית)</li>
         <li>לשם תפעולו התקין ופיתוחו של האתר</li>
         <li>כדי לאכוף את תנאי השימוש באתר ולמלא אחר דרישות כל דין</li>
       </ul>
 
       <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">מסירת מידע לצדדים שלישיים</h2>
-      <p>האגרוסופט לא יעביר לצדדים שלישיים את המידע האישי שמסרת והפרטים שנאספו על פעילותך, אלא במקרים הבאים:</p>
+      <p>אגרוסופט לא יעביר לצדדים שלישיים את המידע האישי שמסרת והפרטים שנאספו על פעילותך, אלא במקרים הבאים:</p>
       <ul style="padding-right:22px;line-height:2.1;color:var(--muted);margin:10px 0 16px">
         <li>ככל שהדבר דרוש לצורך אספקה תקינה של שירותי האתר</li>
         <li>אם תפר את הוראות תנאי השימוש באתר או תבצע פעולות המנוגדות לדין</li>
         <li>אם יתקבל צו שיפוטי או דרישה של רשות מוסמכת</li>
-        <li>בכל מחלוקת, טענה, תביעה או הליכים משפטיים בינך לבין האגרוסופט</li>
-        <li>כשהאגרוסופט יסבור כי מסירת המידע נחוצה כדי למנוע נזק חמור</li>
+        <li>בכל מחלוקת, טענה, תביעה או הליכים משפטיים בינך לבין אגרוסופט</li>
+        <li>כשאגרוסופט יסבור כי מסירת המידע נחוצה כדי למנוע נזק חמור</li>
         <li>לצורך מסירת מידע אנונימי, מצרפי וסטטיסטי</li>
-        <li>אם האגרוסופט ישנה את מבנהו המשפטי או יעביר פעילות לצד שלישי</li>
+        <li>אם אגרוסופט ישנה את מבנהו המשפטי או יעביר פעילות לצד שלישי</li>
         <li>על-פי בקשתך המפורשת</li>
       </ul>
 
       <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">היכן נשמר המידע?</h2>
-      <p>המידע שהאגרוסופט אוסף נשמר במאגר המידע שלו, המאוחסן אצל ספקי אירוח שרתים וגיבוי מידע, שעשויים להימצא גם מחוץ לגבולות ישראל. הסכמתך למדיניות זו מהווה גם הסכמה לשמירת המידע בחו"ל ולהעברתו מחוץ לגבולות ישראל.</p>
+      <p>המידע שאגרוסופט אוסף נשמר במאגר המידע שלו, המאוחסן אצל ספקי אירוח שרתים וגיבוי מידע, שעשויים להימצא גם מחוץ לגבולות ישראל. הסכמתך למדיניות זו מהווה גם הסכמה לשמירת המידע בחו"ל ולהעברתו מחוץ לגבולות ישראל.</p>
 
       <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">Cookies (עוגיות)</h2>
-      <p>האגרוסופט עשוי להשתמש באתר ב'עוגיות' (Cookies) לצורך תפעולו השוטף והתקין, לרבות כדי לאסוף נתונים סטטיסטיים, לאימות פרטים, כדי להתאים את האתר להעדפותיך האישיות, לצרכי אבטחת מידע ועוד.</p>
+      <p>אגרוסופט עשוי להשתמש באתר ב'עוגיות' (Cookies) לצורך תפעולו השוטף והתקין, לרבות כדי לאסוף נתונים סטטיסטיים, לאימות פרטים, כדי להתאים את האתר להעדפותיך האישיות, לצרכי אבטחת מידע ועוד.</p>
       <p>'עוגיות' הן קבצי טקסט, שהדפדפן שלך יוצר לפי פקודה ממחשבי האתר. הן יכולות להכיל מידע מגוון כדוגמת הדפים שבהם ביקרת, משך הזמן ששהית באתר, מהיכן הגעת אל האתר ועוד.</p>
-      <p>האגרוסופט נעזר בנוסף גם ב-Cookies שמקורם בצדדים שלישיים, בהם Google Analytics, שירותי הפרסום של חברת גוגל, ורשתות חברתיות כגון פייסבוק.</p>
+      <p>אגרוסופט נעזר בנוסף גם ב-Cookies שמקורם בצדדים שלישיים, בהם Google Analytics, שירותי הפרסום של חברת גוגל, ורשתות חברתיות כגון פייסבוק.</p>
       <p>אם אינך רוצה לקבל Cookies, תוכל להימנע מכך על ידי שינוי ההגדרות בדפדפן שלך. זכור עם זאת שנטרול העוגיות עלול לגרום לכך שלא תוכל להשתמש בחלק מהשירותים והתכונות באתר.</p>
 
       <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">אבטחת מידע</h2>
-      <p>האגרוסופט מייחס חשיבות עליונה לאבטחת המידע במערכותיו. לשם שמירת המידע, הוא מפעיל מערכות, יישומים ונהלים לאבטחת המידע, המיועדים למזער את הסיכונים מפני גניבה, פגיעה, אובדן או גישה בלתי מורשית למידע.</p>
+      <p>אגרוסופט מייחס חשיבות עליונה לאבטחת המידע במערכותיו. לשם שמירת המידע, הוא מפעיל מערכות, יישומים ונהלים לאבטחת המידע, המיועדים למזער את הסיכונים מפני גניבה, פגיעה, אובדן או גישה בלתי מורשית למידע.</p>
       <p>עם זה, אין וודאות שיישומים אלה מבטיחים באופן מוחלט שמידע אישי לא ייחשף או ייגנב ממאגרי המידע. בעצם השימוש באתר ובשירותיו, אתה מודע ומסכים למגבלות אלו.</p>
 
       <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">זכות לעיין במידע</h2>
@@ -692,7 +691,7 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
       <p>שים לב כי מחיקת מידע עלולה למנוע ממך להמשיך ולקבל שירותים מהאתר. מידע הדרוש לאגרוסופט יוסיף להישמר על-פי דין, אך לא ישמש עוד לצורך פניות אליך.</p>
 
       <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">שינויים במדיניות הפרטיות</h2>
-      <p>האגרוסופט רשאי לשנות מעת לעת את תנאי מדיניות הפרטיות. אם יבוצעו שינויים מהותיים, תפורסם על-כך הודעה בעמוד הבית של האתר 30 ימים לפני כניסת השינויים לתוקף. המשך השימוש באתר לאחר השינוי מעיד על הסכמתך למדיניות המתוקנת.</p>
+      <p>אגרוסופט רשאי לשנות מעת לעת את תנאי מדיניות הפרטיות. אם יבוצעו שינויים מהותיים, תפורסם על-כך הודעה בעמוד הבית של האתר 30 ימים לפני כניסת השינויים לתוקף. המשך השימוש באתר לאחר השינוי מעיד על הסכמתך למדיניות המתוקנת.</p>
 
       <div style="margin-top:24px;padding-top:16px;border-top:1px solid var(--border);color:var(--muted);font-size:.82rem;text-align:center">
         מדיניות הפרטיות עודכנה לאחרונה: 05/04/2026 | מדיניות הפרטיות מנוסחת בלשון זכר מטעמי נוחות בלבד.
@@ -732,7 +731,7 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
       <h4>שירותים</h4>
       <a href="https://www.agropriority.com/ServiceCalls" target="_blank">שירות לקוחות</a>
       <a href="https://www.farm-online.net/login_new/" target="_blank">פורטל מגדלים</a>
-      <a href="index-en.html">English</a>
+      <a href="/en/">English</a>
     </div>
   </div>
   <div class="foot-copy">© 2009–2026 כל הזכויות שמורות | עיצוב ובנייה ע"י <a href="https://ombee.co.il" target="_blank">OMBee Graphic Design And UI/UX</a></div>

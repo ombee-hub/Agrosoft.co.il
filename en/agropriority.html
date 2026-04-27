@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ministry of Agriculture - AgroSoft Ltd.</title>
-<link rel="icon" type="image/svg+xml" href="images/Ag_logo.svg">
+<title>AgroPriority - AgroSoft Ltd.</title>
+<link rel="icon" type="image/svg+xml" href="/images/Ag_logo.svg">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 *{box-sizing:border-box;margin:0;padding:0}
@@ -56,7 +56,7 @@ nav{background:var(--white);border-bottom:1px solid var(--border);position:stick
 .page{display:none}.page.active{display:block}
 
 /* HERO */
-.hero{min-height:42vh;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;text-align:left;padding:50px 60px 40px;background:linear-gradient(160deg,rgba(26,77,35,.82) 0%,rgba(29,107,43,.75) 50%,rgba(46,139,61,.70) 100%),url('images/Agriculture.png') center/cover no-repeat;position:relative;overflow:hidden}
+.hero{min-height:42vh;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;text-align:left;padding:50px 60px 40px;background:linear-gradient(160deg,rgba(26,77,35,.82) 0%,rgba(29,107,43,.75) 50%,rgba(46,139,61,.70) 100%),url('/images/Agriculture.png') center/cover no-repeat;position:relative;overflow:hidden}
 .slider{width:100%;position:relative;display:flex;flex-direction:column;align-items:flex-start}
 .slide{display:none;flex-direction:column;align-items:flex-start;text-align:left;max-width:520px;animation:fadein .6s ease}
 .slide.active{display:flex}
@@ -77,8 +77,8 @@ h2.sec-title{text-align:center;font-size:clamp(1.8rem,3vw,2.35rem);font-weight:9
 .sec-sub{text-align:center;color:var(--muted);font-size:.98rem;max-width:540px;margin:0 auto 54px;line-height:1.78}
 
 /* PRODUCTS */
-.prod-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;max-width:1120px;margin:0 auto}
-.prod-card{background:var(--bg);border:1.5px solid var(--border);border-radius:20px;padding:28px 24px;transition:.28s;cursor:pointer;text-decoration:none;color:inherit;display:flex;flex-direction:column}
+.prod-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;max-width:1120px;margin:0 auto}
+.prod-card{background:var(--bg);border:1.5px solid var(--border);border-radius:20px;padding:28px 24px;transition:.28s;cursor:pointer;text-decoration:none;color:inherit;display:flex;flex-direction:column;align-items:center;text-align:center}
 .prod-card:hover{transform:translateY(-7px);border-color:var(--g3);box-shadow:0 16px 44px rgba(45,122,58,.15);background:var(--white)}
 .prod-ico{width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.55rem;margin-bottom:18px}
 .prod-card h3{font-size:1.15rem;font-weight:800;margin-bottom:8px}
@@ -227,8 +227,8 @@ footer{background:var(--g1);padding:48px 48px 28px;display:flex;flex-direction:c
 .mob-nav a{display:block;padding:11px 14px;border-radius:10px;color:var(--text);text-decoration:none;font-size:.95rem;font-weight:500;transition:.15s}
 .mob-nav a:active{background:#eef6ef;color:var(--g2)}
 .mob-sep{font-size:.7rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--muted);padding:14px 14px 4px;margin-top:4px}
-.mob-sep-toggle{cursor:pointer;display:flex;align-items:center;justify-content:space-between}
-.mob-sep-toggle .mob-sep-arrow{display:inline-block;transition:transform .3s ease;font-size:.9rem;font-weight:900;color:var(--g2);line-height:1}
+.mob-sep-toggle{cursor:pointer;display:flex;align-items:center;justify-content:space-between;font-size:.95rem;font-weight:500;letter-spacing:normal;text-transform:none;color:var(--text);padding:11px 14px;margin-top:0;border-radius:10px}
+.mob-sep-toggle .mob-sep-arrow{display:inline-block;transition:transform .3s ease;font-size:1.25rem;font-weight:900;color:var(--g2);line-height:1;position:relative;top:3px}
 .mob-sep-toggle.open .mob-sep-arrow{transform:rotate(180deg)}
 .mob-products{overflow:hidden;max-height:0;transition:max-height .35s ease;margin:0}
 .mob-products.open{max-height:400px}
@@ -469,54 +469,54 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
       <span></span>
       <span></span>
     </button>
-    <a class="logo" href="index-en.html"><div class="logo-name">AgroSoft</div></a>
+    <a class="logo" href="/en/"><div class="logo-name">AgroSoft</div></a>
     <div class="nav-links">
-      <a href="about-en.html">About</a>
+      <a href="about.html">About</a>
       <div class="dropdown">
         <a href="#">Solutions <span class="dd-arrow">&#9660;</span></a>
         <div class="mega">
           <div class="mega-grid">
-            <a class="mega-item" href="agropriority-en.html">
-              <img class="mega-img" src="images/AgroPriority_logo.png">
+            <a class="mega-item" href="agropriority.html">
+              <img class="mega-img" src="/images/AgroPriority_logo.png">
               <div class="mega-txt"><h4>AgroPriority</h4><p>Complete ERP solution for agricultural companies</p></div>
               <span class="mega-arr">Learn more &rarr;</span>
             </a>
-            <a class="mega-item" href="agrotalk-en.html">
-              <img class="mega-img" src="images/AgroTalk_logoN.png">
+            <a class="mega-item" href="agrotalk.html">
+              <img class="mega-img" src="/images/AgroTalk_logoN.png">
               <div class="mega-txt"><h4>AgroTalk</h4><p>Real-time messaging with suppliers and customers</p></div>
               <span class="mega-arr">Learn more &rarr;</span>
             </a>
-            <a class="mega-item" href="agrosmart-en.html">
-              <img class="mega-img" src="images/AgroSmart_Logo.png">
+            <a class="mega-item" href="agrosmart.html">
+              <img class="mega-img" src="/images/AgroSmart_Logo.png">
               <div class="mega-txt"><h4>AgroSmart</h4><p>Smart warehouse management for any device</p></div>
               <span class="mega-arr">Learn more &rarr;</span>
             </a>
-            <a class="mega-item" href="agroqc-en.html">
-              <img class="mega-img" src="images/AgroQC_LogoN.png">
+            <a class="mega-item" href="agroqc.html">
+              <img class="mega-img" src="/images/AgroQC_LogoN.png">
               <div class="mega-txt"><h4>AgroQC</h4><p>Interactive and flexible quality control</p></div>
               <span class="mega-arr">Learn more &rarr;</span>
             </a>
-            <a class="mega-item" href="agroshop-en.html">
-              <img class="mega-img" src="images/agroShop.png">
+            <a class="mega-item" href="agroshop.html">
+              <img class="mega-img" src="/images/agroShop.png">
               <div class="mega-txt"><h4>AgroShop</h4><p>Online B2B portal for customer order entry</p></div>
               <span class="mega-arr">Learn more &rarr;</span>
             </a>
           </div>
           <div class="mega-footer">
-            <a href="index-en.html#products-section">&#8594; All Solutions</a>
+            <a href="/en/#products-section">&#8594; All Solutions</a>
           </div>
         </div>
       </div>
-      <a href="customers-en.html">Our Clients</a>
+      <a href="customers.html">Our Clients</a>
       <a href="https://www.agropriority.com/ServiceCalls" target="_blank">Customer Service</a>
-      <a href="news-en.html">News &amp; Updates</a>
+      <a href="news.html">News &amp; Updates</a>
       <a href="https://www.farm-online.net/login_new/" target="_blank">Growers Portal</a>
-      <a href="contact-en.html" class="nav-cta">Contact Us</a>
+      <a href="contact.html" class="nav-cta">Contact Us</a>
     </div>
     <div class="lang-dd">
       <a class="lang-btn" href="#">🌐 ▾</a>
       <div class="lang-menu">
-        <a href="index.html"><img src="images/flag-for-flag-israel-svgrepo-com.svg" width="20" height="20" style="vertical-align:middle;margin-right:6px" alt="IL"> &#1506;&#1489;&#1512;&#1497;&#1514;</a>
+        <a href="/"><img src="/images/flag-for-flag-israel-svgrepo-com.svg" width="20" height="20" style="vertical-align:middle;margin-right:6px" alt="IL"> &#1506;&#1489;&#1512;&#1497;&#1514;</a>
       </div>
     </div>
   </div>
@@ -531,81 +531,118 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
     <button class="mob-close-btn" onclick="closeMobileMenu()">&#x2715;</button>
   </div>
   <div class="mob-nav">
-    <a href="about-en.html">About</a>
+    <a href="about.html">About</a>
     <div class="mob-sep mob-sep-toggle open" onclick="toggleMobProducts(this)">Solutions <span class="mob-sep-arrow">▾</span></div>
     <div class="mob-products open">
-      <a href="agropriority-en.html">
+      <a href="agropriority.html">
         <div class="mob-prod">
-          <img src="images/AgroPriority_logo.png" style="width:68px;height:68px">
+          <img src="/images/AgroPriority_logo.png" style="width:68px;height:68px">
           <span class="mob-prod-txt">AgroPriority</span>
         </div>
       </a>
-      <a href="agrotalk-en.html">
+      <a href="agrotalk.html">
         <div class="mob-prod">
-          <img src="images/AgroTalk_logoN.png" style="background:#e8f5e9">
+          <img src="/images/AgroTalk_logoN.png" style="background:#e8f5e9">
           <span class="mob-prod-txt">AgroTalk</span>
         </div>
       </a>
-      <a href="agrosmart-en.html">
+      <a href="agrosmart.html">
         <div class="mob-prod">
-          <img src="images/AgroSmart_Logo.png" style="background:#fff3e0">
+          <img src="/images/AgroSmart_Logo.png" style="background:#fff3e0">
           <span class="mob-prod-txt">AgroSmart</span>
         </div>
       </a>
-      <a href="agroqc-en.html">
+      <a href="agroqc.html">
         <div class="mob-prod">
-          <img src="images/AgroQC_LogoN.png" style="background:#fce4ec">
+          <img src="/images/AgroQC_LogoN.png" style="background:#fce4ec">
           <span class="mob-prod-txt">AgroQC</span>
         </div>
       </a>
-      <a href="agroshop-en.html">
+      <a href="agroshop.html">
         <div class="mob-prod">
-          <img src="images/agroShop.png" style="background:#f3e5f5">
+          <img src="/images/agroShop.png" style="background:#f3e5f5">
           <span class="mob-prod-txt">AgroShop</span>
         </div>
     </a>
     </div>
-    <div class="mob-sep">More</div>
-    <a href="customers-en.html">Our Clients</a>
+    <a href="customers.html">Our Clients</a>
     <a href="https://www.agropriority.com/ServiceCalls" target="_blank" onclick="closeMobileMenu()">Customer Service</a>
-    <a href="news-en.html">News &amp; Updates</a>
+    <a href="news.html">News &amp; Updates</a>
     <a href="https://www.farm-online.net/login_new/" target="_blank" onclick="closeMobileMenu()">Growers Portal</a>
-    <a href="index.html" onclick="closeMobileMenu()"><img src="images/flag-for-flag-israel-svgrepo-com.svg" width="20" height="20" style="vertical-align:middle;margin-right:6px" alt="IL"> &#1506;&#1489;&#1512;&#1497;&#1514;</a>
-    <a class="mob-cta" href="contact-en.html">Contact Us &#8594;</a>
+    <a href="/" onclick="closeMobileMenu()"><img src="/images/flag-for-flag-israel-svgrepo-com.svg" width="20" height="20" style="vertical-align:middle;margin-right:6px" alt="IL"> &#1506;&#1489;&#1512;&#1497;&#1514;</a>
+    <a class="mob-cta" href="contact.html">Contact Us &#8594;</a>
   </div>
 </div>
 
-<div id="news-agriculture" class="page active">
-  <div class="news-art-hero">
-    <span class="news-art-back" onclick="goBack()">&larr; Back</span>
-    <div class="news-art-date">January 2018</div>
-    <h1>Interface with Ministry of Agriculture &ndash; Plant Protection Servers</h1>
+<div id="agropriority" class="page active">
+  <div class="prod-pg-hdr" style="background:linear-gradient(135deg,#1a4d23,#4caf50)">
+    <div style="color:#fff;max-width:580px">
+      <div style="font-size:.78rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;opacity:.75;margin-bottom:12px">Leading ERP Solution for Agriculture</div>
+      <h1 style="font-size:2.8rem;font-weight:900;margin-bottom:18px;line-height:1.15">AgroPriority</h1>
+      <p style="font-size:1.05rem;line-height:1.8;opacity:.88;margin-bottom:28px">A complete solution for managing agricultural companies &mdash; export, marketing &amp; distribution, packing houses, logistics centers, startups and more. Based on <strong>Priority ERP</strong> with a unique agricultural marketing module developed by AgroSoft.</p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <a href="contact.html" style="background:#fff;color:var(--g1);padding:12px 28px;border-radius:12px;font-weight:800;text-decoration:none;font-size:.95rem">Contact Us</a>
+        <a href="https://www.agropriority.com/ServiceCalls" target="_blank" style="background:rgba(255,255,255,.15);color:#fff;padding:12px 28px;border-radius:12px;font-weight:600;text-decoration:none;font-size:.95rem;border:2px solid rgba(255,255,255,.35)">Customer Service Portal</a>
+      </div>
+    </div>
+    <img src="/images/authorized-partner-white.png" style="height:100px;opacity:.95" onerror="this.style.display='none'">
   </div>
-  <div class="news-art-body">
-    <p>Development of a direct interface between AgroPriority and the Ministry of Agriculture's plant protection server computer system &mdash; full operation from within the system without switching to an external interface.</p>
-    <h2>Available Operations</h2>
-    <div class="news-art-feature">
-      <div class="ico">&#128221;</div>
-      <div><h4>Open an Order</h4><p>Open an order in the plant protection servers directly from AgroPriority.</p></div>
+  <section style="background:var(--bg);padding:48px">
+    <div class="feat-g3">
+      <div style="background:var(--white);border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
+        <div style="font-size:2rem;margin-bottom:12px">&#127757;</div>
+        <h3 style="font-weight:800;margin-bottom:8px;font-size:1rem">Multi-language &amp; Multi-currency</h3>
+        <p style="color:var(--muted);font-size:.86rem;line-height:1.6">Full support for multiple languages and currencies for managing international export operations</p>
+      </div>
+      <div style="background:var(--white);border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
+        <div style="font-size:2rem;margin-bottom:12px">&#128279;</div>
+        <h3 style="font-weight:800;margin-bottom:8px;font-size:1rem">Full Integration</h3>
+        <p style="color:var(--muted);font-size:.86rem;line-height:1.6">Interfaces with Ministry of Agriculture, customs brokers, sorting machines and weighing systems</p>
+      </div>
+      <div style="background:var(--white);border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
+        <div style="font-size:2rem;margin-bottom:12px">&#128202;</div>
+        <h3 style="font-weight:800;margin-bottom:8px;font-size:1rem">Reports &amp; Analytics</h3>
+        <p style="color:var(--muted);font-size:.86rem;line-height:1.6">Flexible report generators at both user and system administrator level</p>
+      </div>
     </div>
-    <div class="news-art-feature">
-      <div class="ico">&#127807;</div>
-      <div><h4>Broadcast Growing Areas</h4><p>Transmit growing area data to Ministry of Agriculture servers.</p></div>
+  </section>
+  <section style="background:var(--white);padding:56px 48px">
+    <div style="max-width:980px;margin:0 auto">
+      <div style="text-align:center;margin-bottom:40px">
+        <div class="sec-label">What's Included</div>
+        <h2 class="sec-title">Key Modules</h2>
+      </div>
+      <div class="mod-grid">
+        <div class="mod"><div class="mod-dot"></div><span>Customer relationship management, quotes and forecasts</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Purchasing management &ndash; purchase requests and orders end-to-end</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Inventory management and full traceability locally and abroad</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Marketing and sales, customer orders</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Export file management and profitability calculations</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Import file and loading management</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Export document generation via email at the click of a button</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Advanced process control (BPM)</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Automatic import of customs broker invoices</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Interfaces with the Ministry of Agriculture</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Full accounting management</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Grower payment calculation models</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Report generators at user and system administrator level</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Packing house sorting processes + interface with sorting &amp; weighing machines</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Portal for growers and packing houses</span></div>
+        <div class="mod"><div class="mod-dot"></div><span>Agent management systems and online store</span></div>
+      </div>
     </div>
-    <div class="news-art-feature">
-      <div class="ico">&#128666;</div>
-      <div><h4>Transmit Delivery Note</h4><p>Transmit delivery notes for regulatory monitoring and tracking.</p></div>
-    </div>
-    <h2>Advantage</h2>
-    <p>All work is done from within AgroPriority &mdash; saving time, preventing double-entry errors and meeting the Ministry of Agriculture's regulatory requirements.</p>
-    <div class="news-art-cta">
-      <p>Do you need an additional regulatory interface?</p>
-      <a href="contact-en.html">Contact Us &#8594;</a>
+  </section>
+  <div class="cta-band">
+    <h2>Want to learn more about AgroPriority?</h2>
+    <p>Contact us and we'll be happy to give you a personal demo</p>
+    <div class="cta-btns">
+      <a class="btn-solid" href="contact.html">Contact Us Now</a>
+      <a class="btn-ghost" href="https://www.agropriority.com/ServiceCalls" target="_blank">Customer Service Portal</a>
     </div>
   </div>
 </div>
 
-<!-- NEWS ARTICLE: CUSTOMS MODULE -->
+<!-- AGROTALK -->
 <footer>
   <div class="foot-title">Site Map</div>
   <div class="foot-top">
@@ -615,29 +652,29 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
     </div>
     <div class="foot-col">
       <h4>Company</h4>
-      <a href="about-en.html">About</a>
-      <a href="customers-en.html">Our Clients</a>
-      <a href="contact-en.html">Contact</a>
+      <a href="about.html">About</a>
+      <a href="customers.html">Our Clients</a>
+      <a href="contact.html">Contact</a>
     </div>
     <div class="foot-col">
       <h4>Solutions</h4>
-      <a href="agropriority-en.html">AgroPriority</a>
-      <a href="agrotalk-en.html">AgroTalk</a>
-      <a href="agrosmart-en.html">AgroSmart</a>
-      <a href="agroqc-en.html">AgroQC</a>
-      <a href="agroshop-en.html">AgroShop</a>
+      <a href="agropriority.html">AgroPriority</a>
+      <a href="agrotalk.html">AgroTalk</a>
+      <a href="agrosmart.html">AgroSmart</a>
+      <a href="agroqc.html">AgroQC</a>
+      <a href="agroshop.html">AgroShop</a>
     </div>
     <div class="foot-col">
       <h4>News &amp; Info</h4>
-      <a href="news-en.html">News &amp; Updates</a>
-      <a href="accessibility-en.html">Accessibility</a>
-      <a href="privacy-en.html">Privacy Policy</a>
+      <a href="news.html">News &amp; Updates</a>
+      <a href="accessibility.html">Accessibility</a>
+      <a href="privacy.html">Privacy Policy</a>
     </div>
     <div class="foot-col">
       <h4>Services</h4>
       <a href="https://www.agropriority.com/ServiceCalls" target="_blank">Customer Service</a>
       <a href="https://www.farm-online.net/login_new/" target="_blank">Growers Portal</a>
-      <a href="index.html">עברית</a>
+      <a href="/">עברית</a>
     </div>
   </div>
   <div class="foot-copy">© 2009–2026 All rights reserved | Design &amp; Development by <a href="https://ombee.co.il" target="_blank">OMBee Graphic Design And UI/UX</a></div>
@@ -708,13 +745,13 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
   </div>
   <div class="a11y-foot">
     <button class="a11y-reset" onclick="resetA11y()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M1 4v6h6"/><path d="M3.51 15a9 9 0 105.34-9.34L1 10"/></svg> Reset All Settings</button>
-    <div class="a11y-stmt"><a href="accessibility-en.html">Accessibility Statement</a> | <a href="privacy-en.html">Privacy Policy</a></div>
+    <div class="a11y-stmt"><a href="accessibility.html">Accessibility Statement</a> | <a href="privacy.html">Privacy Policy</a></div>
   </div>
 </div>
 
 <!-- COOKIES BANNER -->
 <div class="cookie-banner" id="cookie-banner">
-  <p>🍪 This website uses cookies to improve your browsing experience. <a href="privacy-en.html">Privacy Policy</a></p>
+  <p>🍪 This website uses cookies to improve your browsing experience. <a href="privacy.html">Privacy Policy</a></p>
   <div class="cookie-btns">
     <button class="cookie-accept" onclick="acceptCookies()">Accept</button>
     <button class="cookie-reject" onclick="rejectCookies()">Decline</button>
@@ -751,10 +788,10 @@ var customerLogos = [
 ];
 
 var logoImages = customerLogos.map(function(c){
-  return { src: 'images/customerImages/' + c.file, name: c.name };
+  return { src: '/images/customerImages/' + c.file, name: c.name };
 });
 var homeLogos = customerLogos.filter(function(c){ return c.home; }).map(function(c){
-  return { src: 'images/customerImages/' + c.file, name: c.name };
+  return { src: '/images/customerImages/' + c.file, name: c.name };
 });
 
 function renderCarousel(){

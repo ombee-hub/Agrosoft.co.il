@@ -77,8 +77,8 @@ h2.sec-title{text-align:center;font-size:clamp(1.8rem,3vw,2.35rem);font-weight:9
 .sec-sub{text-align:center;color:var(--muted);font-size:.98rem;max-width:540px;margin:0 auto 54px;line-height:1.78}
 
 /* PRODUCTS */
-.prod-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;max-width:1120px;margin:0 auto}
-.prod-card{background:var(--bg);border:1.5px solid var(--border);border-radius:20px;padding:28px 24px;transition:.28s;cursor:pointer;text-decoration:none;color:inherit;display:flex;flex-direction:column}
+.prod-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;max-width:1120px;margin:0 auto}
+.prod-card{background:var(--bg);border:1.5px solid var(--border);border-radius:20px;padding:28px 24px;transition:.28s;cursor:pointer;text-decoration:none;color:inherit;display:flex;flex-direction:column;align-items:center;text-align:center}
 .prod-card:hover{transform:translateY(-7px);border-color:var(--g3);box-shadow:0 16px 44px rgba(45,122,58,.15);background:var(--white)}
 .prod-ico{width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.55rem;margin-bottom:18px}
 .prod-card h3{font-size:1.15rem;font-weight:800;margin-bottom:8px}
@@ -257,8 +257,8 @@ footer{background:var(--g1);padding:48px 48px 28px;display:flex;flex-direction:c
 .mob-nav a{display:block;padding:11px 14px;border-radius:10px;color:var(--text);text-decoration:none;font-size:.95rem;font-weight:500;transition:.15s}
 .mob-nav a:active{background:#eef6ef;color:var(--g2)}
 .mob-sep{font-size:.7rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--muted);padding:14px 14px 4px;margin-top:4px}
-.mob-sep-toggle{cursor:pointer;display:flex;align-items:center;justify-content:space-between}
-.mob-sep-toggle .mob-sep-arrow{display:inline-block;transition:transform .3s ease;font-size:.9rem;font-weight:900;color:var(--g2);line-height:1}
+.mob-sep-toggle{cursor:pointer;display:flex;align-items:center;justify-content:space-between;font-size:.95rem;font-weight:500;letter-spacing:normal;text-transform:none;color:var(--text);padding:11px 14px;margin-top:0;border-radius:10px}
+.mob-sep-toggle .mob-sep-arrow{display:inline-block;transition:transform .3s ease;font-size:1.25rem;font-weight:900;color:var(--g2);line-height:1;position:relative;top:3px}
 .mob-sep-toggle.open .mob-sep-arrow{transform:rotate(180deg)}
 .mob-products{overflow:hidden;max-height:0;transition:max-height .35s ease;margin:0}
 .mob-products.open{max-height:400px}
@@ -507,7 +507,7 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
       <span></span>
       <span></span>
     </button>
-    <a class="logo" href="index.html"><div class="logo-name">AgroSoft</div></a>
+    <a class="logo" href="/"><div class="logo-name">AgroSoft</div></a>
     <div class="nav-links">
       <a href="about.html">חברה</a>
       <div class="dropdown">
@@ -541,7 +541,7 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
             </a>
           </div>
           <div class="mega-footer">
-            <a href="index.html#products-section">← לכל הפתרונות</a>
+            <a href="/#products-section">← לכל הפתרונות</a>
           </div>
         </div>
       </div>
@@ -554,7 +554,7 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
     <div class="lang-dd">
       <a class="lang-btn" href="#">🌐 ▾</a>
       <div class="lang-menu">
-        <a href="index-en.html"><img src="images/Union_Jack_1606_Scotland.svg" width="20" height="20" style="vertical-align:middle;margin-left:6px" alt="EN"> English</a>
+        <a href="/en/"><img src="images/Union_Jack_1606_Scotland.svg" width="20" height="20" style="vertical-align:middle;margin-left:6px" alt="EN"> English</a>
       </div>
     </div>
   </div>
@@ -603,12 +603,11 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
         </div>
       </a>
     </div>
-    <div class="mob-sep">עוד</div>
     <a href="customers.html">הלקוחות שלנו</a>
     <a href="https://www.agropriority.com/ServiceCalls" target="_blank" onclick="closeMobileMenu()">שרות לקוחות</a>
     <a href="news.html">חדשות ועדכונים</a>
     <a href="https://www.farm-online.net/login_new/" target="_blank" onclick="closeMobileMenu()">פורטל מגדלים</a>
-    <a href="index-en.html" onclick="closeMobileMenu()"><img src="images/Union_Jack_1606_Scotland.svg" width="20" height="20" style="vertical-align:middle;margin-left:6px" alt="EN"> English</a>
+    <a href="/en/" onclick="closeMobileMenu()"><img src="images/Union_Jack_1606_Scotland.svg" width="20" height="20" style="vertical-align:middle;margin-left:6px" alt="EN"> English</a>
     <a class="mob-cta" href="contact.html">יצירת קשר ←</a>
   </div>
 </div>
@@ -709,7 +708,7 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
       <h4>שירותים</h4>
       <a href="https://www.agropriority.com/ServiceCalls" target="_blank">שירות לקוחות</a>
       <a href="https://www.farm-online.net/login_new/" target="_blank">פורטל מגדלים</a>
-      <a href="index-en.html">English</a>
+      <a href="/en/">English</a>
     </div>
   </div>
   <div class="foot-copy">© 2009–2026 כל הזכויות שמורות | עיצוב ובנייה ע"י <a href="https://ombee.co.il" target="_blank">OMBee Graphic Design And UI/UX</a></div>

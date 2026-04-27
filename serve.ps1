@@ -11,7 +11,10 @@ while ($true) {
     $localPath = $req.Url.LocalPath.TrimStart('/')
     if ($localPath -eq '' -or $localPath -eq '/') { $localPath = 'index.html' }
     $filePath = Join-Path $root $localPath
-    if (Test-Path $filePath) {
+    if ((Test-Path $filePath -PathType Container)) {
+        $filePath = Join-Path $filePath 'index.html'
+    }
+    if (Test-Path $filePath -PathType Leaf) {
         $bytes = [System.IO.File]::ReadAllBytes($filePath)
         $ext = [System.IO.Path]::GetExtension($filePath).ToLower()
         $mime = switch ($ext) {

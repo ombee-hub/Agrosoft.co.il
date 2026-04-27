@@ -1,0 +1,6 @@
+backup_*/
+.claude/
+agrosoft-web.zip
+*.log
+.DS_Store
+Thumbs.db
