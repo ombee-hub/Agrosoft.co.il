@@ -799,31 +799,51 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
 // home: false = מופיע רק בדף הלקוחות
 // ================================================================
 var customerLogos = [
-  { file: 'Aviv_new.png',                    name: 'אביב',                  home: true  },
-  { file: 'tzurfarm_logo_width_2023.png',    name: 'משק צור',               home: true  },
-  { file: 'Logo_Galilee.png',                name: 'גליל',                  home: true  },
-  { file: 'galil_2013_new.png',         name: 'גליל',                  home: false },
-  { file: 'taligrapes_logo.png',             name: 'ענבי טלי',              home: true  },
-  { file: 'Granot_agricultural_produce.png', name: 'תוצרת חקלאי גרנות',    home: true  },
-  { file: 'Miluopri_logo_He.png',            name: 'מלופרי',                home: true  },
-  { file: 'Miriam_Shoham_Logo.png',          name: 'שוהם',                  home: true  },
-  { file: 'sdot_baemek_logo.png',            name: 'שדות בעמק',             home: true  },
-  { file: 'yevuley_hacfar_logo.png',         name: 'יבולי הכפר',            home: true  },
-  { file: 'Abu-Kadu.png',                    name: 'אבו קאדו',              home: false },
-  { file: 'Arava_Logo.png',                  name: 'איחוד חקלאי הערבה',     home: false },
-  { file: 'Dudu_Ezra.png',                   name: 'דודו עזרא',             home: false },
-  { file: 'EGO_GROWERS_LTD.png',             name: 'EGO Growers',           home: false },
-  { file: 'Galey_Moshe_logo.png',            name: 'גלי משה',               home: false },
-  { file: 'Gezer_Shallit_He.png',            name: 'גזר שליט',              home: false },
-  { file: 'Gilad_Logo_new.png',              name: 'גלעד',                  home: true  },
-  { file: 'Logo_Stm.png',                   name: 'STM',                   home: false },
-  { file: 'MeshekBechor_Logo.png',          name: 'משק בכור',              home: false },
-  { file: 'tal_hel_yiska_logo.png',           name: 'טל הל יסכה',            home: false },
-  { file: 'Hamarlog_Logo.png',             name: 'המרלוג',                home: false },
-  { file: 'haskelberg_Logo.png',           name: 'הסקלברג',               home: false },
-  { file: 'carmy_export_logo.png',         name: 'Carmy Export',          home: false },
-  { file: 'Ilsar_Truffles_Logo.png',       name: 'Ilsar Truffles',        home: false },
-  { file: 'Joytech_logo.png',             name: 'Joytech',               home: false },
+  { file: 'Aviv_Logo.png',                              name: 'אביב',                          home: true  },
+  { file: 'Tzur Farm_Logo.png',                         name: 'משק צור',                       home: true  },
+  { file: 'Galilee_Logo.png',                           name: 'גליל',                          home: true  },
+  { file: 'Tali Grapes_Logo.png',                       name: 'ענבי טלי',                      home: true  },
+  { file: 'Agricultural produce from Granot_Logo.png',  name: 'תוצרת חקלאית גרנות',            home: true  },
+  { file: 'Milopri_Logo.png',                           name: 'מילופרי',                       home: true  },
+  { file: 'Miriam Shoham_Logo.png',                     name: 'מרים שוהם',                     home: true  },
+  { file: 'Sadot Baemek_Logo.png',                      name: 'שדות בעמק',                     home: true  },
+  { file: 'Yevoley Hakfar_Logo.png',                    name: 'יבולי הכפר',                    home: true  },
+  { file: 'GiladLogo.png',                              name: 'גלעד',                          home: true  },
+  { file: 'Avicado_Logo.png',                           name: 'אבו קאדו',                      home: false },
+  { file: 'Arava Farmers Union_Logo.png',               name: 'איחוד חקלאי הערבה',             home: false },
+  { file: 'Dudu Ezra_Logo.png',                         name: 'דודו עזרא',                     home: false },
+  { file: 'Ego tumors_Logo.png',                        name: 'אגו',                           home: false },
+  { file: 'Gali Moshe_Logo.png',                        name: 'גלי משה',                       home: false },
+  { file: 'Gzar Shlit_Logo.png',                        name: 'גזר שליט',                      home: false },
+  { file: 'Stm_Logo.png',                               name: 'STM',                           home: false },
+  { file: 'MeshekBechor_Logo.png',                      name: 'משק בכור',                      home: false },
+  { file: 'Tal Hel Yaska_Logo.png',                     name: 'טל הל יסכה',                    home: false },
+  { file: 'Hmarlog_logo.png',                           name: 'המרלוג',                        home: false },
+  { file: 'Haskelberg_Logo.png',                        name: 'הסקלברג',                       home: false },
+  { file: 'Carmy_Logo.png',                             name: 'Carmy',                         home: false },
+  { file: 'ILsar_Logo.png',                             name: 'אילסר',                         home: false },
+  { file: 'Joytech_Logo.png',                           name: 'Joytech',                       home: false },
+  { file: 'A.A. Gabbay_Logo.png',                       name: 'א.א. גבאי',                     home: false },
+  { file: 'Adom Feuits_Logo.png',                       name: 'אדום פירות',                    home: false },
+  { file: 'Agricultural Exchange_Logo.png',             name: 'בורסת התוצרת החקלאית',         home: false },
+  { file: 'Agridera_Logo.png',                          name: 'אגרידרה',                       home: false },
+  { file: 'Banana growers Western Galilee_Logo.png',    name: 'מגדלי בננות מערב הגליל',       home: false },
+  { file: 'Befresh_Logo.png',                           name: 'ביפראש',                        home: false },
+  { file: 'Bless_Logo.png',                             name: 'בלאס',                          home: false },
+  { file: 'Carmels_logo.png',                           name: 'כרמלים',                        home: false },
+  { file: 'Garden farmer_Logo.png',                     name: 'גן ירק',                        home: false },
+  { file: 'Gilil +Adam_Logo.png',                       name: 'גליל + אדם',                    home: false },
+  { file: 'Milouf_Logo.png',                            name: 'מילועוף',                       home: false },
+  { file: 'Mor_IL.png',                                 name: 'Mor IL',                        home: false },
+  { file: 'Mor_USA.png',                                name: 'Mor USA',                       home: false },
+  { file: 'Potatoes of the good land_Logo.png',         name: 'תפודי הארץ הטובה',              home: false },
+  { file: 'Pringeve.png',                               name: 'Pringeve',                      home: false },
+  { file: 'R.A.N_Logo.png',                             name: 'R.A.N',                         home: false },
+  { file: 'Timura_Logo.png',                            name: 'תימורה',                        home: false },
+  { file: 'Totzrat Hangev_logo.png',                    name: 'תוצרת הנגב',                    home: false },
+  { file: 'Yad Mordechai_Logo.png',                     name: 'יד מרדכי',                      home: false },
+  { file: 'Yofi shel Yarkot_Logo.png',                  name: 'יופי של ירקות',                home: false },
+  { file: 'benenut hachof_Logo.png',                    name: 'בננות החוף',                    home: false },
 ];
 </script>
 <script>
@@ -874,17 +894,13 @@ var customers = [
 // לוגואים שהועלו ידנית
 var uploadedLogos = {};
 
-var customerImages = {
-  0: 'images/customerImages/Aviv_new.png',
-  1: 'images/customerImages/tzurfarm_logo_width_2023.png',
-  3: 'images/customerImages/Logo_Galilee.png',
-};
+var customerImages = {};
 
 var logoImages = customerLogos.map(function(c){
-  return { src: 'images/customerImages/' + c.file, name: c.name };
+  return { src: 'images/Logos%20Is%20Our%20Customers/' + c.file, name: c.name };
 });
 var homeLogos = customerLogos.filter(function(c){ return c.home; }).map(function(c){
-  return { src: 'images/customerImages/' + c.file, name: c.name };
+  return { src: 'images/Logos%20Is%20Our%20Customers/' + c.file, name: c.name };
 });
 
 function renderCustomers(){

@@ -457,7 +457,14 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
   .a11y-panel{width:300px}
   .cookie-banner{padding:16px 20px;gap:14px;flex-direction:column}
 }
-</style>
+
+/* Lightbox */
+.lightbox-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:20000;justify-content:center;align-items:center;cursor:zoom-out}
+.lightbox-overlay.active{display:flex}
+.lightbox-overlay img{max-width:92vw;max-height:90vh;border-radius:10px;box-shadow:0 8px 40px rgba(0,0,0,.5);object-fit:contain}
+.lightbox-close{position:fixed;top:18px;right:18px;color:#fff;font-size:2rem;cursor:pointer;z-index:20001;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.15);border-radius:50%;transition:.2s}
+.lightbox-close:hover{background:rgba(255,255,255,.3)}
+.news-art-body img,.img-gallery img{cursor:zoom-in}</style>
 </head>
 <body>
 
@@ -576,7 +583,7 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
 
 <div id="news-bt9" class="page active">
   <div class="news-art-hero">
-    <span class="news-art-back" onclick="goBack()">&larr; Back</span>
+    <span class="news-art-back" onclick="history.back()">&larr; Back</span>
     <div class="news-art-date">January 2018</div>
     <h1>BT9 Integration Module</h1>
   </div>
@@ -716,38 +723,58 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
 
 <script>
 var customerLogos = [
-  { file: 'Aviv_new.png',                    name: 'Aviv',                     home: true  },
-  { file: 'tzurfarm_logo_width_2023.png',    name: 'Tzur Farm',                home: true  },
-  { file: 'Logo_Galilee.png',                name: 'Galilee',                  home: true  },
-  { file: 'galil_2013_new.png', name: 'Galilee', home: false },
-  { file: 'taligrapes_logo.png',             name: 'Tali Grapes',              home: true  },
-  { file: 'Granot_agricultural_produce.png', name: 'Granot Agriculture',       home: true  },
-  { file: 'Miluopri_logo_He.png',            name: 'Miluopri',                 home: true  },
-  { file: 'Miriam_Shoham_Logo.png',          name: 'Miriam Shoham',            home: true  },
-  { file: 'sdot_baemek_logo.png',            name: 'Sdot Baemek',              home: true  },
-  { file: 'yevuley_hacfar_logo.png',         name: 'Yevuley Hakfar',           home: true  },
-  { file: 'Abu-Kadu.png',                    name: 'Abu Kadu',                 home: false },
-  { file: 'Arava_Logo.png',                  name: 'Arava Agricultural Union', home: false },
-  { file: 'Dudu_Ezra.png',                   name: 'Dudu Ezra',                home: false },
-  { file: 'EGO_GROWERS_LTD.png',             name: 'EGO Growers',              home: false },
-  { file: 'Galey_Moshe_logo.png',            name: 'Galey Moshe',              home: false },
-  { file: 'Gezer_Shallit_He.png',            name: 'Gezer Shallit',            home: false },
-  { file: 'Gilad_Logo_new.png',              name: 'Gilad',                    home: true  },
-  { file: 'Logo_Stm.png',                    name: 'STM',                      home: false },
-  { file: 'MeshekBechor_Logo.png',           name: 'Meshek Bechor',            home: false },
-  { file: 'tal_hel_yiska_logo.png', name: 'Tal Hal Yska', home: false },
-  { file: 'Hamarlog_Logo.png',               name: 'Hamarlog',                 home: false },
-  { file: 'haskelberg_Logo.png',             name: 'Haskelberg',               home: false },
-  { file: 'carmy_export_logo.png',           name: 'Carmy Export',             home: false },
-  { file: 'Ilsar_Truffles_Logo.png',         name: 'Ilsar Truffles',           home: false },
-  { file: 'Joytech_logo.png',                name: 'Joytech',                  home: false },
+  { file: 'Aviv_Logo.png',                              name: 'Aviv',                          home: true  },
+  { file: 'Tzur Farm_Logo.png',                         name: 'Tzur Farm',                     home: true  },
+  { file: 'Galilee_Logo.png',                           name: 'Galilee',                       home: true  },
+  { file: 'Tali Grapes_Logo.png',                       name: 'Tali Grapes',                   home: true  },
+  { file: 'Granot Fresh_Logo.png',                      name: 'Granot Fresh',                  home: true  },
+  { file: 'Milopri_Logo.png',                           name: 'Milopri',                       home: true  },
+  { file: 'Miriam Shoham_Logo.png',                     name: 'Miriam Shoham',                 home: true  },
+  { file: 'Sadot Baemek_Logo.png',                      name: 'Sadot Baemek',                  home: true  },
+  { file: 'Yevoley Hakfar_Logo.png',                    name: 'Yevoley Hakfar',                home: true  },
+  { file: 'GiladLogo.png',                              name: 'Gilad',                         home: true  },
+  { file: 'Avicado_Logo.png',                           name: 'Avicado',                       home: false },
+  { file: 'Arava Farmers Union_Logo.png',               name: 'Arava Farmers Union',           home: false },
+  { file: 'Dudu Ezra_Logo.png',                         name: 'Dudu Ezra',                     home: false },
+  { file: 'Ego tumors_Logo.png',                        name: 'Ego',                           home: false },
+  { file: 'Gali Moshe_Logo.png',                        name: 'Gali Moshe',                    home: false },
+  { file: 'Gzar Shlit_Logo.png',                        name: 'Gzar Shlit',                    home: false },
+  { file: 'Stm_Logo.png',                               name: 'STM',                           home: false },
+  { file: 'MeshekBechor_Logo.png',                      name: 'Meshek Bechor',                 home: false },
+  { file: 'Tal Hel Yaska_Logo.png',                     name: 'Tal Hel Yaska',                 home: false },
+  { file: 'Hmarlog_logo.png',                           name: 'Hmarlog',                       home: false },
+  { file: 'Haskelberg_Logo.png',                        name: 'Haskelberg',                    home: false },
+  { file: 'Carmy_Logo.png',                             name: 'Carmy',                         home: false },
+  { file: 'ILsar_Logo.png',                             name: 'ILsar',                         home: false },
+  { file: 'Joytech_Logo.png',                           name: 'Joytech',                       home: false },
+  { file: 'A.A. Gabbay_Logo.png',                       name: 'A.A. Gabbay',                   home: false },
+  { file: 'Adom Feuits_Logo.png',                       name: 'Adom Fruits',                   home: false },
+  { file: 'Agricultural Exchange_Logo.png',             name: 'Agricultural Exchange',         home: false },
+  { file: 'Agridera_Logo.png',                          name: 'Agridera',                      home: false },
+  { file: 'Banana growers Western Galilee_Logo.png',    name: 'Western Galilee Banana Growers',home: false },
+  { file: 'Befresh_Logo.png',                           name: 'Befresh',                       home: false },
+  { file: 'Bless_Logo.png',                             name: 'Bless',                         home: false },
+  { file: 'Carmels_logo.png',                           name: 'Carmels',                       home: false },
+  { file: 'Garden farmer_Logo.png',                     name: 'Garden Farmer',                 home: false },
+  { file: 'Gilil +Adam_Logo.png',                       name: 'Gilil + Adam',                  home: false },
+  { file: 'Milouf_Logo.png',                            name: 'Milouf',                        home: false },
+  { file: 'Mor_IL.png',                                 name: 'Mor IL',                        home: false },
+  { file: 'Mor_USA.png',                                name: 'Mor USA',                       home: false },
+  { file: 'Potatoes of the good land_Logo.png',         name: 'Potatoes of the Good Land',     home: false },
+  { file: 'Pringeve.png',                               name: 'Pringeve',                      home: false },
+  { file: 'R.A.N_EN_Logo.png',                          name: 'R.A.N',                         home: false },
+  { file: 'Timura_Logo.png',                            name: 'Timura',                        home: false },
+  { file: 'Totzrat Hangev_logo.png',                    name: 'Negev Produce',                 home: false },
+  { file: 'Yad Mordechai_Logo.png',                     name: 'Yad Mordechai',                 home: false },
+  { file: 'Yofi shel Yarkot_Logo.png',                  name: 'Yofi Shel Yarkot',              home: false },
+  { file: 'benenut hachof_Logo.png',                    name: 'Benenut Hachof',                home: false },
 ];
 
 var logoImages = customerLogos.map(function(c){
-  return { src: '/images/customerImages/' + c.file, name: c.name };
+  return { src: '/images/Logos%20Is%20Our%20Customers/' + c.file, name: c.name };
 });
 var homeLogos = customerLogos.filter(function(c){ return c.home; }).map(function(c){
-  return { src: '/images/customerImages/' + c.file, name: c.name };
+  return { src: '/images/Logos%20Is%20Our%20Customers/' + c.file, name: c.name };
 });
 
 function renderCarousel(){
@@ -946,6 +973,34 @@ function rejectCookies(){
 }
 showCookieBanner();
 
+
+/* Lightbox */
+(function(){
+  var overlay=document.createElement('div');
+  overlay.className='lightbox-overlay';
+  overlay.innerHTML='<span class="lightbox-close">&times;</span><img src="" alt="">';
+  document.body.appendChild(overlay);
+  var lbImg=overlay.querySelector('img');
+  document.addEventListener('click',function(e){
+    var img=e.target.closest('.news-art-body img, .img-gallery img');
+    if(img){
+      lbImg.src=img.src;
+      lbImg.alt=img.alt||'';
+      overlay.classList.add('active');
+      document.body.style.overflow='hidden';
+    }
+  });
+  function close(){
+    overlay.classList.remove('active');
+    document.body.style.overflow='';
+  }
+  overlay.addEventListener('click',function(e){
+    if(e.target!==lbImg) close();
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape') close();
+  });
+})();
 </script>
 </body>
 </html>
