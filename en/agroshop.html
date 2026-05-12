@@ -457,7 +457,13 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
   .a11y-panel{width:300px}
   .cookie-banner{padding:16px 20px;gap:14px;flex-direction:column}
 }
-</style>
+
+/* Lightbox */
+.lightbox-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:20000;justify-content:center;align-items:center;cursor:zoom-out}
+.lightbox-overlay.active{display:flex}
+.lightbox-overlay img{max-width:92vw;max-height:90vh;border-radius:10px;box-shadow:0 8px 40px rgba(0,0,0,.5);object-fit:contain}
+.lightbox-close{position:fixed;top:18px;right:18px;color:#fff;font-size:2rem;cursor:pointer;z-index:20001;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.15);border-radius:50%;transition:.2s}
+.lightbox-close:hover{background:rgba(255,255,255,.3)}</style>
 </head>
 <body>
 
@@ -469,7 +475,7 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
       <span></span>
       <span></span>
     </button>
-    <a class="logo" href="/en/"><div class="logo-name">AgroSoft</div></a>
+    <a class="logo" href="/en/"><img src="/images/AgrosoftLogo.png" alt="AgroSoft" style="height:32px;width:auto;display:block"></a>
     <div class="nav-links">
       <a href="about.html">About</a>
       <div class="dropdown">
@@ -511,10 +517,10 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
       <a href="https://www.agropriority.com/ServiceCalls" target="_blank">Customer Service</a>
       <a href="news.html">News &amp; Updates</a>
       <a href="https://www.farm-online.net/login_new/" target="_blank">Growers Portal</a>
-      <a href="contact.html" class="nav-cta">Contact Us</a>
+      <a href="contact.html" class="nav-cta" style="display:inline-flex;align-items:center;gap:0"><svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;vertical-align:middle;margin-inline-end:6px;flex-shrink:0"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>Contact Us</a>
     </div>
     <div class="lang-dd">
-      <a class="lang-btn" href="#">🌐 ▾</a>
+      <a class="lang-btn" href="#"><img src="/images/Earth.png" alt="" style="width:18px;height:18px;vertical-align:middle"> ▾</a>
       <div class="lang-menu">
         <a href="/"><img src="/images/flag-for-flag-israel-svgrepo-com.svg" width="20" height="20" style="vertical-align:middle;margin-right:6px" alt="IL"> &#1506;&#1489;&#1512;&#1497;&#1514;</a>
       </div>
@@ -527,7 +533,7 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
 <!-- MOBILE MENU -->
 <div class="mob-menu" id="mob-menu">
   <div class="mob-head">
-    <div class="mob-logo">AgroSoft</div>
+    <img class="mob-logo" src="/images/AgrosoftLogo.png" alt="AgroSoft" style="height:28px;width:auto">
     <button class="mob-close-btn" onclick="closeMobileMenu()">&#x2715;</button>
   </div>
   <div class="mob-nav">
@@ -570,7 +576,7 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
     <a href="news.html">News &amp; Updates</a>
     <a href="https://www.farm-online.net/login_new/" target="_blank" onclick="closeMobileMenu()">Growers Portal</a>
     <a href="/" onclick="closeMobileMenu()"><img src="/images/flag-for-flag-israel-svgrepo-com.svg" width="20" height="20" style="vertical-align:middle;margin-right:6px" alt="IL"> &#1506;&#1489;&#1512;&#1497;&#1514;</a>
-    <a class="mob-cta" href="contact.html">Contact Us &#8594;</a>
+    <a class="mob-cta" href="contact.html" style="display:inline-flex;align-items:center;justify-content:center;gap:0"><svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;vertical-align:middle;margin-inline-end:6px;flex-shrink:0"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>Contact Us</a>
   </div>
 </div>
 
@@ -642,7 +648,7 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
   <div class="foot-title">Site Map</div>
   <div class="foot-top">
     <div class="foot-brand">
-      <div class="foot-logo">AgroSoft</div>
+      <img class="foot-logo" src="/images/AgrosoftLogo.png" alt="AgroSoft" style="height:36px;width:auto;filter:brightness(0) invert(1);margin-bottom:10px">
       <div class="foot-tagline">A software house specializing in Priority ERP-based solutions for agricultural companies.</div>
     </div>
     <div class="foot-col">
@@ -672,7 +678,7 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
       <a href="/">עברית</a>
     </div>
   </div>
-  <div class="foot-copy">© 2009–2026 All rights reserved | Design &amp; Development by <a href="https://ombee.co.il" target="_blank">OMBee Graphic Design And UI/UX</a></div>
+  <div class="foot-copy">© 2009–2026 All rights reserved | Design &amp; Development by <a href="https://ombee.co.il" target="_blank" style="display:inline-block;vertical-align:middle"><img src="/images/ombee-logo.png" alt="OMBee" style="height:28px;width:auto;filter:brightness(0) invert(1);vertical-align:middle"></a></div>
 </footer>
 
 
@@ -1005,6 +1011,25 @@ function rejectCookies(){
 }
 showCookieBanner();
 
+
+/* Lightbox - ensure overlay element exists */
+(function(){
+  if(document.querySelector('.lightbox-overlay'))return;
+  var overlay=document.createElement('div');
+  overlay.className='lightbox-overlay';
+  overlay.innerHTML='<span class="lightbox-close">&times;</span><img src="" alt="">';
+  document.body.appendChild(overlay);
+  var lbImg=overlay.querySelector('img');
+  overlay.addEventListener('click',function(e){
+    if(e.target!==lbImg){
+      overlay.classList.remove('active');
+      document.body.style.overflow='';
+    }
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){overlay.classList.remove('active');document.body.style.overflow='';}
+  });
+})();
 </script>
 </body>
 </html>
