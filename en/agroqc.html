@@ -33,12 +33,12 @@ nav{background:var(--white);border-bottom:1px solid var(--border);position:stick
 .dropdown:hover .mega{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto}
 .mega{position:absolute;top:calc(100%+8px);left:-200px;background:var(--white);border:1px solid var(--border);border-radius:20px;padding:24px;width:820px;box-shadow:0 16px 48px rgba(0,0,0,.14);z-index:200;opacity:0;visibility:hidden;transform:translateY(-12px);pointer-events:none;transition:opacity .3s ease,transform .3s ease,visibility .3s ease}
 .mega-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
-.mega-item{display:flex;flex-direction:column;align-items:center;padding:18px 10px;border-radius:20px;text-decoration:none;color:inherit;border:1.5px solid var(--border);transition:.28s;background:var(--bg);text-align:center}
-.mega-item:hover{transform:translateY(-5px);border-color:var(--g3);box-shadow:0 12px 32px rgba(45,122,58,.14);background:var(--white)}
+.mega-item{display:flex;flex-direction:column;align-items:center;padding:18px 10px;border-radius:20px;color:inherit;border:2px solid var(--g3);transition:.28s;background:#fff;text-align:center}
+.mega-item:hover{transform:translateY(-3px);border-color:var(--g2);box-shadow:0 8px 24px rgba(45,122,58,.18)}
 .mega-img{width:60px;height:60px;border-radius:12px;object-fit:contain;padding:4px;flex-shrink:0;margin-bottom:10px}
-.mega-txt h4{font-size:.85rem;font-weight:800;margin-bottom:4px}
-.mega-txt p{font-size:.72rem;color:var(--muted);line-height:1.4}
-.mega-arr{display:inline-flex;align-items:center;gap:4px;margin-top:8px;color:var(--g2);font-weight:700;font-size:.74rem}
+.mega-txt{flex:1;display:flex;flex-direction:column;justify-content:flex-start;margin-bottom:10px}.mega-txt h4{font-size:.85rem;font-weight:800;margin-bottom:4px}
+.mega-txt p{font-size:.72rem;color:var(--muted);line-height:1.4;min-height:50px}
+.mega-arr{display:inline-flex;align-items:center;justify-content:center;gap:4px;margin-top:auto;color:#fff;background:linear-gradient(135deg,var(--g2),var(--g3));padding:6px 16px;border-radius:8px;font-weight:700;font-size:.74rem;box-shadow:0 2px 8px rgba(45,122,58,.2);transition:.2s;text-decoration:none}.mega-item:hover .mega-arr{box-shadow:0 4px 14px rgba(45,122,58,.35);transform:translateY(-1px)}
 .mega-footer{margin-top:16px;padding-top:14px;border-top:1px solid var(--border);display:flex;justify-content:center}
 .mega-footer a{font-size:.82rem;color:var(--g2);font-weight:700;text-decoration:none;padding:8px 20px;border-radius:8px;background:#eef6ef;transition:.2s}
 .mega-footer a:hover{background:var(--g2);color:#fff}
@@ -78,12 +78,12 @@ h2.sec-title{text-align:center;font-size:clamp(1.8rem,3vw,2.35rem);font-weight:9
 
 /* PRODUCTS */
 .prod-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;max-width:1120px;margin:0 auto}
-.prod-card{background:var(--bg);border:1.5px solid var(--border);border-radius:20px;padding:28px 24px;transition:.28s;cursor:pointer;text-decoration:none;color:inherit;display:flex;flex-direction:column;align-items:center;text-align:center}
-.prod-card:hover{transform:translateY(-7px);border-color:var(--g3);box-shadow:0 16px 44px rgba(45,122,58,.15);background:var(--white)}
+.prod-card{background:transparent;border:2px solid var(--g3);border-radius:20px;padding:28px 24px;transition:.28s;display:flex;flex-direction:column;align-items:center;text-align:center}
+.prod-card:hover{transform:translateY(-7px);border-color:var(--g2);box-shadow:0 16px 44px rgba(45,122,58,.15)}
 .prod-ico{width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.55rem;margin-bottom:18px}
 .prod-card h3{font-size:1.15rem;font-weight:800;margin-bottom:8px}
-.prod-card p{color:var(--muted);font-size:.875rem;line-height:1.65;flex:1}
-.prod-arr{display:inline-flex;align-items:center;gap:5px;margin-top:16px;color:var(--g2);font-weight:700;font-size:.82rem}
+.prod-card p{color:var(--muted);font-size:.875rem;line-height:1.65;flex:1;min-height:80px;padding-bottom:18px}
+.prod-arr{display:inline-flex;align-items:center;justify-content:center;gap:6px;margin-top:auto;color:#fff;background:linear-gradient(135deg,var(--g2),var(--g3));padding:10px 24px;border-radius:10px;font-weight:700;font-size:.85rem;box-shadow:0 4px 14px rgba(45,122,58,.25);transition:.2s;align-self:center}.prod-card:hover .prod-arr{box-shadow:0 8px 22px rgba(45,122,58,.4);transform:translateY(-1px)}
 
 /* ABOUT */
 .about-wrap{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
@@ -247,7 +247,7 @@ footer{background:var(--g1);padding:48px 48px 28px;display:flex;flex-direction:c
 .stats-g3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 
 /* PRIORITY BAND */
-.priority-band{background:#4E2E16;padding:28px 48px;text-align:center;width:100%}
+.priority-band{background:#572E1D;padding:28px 48px;text-align:center;width:100%;border-top:3px solid #2CA637}
 .pb-inner{display:inline-flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:center}
 
 /* TABLET */
@@ -457,7 +457,13 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
   .a11y-panel{width:300px}
   .cookie-banner{padding:16px 20px;gap:14px;flex-direction:column}
 }
-</style>
+
+/* Lightbox */
+.lightbox-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:20000;justify-content:center;align-items:center;cursor:zoom-out}
+.lightbox-overlay.active{display:flex}
+.lightbox-overlay img{max-width:92vw;max-height:90vh;border-radius:10px;box-shadow:0 8px 40px rgba(0,0,0,.5);object-fit:contain}
+.lightbox-close{position:fixed;top:18px;right:18px;color:#fff;font-size:2rem;cursor:pointer;z-index:20001;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.15);border-radius:50%;transition:.2s}
+.lightbox-close:hover{background:rgba(255,255,255,.3)}</style>
 </head>
 <body>
 
@@ -476,34 +482,29 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
         <a href="#">Solutions <span class="dd-arrow">&#9660;</span></a>
         <div class="mega">
           <div class="mega-grid">
-            <a class="mega-item" href="agropriority.html">
+            <div class="mega-item">
               <img class="mega-img" src="/images/AgroPriority_logo.png">
               <div class="mega-txt"><h4>AgroPriority</h4><p>Complete ERP solution for agricultural companies</p></div>
-              <span class="mega-arr">Learn more &rarr;</span>
-            </a>
-            <a class="mega-item" href="agrotalk.html">
+              <a class="mega-arr" href="agropriority.html">Learn More</a></div>
+            <div class="mega-item">
               <img class="mega-img" src="/images/AgroTalk_logoN.png">
               <div class="mega-txt"><h4>AgroTalk</h4><p>Real-time messaging with suppliers and customers</p></div>
-              <span class="mega-arr">Learn more &rarr;</span>
-            </a>
-            <a class="mega-item" href="agrosmart.html">
+              <a class="mega-arr" href="agrotalk.html">Learn More</a></div>
+            <div class="mega-item">
               <img class="mega-img" src="/images/AgroSmart_Logo.png">
               <div class="mega-txt"><h4>AgroSmart</h4><p>Smart warehouse management for any device</p></div>
-              <span class="mega-arr">Learn more &rarr;</span>
-            </a>
-            <a class="mega-item" href="agroqc.html">
+              <a class="mega-arr" href="agrosmart.html">Learn More</a></div>
+            <div class="mega-item">
               <img class="mega-img" src="/images/AgroQC_LogoN.png">
               <div class="mega-txt"><h4>AgroQC</h4><p>Interactive and flexible quality control</p></div>
-              <span class="mega-arr">Learn more &rarr;</span>
-            </a>
-            <a class="mega-item" href="agroshop.html">
+              <a class="mega-arr" href="agroqc.html">Learn More</a></div>
+            <div class="mega-item">
               <img class="mega-img" src="/images/agroShop.png">
-              <div class="mega-txt"><h4>AgroShop</h4><p>Online B2B portal for customer order entry</p></div>
-              <span class="mega-arr">Learn more &rarr;</span>
-            </a>
+              <div class="mega-txt"><h4>AgroShop</h4><p>Online B2B portal for order entry, optimized for mobile and desktop.</p></div>
+              <a class="mega-arr" href="agroshop.html">Learn More</a></div>
           </div>
           <div class="mega-footer">
-            <a href="/en/#products-section">&#8594; All Solutions</a>
+            <a href="/en/#products-section">All Solutions</a>
           </div>
         </div>
       </div>
@@ -625,7 +626,7 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
     </div>
   </section>
   <section style="background:var(--white);padding:40px 48px;text-align:center">
-    <img src="/images/AgroQC.png" style="max-width:100%;max-height:500px;object-fit:contain;border-radius:18px;box-shadow:0 12px 40px rgba(0,0,0,.12)" onerror="this.style.display='none'">
+    <img src="/images/AgroQC.png" style="max-width:100%;max-height:500px;object-fit:contain;border-radius:18px;box-shadow:0 12px 40px rgba(0,0,0,.12);cursor:zoom-in" onclick="var o=document.querySelector('.lightbox-overlay');o.querySelector('img').src=this.src;o.classList.add('active');document.body.style.overflow='hidden';" onerror="this.style.display='none'">
   </section>
   <div class="cta-band" style="background:linear-gradient(135deg,#1a4d23,#4caf50)">
     <h2>Want to learn more about AgroQC?</h2>
@@ -1005,6 +1006,22 @@ function rejectCookies(){
 }
 showCookieBanner();
 
+
+/* Lightbox setup */
+(function(){
+  if(document.querySelector('.lightbox-overlay'))return;
+  var overlay=document.createElement('div');
+  overlay.className='lightbox-overlay';
+  overlay.innerHTML='<span class="lightbox-close">&times;</span><img src="" alt="">';
+  document.body.appendChild(overlay);
+  var lbImg=overlay.querySelector('img');
+  overlay.addEventListener('click',function(e){
+    if(e.target!==lbImg){overlay.classList.remove('active');document.body.style.overflow='';}
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){overlay.classList.remove('active');document.body.style.overflow='';}
+  });
+})();
 </script>
 </body>
 </html>
