@@ -174,10 +174,9 @@ h2.sec-title{text-align:center;font-size:clamp(1.8rem,3vw,2.35rem);font-weight:9
 /* CONTACT */
 .contact-wrap{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:300px 1fr;gap:28px;align-items:start}
 .cinfo-row{display:flex;flex-direction:column;gap:14px;margin-bottom:0}
-.cinfo{background:var(--white);border-radius:18px;padding:26px 20px;box-shadow:var(--sh);border:1px solid var(--border);text-align:right}
-.cinfo .ico{font-size:1.8rem;margin-bottom:10px}
-.cinfo h3{font-size:.88rem;color:var(--g2);font-weight:700;margin-bottom:5px}
-.cinfo a,.cinfo p{color:var(--text);text-decoration:none;font-weight:600;font-size:.88rem}
+.cinfo{background:var(--white);border-radius:18px;padding:18px 20px;box-shadow:var(--sh);border:1px solid var(--border);display:flex;align-items:center;gap:14px}
+.cinfo .ico{font-size:1.6rem;flex-shrink:0;line-height:1}
+.cinfo a,.cinfo p{color:var(--text);text-decoration:none;font-weight:600;font-size:.92rem;margin:0}
 .cform{background:var(--white);border-radius:20px;padding:36px;box-shadow:var(--sh);border:1px solid var(--border)}
 .cform h3{font-size:1.25rem;font-weight:900;margin-bottom:22px}
 .frow{display:grid;grid-template-columns:1fr 1fr;gap:16px}
@@ -613,9 +612,9 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
   <section>
     <div class="contact-wrap">
       <div class="cinfo-row">
-        <div class="cinfo"><div class="ico">📞</div><h3>טלפון</h3><a href="tel:037363728">03-736-3728</a></div>
-        <div class="cinfo"><div class="ico">📍</div><h3>כתובת</h3><p>הדובדבן 9, קרית אונו 5551052</p></div>
-        <div class="cinfo"><div class="ico">✉️</div><h3>אימייל</h3><a href="mailto:support@agrosoft.co.il">support@agrosoft.co.il</a></div>
+        <div class="cinfo"><span class="ico">📞</span><a href="tel:037363728">03-736-3728</a></div>
+        <div class="cinfo"><span class="ico">📍</span><p>הדובדבן 9, קרית אונו 5551052</p></div>
+        <div class="cinfo"><span class="ico">✉️</span><a href="mailto:support@agrosoft.co.il">support@agrosoft.co.il</a></div>
       </div>
       <div class="cform">
         <h3>שלח/י הודעה</h3>
