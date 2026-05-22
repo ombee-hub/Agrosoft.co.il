@@ -172,8 +172,8 @@ h2.sec-title{text-align:center;font-size:clamp(1.8rem,3vw,2.35rem);font-weight:9
 .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 
 /* CONTACT */
-.contact-wrap{max-width:820px;margin:0 auto}
-.cinfo-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:28px}
+.contact-wrap{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:300px 1fr;gap:28px;align-items:start}
+.cinfo-row{display:flex;flex-direction:column;gap:14px;margin-bottom:0}
 .cinfo{background:var(--white);border-radius:18px;padding:26px 20px;box-shadow:var(--sh);border:1px solid var(--border);text-align:center}
 .cinfo .ico{font-size:1.8rem;margin-bottom:10px}
 .cinfo h3{font-size:.88rem;color:var(--g2);font-weight:700;margin-bottom:5px}
@@ -306,8 +306,9 @@ footer{background:var(--g1);padding:48px 48px 28px;display:flex;flex-direction:c
   .about-wrap{gap:36px}
   .about-txt h2{font-size:1.7rem}
 
-  /* CONTACT INFO - 3 → 2 columns */
-  .cinfo-row{grid-template-columns:repeat(2,1fr)}
+  /* CONTACT - stack info above form, info row goes back to horizontal */
+  .contact-wrap{grid-template-columns:1fr;max-width:820px}
+  .cinfo-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:28px}
 
   /* FEATURE + STATS GRIDS - 3 → 2 columns */
   .feat-g3,.stats-g3{grid-template-columns:repeat(2,1fr)!important}
@@ -630,7 +631,6 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
             <option>AgroSmart</option>
             <option>AgroQC</option>
             <option>AgroShop</option>
-            <option>אחר</option>
           </select>
         </div>
         <div class="fg"><label>הודעה *</label><textarea rows="5" placeholder="כתוב את הודעתך..."></textarea></div>
