@@ -132,8 +132,8 @@ h2.sec-title{text-align:center;font-size:clamp(1.8rem,3vw,2.35rem);font-weight:9
 .news-card p{color:var(--muted);font-size:.875rem;line-height:1.75}
 .news-card ul{color:var(--muted);font-size:.875rem;line-height:2;padding-right:20px;margin-top:8px}
 .news-card li{margin-bottom:2px}
-.news-link{display:inline-flex;align-items:center;gap:5px;margin-top:14px;color:var(--g2);font-weight:700;font-size:.82rem;text-decoration:none;transition:.18s}
-.news-link:hover{color:var(--g1);gap:8px}
+.news-link{display:inline-flex;align-items:center;justify-content:center;margin-top:14px;color:#fff;background:linear-gradient(135deg,var(--g2),var(--g3));padding:10px 22px;border-radius:10px;font-weight:700;font-size:.85rem;text-decoration:none;transition:.2s;box-shadow:0 4px 14px rgba(45,122,58,.25)}
+.news-link:hover{box-shadow:0 8px 22px rgba(45,122,58,.4);transform:translateY(-1px)}
 
 /* BACK BUTTON */
 .back-fab{position:fixed!important;top:80px!important;bottom:auto!important;right:24px!important;z-index:997;display:none;transform:none!important;transition:none!important}
@@ -635,7 +635,7 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
           <div class="news-badge">חדש</div>
           <h3>AgroStore – חנות הזמנות B2B</h3>
           <p>מערכת חדשה לניהול הזמנות B2B המשולבת במלואה עם AgroPriority — ללא בסיס נתונים נפרד.</p>
-          <span class="news-link">קרא עוד ←</span>
+          <span class="news-link">קרא/י עוד</span>
         </div>
       </a>
 
@@ -650,7 +650,7 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
         <div>
           <h3>קישור בין מגדלים לחברת השיווק ובית האריזה</h3>
           <p>קישור ישיר בין מגדלים לחברת השיווק ולבית האריזה ישירות מ-AgroTalk.</p>
-          <span class="news-link">קרא עוד ←</span>
+          <span class="news-link">קרא/י עוד</span>
         </div>
       </a>
 
@@ -659,7 +659,7 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
         <div>
           <h3>חידושים ב-AgroTalk – הזנת נתונים ישירות מהמגדל</h3>
           <p>קישור להזנת נתונים ישירות מהמגדל לאגרופריוריטי. האפליקציה זמינה ל-Android ו-iPhone.</p>
-          <span class="news-link">קרא עוד ←</span>
+          <span class="news-link">קרא/י עוד</span>
         </div>
       </a>
 
@@ -668,7 +668,7 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
         <div>
           <h3>פיתוחים מותאמים עם ממשקי API לפריוריטי</h3>
           <p>פיתוחים מיוחדים לצרכי הלקוח באמצעות ממשקי API לפריוריטי.</p>
-          <span class="news-link">קרא עוד ←</span>
+          <span class="news-link">קרא/י עוד</span>
         </div>
       </a>
 
@@ -683,7 +683,7 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
         <div>
           <h3>ממשק חדש לקליטת תעודות קבלה ומשלוח</h3>
           <p>ממשק המאפשר קליטה אוטומטית של תעודות מבתי אריזה ולקוחות בארץ ובחו"ל.</p>
-          <span class="news-link">קרא עוד ←</span>
+          <span class="news-link">קרא/י עוד</span>
         </div>
       </a>
 
@@ -692,7 +692,7 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
         <div>
           <h3>ממשק מול משרד החקלאות – שרתי הגנת הצומח</h3>
           <p>עבודה מתוך AgroPriority ישירות מול מערכת המחשוב של השרתים.</p>
-          <span class="news-link">קרא עוד ←</span>
+          <span class="news-link">קרא/י עוד</span>
         </div>
       </a>
 
@@ -701,7 +701,7 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
         <div>
           <h3>מודול מרכזי לחשבוניות עמילי מכס</h3>
           <p>מרכז את כלל החשבוניות מעמילי המכס למסך אחד נוח לעבודה.</p>
-          <span class="news-link">קרא עוד ←</span>
+          <span class="news-link">קרא/י עוד</span>
         </div>
       </a>
 
@@ -710,7 +710,7 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
         <div>
           <h3>מודול עבודה מול BT9</h3>
           <p>שידור נתונים של מכולות וסנסורים ישירות מ-AgroPriority לפורטל של BT9.</p>
-          <span class="news-link">קרא עוד ←</span>
+          <span class="news-link">קרא/י עוד</span>
         </div>
       </a>
 
@@ -719,7 +719,7 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
         <div>
           <h3>AgroQC – אפליקציה לבקרת איכות ושאלונים</h3>
           <p>בניית שאלונים אינטראקטיביים בתוך AgroPriority עם סוגי שאלות מגוונים.</p>
-          <span class="news-link">קרא עוד ←</span>
+          <span class="news-link">קרא/י עוד</span>
         </div>
       </a>
 
