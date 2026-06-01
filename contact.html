@@ -619,7 +619,7 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
       <div class="cform">
         <h3>שלח/י הודעה</h3>
         <div class="frow">
-          <div class="fg"><label>שם מלא *</label><input type="text" placeholder="הכנס שמך..."></div>
+          <div class="fg"><label>שם מלא *</label><input type="text" placeholder="הכנס/י שם..."></div>
           <div class="fg"><label>טלפון</label><input type="tel" placeholder="05X-XXXXXXX"></div>
         </div>
         <div class="fg"><label>אימייל *</label><input type="email" placeholder="your@email.com"></div>
@@ -632,8 +632,8 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
             <option>AgroShop</option>
           </select>
         </div>
-        <div class="fg"><label>הודעה *</label><textarea rows="5" placeholder="כתוב את הודעתך..."></textarea></div>
-        <button class="submit-btn" onclick="alert('תודה! הודעתך נשלחה בהצלחה 🌿')">שלח/י הודעה <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px"><path d="M22 2L11 13"/><path d="M22 2L15 22L11 13L2 9L22 2Z"/></svg></button>
+        <div class="fg"><label>הודעה *</label><textarea rows="5" placeholder="כתבו את ההודעה שלכם..."></textarea></div>
+        <button class="submit-btn" onclick="alert('תודה! ההודעה נשלחה בהצלחה 🌿')">שלח/י הודעה <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:middle;margin-right:6px"><path d="M22 2L11 13"/><path d="M22 2L15 22L11 13L2 9L22 2Z"/></svg></button>
       </div>
     </div>
   </section>
@@ -877,7 +877,7 @@ function renderCustomers(){
     card.style.cssText = 'background:var(--white);border:1.5px solid var(--border);border-radius:14px;padding:16px;text-align:center;cursor:pointer;transition:.2s;position:relative;min-height:110px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px';
     card.onmouseover = function(){this.style.borderColor='var(--g3)';this.style.boxShadow='0 4px 16px rgba(45,122,58,.12)'};
     card.onmouseout = function(){this.style.borderColor='var(--border)';this.style.boxShadow='none'};
-    card.title = 'לחץ להחלפת לוגו';
+    card.title = 'לחיצה להחלפת לוגו';
     if(customerImages[i]){
       var img = document.createElement('img');
       img.src = customerImages[i];

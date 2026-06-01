@@ -878,7 +878,7 @@ function renderCustomers(){
     card.style.cssText = 'background:var(--white);border:1.5px solid var(--border);border-radius:14px;padding:16px;text-align:center;cursor:pointer;transition:.2s;position:relative;min-height:110px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px';
     card.onmouseover = function(){this.style.borderColor='var(--g3)';this.style.boxShadow='0 4px 16px rgba(45,122,58,.12)'};
     card.onmouseout = function(){this.style.borderColor='var(--border)';this.style.boxShadow='none'};
-    card.title = 'לחץ להחלפת לוגו';
+    card.title = 'לחיצה להחלפת לוגו';
     if(customerImages[i]){
       var img = document.createElement('img');
       img.src = customerImages[i];
