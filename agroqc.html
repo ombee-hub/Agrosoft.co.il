@@ -622,17 +622,17 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
   </div>
   <section style="background:var(--bg);padding:48px">
     <div class="feat-g3">
-      <div style="background:#EDF2F1;border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
+      <div style="background:#fff;border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
         <div style="font-size:2rem;margin-bottom:12px">📋</div>
         <h3 style="font-weight:800;margin-bottom:8px;font-size:1rem">שאלונים גמישים</h3>
         <p style="color:var(--muted);font-size:.86rem;line-height:1.6">בניית שאלוני QC מותאמים אישית לכל מוצר ותהליך בארגון</p>
       </div>
-      <div style="background:#EDF2F1;border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
+      <div style="background:#fff;border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
         <div style="font-size:2rem;margin-bottom:12px">🔗</div>
         <h3 style="font-weight:800;margin-bottom:8px;font-size:1rem">אינטגרציה מלאה</h3>
         <p style="color:var(--muted);font-size:.86rem;line-height:1.6">תוצאות הבקרה מועברות ישירות ל-AgroPriority ERP</p>
       </div>
-      <div style="background:#EDF2F1;border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
+      <div style="background:#fff;border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
         <div style="font-size:2rem;margin-bottom:12px">📊</div>
         <h3 style="font-weight:800;margin-bottom:8px;font-size:1rem">דוחות ומעקב</h3>
         <p style="color:var(--muted);font-size:.86rem;line-height:1.6">היסטוריית בקרות, מגמות ואיתור בעיות איכות לאורך זמן</p>
@@ -905,7 +905,7 @@ function renderCustomers(){
   grid.innerHTML = '';
   customers.forEach(function(name, i){
     var card = document.createElement('div');
-    card.style.cssText = 'background:#EDF2F1;border:1.5px solid var(--border);border-radius:14px;padding:16px;text-align:center;cursor:pointer;transition:.2s;position:relative;min-height:110px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px';
+    card.style.cssText = 'background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:16px;text-align:center;cursor:pointer;transition:.2s;position:relative;min-height:110px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px';
     card.onmouseover = function(){this.style.borderColor='var(--g3)';this.style.boxShadow='0 4px 16px rgba(45,122,58,.12)'};
     card.onmouseout = function(){this.style.borderColor='var(--border)';this.style.boxShadow='none'};
     card.title = 'לחיצה להחלפת לוגו';

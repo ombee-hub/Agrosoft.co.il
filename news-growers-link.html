@@ -880,7 +880,7 @@ function renderCustomers(){
   grid.innerHTML = '';
   customers.forEach(function(name, i){
     var card = document.createElement('div');
-    card.style.cssText = 'background:#EDF2F1;border:1.5px solid var(--border);border-radius:14px;padding:16px;text-align:center;cursor:pointer;transition:.2s;position:relative;min-height:110px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px';
+    card.style.cssText = 'background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:16px;text-align:center;cursor:pointer;transition:.2s;position:relative;min-height:110px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px';
     card.onmouseover = function(){this.style.borderColor='var(--g3)';this.style.boxShadow='0 4px 16px rgba(45,122,58,.12)'};
     card.onmouseout = function(){this.style.borderColor='var(--border)';this.style.boxShadow='none'};
     card.title = 'לחיצה להחלפת לוגו';

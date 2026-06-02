@@ -622,17 +622,17 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
   </div>
   <section style="background:var(--bg);padding:48px">
     <div class="feat-g3">
-      <div style="background:#EDF2F1;border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
+      <div style="background:#fff;border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
         <div style="font-size:2rem;margin-bottom:12px">📱</div>
         <h3 style="font-weight:800;margin-bottom:8px;font-size:1rem">כל מכשיר</h3>
         <p style="color:var(--muted);font-size:.86rem;line-height:1.6">תואם למסופונים, טאבלטים ומסופני מלגזה — עובד בכל סביבה מחסנית</p>
       </div>
-      <div style="background:#EDF2F1;border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
+      <div style="background:#fff;border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
         <div style="font-size:2rem;margin-bottom:12px">🔗</div>
         <h3 style="font-weight:800;margin-bottom:8px;font-size:1rem">מחובר ל-ERP</h3>
         <p style="color:var(--muted);font-size:.86rem;line-height:1.6">סנכרון מלא עם AgroPriority לעדכון מלאי בזמן אמת</p>
       </div>
-      <div style="background:#EDF2F1;border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
+      <div style="background:#fff;border-radius:18px;padding:28px;border:1.5px solid var(--border);text-align:center">
         <div style="font-size:2rem;margin-bottom:12px">⚡</div>
         <h3 style="font-weight:800;margin-bottom:8px;font-size:1rem">מהיר ומדויק</h3>
         <p style="color:var(--muted);font-size:.86rem;line-height:1.6">סריקת ברקודים ועדכון מיידי — מצמצם שגיאות ומגביר יעילות</p>
@@ -905,7 +905,7 @@ function renderCustomers(){
   grid.innerHTML = '';
   customers.forEach(function(name, i){
     var card = document.createElement('div');
-    card.style.cssText = 'background:#EDF2F1;border:1.5px solid var(--border);border-radius:14px;padding:16px;text-align:center;cursor:pointer;transition:.2s;position:relative;min-height:110px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px';
+    card.style.cssText = 'background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:16px;text-align:center;cursor:pointer;transition:.2s;position:relative;min-height:110px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px';
     card.onmouseover = function(){this.style.borderColor='var(--g3)';this.style.boxShadow='0 4px 16px rgba(45,122,58,.12)'};
     card.onmouseout = function(){this.style.borderColor='var(--border)';this.style.boxShadow='none'};
     card.title = 'לחיצה להחלפת לוגו';
