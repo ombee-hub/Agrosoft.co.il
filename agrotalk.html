@@ -1125,18 +1125,18 @@ loadA11y();
 
 /* ===== COOKIES BANNER ===== */
 function showCookieBanner(){
-  if(!localStorage.getItem('cookie-consent')){
+  if(!localStorage.getItem('cookie-consent-v2')){
     setTimeout(function(){
       document.getElementById('cookie-banner').classList.add('show');
     },800);
   }
 }
 function acceptCookies(){
-  localStorage.setItem('cookie-consent','accepted');
+  localStorage.setItem('cookie-consent-v2','accepted');
   document.getElementById('cookie-banner').classList.remove('show');
 }
 function rejectCookies(){
-  localStorage.setItem('cookie-consent','rejected');
+  localStorage.setItem('cookie-consent-v2','rejected');
   document.getElementById('cookie-banner').classList.remove('show');
 }
 showCookieBanner();
