@@ -741,14 +741,6 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
   </div>
 </div>
 
-<!-- COOKIES BANNER -->
-<div class="cookie-banner" id="cookie-banner">
-  <p>🍪 אתר זה משתמש בעוגיות (Cookies) כדי לשפר את חוויית הגלישה שלך. <a href="privacy.html">מדיניות פרטיות</a></p>
-  <div class="cookie-btns">
-    <button class="cookie-accept" onclick="acceptCookies()">אישור</button>
-    <button class="cookie-reject" onclick="rejectCookies()">דחייה</button>
-  </div>
-</div>
 
 <script>
 // ================================================================
@@ -1083,23 +1075,6 @@ function loadA11y(){
 }
 loadA11y();
 
-/* ===== COOKIES BANNER ===== */
-function showCookieBanner(){
-  if(!localStorage.getItem('cookie-consent-v2')){
-    setTimeout(function(){
-      document.getElementById('cookie-banner').classList.add('show');
-    },800);
-  }
-}
-function acceptCookies(){
-  localStorage.setItem('cookie-consent-v2','accepted');
-  document.getElementById('cookie-banner').classList.remove('show');
-}
-function rejectCookies(){
-  localStorage.setItem('cookie-consent-v2','rejected');
-  document.getElementById('cookie-banner').classList.remove('show');
-}
-showCookieBanner();
 
 /* Lightbox */
 (function(){
