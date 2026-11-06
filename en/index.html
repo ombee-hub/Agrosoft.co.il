@@ -86,13 +86,21 @@ h2.sec-title{text-align:center;font-size:clamp(1.8rem,3vw,2.35rem);font-weight:9
 .sec-sub{text-align:center;color:var(--muted);font-size:.98rem;max-width:540px;margin:0 auto 54px;line-height:1.78}
 
 /* PRODUCTS */
-.prod-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;max-width:1120px;margin:0 auto}
-.prod-card{background:#fff;border:2px solid var(--g3);border-radius:20px;padding:28px 24px;transition:.28s;display:flex;flex-direction:column;align-items:center;text-align:center}
-.prod-card:hover{transform:translateY(-7px);border-color:var(--g2);box-shadow:0 16px 44px rgba(45,122,58,.15)}
-.prod-ico{width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.55rem;margin-bottom:18px}
-.prod-card h3{font-size:1.15rem;font-weight:800;margin-bottom:8px}
-.prod-card p{color:var(--muted);font-size:.875rem;line-height:1.65;flex:1;min-height:80px;padding-bottom:18px}
-.prod-arr{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:auto;color:#fff;background:linear-gradient(135deg,var(--g2),var(--g3));padding:12px 24px;border-radius:10px;font-weight:700;font-size:.9rem;box-shadow:0 4px 14px rgba(45,122,58,.25);transition:.2s;align-self:stretch;text-decoration:none}.prod-card:hover .prod-arr{box-shadow:0 8px 22px rgba(45,122,58,.4);transform:translateY(-1px)}
+#products-section{position:relative;overflow:hidden}
+#products-section::before,#products-section::after{content:"";position:absolute;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(76,175,80,.16),transparent 65%);pointer-events:none}
+#products-section::before{top:-150px;right:-130px}
+#products-section::after{bottom:-170px;left:-140px}
+.prod-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;max-width:1160px;margin:0 auto;position:relative;z-index:1}
+.prod-card{background:linear-gradient(180deg,#fff 0%,#f2faf2 100%);border:1px solid rgba(76,175,80,.28);border-radius:22px;padding:22px 18px 24px;transition:.28s;display:flex;flex-direction:column;align-items:center;text-align:center;box-shadow:0 12px 32px -20px rgba(45,122,58,.4)}
+.prod-card:hover{transform:translateY(-7px);border-color:rgba(76,175,80,.6);box-shadow:0 24px 50px -22px rgba(45,122,58,.55)}
+.prod-top{display:flex;align-items:center;justify-content:center;gap:9px;min-height:44px;margin-bottom:14px}
+.prod-top img{width:36px;height:36px;object-fit:contain}
+.prod-top img.prod-logo-wide{width:120px;height:auto}
+.prod-top h3{font-size:1.06rem;font-weight:800;margin:0}
+.prod-illu{width:100%;height:auto;border-radius:14px;margin-bottom:14px}
+.prod-card p{color:var(--muted);font-size:.86rem;line-height:1.65;flex:1;margin:0 0 16px}
+.prod-arr{display:block;align-self:stretch;text-align:center;color:var(--g1);background:linear-gradient(180deg,#e7f7e7,#cceccd);border:1px solid rgba(76,175,80,.5);padding:10px 18px;border-radius:999px;font-weight:800;font-size:.88rem;box-shadow:0 3px 10px rgba(45,122,58,.14);transition:.2s;text-decoration:none}
+.prod-card:hover .prod-arr{background:linear-gradient(180deg,#d8f1d9,#b9e5bb);box-shadow:0 7px 16px rgba(45,122,58,.26);transform:translateY(-1px)}
 
 /* ABOUT */
 .about-wrap{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
@@ -387,6 +395,7 @@ footer{background:#572E1D;padding:48px 48px 28px;display:flex;flex-direction:col
 }
 
 @media(max-width:480px){
+  .prod-grid{grid-template-columns:1fr;max-width:430px}
   .hero{padding:28px 16px 24px}
   .slide h1{font-size:1.55rem}
   .hero-sub{font-size:.85rem}
@@ -643,8 +652,9 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
   </section>
 
   <!-- Products -->
-  <section id="products-section" style="background:#EDF2F1;padding-top:40px">
-    <div style="text-align:center;margin-bottom:48px">
+  <section id="products-section" style="background:linear-gradient(160deg,#f3faf3,#e4f2e5 55%,#eef7ee);padding-top:40px">
+    <div style="text-align:center;margin-bottom:44px;position:relative;z-index:1">
+      <svg width="38" height="30" viewBox="0 0 38 30" fill="none" aria-hidden="true" style="display:block;margin:0 auto 6px"><path d="M19 29C19 17 11 10 1 9c1 11 8 18 18 20Z" fill="#4caf50"/><path d="M19 29c0-14 8-22 18-23-1 13-8 21-18 23Z" fill="#2d7a3a"/></svg>
       <div style="display:inline-flex;align-items:center;gap:18px">
         <span style="width:60px;height:3px;background:var(--g2);border-radius:2px"></span>
         <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);font-weight:900;color:var(--g1);margin:0">Our Products</h2>
@@ -653,28 +663,28 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
     </div>
     <div class="prod-grid">
       <div class="prod-card">
-        <img src="../images/agropriority-logo.webp" style="width:100px;height:100px;object-fit:contain;margin-bottom:18px">
-        <h3>AgroPriority</h3>
-        <p>Complete ERP solution &ndash; export management, marketing, packing houses, inventory, financials and more.</p>
+        <div class="prod-top"><img class="prod-logo-wide" src="../images/agropriority-logo.webp" alt="AgroPriority" loading="lazy"></div>
+        <img class="prod-illu" src="../images/illu-agropriority.webp" alt="" width="303" height="209" loading="lazy">
+        <p>Complete ERP solution – export management, marketing, packing houses, inventory, financials and more.</p>
         <a class="prod-arr" href="agropriority.html">Learn More</a></div>
       <div class="prod-card">
-        <img src="../images/AgroTalk_logoN.webp" style="width:100px;height:100px;object-fit:contain;margin-bottom:18px">
-        <h3>AgroTalk</h3>
+        <div class="prod-top"><img src="../images/AgroTalk_logoN.webp" alt="" loading="lazy"><h3>AgroTalk</h3></div>
+        <img class="prod-illu" src="../images/illu-agrotalk.webp" alt="" width="303" height="209" loading="lazy">
         <p>Real-time messaging between the ERP, suppliers and customers.</p>
         <a class="prod-arr" href="agrotalk.html">Learn More</a></div>
       <div class="prod-card">
-        <img src="../images/AgroSmart_Logo.webp" style="width:100px;height:100px;object-fit:contain;margin-bottom:18px">
-        <h3>AgroSmart</h3>
+        <div class="prod-top"><img src="../images/AgroSmart_Logo.webp" alt="" loading="lazy"><h3>AgroSmart</h3></div>
+        <img class="prod-illu" src="../images/illu-agrosmart.webp" alt="" width="303" height="209" loading="lazy">
         <p>Smart warehouse management for handheld terminals, tablets and forklift terminals.</p>
         <a class="prod-arr" href="agrosmart.html">Learn More</a></div>
       <div class="prod-card">
-        <img src="../images/AgroQC_LogoN.webp" style="width:100px;height:100px;object-fit:contain;margin-bottom:18px">
-        <h3>AgroQC</h3>
+        <div class="prod-top"><img src="../images/AgroQC_LogoN.webp" alt="" loading="lazy"><h3>AgroQC</h3></div>
+        <img class="prod-illu" src="../images/illu-agroqc.webp" alt="" width="303" height="209" loading="lazy">
         <p>Interactive and flexible quality control questionnaires connected to information systems.</p>
         <a class="prod-arr" href="agroqc.html">Learn More</a></div>
       <div class="prod-card">
-        <img src="../images/agroShop.webp" style="width:100px;height:100px;object-fit:contain;margin-bottom:18px">
-        <h3>AgroShop</h3>
+        <div class="prod-top"><img src="../images/agroShop.webp" alt="" loading="lazy"><h3>AgroShop</h3></div>
+        <img class="prod-illu" src="../images/illu-agroshop.webp" alt="" width="303" height="209" loading="lazy">
         <p>Online B2B portal for order entry, optimized for mobile and desktop.</p>
         <a class="prod-arr" href="agroshop.html">Learn More</a></div>
     </div>
