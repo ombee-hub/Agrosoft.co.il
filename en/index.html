@@ -287,6 +287,7 @@ footer{background:#572E1D;padding:48px 48px 28px;display:flex;flex-direction:col
 
   /* PRODUCTS GRID - 2 columns */
   .prod-grid{grid-template-columns:repeat(2,1fr);max-width:900px}
+  .prod-illu{max-width:72%}
 
   /* ABOUT */
   .about-wrap{gap:36px}
@@ -390,7 +391,15 @@ footer{background:#572E1D;padding:48px 48px 28px;display:flex;flex-direction:col
 }
 
 @media(max-width:480px){
-  .prod-grid{grid-template-columns:1fr;max-width:430px}
+  .prod-grid{grid-template-columns:1fr;max-width:350px;gap:14px}
+  .prod-card{padding:16px 14px 18px}
+  .prod-illu{max-width:60%;margin-bottom:10px}
+  .prod-top{min-height:36px;margin-bottom:10px}
+  .prod-top img{width:30px;height:30px}
+  .prod-top img.prod-logo-wide{width:100px}
+  .prod-top h3{font-size:.95rem}
+  .prod-card p{font-size:.8rem;margin-bottom:12px}
+  .prod-arr{padding:8px 14px;font-size:.8rem}
   .hero{padding:28px 16px 24px}
   .slide h1{font-size:1.55rem}
   .hero-sub{font-size:.85rem}
