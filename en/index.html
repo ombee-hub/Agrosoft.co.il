@@ -86,10 +86,6 @@ h2.sec-title{text-align:center;font-size:clamp(1.8rem,3vw,2.35rem);font-weight:9
 .sec-sub{text-align:center;color:var(--muted);font-size:.98rem;max-width:540px;margin:0 auto 54px;line-height:1.78}
 
 /* PRODUCTS */
-#products-section{position:relative;overflow:hidden}
-#products-section::before,#products-section::after{content:"";position:absolute;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(76,175,80,.16),transparent 65%);pointer-events:none}
-#products-section::before{top:-150px;right:-130px}
-#products-section::after{bottom:-170px;left:-140px}
 .prod-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;max-width:1160px;margin:0 auto;position:relative;z-index:1}
 .prod-card{background:linear-gradient(180deg,#fff 0%,#f2faf2 100%);border:1px solid rgba(76,175,80,.28);border-radius:22px;padding:22px 18px 24px;transition:.28s;display:flex;flex-direction:column;align-items:center;text-align:center;box-shadow:0 12px 32px -20px rgba(45,122,58,.4)}
 .prod-card:hover{transform:translateY(-7px);border-color:rgba(76,175,80,.6);box-shadow:0 24px 50px -22px rgba(45,122,58,.55)}
@@ -651,9 +647,8 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
   </section>
 
   <!-- Products -->
-  <section id="products-section" style="background:linear-gradient(160deg,#f3faf3,#e4f2e5 55%,#eef7ee);padding-top:40px">
+  <section id="products-section" style="background:#EDF2F1;padding-top:40px">
     <div style="text-align:center;margin-bottom:44px;position:relative;z-index:1">
-      <svg width="38" height="30" viewBox="0 0 38 30" fill="none" aria-hidden="true" style="display:block;margin:0 auto 6px"><path d="M19 29C19 17 11 10 1 9c1 11 8 18 18 20Z" fill="#4caf50"/><path d="M19 29c0-14 8-22 18-23-1 13-8 21-18 23Z" fill="#2d7a3a"/></svg>
       <div style="display:inline-flex;align-items:center;gap:18px">
         <span style="width:60px;height:3px;background:var(--g2);border-radius:2px"></span>
         <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);font-weight:900;color:var(--g1);margin:0">Our Products</h2>
