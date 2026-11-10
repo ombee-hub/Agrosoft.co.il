@@ -178,6 +178,16 @@ html.a11y-textAlign body>:not(.agro-a11y-root) *{text-align:${ALIGN}!important}
   .agro-a11y-btn{bottom:16px;left:16px;width:50px;height:50px}
   .agro-a11y-btn svg{width:26px;height:26px}
 }
+@media(max-width:600px){
+  .agro-a11y-panel{width:auto;left:0;right:0;border-radius:18px 18px 0 0;max-height:82vh;transform:translateY(105%)}
+  .agro-a11y-panel.open{transform:none}
+  .agro-a11y-grid{grid-template-columns:1fr 1fr 1fr;gap:8px;padding:4px 10px 10px}
+  .agro-a11y-item{min-height:84px;padding:10px 4px;gap:8px;border-radius:10px}
+  .agro-a11y-ico{width:24px;height:24px}
+  .agro-a11y-item-label{font-size:11.5px}
+  .agro-a11y-reset{margin:4px 10px 10px;width:calc(100% - 20px);padding:12px}
+  .agro-a11y-bottom{padding:0 10px 12px}
+}
 @media(prefers-reduced-motion:reduce){.agro-a11y-panel,.agro-a11y-overlay,.agro-a11y-btn{transition:none}}
 `;
   document.head.appendChild(style);
