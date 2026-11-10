@@ -85,9 +85,10 @@
 /* ── Panel ── */
 .agro-a11y-panel{
   --a11y-w:280px;--a11y-icon:28px;--a11y-label:13px;--a11y-card:104px;
-  position:fixed;top:0;bottom:0;left:0;z-index:10001;
+  position:fixed;bottom:0;left:0;z-index:10001;
+  max-height:100vh;height:auto;
   width:var(--a11y-w);max-width:100vw;overflow-y:auto;overscroll-behavior:contain;
-  background:linear-gradient(170deg,#f6fbf6,#e4f2e5);border-radius:0 18px 18px 0;
+  background:linear-gradient(170deg,#f6fbf6,#e4f2e5);border-radius:0 18px 0 0;
   box-shadow:8px 0 40px rgba(0,0,0,.18);
   transform:translateX(-105%);visibility:hidden;
   transition:transform .35s cubic-bezier(.4,0,.2,1),visibility 0s linear .35s,width .25s ease;
