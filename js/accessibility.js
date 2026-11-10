@@ -149,18 +149,16 @@
     '#a11y-btn,.a11y-tile,#a11y-reset,#a11y-bottom a,#a11y-close{-webkit-tap-highlight-color:transparent}',
     'html.a11y-open,html.a11y-open body{overflow:hidden}',
 
-    /* mobile: full-width bottom sheet */
+    /* mobile: full-height side panel, like the Aviv widget */
     '@media(max-width:600px){',
     '  #a11y-btn{bottom:16px;left:16px}',
-    '  #a11y-panel{width:auto;left:0;right:0;border-radius:18px 18px 0 0;max-height:82vh;transform:translateY(105%)}',
-    '  #a11y-panel.open{transform:none}',
+    '  #a11y-panel{top:0;bottom:0;max-height:none;border-radius:0 18px 18px 0}',
     '  #a11y-head{padding:max(12px,env(safe-area-inset-top)) 12px 8px}',
-    '  #a11y-grid{grid-template-columns:1fr 1fr 1fr;gap:8px;padding:4px 10px 10px}',
-    '  .a11y-tile{min-height:84px;gap:8px;padding:10px 4px;border-radius:10px}',
-    '  .a11y-ico{width:24px;height:24px}',
-    '  .a11y-label{font-size:11.5px}',
-    '  #a11y-reset{width:calc(100% - 20px);margin:4px 10px 10px;padding:12px}',
-    '  #a11y-bottom{padding:0 10px 12px}',
+    '  #a11y-grid{gap:8px;padding:4px 10px 10px}',
+    '  .a11y-tile{min-height:92px;gap:9px;padding:12px 4px}',
+    '  .a11y-label{font-size:13px}',
+    '  #a11y-reset{width:calc(100% - 20px);margin:4px 10px 12px}',
+    '  #a11y-bottom{padding:0 10px 16px}',
     '}',
     '@media(prefers-reduced-motion:reduce){#a11y-panel,#a11y-overlay,#a11y-btn{transition:none}}'
   ].join('\n');
