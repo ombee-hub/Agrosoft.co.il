@@ -545,8 +545,8 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
   </div>
   <div class="mob-nav">
     <a href="about.html">About</a>
-    <div class="mob-sep mob-sep-toggle open" onclick="toggleMobProducts(this)">Solutions <span class="mob-sep-arrow">▾</span></div>
-    <div class="mob-products open">
+    <div class="mob-sep mob-sep-toggle" onclick="toggleMobProducts(this)">Solutions <span class="mob-sep-arrow">▾</span></div>
+    <div class="mob-products">
       <a href="agropriority.html">
         <div class="mob-prod">
           <span class="mob-prod-ic"><img src="../images/illu-agropriority.webp" alt="" loading="lazy"></span>
@@ -925,6 +925,8 @@ function closeMobileMenu(){
   menu.classList.remove('open');
   overlay.classList.remove('open');
   ham.classList.remove('open');
+  var mpt=menu.querySelector(".mob-sep-toggle");if(mpt)mpt.classList.remove("open");
+  var mpl=menu.querySelector(".mob-products");if(mpl)mpl.classList.remove("open");
   document.body.style.overflow='';
 }
 window.addEventListener('resize',function(){
