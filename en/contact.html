@@ -239,11 +239,11 @@ footer{background:#572E1D;padding:48px 48px 28px;display:flex;flex-direction:col
 .mob-sep-toggle .mob-sep-arrow{display:inline-block;transition:transform .3s ease;font-size:1.25rem;font-weight:900;color:var(--g2);line-height:1;position:relative;top:3px}
 .mob-sep-toggle.open .mob-sep-arrow{transform:rotate(180deg)}
 .mob-products{overflow:hidden;max-height:0;transition:max-height .35s ease;margin:0}
-.mob-products.open{max-height:400px}
+.mob-products.open{max-height:420px;margin:2px 0 8px}.mob-products a{padding:0;margin:0 0 7px;border-radius:14px;border:1px solid rgba(76,175,80,.3);background:linear-gradient(180deg,#fff,#f2faf2);box-shadow:0 4px 12px -8px rgba(45,122,58,.35)}.mob-products a:active{border-color:rgba(76,175,80,.6);background:linear-gradient(180deg,#f2faf2,#e4f2e5)}
 .mob-cta{background:linear-gradient(135deg,var(--g2),var(--g3))!important;color:#fff!important;text-align:center;font-weight:700!important;margin-top:8px;padding:13px 14px!important;border-radius:10px}
-.mob-prod{display:flex;align-items:center;gap:16px}
-.mob-prod img{width:58px;height:58px;border-radius:0;object-fit:contain;flex-shrink:0;padding:0;background:none!important}
-.mob-prod-txt{font-size:1.05rem;font-weight:700;color:var(--text)}
+.mob-prod{display:flex;align-items:center;gap:12px;padding:8px 10px}.mob-prod-ic{width:54px;height:44px;border-radius:10px;background:#fff;border:1px solid rgba(76,175,80,.22);display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:3px}
+.mob-prod-ic img{width:100%;height:100%;object-fit:contain}
+.mob-prod-txt{font-size:.93rem;font-weight:700;color:var(--text);flex:1}.mob-prod-go{color:var(--g2);font-weight:900;font-size:1.05rem;opacity:.75;line-height:1}
 
 /* PRODUCT PAGE HEADERS */
 .prod-pg-hdr{padding:60px 48px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap}
@@ -549,34 +549,39 @@ body.a11y-grayscale.a11y-saturation{filter:grayscale(1) saturate(3)}
     <div class="mob-products open">
       <a href="agropriority.html">
         <div class="mob-prod">
-          <img src="../images/agropriority-logo.webp" style="width:68px;height:68px">
+          <span class="mob-prod-ic"><img src="../images/illu-agropriority.webp" alt="" loading="lazy"></span>
           <span class="mob-prod-txt">AgroPriority</span>
+          <span class="mob-prod-go" aria-hidden="true">›</span>
         </div>
       </a>
       <a href="agrotalk.html">
         <div class="mob-prod">
-          <img src="../images/AgroTalk_logoN.webp" style="background:#e8f5e9">
+          <span class="mob-prod-ic"><img src="../images/illu-agrotalk.webp" alt="" loading="lazy"></span>
           <span class="mob-prod-txt">AgroTalk</span>
+          <span class="mob-prod-go" aria-hidden="true">›</span>
         </div>
       </a>
       <a href="agrosmart.html">
         <div class="mob-prod">
-          <img src="../images/AgroSmart_Logo.webp" style="background:#fff3e0">
+          <span class="mob-prod-ic"><img src="../images/illu-agrosmart.webp" alt="" loading="lazy"></span>
           <span class="mob-prod-txt">AgroSmart</span>
+          <span class="mob-prod-go" aria-hidden="true">›</span>
         </div>
       </a>
       <a href="agroqc.html">
         <div class="mob-prod">
-          <img src="../images/AgroQC_LogoN.webp" style="background:#fce4ec">
+          <span class="mob-prod-ic"><img src="../images/illu-agroqc.webp" alt="" loading="lazy"></span>
           <span class="mob-prod-txt">AgroQC</span>
+          <span class="mob-prod-go" aria-hidden="true">›</span>
         </div>
       </a>
       <a href="agroshop.html">
         <div class="mob-prod">
-          <img src="../images/agroShop.webp" style="background:#f3e5f5">
+          <span class="mob-prod-ic"><img src="../images/illu-agroshop.webp" alt="" loading="lazy"></span>
           <span class="mob-prod-txt">AgroShop</span>
+          <span class="mob-prod-go" aria-hidden="true">›</span>
         </div>
-    </a>
+      </a>
     </div>
     <a href="customers.html">Our Clients</a>
     <a href="https://www.agropriority.com/ServiceCalls" target="_blank" onclick="closeMobileMenu()">Customer Service</a>
