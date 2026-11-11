@@ -35,7 +35,7 @@ nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;
 .dropdown:hover .dd-arrow{transform:rotate(180deg)}
 .dropdown:hover .mega{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto}
 .mega{position:absolute;top:calc(100%+8px);right:-200px;background:linear-gradient(160deg,#fbfefb,#eef7ee);border:1px solid var(--border);border-radius:20px;padding:24px;width:820px;box-shadow:0 16px 48px rgba(0,0,0,.14);z-index:200;opacity:0;visibility:hidden;transform:translateY(-12px);pointer-events:none;transition:opacity .3s ease,transform .3s ease,visibility .3s ease}
-.mega-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.mega-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .mega-item{display:flex;flex-direction:column;align-items:center;padding:12px 10px 14px;border-radius:16px;color:inherit;border:1px solid rgba(76,175,80,.28);transition:.28s;background:linear-gradient(180deg,#fff,#f2faf2);text-align:center;box-shadow:0 8px 20px -14px rgba(45,122,58,.4)}
 .mega-item:hover{transform:translateY(-3px);border-color:rgba(76,175,80,.6);box-shadow:0 14px 30px -14px rgba(45,122,58,.5)}
 .mega-illu{width:100%;height:auto;border-radius:10px;margin-bottom:10px}
@@ -271,7 +271,7 @@ footer{background:#572E1D;padding:48px 48px 28px;display:flex;flex-direction:col
 .mob-sep-toggle .mob-sep-arrow{display:inline-block;transition:transform .3s ease;font-size:1.25rem;font-weight:900;color:var(--g2);line-height:1;position:relative;top:3px}
 .mob-sep-toggle.open .mob-sep-arrow{transform:rotate(180deg)}
 .mob-products{overflow:hidden;max-height:0;transition:max-height .35s ease;margin:0}
-.mob-products.open{max-height:420px;margin:2px 0 8px}.mob-products a{padding:5px 12px;margin:0;border-radius:10px}.mob-products a:active{background:#eef6ef}
+.mob-products.open{max-height:520px;margin:2px 0 8px}.mob-products a{padding:5px 12px;margin:0;border-radius:10px}.mob-products a:active{background:#eef6ef}
 .mob-cta{background:linear-gradient(135deg,var(--g2),var(--g3))!important;color:#fff!important;text-align:center;font-weight:700!important;margin-top:8px;padding:13px 14px!important;border-radius:10px}
 .mob-prod{display:flex;align-items:center;gap:12px;padding:8px 10px}.mob-prod-ic{width:54px;height:42px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .mob-prod-ic img{width:100%;height:100%;object-fit:contain}
@@ -497,6 +497,10 @@ footer{background:#572E1D;padding:48px 48px 28px;display:flex;flex-direction:col
               <img class="mega-illu" src="images/illu-agroshop.webp?v=2" alt="" width="303" height="209" loading="lazy">
               <div class="mega-txt"><h4>AgroShop</h4><p>פורטל B2B מקוון להזנת הזמנות לקוחות</p></div>
               <a class="mega-arr" href="agroshop.html">למידע נוסף</a></div>
+            <div class="mega-item">
+              <img class="mega-illu" src="images/illu-agroscan.webp" alt="" width="303" height="209" loading="lazy">
+              <div class="mega-txt"><h4>AgroScan</h4><p>סריקת מסמכים חכמה ב-AI לפריוריטי</p></div>
+              <a class="mega-arr" href="agroscan.html">למידע נוסף</a></div>
           </div>
           <div class="mega-footer">
             <a href="/#products-section">לכל הפתרונות</a>
@@ -569,6 +573,12 @@ footer{background:#572E1D;padding:48px 48px 28px;display:flex;flex-direction:col
 
         </div>
       </a>
+      <a href="agroscan.html">
+        <div class="mob-prod">
+          <span class="mob-prod-ic"><img src="images/illu-agroscan.webp" alt="" loading="lazy"></span>
+          <span class="mob-prod-txt">AgroScan</span>
+        </div>
+      </a>
     </div>
     <a href="customers.html">הלקוחות שלנו</a>
     <a href="https://www.agropriority.com/ServiceCalls" target="_blank" onclick="closeMobileMenu()">שרות לקוחות</a>
@@ -639,6 +649,7 @@ footer{background:#572E1D;padding:48px 48px 28px;display:flex;flex-direction:col
       <a href="agrosmart.html">AgroSmart</a>
       <a href="agroqc.html">AgroQC</a>
       <a href="agroshop.html">AgroShop</a>
+      <a href="agroscan.html">AgroScan</a>
     </div>
     <div class="foot-col">
       <h4>חדשות ומידע</h4>
