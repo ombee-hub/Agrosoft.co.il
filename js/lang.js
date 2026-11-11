@@ -68,3 +68,44 @@
     }
   });
 })();
+
+/* ============================================================
+   Solutions mega menu — opens on hover or click and STAYS open
+   until a click outside, Escape, or choosing an item.
+   ============================================================ */
+(function () {
+  'use strict';
+  var dd = document.querySelector('.dropdown');
+  if (!dd) return;
+  var mega = dd.querySelector('.mega');
+  var trig = dd.querySelector('a');
+  if (!mega || !trig) return;
+
+  function open() {
+    mega.classList.add('open');
+    dd.classList.add('open');
+    trig.setAttribute('aria-expanded', 'true');
+  }
+  function close() {
+    mega.classList.remove('open');
+    dd.classList.remove('open');
+    trig.setAttribute('aria-expanded', 'false');
+  }
+  trig.setAttribute('aria-haspopup', 'true');
+  trig.setAttribute('aria-expanded', 'false');
+
+  dd.addEventListener('mouseenter', open);
+  trig.addEventListener('click', function (e) {
+    e.preventDefault();
+    if (mega.classList.contains('open')) close(); else open();
+  });
+  document.addEventListener('click', function (e) {
+    if (!dd.contains(e.target)) close();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') close();
+  });
+  Array.prototype.forEach.call(mega.querySelectorAll('a'), function (a) {
+    a.addEventListener('click', function () { close(); });
+  });
+})();
