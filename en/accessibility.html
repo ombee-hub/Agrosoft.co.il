@@ -431,7 +431,7 @@ footer{background:#572E1D;padding:48px 48px 28px;display:flex;flex-direction:col
 .legal-intro{background:#eef6ef;border-left:4px solid var(--g3);border-radius:12px;padding:20px 24px;margin-bottom:26px}
 .legal-intro p{margin:0 0 8px}.legal-intro p:last-child{margin-bottom:0}
 .legal-date{font-size:.88rem;font-weight:800;color:var(--g2)}
-.legal-toc{border:1.5px solid var(--border);border-radius:12px;padding:16px 24px;margin-bottom:14px;background:#fff}
+.legal-toc{position:static;border:1.5px solid var(--border);border-radius:12px;padding:16px 24px;margin-bottom:14px;background:#fff}
 .legal-toc strong{display:block;color:var(--g1);margin-bottom:8px}
 .legal-toc ol{columns:2;column-gap:32px;padding-left:20px;margin:0}
 .legal-toc li{list-style:decimal;margin-bottom:6px;break-inside:avoid}
@@ -590,14 +590,14 @@ footer{background:#572E1D;padding:48px 48px 28px;display:flex;flex-direction:col
         <p class="legal-date">Last updated: November 2026</p>
         <p>AgroSoft Ltd. believes everyone should be able to use this website easily and comfortably, including people with disabilities. We continuously work to improve the site's accessibility and invite you to contact us with any issue or suggestion.</p>
       </div>
-      <nav class="legal-toc" aria-label="Page contents"><strong>On this page</strong><ol>
+      <div class="legal-toc" role="navigation" aria-label="Page contents"><strong>On this page</strong><ol>
         <li><a href="#sec-1">Accessibility level of the site</a></li>
         <li><a href="#sec-2">What we did to make the site accessible</a></li>
         <li><a href="#sec-3">The accessibility widget</a></li>
         <li><a href="#sec-4">Zooming in the browser</a></li>
         <li><a href="#sec-5">Known limitations</a></li>
         <li><a href="#sec-6">Contacting the accessibility coordinator</a></li>
-      </ol></nav>
+      </ol></div>
 
       <h2 id="sec-1">Accessibility level of the site</h2>
       <p>The site was made accessible in accordance with the Israeli Equal Rights for Persons with Disabilities regulations (Service Accessibility Adjustments), 2013, and Israeli Standard 5568, which is based on the WCAG guidelines at level AA. The site supports the common browsers and is adapted for phones and tablets.</p>

@@ -463,7 +463,7 @@ footer{background:#572E1D;padding:48px 48px 28px;display:flex;flex-direction:col
 .legal-intro{background:#eef6ef;border-right:4px solid var(--g3);border-radius:12px;padding:20px 24px;margin-bottom:26px}
 .legal-intro p{margin:0 0 8px}.legal-intro p:last-child{margin-bottom:0}
 .legal-date{font-size:.88rem;font-weight:800;color:var(--g2)}
-.legal-toc{border:1.5px solid var(--border);border-radius:12px;padding:16px 24px;margin-bottom:14px;background:#fff}
+.legal-toc{position:static;border:1.5px solid var(--border);border-radius:12px;padding:16px 24px;margin-bottom:14px;background:#fff}
 .legal-toc strong{display:block;color:var(--g1);margin-bottom:8px}
 .legal-toc ol{columns:2;column-gap:32px;padding-right:20px;margin:0}
 .legal-toc li{list-style:decimal;margin-bottom:6px;break-inside:avoid}
@@ -622,14 +622,14 @@ footer{background:#572E1D;padding:48px 48px 28px;display:flex;flex-direction:col
         <p class="legal-date">עודכן לאחרונה: נובמבר 2026</p>
         <p>אגרוסופט בע"מ רואה חשיבות רבה בכך שכל אחד ואחת יוכלו להשתמש באתר בקלות ובנוחות, כולל אנשים עם מוגבלויות. אנו פועלים כל הזמן לשיפור נגישות האתר, ומזמינים אתכם לפנות אלינו בכל בעיה או הצעה.</p>
       </div>
-      <nav class="legal-toc" aria-label="תוכן העמוד"><strong>בעמוד זה</strong><ol>
+      <div class="legal-toc" role="navigation" aria-label="תוכן העמוד"><strong>בעמוד זה</strong><ol>
         <li><a href="#sec-1">רמת הנגישות באתר</a></li>
         <li><a href="#sec-2">מה עשינו כדי להנגיש את האתר</a></li>
         <li><a href="#sec-3">תו הנגישות</a></li>
         <li><a href="#sec-4">הגדלת התצוגה בדפדפן</a></li>
         <li><a href="#sec-5">מגבלות ידועות</a></li>
         <li><a href="#sec-6">פנייה לרכז הנגישות</a></li>
-      </ol></nav>
+      </ol></div>
 
       <h2 id="sec-1">רמת הנגישות באתר</h2>
       <p>האתר הונגש בהתאם לתקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), התשע"ג-2013, ולתקן הישראלי ת"י 5568 המבוסס על הנחיות WCAG ברמה AA. האתר מותאם לתצוגה בדפדפנים הנפוצים ולשימוש בטלפון הנייד ובטאבלט.</p>
