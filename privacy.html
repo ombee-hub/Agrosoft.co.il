@@ -458,6 +458,31 @@ footer{background:#572E1D;padding:48px 48px 28px;display:flex;flex-direction:col
   
   .cookie-banner{padding:16px 20px;gap:14px;flex-direction:column}
 }
+/* LEGAL PAGES (accessibility / privacy) */
+.legal-content{max-width:800px;margin:0 auto;padding:8px 0 24px;line-height:1.85;color:var(--muted);font-size:.95rem}
+.legal-intro{background:#eef6ef;border-right:4px solid var(--g3);border-radius:12px;padding:20px 24px;margin-bottom:26px}
+.legal-intro p{margin:0 0 8px}.legal-intro p:last-child{margin-bottom:0}
+.legal-date{font-size:.88rem;font-weight:800;color:var(--g2)}
+.legal-toc{border:1.5px solid var(--border);border-radius:12px;padding:16px 24px;margin-bottom:14px;background:#fff}
+.legal-toc strong{display:block;color:var(--g1);margin-bottom:8px}
+.legal-toc ol{columns:2;column-gap:32px;padding-right:20px;margin:0}
+.legal-toc li{list-style:decimal;margin-bottom:6px;break-inside:avoid}
+.legal-toc a{color:var(--g2);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.legal-toc a:hover{color:var(--g1)}
+.legal-content h2{font-size:1.25rem;font-weight:800;color:var(--g1);margin:34px 0 12px;padding-right:12px;border-right:4px solid var(--g3);line-height:1.4;scroll-margin-top:90px}
+.legal-content p{margin-bottom:12px}
+.legal-list{padding-right:24px;margin:0 0 16px}
+.legal-list li{margin-bottom:8px;line-height:1.8;list-style:disc}
+.legal-content a{color:var(--g2);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.legal-content a:hover{color:var(--g1)}
+.legal-checklist{display:grid;grid-template-columns:1fr 1fr;gap:8px 28px;margin:0 0 16px;padding:0;list-style:none}
+.legal-checklist li{position:relative;padding-right:28px;line-height:1.7}
+.legal-checklist li::before{content:'';position:absolute;right:0;top:.3em;width:18px;height:18px;border-radius:50%;background:var(--g2) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/11px no-repeat}
+.legal-contact{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:10px}
+.legal-contact>div{background:#eef6ef;border-radius:12px;padding:14px 18px}
+.legal-contact strong{display:block;font-size:.85rem;color:var(--g2);margin-bottom:3px}
+.legal-contact a,.legal-contact span{font-weight:700;color:var(--g1);text-decoration:none!important}
+@media(max-width:576px){.legal-toc ol{columns:1}.legal-checklist,.legal-contact{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -592,40 +617,36 @@ footer{background:#572E1D;padding:48px 48px 28px;display:flex;flex-direction:col
 <div id="privacy" class="page active">
   <div class="page-hdr"><h1>מדיניות פרטיות</h1><p>אגרוסופט בע"מ</p></div>
   <section style="max-width:820px;margin:0 auto">
-    <div class="prod-desc">
+    <div class="legal-content">
+      <div class="legal-intro"><p class="legal-date">עודכן לאחרונה: 5 באפריל 2026</p><p>מדיניות זו מסבירה איזה מידע נאסף באתר אגרוסופט, כיצד הוא משמש ואילו זכויות עומדות לכם. המדיניות מנוסחת בלשון זכר מטעמי נוחות בלבד וחלה על כל המינים.</p></div>
+      <nav class="legal-toc" aria-label="תוכן העמוד"><strong>בעמוד זה</strong><ol><li><a href="#sec-1">מהי מדיניות הפרטיות?</a></li><li><a href="#sec-2">דיווח על פגיעה בפרטיות</a></li><li><a href="#sec-3">מסירת פרטים ומידע אישי לאגרוסופט</a></li><li><a href="#sec-4">מידע שנאסף במהלך השימוש באתר</a></li><li><a href="#sec-5">רשתות חברתיות ומידע אישי שאתם משתפים</a></li><li><a href="#sec-6">השימוש במידע</a></li><li><a href="#sec-7">מסירת מידע לצדדים שלישיים</a></li><li><a href="#sec-8">היכן נשמר המידע?</a></li><li><a href="#sec-9">Cookies (עוגיות)</a></li><li><a href="#sec-10">אבטחת מידע</a></li><li><a href="#sec-11">זכות לעיין במידע</a></li><li><a href="#sec-12">שינויים במדיניות הפרטיות</a></li></ol></nav>
 
-      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin-bottom:16px;border-bottom:2px solid var(--border);padding-bottom:10px">מהי מדיניות הפרטיות?</h2>
-      <p>אגרוסופט בע"מ (להלן: "אגרוסופט") מתייחס בכבוד לפרטיות המשתמשים באתר אגרוסופט, הפועל בכתובת האינטרנט <a href="https://agrosoft.co.il" style="color:var(--g2);font-weight:700" target="_blank">agrosoft.co.il</a> ובכל כתובת נוספת בהתאם לשיקול דעתו של אגרוסופט (להלן: "האתר").</p>
+      <h2 id="sec-1">מהי מדיניות הפרטיות?</h2>
+      <p>אגרוסופט בע"מ (להלן: "אגרוסופט") מתייחס בכבוד לפרטיות המשתמשים באתר אגרוסופט, הפועל בכתובת האינטרנט <a href="https://agrosoft.co.il" target="_blank">agrosoft.co.il</a> ובכל כתובת נוספת בהתאם לשיקול דעתו של אגרוסופט (להלן: "האתר").</p>
       <p>תנאים אלה ילמדו אתכם מהי מדיניות הפרטיות הנהוגה באתר. הם סוקרים, בין השאר, את האופן שבו משתמש אגרוסופט בע"מ במידע שתמסרו לו ובמידע שייאסף על אודותיכם בעת שתשתמשו באתר. במדיניות זו, הביטוי "מידע אישי" פירושו כל מידע שניתן לעשות בו שימוש באופן סביר על-מנת לזהות אתכם, לרבות שמכם הפרטי ושם משפחתכם, כתובתכם, מספר הטלפון שלכם ועוד.</p>
       <p>מדיניות זו מהווה חלק בלתי נפרד מתנאי השימוש באתר. המדיניות מנוסחת בלשון רבים מטעמי נוחות בלבד, והיא חלה באופן זהה עבור כל המינים. בנוסף, מדיניות זו חלה גם על פעילותכם והשתתפותכם באילו מהקהילות המקוונות, הפורומים המקצועיים ורשימות הדיוור והתפוצה של אגרוסופט (להלן: "הקהילות המקוונות"), בשינויים המחויבים לפי העניין.</p>
 
-      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">דיווח על פגיעה בפרטיות</h2>
+      <h2 id="sec-2">דיווח על פגיעה בפרטיות</h2>
       <p>אם אתם חושבים שפרטיותכם נפגעה במהלך השימוש באתר, או באילו מהקהילות המקוונות, אנא פנו אלינו:</p>
-      <div style="margin:12px 0;display:flex;gap:14px;align-items:flex-start">
-        <div style="font-size:1.4rem;flex-shrink:0;margin-top:2px">📧</div>
-        <div>
-          <p style="margin:0;font-size:.9rem">דוא"ל: <a href="mailto:support@agrosoft.co.il" style="color:var(--g2);font-weight:700;text-decoration:none">support@agrosoft.co.il</a></p>
-          <p style="margin:4px 0 0;font-size:.86rem">כתובת: אגרוסופט בע"מ, הדובדבן 9, קרית אונו 5551052</p>
-        </div>
-      </div>
+      <div class="legal-contact"><div><strong>דוא"ל</strong><a href="mailto:support@agrosoft.co.il">support@agrosoft.co.il</a></div><div><strong>כתובת</strong><span>אגרוסופט בע"מ, הדובדבן 9, קרית אונו 5551052</span></div></div>
 
-      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">מסירת פרטים ומידע אישי לאגרוסופט</h2>
+      <h2 id="sec-3">מסירת פרטים ומידע אישי לאגרוסופט</h2>
       <p>השימוש באתר אינו כרוך ברישום או במסירת פרטים ומידע אישי. עם זאת, אזורים ומדורים שונים באתר, כגון רישום לאירועים, רישום לרשימות התפוצה, יצירת קשר באמצעות טפסי קשר מקוונים ועוד – עשויים להיות כרוכים ברישום ומסירת פרטים ומידע אישי, כגון שם מלא, כתובת, טלפון, כתובת דוא"ל פעילה, שיוך ארגוני ופרטים נוספים לפי הצורך.</p>
       <p>השדות שחובה למלא יסומנו במפורש. ללא מסירת הפרטים המתבקשים בשדות החובה לא תוכלו להירשם באזור הרלבנטי באתר. עליכם למסור רק פרטים נכונים, מדויקים ומלאים.</p>
       <p>אינכם חייבים על-פי חוק למסור את הפרטים והמידע האישי. מסירתם תלויה בהסכמתכם וברצונכם החופשי – אולם מסירת פרטים שגויים, או אי מסירת מלוא הפרטים הנדרשים, עלולים למנוע מכם את האפשרות להשלים את הרישום או להשתמש בחלק משירותי האתר.</p>
       <p>כאשר אתם מוסרים מידע אישי של צד שלישי, אתם מצהירים כי קיבלתם את הסכמתו המפורשת למסירת המידע לאגרוסופט, לשם השימוש במידע זה בהתאם למדיניות זו.</p>
 
-      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">מידע שנאסף במהלך השימוש באתר</h2>
+      <h2 id="sec-4">מידע שנאסף במהלך השימוש באתר</h2>
       <p>בעת שתשתמשו באתר, או באילו מהקהילות המקוונות, עשוי אגרוסופט לאסוף מידע על נוהגיכם ביחס לשימוש באתר, לרבות תכנים שטענתם או פרסמתם, מידע שקראתם, העמודים שבהם צפיתם, השירותים שעניינו אתכם, מקום המחשב ונתוני כתובת האינטרנט (IP address), סוג מערכת ההפעלה המשמשת אתכם, סוג מכשיר הקצה שברשותכם ועוד.</p>
       <p>בנוסף, אגרוסופט רשאי לאסוף ולהסתייע בשירותיהם של צדדים שלישיים כדי לאסוף ולנתח מידע אנונימי, סטטיסטי, או מצרפי (אגרגטיבי) בקשר עם השימוש כאמור.</p>
 
-      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">רשתות חברתיות ומידע אישי שאתם משתפים</h2>
+      <h2 id="sec-5">רשתות חברתיות ומידע אישי שאתם משתפים</h2>
       <p>אגרוסופט מעמיד לרשות משתמשי האתר כלים לשיתוף וקישור תכנים מהאתר באמצעות רשתות חברתיות ושירותים מקוונים שונים. תשומת ליבכם כי השימוש ברשתות חברתיות ושירותים מקוונים כאמור הוא חיצוני ונפרד לאתר וכפוף לנוהגי הפרטיות של אותם שירותים.</p>
       <p>דעו כי התכנים שאתם טוענים לאתר או לקהילה הרלבנטית אינם פרטיים או חסויים. עליכם לנקוט משנה זהירות ולהפעיל שיקול דעת בעת שאתם מוסרים מידע אישי שעלול לזהות אתכם או אחרים.</p>
 
-      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">השימוש במידע</h2>
+      <h2 id="sec-6">השימוש במידע</h2>
       <p>בפרטים ובמידע האישי שתמסרו ובפרטים שיאסוף אגרוסופט, ייעשה שימוש למטרות הבאות:</p>
-      <ul style="padding-right:22px;line-height:2.1;color:var(--muted);margin:10px 0 16px">
+      <ul class="legal-list">
         <li>כדי לאפשר לכם להשתמש באתר, בתכנים הכלולים בו ובשירותים שהוא מציע</li>
         <li>כדי לזהות אתכם במהלך כניסות חוזרות לאזורים הטעונים הרשמה</li>
         <li>כדי לשפר ולהעשיר את השירותים והתכנים באתר</li>
@@ -637,9 +658,9 @@ footer{background:#572E1D;padding:48px 48px 28px;display:flex;flex-direction:col
         <li>כדי לאכוף את תנאי השימוש באתר ולמלא אחר דרישות כל דין</li>
       </ul>
 
-      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">מסירת מידע לצדדים שלישיים</h2>
+      <h2 id="sec-7">מסירת מידע לצדדים שלישיים</h2>
       <p>אגרוסופט לא יעביר לצדדים שלישיים את המידע האישי שמסרתם והפרטים שנאספו על פעילותכם, אלא במקרים הבאים:</p>
-      <ul style="padding-right:22px;line-height:2.1;color:var(--muted);margin:10px 0 16px">
+      <ul class="legal-list">
         <li>ככל שהדבר דרוש לצורך אספקה תקינה של שירותי האתר</li>
         <li>אם תפרו את הוראות תנאי השימוש באתר או תבצעו פעולות המנוגדות לדין</li>
         <li>אם יתקבל צו שיפוטי או דרישה של רשות מוסמכת</li>
@@ -650,29 +671,25 @@ footer{background:#572E1D;padding:48px 48px 28px;display:flex;flex-direction:col
         <li>על-פי בקשתכם המפורשת</li>
       </ul>
 
-      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">היכן נשמר המידע?</h2>
+      <h2 id="sec-8">היכן נשמר המידע?</h2>
       <p>המידע שאגרוסופט אוסף נשמר במאגר המידע שלו, המאוחסן אצל ספקי אירוח שרתים וגיבוי מידע, שעשויים להימצא גם מחוץ לגבולות ישראל. הסכמתכם למדיניות זו מהווה גם הסכמה לשמירת המידע בחו"ל ולהעברתו מחוץ לגבולות ישראל.</p>
 
-      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">Cookies (עוגיות)</h2>
+      <h2 id="sec-9">Cookies (עוגיות)</h2>
       <p>אגרוסופט עשוי להשתמש באתר ב'עוגיות' (Cookies) לצורך תפעולו השוטף והתקין, לרבות כדי לאסוף נתונים סטטיסטיים, לאימות פרטים, כדי להתאים את האתר להעדפותיכם האישיות, לצרכי אבטחת מידע ועוד.</p>
       <p>'עוגיות' הן קבצי טקסט, שהדפדפן שלכם יוצר לפי פקודה ממחשבי האתר. הן יכולות להכיל מידע מגוון כדוגמת הדפים שבהם ביקרתם, משך הזמן ששהיתם באתר, מהיכן הגעתם אל האתר ועוד.</p>
       <p>אגרוסופט נעזר בנוסף גם ב-Cookies שמקורם בצדדים שלישיים, בהם Google Analytics, שירותי הפרסום של חברת גוגל, ורשתות חברתיות כגון פייסבוק.</p>
       <p>אם אינכם רוצים לקבל Cookies, תוכלו להימנע מכך על ידי שינוי ההגדרות בדפדפן שלכם. זכרו עם זאת שנטרול העוגיות עלול לגרום לכך שלא תוכלו להשתמש בחלק מהשירותים והתכונות באתר.</p>
 
-      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">אבטחת מידע</h2>
+      <h2 id="sec-10">אבטחת מידע</h2>
       <p>אגרוסופט מייחס חשיבות עליונה לאבטחת המידע במערכותיו. לשם שמירת המידע, הוא מפעיל מערכות, יישומים ונהלים לאבטחת המידע, המיועדים למזער את הסיכונים מפני גניבה, פגיעה, אובדן או גישה בלתי מורשית למידע.</p>
       <p>עם זה, אין וודאות שיישומים אלה מבטיחים באופן מוחלט שמידע אישי לא ייחשף או ייגנב ממאגרי המידע. בעצם השימוש באתר ובשירותיו, אתם מודעים ומסכימים למגבלות אלו.</p>
 
-      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">זכות לעיין במידע</h2>
+      <h2 id="sec-11">זכות לעיין במידע</h2>
       <p>על-פי חוק הגנת הפרטיות, התשמ"א – 1981, כל אדם זכאי לעיין במידע שעליו המוחזק במאגר מידע. אדם שעיין במידע שעליו ומצא שאינו נכון, שלם, ברור או מעודכן, רשאי לפנות לבעל מאגר המידע בבקשה לתקן את המידע או למוחקו.</p>
       <p>שימו לב כי מחיקת מידע עלולה למנוע מכם להמשיך ולקבל שירותים מהאתר. מידע הדרוש לאגרוסופט יוסיף להישמר על-פי דין, אך לא ישמש עוד לצורך פניות אליכם.</p>
 
-      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">שינויים במדיניות הפרטיות</h2>
+      <h2 id="sec-12">שינויים במדיניות הפרטיות</h2>
       <p>אגרוסופט רשאי לשנות מעת לעת את תנאי מדיניות הפרטיות. אם יבוצעו שינויים מהותיים, תפורסם על-כך הודעה בעמוד הבית של האתר 30 ימים לפני כניסת השינויים לתוקף. המשך השימוש באתר לאחר השינוי מעיד על הסכמתכם למדיניות המתוקנת.</p>
-
-      <div style="margin-top:24px;padding-top:16px;border-top:1px solid var(--border);color:var(--muted);font-size:.82rem;text-align:center">
-        מדיניות הפרטיות עודכנה לאחרונה: 05/04/2026 | מדיניות הפרטיות מנוסחת בלשון זכר מטעמי נוחות בלבד.
-      </div>
     </div>
   </section>
 </div>
@@ -1036,6 +1053,6 @@ setInterval(function(){changeSlide(1)},5000);
 })();
 
 </script>
-<script src="js/lang.js?v=2" defer></script>
+<script src="js/lang.js?v=3" defer></script>
 </body>
 </html>

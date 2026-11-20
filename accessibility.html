@@ -458,6 +458,31 @@ footer{background:#572E1D;padding:48px 48px 28px;display:flex;flex-direction:col
   
   .cookie-banner{padding:16px 20px;gap:14px;flex-direction:column}
 }
+/* LEGAL PAGES (accessibility / privacy) */
+.legal-content{max-width:800px;margin:0 auto;padding:8px 0 24px;line-height:1.85;color:var(--muted);font-size:.95rem}
+.legal-intro{background:#eef6ef;border-right:4px solid var(--g3);border-radius:12px;padding:20px 24px;margin-bottom:26px}
+.legal-intro p{margin:0 0 8px}.legal-intro p:last-child{margin-bottom:0}
+.legal-date{font-size:.88rem;font-weight:800;color:var(--g2)}
+.legal-toc{border:1.5px solid var(--border);border-radius:12px;padding:16px 24px;margin-bottom:14px;background:#fff}
+.legal-toc strong{display:block;color:var(--g1);margin-bottom:8px}
+.legal-toc ol{columns:2;column-gap:32px;padding-right:20px;margin:0}
+.legal-toc li{list-style:decimal;margin-bottom:6px;break-inside:avoid}
+.legal-toc a{color:var(--g2);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.legal-toc a:hover{color:var(--g1)}
+.legal-content h2{font-size:1.25rem;font-weight:800;color:var(--g1);margin:34px 0 12px;padding-right:12px;border-right:4px solid var(--g3);line-height:1.4;scroll-margin-top:90px}
+.legal-content p{margin-bottom:12px}
+.legal-list{padding-right:24px;margin:0 0 16px}
+.legal-list li{margin-bottom:8px;line-height:1.8;list-style:disc}
+.legal-content a{color:var(--g2);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.legal-content a:hover{color:var(--g1)}
+.legal-checklist{display:grid;grid-template-columns:1fr 1fr;gap:8px 28px;margin:0 0 16px;padding:0;list-style:none}
+.legal-checklist li{position:relative;padding-right:28px;line-height:1.7}
+.legal-checklist li::before{content:'';position:absolute;right:0;top:.3em;width:18px;height:18px;border-radius:50%;background:var(--g2) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/11px no-repeat}
+.legal-contact{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:10px}
+.legal-contact>div{background:#eef6ef;border-radius:12px;padding:14px 18px}
+.legal-contact strong{display:block;font-size:.85rem;color:var(--g2);margin-bottom:3px}
+.legal-contact a,.legal-contact span{font-weight:700;color:var(--g1);text-decoration:none!important}
+@media(max-width:576px){.legal-toc ol{columns:1}.legal-checklist,.legal-contact{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -591,61 +616,68 @@ footer{background:#572E1D;padding:48px 48px 28px;display:flex;flex-direction:col
 
 <div id="accessibility" class="page active">
   <div class="page-hdr"><h1>הצהרת נגישות</h1><p>מחויבים לנגישות מלאה עבור כולם</p></div>
-  <section style="max-width:820px;margin:0 auto">
-    <div class="prod-desc">
-      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin-bottom:16px;border-bottom:2px solid var(--border);padding-bottom:10px">מדיניות נגישות</h2>
-      <p>אנו רואים בלקוחות עם מוגבלות לקוחות שווי זכויות, הזכאים ליהנות מנגישות מלאה.</p>
-      <p>אנו פועלים על-פי הקבוע בחוק שוויון הזדמנויות לאנשים עם מוגבלות, ובהתאם לכך מונגש אתרנו.</p>
-      <p>חלק זה באתר נכתב במטרה ליידע אותך כיצד ניתן ליהנות מהסדרי הנגישות של האתר.</p>
-      <p>מטרתנו לאפשר לכל לקוח עם או בלי מוגבלות שירות שוויוני ונגיש.</p>
-      <p>אתר זה עומד בדרישות תקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), התשע"ג 2013.</p>
-      <p>כמו כן, מותאם לתצוגה בדפדפנים הנפוצים ולשימוש בטלפון הסלולרי.</p>
+    <section style="max-width:860px;margin:0 auto;padding:40px 24px">
+    <div class="legal-content">
+      <div class="legal-intro">
+        <p class="legal-date">עודכן לאחרונה: נובמבר 2026</p>
+        <p>אגרוסופט בע"מ רואה חשיבות רבה בכך שכל אחד ואחת יוכלו להשתמש באתר בקלות ובנוחות, כולל אנשים עם מוגבלויות. אנו פועלים כל הזמן לשיפור נגישות האתר, ומזמינים אתכם לפנות אלינו בכל בעיה או הצעה.</p>
+      </div>
+      <nav class="legal-toc" aria-label="תוכן העמוד"><strong>בעמוד זה</strong><ol>
+        <li><a href="#sec-1">רמת הנגישות באתר</a></li>
+        <li><a href="#sec-2">מה עשינו כדי להנגיש את האתר</a></li>
+        <li><a href="#sec-3">תו הנגישות</a></li>
+        <li><a href="#sec-4">הגדלת התצוגה בדפדפן</a></li>
+        <li><a href="#sec-5">מגבלות ידועות</a></li>
+        <li><a href="#sec-6">פנייה לרכז הנגישות</a></li>
+      </ol></nav>
 
-      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">הנחיות לתפעול מאפייני הנגישות</h2>
-      <p>האתר נתמך על ידי הדפדפנים הנפוצים, בגרסתם העדכנית ביותר.</p>
-      <p>האתר מספק תמיכה בדפוס השימוש המקובל להפעלה עם מקלדת בעזרת מקשי החיצים, Enter ו-Esc ליציאה מתפריטים וחלונות.</p>
+      <h2 id="sec-1">רמת הנגישות באתר</h2>
+      <p>האתר הונגש בהתאם לתקנות שוויון זכויות לאנשים עם מוגבלות (התאמות נגישות לשירות), התשע"ג-2013, ולתקן הישראלי ת"י 5568 המבוסס על הנחיות WCAG ברמה AA. האתר מותאם לתצוגה בדפדפנים הנפוצים ולשימוש בטלפון הנייד ובטאבלט.</p>
 
-      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">תוסף הנגישות באתר</h2>
-      <p>באתר זה מוטמע תוסף נגישות המסייע בהנגשת האתר לבעלי מוגבלויות:</p>
-      <ul style="padding-right:22px;line-height:2.1;color:var(--muted);margin:10px 0 16px">
-        <li>כפתור המציג את האפשרות לנגישות</li>
-        <li>לחיצה על כפתור הנגישות תפתח את תפריט הנגישות</li>
-        <li>לחיצה נוספת על כפתור הנגישות תסגור את תפריט הנגישות</li>
-        <li>כפתור מצב שחור לבן עבור עיוורי צבעים</li>
-        <li>כפתור שינוי ניגודיות גבוהה</li>
-        <li>כפתור המדגיש בצורה ברורה את כל הקישורים המופיעים באתר</li>
-        <li>כפתור הגדלת גודל הגופנים באתר</li>
-        <li>כפתור הקטנת גודל הגופנים באתר</li>
+      <h2 id="sec-2">מה עשינו כדי להנגיש את האתר</h2>
+      <ul class="legal-list">
+        <li>מבנה עמודים ברור, עם כותרות ותגיות HTML לפי משמעותן, כדי שקוראי מסך יוכלו לנווט בקלות</li>
+        <li>ניווט מלא במקלדת — Tab מעביר בין קישורים, Enter מפעיל קישור ו-Esc סוגר תפריטים וחלונות</li>
+        <li>טקסט חלופי לתמונות שמעבירות מידע</li>
+        <li>ניגודיות צבעים מספקת בין הטקסט לרקע</li>
+        <li>האתר רספונסיבי וניתן להגדלה בדפדפן בלי שהתוכן ייחתך</li>
+        <li>אם במערכת ההפעלה הוגדרה "הפחתת תנועה", האנימציות באתר מצטמצמות אוטומטית</li>
       </ul>
 
-      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">הגדלת התצוגה באתר</h2>
-      <p>גולשים המתקשים בראייה ורוצים להגדיל את התצוגה באתר, יכולים לעשות זאת באמצעות לחיצה בו זמנית על המקשים <strong style="color:var(--g2)">Ctrl</strong> ו-<strong style="color:var(--g2)">+</strong> (קונטרול ופלוס). כל לחיצה על צמד המקשים הללו תגדיל את התצוגה.</p>
-      <p>כדי להקטין את התצוגה יש ללחוץ בו זמנית על המקשים <strong style="color:var(--g2)">Ctrl</strong> ו-<strong style="color:var(--g2)">-</strong> (קונטרול ומינוס).</p>
+      <h2 id="sec-3">תו הנגישות</h2>
+      <p>בכל עמוד באתר יש כפתור נגישות קבוע בפינה השמאלית התחתונה. הוא פותח את תו הנגישות, שבו אפשר להפעיל את ההתאמות הבאות:</p>
+      <ul class="legal-checklist">
+        <li>הגברת ניגודיות (שתי רמות, כולל היפוך צבעים)</li>
+        <li>הדגשת קישורים</li>
+        <li>טקסט גדול (שלוש רמות)</li>
+        <li>ריווח טקסט</li>
+        <li>ביטול הנפשות</li>
+        <li>הסתרת תמונות</li>
+        <li>גופן פשוט וקריא (תמיכה בדיסלקסיה)</li>
+        <li>סמן עכבר מוגדל</li>
+        <li>הגדלת גובה השורה (שתי רמות)</li>
+        <li>יישור טקסט</li>
+        <li>תצוגה בגווני אפור</li>
+        <li>קו קריאה שעוקב אחרי הסמן</li>
+      </ul>
+      <p>אפשר להפעיל את תו הנגישות גם מהמקלדת ולסגור אותו במקש Esc. כפתור אחד מאפס את כל ההגדרות, וההגדרות שבחרתם נשמרות בדפדפן ויופעלו שוב בביקור הבא.</p>
 
-      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">הפעלת האתר באמצעות מקלדת</h2>
-      <p>לחיצה חוזרת על מקש <strong style="color:var(--g2)">Tab</strong> תעביר בין הקישורים השונים בעמוד.</p>
-      <p>לחיצה בו זמנית על המקשים <strong style="color:var(--g2)">Shift + Tab</strong> תחזיר את הסמן לקישור הקודם.</p>
-      <p>לחיצה על מקש <strong style="color:var(--g2)">Enter</strong> תפעיל את הקישור המסומן.</p>
-      <p>מקש <strong style="color:var(--g2)">F11</strong> יגדיל את המסך לגודל מלא – לחיצה נוספת תקטין אותו חזרה.</p>
-      <p>מקש רווח (<strong style="color:var(--g2)">Space</strong>) יוריד את האתר כלפי מטה.</p>
+      <h2 id="sec-4">הגדלת התצוגה בדפדפן</h2>
+      <p>להגדלת התצוגה אפשר ללחוץ בו-זמנית על <strong>Ctrl</strong> ועל <strong>+</strong>, ולהקטנתה על <strong>Ctrl</strong> ועל <strong>-</strong>. מקש <strong>F11</strong> מציג את האתר במסך מלא, ולחיצה נוספת מחזירה את התצוגה הרגילה.</p>
 
-      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">דרכי יצירת קשר</h2>
-      <p>לצורך שיפור השירות נשמח לקבל פניות לקבלת מידע ו/או הצעות שיפור.</p>
-      <div style="margin:12px 0;display:flex;gap:14px;align-items:flex-start">
-        <div style="font-size:1.4rem;flex-shrink:0;margin-top:2px">👤</div>
-        <div>
-          <h4 style="font-size:.95rem;font-weight:800;margin-bottom:5px">רכז הנגישות</h4>
-          <p style="margin:0;font-size:.9rem"><strong>עמרי בן אליהו</strong></p>
-          <p style="margin:4px 0 0;font-size:.86rem">מייל: <a href="mailto:omri@agrosoft.co.il" style="color:var(--g2);font-weight:700;text-decoration:none">omri@agrosoft.co.il</a></p>
-        </div>
-      </div>
-      <p>אנו נמשיך במאמצינו לשפר את נגישות האתר על מנת לאפשר שימוש באתר עבור האוכלוסייה כולה, לרבות אנשים עם מוגבלויות.</p>
+      <h2 id="sec-5">מגבלות ידועות</h2>
+      <p>למרות מאמצינו, ייתכן שחלקים מסוימים באתר עדיין אינם נגישים במלואם. חלק מהגופנים נטענים משירותים חיצוניים (Google Fonts) ואיננו שולטים באופן מלא באופן הצגתם. נתקלתם בבעיה? נשמח לשמוע ולתקן.</p>
 
-      <div style="margin-top:24px;padding-top:16px;border-top:1px solid var(--border);color:var(--muted);font-size:.82rem;text-align:center">
-        הצהרת הנגישות עודכנה ביום: 1.1.2026
+      <h2 id="sec-6">פנייה לרכז הנגישות</h2>
+      <p>נתקלתם בבעיית נגישות או שיש לכם הצעה לשיפור? פנו אלינו ונטפל בפנייה בהקדם. כדי שנוכל לעזור, כדאי לציין באיזה עמוד הייתה הבעיה ומה ניסיתם לעשות.</p>
+      <div class="legal-contact">
+        <div><strong>רכז הנגישות</strong><span>עמרי בן אליהו</span></div>
+        <div><strong>דוא"ל</strong><a href="mailto:omri@agrosoft.co.il">omri@agrosoft.co.il</a></div>
+        <div><strong>כתובת</strong><span>הדובדבן 9, קרית אונו</span></div>
       </div>
     </div>
   </section>
+
 </div>
 
 <!-- PRIVACY POLICY PAGE -->
@@ -1009,6 +1041,6 @@ setInterval(function(){changeSlide(1)},5000);
 })();
 
 </script>
-<script src="js/lang.js?v=2" defer></script>
+<script src="js/lang.js?v=3" defer></script>
 </body>
 </html>

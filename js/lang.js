@@ -102,6 +102,7 @@
   document.addEventListener('click', function (e) {
     if (!dd.contains(e.target)) close();
   });
+  window.addEventListener('scroll', close, { passive: true });
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') close();
   });

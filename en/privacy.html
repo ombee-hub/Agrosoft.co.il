@@ -426,7 +426,32 @@ footer{background:#572E1D;padding:48px 48px 28px;display:flex;flex-direction:col
 .lightbox-overlay.active{display:flex}
 .lightbox-overlay img{max-width:92vw;max-height:90vh;border-radius:10px;box-shadow:0 8px 40px rgba(0,0,0,.5);object-fit:contain}
 .lightbox-close{position:fixed;top:18px;right:18px;color:#fff;font-size:2rem;cursor:pointer;z-index:20001;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.15);border-radius:50%;transition:.2s}
-.lightbox-close:hover{background:rgba(255,255,255,.3)}</style>
+.lightbox-close:hover{background:rgba(255,255,255,.3)}/* LEGAL PAGES (accessibility / privacy) */
+.legal-content{max-width:800px;margin:0 auto;padding:8px 0 24px;line-height:1.85;color:var(--muted);font-size:.95rem}
+.legal-intro{background:#eef6ef;border-left:4px solid var(--g3);border-radius:12px;padding:20px 24px;margin-bottom:26px}
+.legal-intro p{margin:0 0 8px}.legal-intro p:last-child{margin-bottom:0}
+.legal-date{font-size:.88rem;font-weight:800;color:var(--g2)}
+.legal-toc{border:1.5px solid var(--border);border-radius:12px;padding:16px 24px;margin-bottom:14px;background:#fff}
+.legal-toc strong{display:block;color:var(--g1);margin-bottom:8px}
+.legal-toc ol{columns:2;column-gap:32px;padding-left:20px;margin:0}
+.legal-toc li{list-style:decimal;margin-bottom:6px;break-inside:avoid}
+.legal-toc a{color:var(--g2);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.legal-toc a:hover{color:var(--g1)}
+.legal-content h2{font-size:1.25rem;font-weight:800;color:var(--g1);margin:34px 0 12px;padding-left:12px;border-left:4px solid var(--g3);line-height:1.4;scroll-margin-top:90px}
+.legal-content p{margin-bottom:12px}
+.legal-list{padding-left:24px;margin:0 0 16px}
+.legal-list li{margin-bottom:8px;line-height:1.8;list-style:disc}
+.legal-content a{color:var(--g2);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.legal-content a:hover{color:var(--g1)}
+.legal-checklist{display:grid;grid-template-columns:1fr 1fr;gap:8px 28px;margin:0 0 16px;padding:0;list-style:none}
+.legal-checklist li{position:relative;padding-left:28px;line-height:1.7}
+.legal-checklist li::before{content:'';position:absolute;left:0;top:.3em;width:18px;height:18px;border-radius:50%;background:var(--g2) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/11px no-repeat}
+.legal-contact{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:10px}
+.legal-contact>div{background:#eef6ef;border-radius:12px;padding:14px 18px}
+.legal-contact strong{display:block;font-size:.85rem;color:var(--g2);margin-bottom:3px}
+.legal-contact a,.legal-contact span{font-weight:700;color:var(--g1);text-decoration:none!important}
+@media(max-width:576px){.legal-toc ol{columns:1}.legal-checklist,.legal-contact{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 
@@ -560,40 +585,36 @@ footer{background:#572E1D;padding:48px 48px 28px;display:flex;flex-direction:col
 <div id="privacy" class="page active">
   <div class="page-hdr"><h1>Privacy Policy</h1><p>AgroSoft Ltd.</p></div>
   <section style="max-width:820px;margin:0 auto">
-    <div class="prod-desc">
+    <div class="legal-content">
+      <div class="legal-intro"><p class="legal-date">Last updated: April 5, 2026</p><p>This policy explains what information is collected on the Agrosoft website, how it is used and what rights you have.</p></div>
+      <nav class="legal-toc" aria-label="Page contents"><strong>On this page</strong><ol><li><a href="#sec-1">What is the Privacy Policy?</a></li><li><a href="#sec-2">Reporting a Privacy Breach</a></li><li><a href="#sec-3">Providing Personal Information to AgroSoft</a></li><li><a href="#sec-4">Information Collected During Website Use</a></li><li><a href="#sec-5">Social Networks and Personal Information You Share</a></li><li><a href="#sec-6">Use of Information</a></li><li><a href="#sec-7">Disclosure to Third Parties</a></li><li><a href="#sec-8">Where is Information Stored?</a></li><li><a href="#sec-9">Cookies</a></li><li><a href="#sec-10">Information Security</a></li><li><a href="#sec-11">Right to Access Information</a></li><li><a href="#sec-12">Changes to the Privacy Policy</a></li></ol></nav>
 
-      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin-bottom:16px;border-bottom:2px solid var(--border);padding-bottom:10px">What is the Privacy Policy?</h2>
-      <p>AgroSoft Ltd. (hereinafter: "AgroSoft") respects the privacy of the users of the AgroSoft website, operating at <a href="https://agrosoft.co.il" style="color:var(--g2);font-weight:700" target="_blank">agrosoft.co.il</a> and any additional address at AgroSoft's discretion (hereinafter: "the Website").</p>
+      <h2 id="sec-1">What is the Privacy Policy?</h2>
+      <p>AgroSoft Ltd. (hereinafter: "AgroSoft") respects the privacy of the users of the AgroSoft website, operating at <a href="https://agrosoft.co.il" target="_blank">agrosoft.co.il</a> and any additional address at AgroSoft's discretion (hereinafter: "the Website").</p>
       <p>These terms will inform you of the privacy policy practiced on the Website. They cover, among other things, how AgroSoft uses the information you provide and the information collected about you while using the Website. In this policy, "personal information" means any information that can reasonably be used to identify you, including your first and last name, address, phone number, and more.</p>
       <p>This policy is an integral part of the Website's terms of use. This policy also applies to your activity and participation in any of the online communities, professional forums, and mailing lists of AgroSoft (hereinafter: "Online Communities"), with necessary modifications.</p>
 
-      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">Reporting a Privacy Breach</h2>
+      <h2 id="sec-2">Reporting a Privacy Breach</h2>
       <p>If you believe your privacy has been compromised while using the Website or any of the Online Communities, please contact us:</p>
-      <div style="margin:12px 0;display:flex;gap:14px;align-items:flex-start">
-        <div style="font-size:1.4rem;flex-shrink:0;margin-top:2px">📧</div>
-        <div>
-          <p style="margin:0;font-size:.9rem">Email: <a href="mailto:support@agrosoft.co.il" style="color:var(--g2);font-weight:700;text-decoration:none">support@agrosoft.co.il</a></p>
-          <p style="margin:4px 0 0;font-size:.86rem">Address: AgroSoft Ltd., HaDuvdevan 9, Kiryat Ono 5551052, Israel</p>
-        </div>
-      </div>
+      <div class="legal-contact"><div><strong>Email</strong><a href="mailto:support@agrosoft.co.il">support@agrosoft.co.il</a></div><div><strong>Address</strong><span>AgroSoft Ltd., HaDuvdevan 9, Kiryat Ono 5551052, Israel</span></div></div>
 
-      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">Providing Personal Information to AgroSoft</h2>
+      <h2 id="sec-3">Providing Personal Information to AgroSoft</h2>
       <p>Using the Website does not require registration or providing personal information. However, various areas of the Website, such as event registration, mailing list subscriptions, online contact forms, and more &ndash; may require registration and providing personal information such as full name, address, phone, active email address, organizational affiliation, and additional details as needed.</p>
       <p>Required fields will be explicitly marked. Without providing the required information, you will not be able to register in the relevant area. You must provide only accurate and complete information.</p>
       <p>You are not legally required to provide personal information. Submission depends on your consent and free will &ndash; however, providing incorrect information or not providing all required details may prevent you from completing registration or using some Website services.</p>
       <p>When you provide personal information of a third party, you declare that you have obtained their explicit consent to provide the information to AgroSoft for use in accordance with this policy.</p>
 
-      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">Information Collected During Website Use</h2>
+      <h2 id="sec-4">Information Collected During Website Use</h2>
       <p>When you use the Website or any of the Online Communities, AgroSoft may collect information about your usage habits, including content you uploaded or published, information you read, pages you viewed, services that interested you, your computer location and IP address, operating system type, device type, and more.</p>
       <p>Additionally, AgroSoft may collect and use third-party services to collect and analyze anonymous, statistical, or aggregate information related to such use.</p>
 
-      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">Social Networks and Personal Information You Share</h2>
+      <h2 id="sec-5">Social Networks and Personal Information You Share</h2>
       <p>AgroSoft provides Website users with tools for sharing and linking content via social networks and various online services. Please note that the use of social networks and online services is external and separate from the Website and is subject to the privacy practices of those services.</p>
       <p>Be aware that content you upload to the Website or relevant community is not private or confidential. You should exercise caution when providing personal information that may identify you or others.</p>
 
-      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">Use of Information</h2>
+      <h2 id="sec-6">Use of Information</h2>
       <p>The personal information you provide and the information AgroSoft collects will be used for the following purposes:</p>
-      <ul style="padding-left:22px;line-height:2.1;color:var(--muted);margin:10px 0 16px">
+      <ul class="legal-list">
         <li>To enable you to use the Website, its content, and services</li>
         <li>To identify you during repeated visits to areas requiring registration</li>
         <li>To improve and enrich Website services and content</li>
@@ -605,9 +626,9 @@ footer{background:#572E1D;padding:48px 48px 28px;display:flex;flex-direction:col
         <li>To enforce the Website's terms of use and comply with legal requirements</li>
       </ul>
 
-      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">Disclosure to Third Parties</h2>
+      <h2 id="sec-7">Disclosure to Third Parties</h2>
       <p>AgroSoft will not transfer your personal information to third parties except in the following cases:</p>
-      <ul style="padding-left:22px;line-height:2.1;color:var(--muted);margin:10px 0 16px">
+      <ul class="legal-list">
         <li>As required for proper provision of Website services</li>
         <li>If you violate the terms of use or engage in activities contrary to law</li>
         <li>If a court order or competent authority demand is received</li>
@@ -618,29 +639,25 @@ footer{background:#572E1D;padding:48px 48px 28px;display:flex;flex-direction:col
         <li>At your explicit request</li>
       </ul>
 
-      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">Where is Information Stored?</h2>
+      <h2 id="sec-8">Where is Information Stored?</h2>
       <p>Information collected by AgroSoft is stored in its database, hosted by server hosting and data backup providers, which may be located outside of Israel. Your consent to this policy also constitutes consent to storing information abroad and transferring it outside of Israel.</p>
 
-      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">Cookies</h2>
+      <h2 id="sec-9">Cookies</h2>
       <p>AgroSoft may use cookies on the Website for its regular and proper operation, including collecting statistical data, verifying details, customizing the Website to your preferences, information security purposes, and more.</p>
       <p>Cookies are text files that your browser creates at the instruction of the Website's servers. They may contain various information such as pages you visited, time spent on the Website, where you arrived from, and more.</p>
       <p>AgroSoft also uses third-party cookies, including Google Analytics, Google advertising services, and social networks such as Facebook.</p>
       <p>If you do not wish to receive cookies, you can avoid them by changing your browser settings. Note, however, that disabling cookies may prevent you from using some Website services and features.</p>
 
-      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">Information Security</h2>
+      <h2 id="sec-10">Information Security</h2>
       <p>AgroSoft attaches the utmost importance to information security. To protect information, it operates systems, applications, and procedures designed to minimize the risks of theft, damage, loss, or unauthorized access to information.</p>
       <p>However, there is no certainty that these measures absolutely guarantee that personal information will not be exposed or stolen. By using the Website and its services, you are aware of and agree to these limitations.</p>
 
-      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">Right to Access Information</h2>
+      <h2 id="sec-11">Right to Access Information</h2>
       <p>Under the Privacy Protection Law, 1981, every person is entitled to review information about them held in a database. A person who has reviewed their information and found it to be inaccurate, incomplete, unclear, or outdated, may request that the database owner correct or delete the information.</p>
       <p>Please note that deleting information may prevent you from continuing to receive services from the Website. Information required by AgroSoft will continue to be stored in accordance with law but will no longer be used to contact you.</p>
 
-      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">Changes to the Privacy Policy</h2>
+      <h2 id="sec-12">Changes to the Privacy Policy</h2>
       <p>AgroSoft may change the privacy policy terms from time to time. If material changes are made, a notice will be published on the Website's homepage 30 days before the changes take effect. Continued use of the Website after the change indicates your consent to the amended policy.</p>
-
-      <div style="margin-top:24px;padding-top:16px;border-top:1px solid var(--border);color:var(--muted);font-size:.82rem;text-align:center">
-        Privacy policy last updated: April 5, 2026
-      </div>
     </div>
   </section>
 </div>
@@ -890,6 +907,6 @@ setInterval(function(){ changeSlide(1); }, 5000);
   });
 })();
 </script>
-<script src="../js/lang.js?v=2" defer></script>
+<script src="../js/lang.js?v=3" defer></script>
 </body>
 </html>

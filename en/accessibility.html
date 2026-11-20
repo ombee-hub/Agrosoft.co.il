@@ -426,7 +426,32 @@ footer{background:#572E1D;padding:48px 48px 28px;display:flex;flex-direction:col
 .lightbox-overlay.active{display:flex}
 .lightbox-overlay img{max-width:92vw;max-height:90vh;border-radius:10px;box-shadow:0 8px 40px rgba(0,0,0,.5);object-fit:contain}
 .lightbox-close{position:fixed;top:18px;right:18px;color:#fff;font-size:2rem;cursor:pointer;z-index:20001;width:44px;height:44px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.15);border-radius:50%;transition:.2s}
-.lightbox-close:hover{background:rgba(255,255,255,.3)}</style>
+.lightbox-close:hover{background:rgba(255,255,255,.3)}/* LEGAL PAGES (accessibility / privacy) */
+.legal-content{max-width:800px;margin:0 auto;padding:8px 0 24px;line-height:1.85;color:var(--muted);font-size:.95rem}
+.legal-intro{background:#eef6ef;border-left:4px solid var(--g3);border-radius:12px;padding:20px 24px;margin-bottom:26px}
+.legal-intro p{margin:0 0 8px}.legal-intro p:last-child{margin-bottom:0}
+.legal-date{font-size:.88rem;font-weight:800;color:var(--g2)}
+.legal-toc{border:1.5px solid var(--border);border-radius:12px;padding:16px 24px;margin-bottom:14px;background:#fff}
+.legal-toc strong{display:block;color:var(--g1);margin-bottom:8px}
+.legal-toc ol{columns:2;column-gap:32px;padding-left:20px;margin:0}
+.legal-toc li{list-style:decimal;margin-bottom:6px;break-inside:avoid}
+.legal-toc a{color:var(--g2);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.legal-toc a:hover{color:var(--g1)}
+.legal-content h2{font-size:1.25rem;font-weight:800;color:var(--g1);margin:34px 0 12px;padding-left:12px;border-left:4px solid var(--g3);line-height:1.4;scroll-margin-top:90px}
+.legal-content p{margin-bottom:12px}
+.legal-list{padding-left:24px;margin:0 0 16px}
+.legal-list li{margin-bottom:8px;line-height:1.8;list-style:disc}
+.legal-content a{color:var(--g2);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.legal-content a:hover{color:var(--g1)}
+.legal-checklist{display:grid;grid-template-columns:1fr 1fr;gap:8px 28px;margin:0 0 16px;padding:0;list-style:none}
+.legal-checklist li{position:relative;padding-left:28px;line-height:1.7}
+.legal-checklist li::before{content:'';position:absolute;left:0;top:.3em;width:18px;height:18px;border-radius:50%;background:var(--g2) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/11px no-repeat}
+.legal-contact{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:10px}
+.legal-contact>div{background:#eef6ef;border-radius:12px;padding:14px 18px}
+.legal-contact strong{display:block;font-size:.85rem;color:var(--g2);margin-bottom:3px}
+.legal-contact a,.legal-contact span{font-weight:700;color:var(--g1);text-decoration:none!important}
+@media(max-width:576px){.legal-toc ol{columns:1}.legal-checklist,.legal-contact{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
 
@@ -559,61 +584,68 @@ footer{background:#572E1D;padding:48px 48px 28px;display:flex;flex-direction:col
 
 <div id="accessibility" class="page active">
   <div class="page-hdr"><h1>Accessibility Statement</h1><p>Committed to full accessibility for everyone</p></div>
-  <section style="max-width:820px;margin:0 auto">
-    <div class="prod-desc">
-      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin-bottom:16px;border-bottom:2px solid var(--border);padding-bottom:10px">Accessibility Policy</h2>
-      <p>We view customers with disabilities as equal-right customers, entitled to full accessibility.</p>
-      <p>We operate in accordance with the Equal Rights for Persons with Disabilities Law, and our website has been made accessible accordingly.</p>
-      <p>This section of the website was written to inform you how you can enjoy the accessibility features of the site.</p>
-      <p>Our goal is to provide equal and accessible service to every customer, with or without a disability.</p>
-      <p>This website complies with the requirements of the Equal Rights for Persons with Disabilities Regulations (Accessibility Adjustments for Service), 2013.</p>
-      <p>The site is also adapted for display on popular browsers and for mobile phone use.</p>
+    <section style="max-width:860px;margin:0 auto;padding:40px 24px">
+    <div class="legal-content">
+      <div class="legal-intro">
+        <p class="legal-date">Last updated: November 2026</p>
+        <p>AgroSoft Ltd. believes everyone should be able to use this website easily and comfortably, including people with disabilities. We continuously work to improve the site's accessibility and invite you to contact us with any issue or suggestion.</p>
+      </div>
+      <nav class="legal-toc" aria-label="Page contents"><strong>On this page</strong><ol>
+        <li><a href="#sec-1">Accessibility level of the site</a></li>
+        <li><a href="#sec-2">What we did to make the site accessible</a></li>
+        <li><a href="#sec-3">The accessibility widget</a></li>
+        <li><a href="#sec-4">Zooming in the browser</a></li>
+        <li><a href="#sec-5">Known limitations</a></li>
+        <li><a href="#sec-6">Contacting the accessibility coordinator</a></li>
+      </ol></nav>
 
-      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">Accessibility Feature Guidelines</h2>
-      <p>The website is supported by popular browsers in their most up-to-date versions.</p>
-      <p>The website supports standard keyboard navigation using arrow keys, Enter, and Esc to exit menus and dialogs.</p>
+      <h2 id="sec-1">Accessibility level of the site</h2>
+      <p>The site was made accessible in accordance with the Israeli Equal Rights for Persons with Disabilities regulations (Service Accessibility Adjustments), 2013, and Israeli Standard 5568, which is based on the WCAG guidelines at level AA. The site supports the common browsers and is adapted for phones and tablets.</p>
 
-      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">Accessibility Plugin</h2>
-      <p>This website includes an accessibility plugin that assists in making the site accessible for people with disabilities:</p>
-      <ul style="padding-left:22px;line-height:2.1;color:var(--muted);margin:10px 0 16px">
-        <li>A button displaying the accessibility options</li>
-        <li>Clicking the accessibility button opens the accessibility menu</li>
-        <li>Clicking the accessibility button again closes the menu</li>
-        <li>Black &amp; white mode for color blind users</li>
-        <li>High contrast mode</li>
-        <li>A button that clearly highlights all links on the site</li>
-        <li>Increase font size</li>
-        <li>Decrease font size</li>
+      <h2 id="sec-2">What we did to make the site accessible</h2>
+      <ul class="legal-list">
+        <li>Clear page structure with meaningful headings and HTML tags, so screen readers can navigate easily</li>
+        <li>Full keyboard navigation &mdash; Tab moves between links, Enter activates a link and Esc closes menus and dialogs</li>
+        <li>Alternative text for informative images</li>
+        <li>Sufficient color contrast between text and background</li>
+        <li>The site is responsive and can be zoomed in the browser without content being cut off</li>
+        <li>If "reduced motion" is set in the operating system, the site's animations are automatically minimized</li>
       </ul>
 
-      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">Enlarging the Display</h2>
-      <p>Users who have difficulty seeing and wish to enlarge the display can do so by pressing <strong style="color:var(--g2)">Ctrl</strong> and <strong style="color:var(--g2)">+</strong> simultaneously. Each press will enlarge the display further.</p>
-      <p>To reduce the display, press <strong style="color:var(--g2)">Ctrl</strong> and <strong style="color:var(--g2)">-</strong> simultaneously.</p>
+      <h2 id="sec-3">The accessibility widget</h2>
+      <p>Every page has a fixed accessibility button in the bottom-left corner. It opens the accessibility widget, which offers the following adjustments:</p>
+      <ul class="legal-checklist">
+        <li>Increased contrast (two levels, including color inversion)</li>
+        <li>Link highlighting</li>
+        <li>Bigger text (three levels)</li>
+        <li>Text spacing</li>
+        <li>Pause animations</li>
+        <li>Hide images</li>
+        <li>Simple, readable font (dyslexia support)</li>
+        <li>Enlarged mouse cursor</li>
+        <li>Increased line height (two levels)</li>
+        <li>Text alignment</li>
+        <li>Grayscale display</li>
+        <li>A reading guide that follows the pointer</li>
+      </ul>
+      <p>The widget can also be operated from the keyboard and closed with Esc. One button resets all settings, and your choices are saved in the browser and reapplied on your next visit.</p>
 
-      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">Keyboard Navigation</h2>
-      <p>Pressing <strong style="color:var(--g2)">Tab</strong> repeatedly will move between the different links on the page.</p>
-      <p>Pressing <strong style="color:var(--g2)">Shift + Tab</strong> will return the cursor to the previous link.</p>
-      <p>Pressing <strong style="color:var(--g2)">Enter</strong> will activate the selected link.</p>
-      <p><strong style="color:var(--g2)">F11</strong> will maximize the screen &ndash; pressing again will restore it.</p>
-      <p>The <strong style="color:var(--g2)">Space</strong> bar will scroll the page down.</p>
+      <h2 id="sec-4">Zooming in the browser</h2>
+      <p>To zoom in, press <strong>Ctrl</strong> and <strong>+</strong> together; to zoom out, press <strong>Ctrl</strong> and <strong>-</strong>. The <strong>F11</strong> key shows the site in full screen, and pressing it again restores the regular view.</p>
 
-      <h2 style="font-size:1.2rem;font-weight:800;color:var(--g1);margin:28px 0 16px;border-bottom:2px solid var(--border);padding-bottom:10px">Contact Us</h2>
-      <p>We welcome inquiries for information and/or suggestions for improvement.</p>
-      <div style="margin:12px 0;display:flex;gap:14px;align-items:flex-start">
-        <div style="font-size:1.4rem;flex-shrink:0;margin-top:2px">👤</div>
-        <div>
-          <h4 style="font-size:.95rem;font-weight:800;margin-bottom:5px">Accessibility Coordinator</h4>
-          <p style="margin:0;font-size:.9rem"><strong>Omri Ben Eliyahu</strong></p>
-          <p style="margin:4px 0 0;font-size:.86rem">Email: <a href="mailto:omri@agrosoft.co.il" style="color:var(--g2);font-weight:700;text-decoration:none">omri@agrosoft.co.il</a></p>
-        </div>
-      </div>
-      <p>We will continue our efforts to improve the accessibility of the website to enable use for the entire population, including people with disabilities.</p>
+      <h2 id="sec-5">Known limitations</h2>
+      <p>Despite our efforts, some parts of the site may not yet be fully accessible. Some fonts are loaded from external services (Google Fonts) and we do not fully control how they are displayed. Found a problem? We would love to hear about it and fix it.</p>
 
-      <div style="margin-top:24px;padding-top:16px;border-top:1px solid var(--border);color:var(--muted);font-size:.82rem;text-align:center">
-        Accessibility statement last updated: January 1, 2026
+      <h2 id="sec-6">Contacting the accessibility coordinator</h2>
+      <p>Encountered an accessibility issue, or have a suggestion? Contact us and we will handle it promptly. To help us, please mention which page had the problem and what you were trying to do.</p>
+      <div class="legal-contact">
+        <div><strong>Accessibility Coordinator</strong><span>Omri Ben Eliyahu</span></div>
+        <div><strong>Email</strong><a href="mailto:omri@agrosoft.co.il">omri@agrosoft.co.il</a></div>
+        <div><strong>Address</strong><span>HaDuvdevan 9, Kiryat Ono, Israel</span></div>
       </div>
     </div>
   </section>
+
 </div>
 
 <!-- PRIVACY POLICY PAGE -->
@@ -862,6 +894,6 @@ setInterval(function(){ changeSlide(1); }, 5000);
   });
 })();
 </script>
-<script src="../js/lang.js?v=2" defer></script>
+<script src="../js/lang.js?v=3" defer></script>
 </body>
 </html>
